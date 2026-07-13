@@ -1,0 +1,1278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NUCLIDE — Physics Trainer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
+<style>
+:root{
+  --bg:#0A0D12;
+  --bg-panel:#12161F;
+  --bg-raised:#1A2030;
+  --bg-raised-2:#212840;
+  --border:#262E3D;
+  --border-soft:#1B212C;
+  --text:#E8ECF4;
+  --text-dim:#8993A8;
+  --text-faint:#59637A;
+  --cherenkov:#5FD4E3;
+  --cherenkov-dim:#3A8B96;
+  --scint:#9B87F5;
+  --amber:#F2B84B;
+  --good:#5FD98A;
+  --bad:#F2686B;
+  --font-display:'Space Grotesk',sans-serif;
+  --font-body:'Inter',sans-serif;
+  --font-mono:'IBM Plex Mono',monospace;
+  --radius:12px;
+}
+*{box-sizing:border-box;}
+html,body{height:100%;}
+body{
+  margin:0;
+  background:
+    radial-gradient(ellipse 900px 500px at 15% -10%, rgba(95,212,227,0.07), transparent 60%),
+    radial-gradient(ellipse 700px 500px at 100% 10%, rgba(155,135,245,0.05), transparent 60%),
+    var(--bg);
+  color:var(--text);
+  font-family:var(--font-body);
+  -webkit-font-smoothing:antialiased;
+}
+::selection{background:rgba(95,212,227,0.25);}
+::-webkit-scrollbar{width:10px;height:10px;}
+::-webkit-scrollbar-track{background:transparent;}
+::-webkit-scrollbar-thumb{background:var(--border);border-radius:8px;}
+::-webkit-scrollbar-thumb:hover{background:var(--text-faint);}
+a{color:inherit;}
+button{font-family:inherit;}
+:focus-visible{outline:2px solid var(--cherenkov);outline-offset:2px;}
+
+#app{display:flex;min-height:100vh;}
+
+/* ---------- Sidebar ---------- */
+.sidebar{
+  width:232px;
+  flex-shrink:0;
+  background:var(--bg-panel);
+  border-right:1px solid var(--border-soft);
+  padding:26px 16px;
+  display:flex;
+  flex-direction:column;
+  position:sticky;
+  top:0;
+  height:100vh;
+}
+.brand{display:flex;align-items:center;gap:10px;padding:2px 8px 26px 8px;}
+.brand-mark{width:30px;height:30px;flex-shrink:0;}
+.brand-text{font-family:var(--font-display);font-weight:700;font-size:17px;letter-spacing:0.02em;line-height:1.1;}
+.brand-sub{font-family:var(--font-mono);font-size:9.5px;color:var(--text-faint);letter-spacing:0.09em;text-transform:uppercase;margin-top:2px;}
+
+.nav{display:flex;flex-direction:column;gap:3px;}
+.nav-item{
+  display:flex;align-items:center;gap:11px;
+  padding:10px 12px;border-radius:9px;
+  color:var(--text-dim);cursor:pointer;
+  font-size:14px;font-weight:500;
+  border:1px solid transparent;
+  transition:background .15s ease, color .15s ease;
+  user-select:none;
+}
+.nav-item:hover{background:var(--bg-raised);color:var(--text);}
+.nav-item.active{background:var(--bg-raised);color:var(--text);border-color:var(--border);box-shadow:inset 3px 0 0 -1px var(--cherenkov);}
+.nav-item svg{width:17px;height:17px;flex-shrink:0;opacity:0.85;}
+.nav-badge{
+  margin-left:auto;font-family:var(--font-mono);font-size:10.5px;
+  background:var(--amber);color:#1a1206;padding:1px 6px;border-radius:20px;font-weight:600;
+}
+.nav-spacer{flex:1;}
+.sidebar-foot{
+  font-family:var(--font-mono);font-size:10.5px;color:var(--text-faint);
+  padding:10px 12px;border-top:1px solid var(--border-soft);margin-top:10px;line-height:1.6;
+}
+
+/* ---------- Main ---------- */
+.main{flex:1;min-width:0;padding:34px 42px 70px 42px;max-width:1180px;}
+.view{display:none;animation:fadeUp .35s ease;}
+.view.active{display:block;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:translateY(0);}}
+
+.page-head{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:28px;flex-wrap:wrap;gap:14px;}
+.page-eyebrow{font-family:var(--font-mono);font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--cherenkov);margin-bottom:6px;}
+.page-title{font-family:var(--font-display);font-size:28px;font-weight:600;letter-spacing:-0.01em;}
+.page-desc{color:var(--text-dim);font-size:13.5px;margin-top:6px;max-width:520px;line-height:1.5;}
+
+/* ---------- Stat cards ---------- */
+.stat-row{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:30px;}
+.stat-card{
+  background:var(--bg-panel);border:1px solid var(--border-soft);border-radius:var(--radius);
+  padding:16px 20px;min-width:132px;flex:1;
+}
+.stat-value{font-family:var(--font-mono);font-size:26px;font-weight:600;color:var(--cherenkov);line-height:1;}
+.stat-value.alt{color:var(--scint);}
+.stat-value.amber{color:var(--amber);}
+.stat-label{font-family:var(--font-mono);font-size:10.5px;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-faint);margin-top:8px;}
+
+/* ---------- Panels ---------- */
+.panel{background:var(--bg-panel);border:1px solid var(--border-soft);border-radius:var(--radius);padding:24px;margin-bottom:20px;}
+.panel-title{font-family:var(--font-display);font-size:15px;font-weight:600;margin-bottom:4px;}
+.panel-sub{color:var(--text-faint);font-size:12px;margin-bottom:18px;}
+
+/* ---------- Topic histogram ---------- */
+.topic-row{display:flex;align-items:center;gap:16px;margin-bottom:16px;}
+.topic-row:last-child{margin-bottom:0;}
+.topic-label{width:190px;flex-shrink:0;}
+.topic-name{font-size:13.5px;font-weight:500;}
+.topic-count{font-family:var(--font-mono);font-size:10.5px;color:var(--text-faint);margin-top:2px;}
+.bar-track{flex:1;height:11px;background:var(--bg-raised);border-radius:6px;overflow:hidden;border:1px solid var(--border-soft);}
+.bar-fill{height:100%;border-radius:5px;transition:width .7s cubic-bezier(.16,1,.3,1);}
+.topic-pct{width:44px;text-align:right;font-family:var(--font-mono);font-size:12.5px;color:var(--text-dim);flex-shrink:0;}
+
+/* ---------- Buttons ---------- */
+.btn{
+  font-family:var(--font-mono);font-size:12.5px;font-weight:600;letter-spacing:0.02em;
+  padding:10px 18px;border-radius:8px;border:1px solid var(--border);
+  background:var(--bg-raised);color:var(--text);cursor:pointer;
+  display:inline-flex;align-items:center;gap:8px;transition:transform .1s ease, border-color .15s ease, background .15s ease;
+}
+.btn:hover{border-color:var(--text-faint);transform:translateY(-1px);}
+.btn:active{transform:translateY(0);}
+.btn-primary{background:linear-gradient(135deg, var(--cherenkov), #4AA9C4);color:#03181B;border-color:transparent;}
+.btn-primary:hover{filter:brightness(1.08);}
+.btn-good{background:rgba(95,217,138,0.12);border-color:rgba(95,217,138,0.4);color:var(--good);}
+.btn-good:hover{background:rgba(95,217,138,0.22);}
+.btn-bad{background:rgba(242,104,107,0.1);border-color:rgba(242,104,107,0.4);color:var(--bad);}
+.btn-bad:hover{background:rgba(242,104,107,0.2);}
+.btn-ghost{background:transparent;border-color:var(--border-soft);color:var(--text-dim);}
+.btn-ghost:hover{color:var(--text);}
+.btn-block{width:100%;justify-content:center;}
+.btn:disabled{opacity:0.4;cursor:not-allowed;transform:none;}
+
+/* ---------- Flashcard ---------- */
+.train-controls{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:22px;}
+.select, .text-input, textarea{
+  background:var(--bg-raised);border:1px solid var(--border);color:var(--text);
+  border-radius:8px;padding:9px 12px;font-family:var(--font-body);font-size:13.5px;
+}
+.select:focus, .text-input:focus, textarea:focus{border-color:var(--cherenkov-dim);}
+.chip{
+  font-family:var(--font-mono);font-size:11.5px;padding:6px 12px;border-radius:20px;
+  border:1px solid var(--border);color:var(--text-dim);cursor:pointer;user-select:none;
+  transition:all .15s ease;
+}
+.chip.on{background:rgba(95,212,227,0.12);border-color:var(--cherenkov-dim);color:var(--cherenkov);}
+.chip-row{display:flex;gap:8px;flex-wrap:wrap;}
+
+.card-stage{max-width:660px;margin:0 auto;}
+.session-meter{display:flex;align-items:center;justify-content:space-between;font-family:var(--font-mono);font-size:11.5px;color:var(--text-faint);margin-bottom:12px;}
+.session-track{flex:1;height:3px;background:var(--bg-raised);border-radius:2px;margin:0 14px;overflow:hidden;}
+.session-fill{height:100%;background:var(--cherenkov);border-radius:2px;transition:width .3s ease;}
+
+.flashcard{
+  position:relative;background:var(--bg-panel);border:1px solid var(--border);
+  border-radius:18px;padding:44px 40px 34px 40px;min-height:260px;
+  display:flex;flex-direction:column;justify-content:center;overflow:hidden;
+}
+.flashcard::before{
+  content:'';position:absolute;top:-140px;right:-140px;width:320px;height:320px;
+  background:radial-gradient(circle, rgba(95,212,227,0.10), transparent 70%);
+  border-radius:50%;pointer-events:none;
+}
+.card-tag-row{position:absolute;top:18px;left:22px;right:22px;display:flex;justify-content:space-between;align-items:center;}
+.card-tag{font-family:var(--font-mono);font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-faint);}
+.card-tag b{color:var(--text-dim);font-weight:600;}
+.box-dots{display:flex;gap:4px;}
+.box-dot{width:6px;height:6px;border-radius:50%;background:var(--border);}
+.box-dot.filled{background:var(--cherenkov);box-shadow:0 0 6px var(--cherenkov);}
+.card-question{font-family:var(--font-display);font-size:19px;font-weight:500;line-height:1.55;margin-top:14px;position:relative;}
+.card-answer{
+  margin-top:24px;padding-top:22px;border-top:1px dashed var(--border);
+  font-size:14.5px;line-height:1.65;color:var(--text-dim);position:relative;
+}
+.card-answer.hidden{display:none;}
+.difficulty-tag{display:inline-block;font-family:var(--font-mono);font-size:9.5px;letter-spacing:0.06em;text-transform:uppercase;padding:2px 7px;border-radius:5px;margin-top:16px;}
+.diff-1{background:rgba(95,217,138,0.12);color:var(--good);}
+.diff-2{background:rgba(242,184,75,0.13);color:var(--amber);}
+.diff-3{background:rgba(242,104,107,0.12);color:var(--bad);}
+
+.card-actions{display:flex;gap:10px;justify-content:center;margin-top:22px;}
+.kbd-hint{text-align:center;font-family:var(--font-mono);font-size:10.5px;color:var(--text-faint);margin-top:14px;}
+.kbd-hint kbd{background:var(--bg-raised);border:1px solid var(--border);border-radius:4px;padding:1px 6px;font-family:var(--font-mono);}
+
+.empty-state{text-align:center;padding:60px 20px;color:var(--text-faint);}
+.empty-state svg{width:52px;height:52px;opacity:0.4;margin-bottom:14px;}
+.empty-state h3{font-family:var(--font-display);color:var(--text-dim);font-weight:600;font-size:16px;margin:0 0 8px 0;}
+.empty-state p{font-size:13px;margin:0 0 18px 0;}
+
+/* ---------- Library ---------- */
+.lib-search{display:flex;gap:10px;margin-bottom:18px;flex-wrap:wrap;}
+.lib-search .text-input{flex:1;min-width:200px;}
+.lib-group{margin-bottom:22px;}
+.lib-group-head{display:flex;align-items:center;gap:10px;margin-bottom:10px;}
+.lib-group-title{font-family:var(--font-display);font-weight:600;font-size:14.5px;}
+.lib-group-dot{width:9px;height:9px;border-radius:50%;flex-shrink:0;}
+.lib-group-count{font-family:var(--font-mono);font-size:11px;color:var(--text-faint);}
+.lib-card{
+  background:var(--bg-raised);border:1px solid var(--border-soft);border-radius:10px;
+  padding:13px 16px;margin-bottom:8px;display:flex;gap:14px;align-items:flex-start;
+}
+.lib-card-body{flex:1;min-width:0;}
+.lib-card-q{font-size:13.5px;font-weight:500;line-height:1.45;}
+.lib-card-a{font-size:12.5px;color:var(--text-faint);margin-top:5px;line-height:1.5;}
+.lib-card-meta{display:flex;gap:8px;align-items:center;flex-shrink:0;}
+.purity-pill{font-family:var(--font-mono);font-size:10.5px;padding:3px 8px;border-radius:20px;border:1px solid var(--border);color:var(--text-dim);white-space:nowrap;}
+.icon-btn{
+  width:26px;height:26px;border-radius:6px;border:1px solid var(--border-soft);background:transparent;
+  color:var(--text-faint);cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;
+}
+.icon-btn:hover{color:var(--bad);border-color:var(--bad);}
+.icon-btn svg{width:13px;height:13px;}
+
+/* ---------- Form ---------- */
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.form-field{display:flex;flex-direction:column;gap:6px;}
+.form-field.full{grid-column:1/-1;}
+.form-label{font-family:var(--font-mono);font-size:11px;letter-spacing:0.05em;text-transform:uppercase;color:var(--text-faint);}
+.form-field textarea{resize:vertical;min-height:70px;line-height:1.5;}
+.form-hint{font-size:11.5px;color:var(--text-faint);margin-top:2px;}
+.diff-select{display:flex;gap:8px;}
+.diff-opt{
+  flex:1;text-align:center;padding:8px;border-radius:8px;border:1px solid var(--border);
+  font-family:var(--font-mono);font-size:11.5px;cursor:pointer;color:var(--text-dim);
+}
+.diff-opt.sel{border-color:var(--cherenkov-dim);background:rgba(95,212,227,0.1);color:var(--cherenkov);}
+.toast{
+  position:fixed;bottom:26px;left:50%;transform:translateX(-50%) translateY(20px);
+  background:var(--bg-raised-2);border:1px solid var(--border);color:var(--text);
+  padding:12px 20px;border-radius:10px;font-size:13px;font-family:var(--font-mono);
+  opacity:0;pointer-events:none;transition:all .25s ease;z-index:50;display:flex;align-items:center;gap:10px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.4);
+}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
+.toast-dot{width:7px;height:7px;border-radius:50%;background:var(--good);flex-shrink:0;}
+
+/* ---------- Summary ---------- */
+.summary-ring{width:150px;height:150px;margin:0 auto 20px auto;}
+.summary-stats{display:flex;justify-content:center;gap:30px;margin-top:6px;}
+.summary-stat{text-align:center;}
+.summary-stat .n{font-family:var(--font-mono);font-size:22px;color:var(--text);}
+.summary-stat .l{font-family:var(--font-mono);font-size:10px;color:var(--text-faint);text-transform:uppercase;letter-spacing:0.06em;margin-top:4px;}
+
+@media (max-width: 760px){
+  #app{flex-direction:column;}
+  .sidebar{width:100%;height:auto;position:relative;flex-direction:row;align-items:center;padding:14px 14px;overflow-x:auto;gap:16px;}
+  .brand{padding:0;flex-shrink:0;}
+  .nav{flex-direction:row;}
+  .nav-spacer{display:none;}
+  .sidebar-foot{display:none;}
+  .main{padding:22px 16px 60px 16px;}
+  .form-grid{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+<div id="app">
+  <nav class="sidebar">
+    <div class="brand">
+      <svg class="brand-mark" viewBox="0 0 40 40" fill="none">
+        <circle cx="20" cy="20" r="4" fill="#5FD4E3"/>
+        <circle cx="20" cy="20" r="10" stroke="#5FD4E3" stroke-opacity="0.55" stroke-width="1.4"/>
+        <circle cx="20" cy="20" r="17" stroke="#9B87F5" stroke-opacity="0.35" stroke-width="1.4"/>
+      </svg>
+      <div>
+        <div class="brand-text">NUCLIDE</div>
+        <div class="brand-sub">physics trainer</div>
+      </div>
+    </div>
+    <div class="nav" id="navList">
+      <!-- injected -->
+    </div>
+    <div class="nav-spacer"></div>
+    <div class="sidebar-foot" id="sidebarFoot">loading…</div>
+  </nav>
+
+  <main class="main">
+    <!-- OVERVIEW -->
+    <section class="view" id="view-overview">
+      <div class="page-head">
+        <div>
+          <div class="page-eyebrow">Run <span id="runNumber">001</span></div>
+          <div class="page-title">Overview</div>
+          <div class="page-desc">System purity by topic. Purity rises as cards move through the review cycle and decays back to Box 0 on a missed recall.</div>
+        </div>
+        <button class="btn btn-primary" onclick="goTo('train')">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 3l14 9-14 9V3z"/></svg>
+          Start training
+        </button>
+      </div>
+
+      <div class="stat-row" id="statRow"></div>
+
+      <div class="panel">
+        <div class="panel-title">Purity by topic</div>
+        <div class="panel-sub">Average mastery (Leitner box level ÷ 5) across all cards in each topic</div>
+        <div id="topicHistogram"></div>
+      </div>
+    </section>
+
+    <!-- TRAIN -->
+    <section class="view" id="view-train">
+      <div class="page-head">
+        <div>
+          <div class="page-eyebrow">Recall training</div>
+          <div class="page-title">Train</div>
+          <div class="page-desc">Self-graded spaced repetition. Grade honestly — the schedule only works if you do.</div>
+        </div>
+      </div>
+
+      <div class="panel" id="trainSetup">
+        <div class="panel-title">Session setup</div>
+        <div class="panel-sub">Pick topics and a queue mode, then start.</div>
+        <div class="chip-row" id="topicChips" style="margin-bottom:16px;"></div>
+        <div class="train-controls">
+          <select class="select" id="queueMode">
+            <option value="due">Due for review only</option>
+            <option value="all">All cards (practice)</option>
+            <option value="weak">Weakest first</option>
+          </select>
+          <select class="select" id="diffFilter">
+            <option value="all">All difficulties</option>
+            <option value="1">Foundational</option>
+            <option value="2">Intermediate</option>
+            <option value="3">Advanced</option>
+          </select>
+          <label class="chip" style="display:flex;align-items:center;gap:6px;">
+            <input type="checkbox" id="shuffleToggle" checked style="accent-color:#5FD4E3;">Shuffle
+          </label>
+          <button class="btn btn-primary" onclick="startSession()">Begin session</button>
+        </div>
+      </div>
+
+      <div id="trainStage" style="display:none;">
+        <div class="card-stage">
+          <div class="session-meter">
+            <span id="sessionPos">1 / 10</span>
+            <div class="session-track"><div class="session-fill" id="sessionFill" style="width:0%;"></div></div>
+            <span id="sessionAcc">— acc.</span>
+          </div>
+          <div class="flashcard">
+            <div class="card-tag-row">
+              <div class="card-tag"><b id="cardTopic">Topic</b> · <span id="cardSub">Subtopic</span></div>
+              <div class="box-dots" id="boxDots"></div>
+            </div>
+            <div class="card-question" id="cardQuestion"></div>
+            <div class="card-answer hidden" id="cardAnswer"></div>
+            <div id="cardDiffTag"></div>
+          </div>
+          <div class="card-actions" id="cardActionsReveal">
+            <button class="btn btn-primary btn-block" onclick="revealAnswer()">Show answer</button>
+          </div>
+          <div class="card-actions" id="cardActionsGrade" style="display:none;">
+            <button class="btn btn-bad" onclick="gradeCard(false)">✕ Missed it</button>
+            <button class="btn btn-good" onclick="gradeCard(true)">✓ Got it</button>
+          </div>
+          <div class="kbd-hint">Press <kbd>Space</kbd> to reveal · <kbd>1</kbd> missed · <kbd>2</kbd> got it</div>
+        </div>
+      </div>
+
+      <div id="trainSummary" style="display:none;">
+        <div class="panel" style="text-align:center;max-width:420px;margin:0 auto;">
+          <div class="panel-title" style="text-align:center;">Session complete</div>
+          <div class="summary-stats">
+            <div class="summary-stat"><div class="n" id="sumReviewed">0</div><div class="l">reviewed</div></div>
+            <div class="summary-stat"><div class="n" id="sumAcc">0%</div><div class="l">efficiency</div></div>
+            <div class="summary-stat"><div class="n" id="sumMastered">0</div><div class="l">now mastered</div></div>
+          </div>
+          <button class="btn btn-primary" style="margin-top:22px;" onclick="backToSetup()">Back to setup</button>
+        </div>
+      </div>
+
+      <div id="trainEmpty" style="display:none;"></div>
+    </section>
+
+    <!-- LIBRARY -->
+    <section class="view" id="view-library">
+      <div class="page-head">
+        <div>
+          <div class="page-eyebrow">Card catalogue</div>
+          <div class="page-title">Library</div>
+          <div class="page-desc">Browse and search every card. Custom cards can be removed; built-in cards are permanent fixtures of the base set. Export/import lets you manage large card sets as separate .json files instead of growing this page.</div>
+        </div>
+        <div style="display:flex;gap:10px;">
+          <button class="btn btn-ghost" onclick="exportDeck()">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v13m0 0l-4-4m4 4l4-4M5 21h14"/></svg>
+            Export .json
+          </button>
+          <button class="btn btn-ghost" onclick="triggerImportFile()">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21V8m0 0l-4 4m4-4l4 4M5 3h14"/></svg>
+            Import .json
+          </button>
+          <input type="file" id="importFileInput" accept="application/json,.json" style="display:none;" onchange="onImportFileChosen(event)">
+        </div>
+      </div>
+      <div class="lib-search">
+        <input class="text-input" id="libSearch" placeholder="Search questions, answers, tags…" oninput="renderLibrary()">
+        <select class="select" id="libTopicFilter" onchange="renderLibrary()"></select>
+      </div>
+      <div id="libraryList"></div>
+    </section>
+
+    <!-- ADD -->
+    <section class="view" id="view-add">
+      <div class="page-head">
+        <div>
+          <div class="page-eyebrow">Extend the set</div>
+          <div class="page-title">Add a card</div>
+          <div class="page-desc">Add depth to an existing topic, or start a brand new one. Use $…$ for inline LaTeX (KaTeX-rendered).</div>
+        </div>
+      </div>
+      <div class="panel">
+        <div class="form-grid">
+          <div class="form-field">
+            <label class="form-label">Topic</label>
+            <select class="select" id="fTopicSelect" onchange="onTopicSelectChange()"></select>
+          </div>
+          <div class="form-field" id="fNewTopicField" style="display:none;">
+            <label class="form-label">New topic name</label>
+            <input class="text-input" id="fNewTopic" placeholder="e.g. Dark Matter Direct Detection">
+          </div>
+          <div class="form-field" id="fSubField">
+            <label class="form-label">Subtopic</label>
+            <input class="text-input" id="fSub" list="subList" placeholder="e.g. Pulse Shape Discrimination">
+            <datalist id="subList"></datalist>
+          </div>
+          <div class="form-field">
+            <label class="form-label">Difficulty</label>
+            <div class="diff-select" id="fDiff">
+              <div class="diff-opt" data-v="1">Foundational</div>
+              <div class="diff-opt sel" data-v="2">Intermediate</div>
+              <div class="diff-opt" data-v="3">Advanced</div>
+            </div>
+          </div>
+          <div class="form-field full">
+            <label class="form-label">Question</label>
+            <textarea id="fQuestion" placeholder="What is…"></textarea>
+          </div>
+          <div class="form-field full">
+            <label class="form-label">Answer</label>
+            <textarea id="fAnswer" placeholder="Explain the answer…" style="min-height:100px;"></textarea>
+            <div class="form-hint">Tip: wrap formulas in $…$, e.g. $\Delta m^2_{21}$</div>
+          </div>
+        </div>
+        <button class="btn btn-primary" style="margin-top:18px;" onclick="submitCard()">Add card to deck</button>
+      </div>
+    </section>
+  </main>
+</div>
+
+<div class="toast" id="toast"><div class="toast-dot"></div><span id="toastMsg"></span></div>
+
+<script>
+const BUILTIN_CARDS = [
+
+// ============ NUCLEAR PHYSICS ============
+{id:'nuc-01', topic:'Nuclear Physics', sub:'Binding Energy', diff:2,
+ q:'Write the semi-empirical mass formula (SEMF / Weizsäcker formula) for nuclear binding energy $B(A,Z)$, and name its five terms.',
+ a:'$$B(A,Z) = a_V A - a_S A^{2/3} - a_C \\frac{Z(Z-1)}{A^{1/3}} - a_A \\frac{(A-2Z)^2}{A} + \\delta(A,Z)$$ The terms are, in order: volume, surface, Coulomb, asymmetry, and pairing energy.'},
+{id:'nuc-02', topic:'Nuclear Physics', sub:'Binding Energy', diff:1,
+ q:'Why does binding energy per nucleon peak near A ≈ 56–62 (Fe/Ni)?',
+ a:'The short-range nuclear force saturates and dominates for light/medium nuclei (surface and volume terms), while the long-range Coulomb repulsion grows roughly as Z² and increasingly penalizes heavier nuclei. The peak sits where this balance between attraction and Coulomb cost is most favorable per nucleon.'},
+{id:'nuc-03', topic:'Nuclear Physics', sub:'Structure & Models', diff:1,
+ q:'What are the nuclear "magic numbers", and what causes them?',
+ a:'2, 8, 20, 28, 50, 82, 126 — these correspond to closed shells in the nuclear shell model. They arise because a strong spin–orbit coupling term, added to the mean-field potential by Mayer and Jensen (1949), splits the naive harmonic-oscillator/Woods-Saxon levels into the observed shell gaps.'},
+{id:'nuc-04', topic:'Nuclear Physics', sub:'Structure & Models', diff:1,
+ q:'Contrast the liquid-drop model and the shell model of the nucleus.',
+ a:'The liquid-drop model treats the nucleus as an incompressible charged fluid — it captures smooth, collective trends like binding energy and fission barriers well, but says nothing about individual quantum states. The shell model treats nucleons as independent particles moving in a mean-field potential, correctly predicting magic numbers and the spins/parities of ground states, but is harder to apply to collective phenomena.'},
+{id:'nuc-05', topic:'Nuclear Physics', sub:'Decay & Radioactivity', diff:2,
+ q:'Write the general alpha-decay reaction. Why do heavy nuclei favor emitting an alpha particle over a single nucleon?',
+ a:'$${}^{A}_{Z}X \\rightarrow {}^{A-4}_{Z-2}Y + \\alpha$$ The alpha particle is unusually tightly bound (about 28.3 MeV), so packaging four nucleons together and ejecting them is energetically favorable compared with emitting a single nucleon. The alpha still must tunnel through the Coulomb barrier, which is the basis of Gamow\'s theory of alpha decay.'},
+{id:'nuc-06', topic:'Nuclear Physics', sub:'Decay & Radioactivity', diff:2,
+ q:'What does the Geiger–Nuttall law relate, and how was it later explained?',
+ a:'It is an empirical linear relation between log(decay constant λ) and 1/√Q for alpha emitters within an isotopic chain. Gamow later explained it as a direct consequence of quantum-mechanical tunneling through the Coulomb barrier: small changes in Q produce huge changes in tunneling probability, hence in λ.'},
+{id:'nuc-07', topic:'Nuclear Physics', sub:'Decay & Radioactivity', diff:1,
+ q:'Give the three types of beta decay and one example nuclide for each.',
+ a:'β⁻: n → p + e⁻ + ν̄e (e.g. ¹⁴C → ¹⁴N). β⁺: p → n + e⁺ + νe (e.g. ¹¹C → ¹¹B). Electron capture: p + e⁻ → n + νe (e.g. ⁷Be → ⁷Li).'},
+{id:'nuc-08', topic:'Nuclear Physics', sub:'Decay & Radioactivity', diff:3,
+ q:'What distinguishes a Fermi transition from a Gamow–Teller transition in beta decay?',
+ a:'In a Fermi transition the emitted electron/antineutrino spins are antiparallel, giving ΔJ = 0 with no parity change (these connect isobaric-analogue states). In a Gamow–Teller transition the emitted spins are parallel, giving ΔJ = 0, ±1 (but not 0→0) with no parity change.'},
+{id:'nuc-09', topic:'Nuclear Physics', sub:'Reactions', diff:1,
+ q:'Define cross section, and give its typical unit in nuclear physics.',
+ a:'σ = (reaction rate) / (incident flux × number of target nuclei). It has units of area; the conventional unit is the barn, 1 b = 10⁻²⁸ m² = 10⁻²⁴ cm².'},
+{id:'nuc-10', topic:'Nuclear Physics', sub:'Reactions', diff:2,
+ q:'What is a compound-nucleus reaction, and what is the Bohr independence hypothesis?',
+ a:'A compound-nucleus reaction proceeds by the projectile and target fusing into an excited intermediate nucleus that thermalizes before decaying. The Bohr independence hypothesis states that the decay mode of this compound state is statistically independent of how it was formed — only its excitation energy, spin, and parity matter.'},
+{id:'nuc-11', topic:'Nuclear Physics', sub:'Reactions', diff:1,
+ q:'Give the empirical formula for the nuclear radius.',
+ a:'$$R = r_0 A^{1/3}, \\quad r_0 \\approx 1.2\\text{ fm}$$'},
+{id:'nuc-12', topic:'Nuclear Physics', sub:'Astrophysics', diff:2,
+ q:'Distinguish the s-process and r-process of nucleosynthesis.',
+ a:'The s-process (slow neutron capture) proceeds on a timescale long compared to beta decay, so the reaction path hugs the valley of stability; it happens in AGB stars. The r-process (rapid capture) is faster than beta decay, driving nuclei far into neutron-rich territory before they decay back toward stability — this is required to build the heaviest elements, and occurs in neutron-star mergers and core-collapse supernovae.'},
+{id:'nuc-13', topic:'Nuclear Physics', sub:'Astrophysics', diff:1,
+ q:'Why can\'t nuclear fusion release net energy beyond iron-peak elements?',
+ a:'Beyond the binding-energy-per-nucleon peak near Fe/Ni, fusion products are less tightly bound per nucleon than their reactants, making the reaction endothermic. Releasing further energy from very heavy nuclei instead requires fission, not fusion.'},
+
+// ============ NEUTRINO PHYSICS ============
+{id:'neu-01', topic:'Neutrino Physics', sub:'Oscillations', diff:2,
+ q:'Write the two-flavor vacuum oscillation probability, with L in km, E in GeV, and Δm² in eV².',
+ a:'$$P(\\nu_\\alpha \\to \\nu_\\beta) = \\sin^2(2\\theta)\\,\\sin^2\\!\\left(1.267\\,\\frac{\\Delta m^2\\,[\\text{eV}^2]\\; L\\,[\\text{km}]}{E\\,[\\text{GeV}]}\\right)$$'},
+{id:'neu-02', topic:'Neutrino Physics', sub:'Oscillations', diff:1,
+ q:'What three angles and one CP phase parametrize the PMNS mixing matrix (Dirac case)?',
+ a:'θ12 (the "solar" angle), θ23 (the "atmospheric" angle), θ13 (the "reactor" angle), and the CP-violating phase δCP. If neutrinos are Majorana particles, two additional Majorana phases appear, though they do not affect oscillation probabilities.'},
+{id:'neu-03', topic:'Neutrino Physics', sub:'Oscillations', diff:2,
+ q:'Roughly what are the two independent mass-squared splittings measured by oscillation experiments?',
+ a:'Δm²21 ≈ 7.4×10⁻⁵ eV² (the solar splitting) and |Δm²31| ≈ 2.5×10⁻³ eV² (the atmospheric splitting).'},
+{id:'neu-04', topic:'Neutrino Physics', sub:'Mass & Hierarchy', diff:1,
+ q:'Define the normal and inverted neutrino mass orderings.',
+ a:'Normal ordering: m3 is the heaviest state, with m1 < m2 ≪ m3 — mirroring the pattern seen in charged leptons and quarks. Inverted ordering: m3 is the lightest, with m3 ≪ m1 < m2.'},
+{id:'neu-05', topic:'Neutrino Physics', sub:'Mass & Hierarchy', diff:2,
+ q:'What experimental signature would directly establish that neutrinos are Majorana particles?',
+ a:'Observation of neutrinoless double-beta decay (0νββ) — a lepton-number-violating nuclear process that is only possible if the neutrino is its own antiparticle.'},
+{id:'neu-06', topic:'Neutrino Physics', sub:'Sources', diff:2,
+ q:'How did the SNO experiment resolve the solar neutrino problem?',
+ a:'SNO used heavy water (D2O), which let it separately measure charged-current (νe only), neutral-current (all active flavors), and elastic-scattering reactions. The neutral-current rate matched the Standard Solar Model prediction for the total flux, while the charged-current rate showed the well-known deficit — proving that solar νe were oscillating into νµ/ντ rather than the solar model being wrong.'},
+{id:'neu-07', topic:'Neutrino Physics', sub:'Sources', diff:1,
+ q:'What did Super-Kamiokande discover about atmospheric neutrinos in 1998?',
+ a:'A zenith-angle-dependent deficit of muon neutrinos: fewer νµ arrived from below (after traveling through the whole Earth) than from directly overhead. This was the first strong evidence for neutrino oscillation, attributed to νµ → ντ.'},
+{id:'neu-08', topic:'Neutrino Physics', sub:'Sources', diff:2,
+ q:'At what baseline do reactor experiments best measure θ13, and why?',
+ a:'About 1–2 km. This is roughly where the atmospheric-scale oscillation (driven by Δm²31) reaches its first maximum for typical reactor ν̄e energies (a few MeV), maximizing sensitivity to the small θ13-driven ν̄e disappearance — as used by Daya Bay, RENO, and Double Chooz.'},
+{id:'neu-09', topic:'Neutrino Physics', sub:'Interactions', diff:2,
+ q:'Name the three main regimes of neutrino–nucleon interaction, ordered by energy, from lowest to highest.',
+ a:'Quasi-elastic scattering (≲ 1 GeV), resonance production such as Δ(1232) (~1 GeV), and deep inelastic scattering (≳ a few GeV).'},
+{id:'neu-10', topic:'Neutrino Physics', sub:'Interactions', diff:1,
+ q:'Distinguish charged-current (CC) and neutral-current (NC) neutrino interactions.',
+ a:'CC interactions exchange a W boson and convert the neutrino into its charged-lepton partner (e.g. νµ N → µ⁻ X), making the flavor identifiable. NC interactions exchange a Z boson; the neutrino remains a neutrino and is only visible indirectly, through the recoiling hadronic system.'},
+{id:'neu-11', topic:'Neutrino Physics', sub:'CP Violation', diff:2,
+ q:'How is leptonic CP violation experimentally probed in long-baseline experiments like DUNE or T2K?',
+ a:'By comparing the νµ → νe appearance probability to the ν̄µ → ν̄e appearance probability. An asymmetry beyond what matter effects alone predict signals δCP ≠ 0, π.'},
+{id:'neu-12', topic:'Neutrino Physics', sub:'Sources', diff:2,
+ q:'What made the neutrino detection from SN1987A significant?',
+ a:'Kamiokande-II, IMB, and Baksan jointly detected a burst of roughly two dozen neutrinos over about 13 seconds, with energies of 20-25 MeV, from the core collapse of SN1987A. This confirmed that ~99% of a core-collapse supernova\'s gravitational binding energy is released as neutrinos, matching core-collapse theory.'},
+{id:'neu-13', topic:'Neutrino Physics', sub:'Sources', diff:2,
+ q:'What anomaly motivated the sterile-neutrino hypothesis, and roughly what mass-squared scale does it point to?',
+ a:'Short-baseline appearance/disappearance anomalies (LSND, MiniBooNE, and reactor/gallium anomalies) hinted at oscillations with Δm² ~ 1 eV² — too large to fit within the standard three-flavor picture, motivating a light, non-weakly-interacting ("sterile") fourth neutrino.'},
+
+// ============ LIQUID ARGON SCINTILLATION ============
+{id:'lar-01', topic:'Liquid Argon Scintillation', sub:'Scintillation Physics', diff:1,
+ q:'What is the wavelength of liquid argon\'s intrinsic scintillation light, and what physically produces it?',
+ a:'128 nm, in the vacuum ultraviolet. It is emitted when excited argon dimers (excimers, Ar2*) in singlet or triplet states decay back to the dissociative ground state, which promptly falls apart into two ground-state argon atoms.'},
+{id:'lar-02', topic:'Liquid Argon Scintillation', sub:'Scintillation Physics', diff:1,
+ q:'Name the two scintillation decay-time components in liquid argon and their approximate lifetimes.',
+ a:'A fast/singlet component with a lifetime of about 6 ns, and a slow/triplet component with a lifetime of about 1.5 µs.'},
+{id:'lar-03', topic:'Liquid Argon Scintillation', sub:'Scintillation Physics', diff:2,
+ q:'How is the singlet-to-triplet light ratio used for particle identification in liquid argon?',
+ a:'The relative population of singlet vs. triplet excimer states depends on ionization density (dE/dx). Heavily-ionizing particles (nuclear recoils, alphas) produce relatively more fast (singlet) light than minimum-ionizing electrons or muons, so the fast-fraction of the pulse discriminates particle type — the basis of pulse-shape discrimination (PSD), critical for LAr dark-matter searches.'},
+{id:'lar-04', topic:'Liquid Argon Scintillation', sub:'Scintillation Physics', diff:2,
+ q:'What is recombination in a LArTPC, and how does it affect the light and charge signals?',
+ a:'Some ionization electrons recombine with their parent Ar⁺ ions rather than drifting away, releasing additional scintillation photons in the process. Recombination is stronger for denser ionization (higher dE/dx) and is suppressed by a stronger applied electric field — so both the charge and light yields depend on the drift field and on particle type.'},
+{id:'lar-05', topic:'Liquid Argon Scintillation', sub:'Light Detection', diff:1,
+ q:'Why is a wavelength shifter needed to detect liquid argon\'s scintillation light?',
+ a:'Standard PMT windows and SiPM surfaces are not efficient — and typical construction materials are not transparent — at 128 nm VUV. A wavelength-shifting coating, most commonly TPB (tetraphenyl butadiene), absorbs the 128 nm photons and re-emits around 430 nm (blue) visible light that ordinary photosensors can detect.'},
+{id:'lar-06', topic:'Liquid Argon Scintillation', sub:'Light Detection', diff:2,
+ q:'What is the purpose of xenon doping in liquid argon detectors?',
+ a:'Trace xenon doping (ppm level) shifts and can enhance the VUV scintillation emission through energy transfer from argon excimers to xenon excimers. This improves light yield and uniformity, and can enable more efficient light collection with reduced reliance on a separate wavelength shifter.'},
+{id:'lar-07', topic:'Liquid Argon Scintillation', sub:'Purity', diff:1,
+ q:'Why must liquid argon be kept extremely pure for a LArTPC, and what are the main contaminants of concern?',
+ a:'Electronegative impurities such as O2 and H2O capture drifting ionization electrons, attenuating the charge signal as it travels to the anode. Contamination must be kept at sub-ppb O2-equivalent levels to achieve electron lifetimes long enough for meter-scale drift distances.'},
+{id:'lar-08', topic:'Liquid Argon Scintillation', sub:'Purity', diff:2,
+ q:'What is "electron lifetime" in a LArTPC, and how is the resulting signal loss modeled?',
+ a:'It is the mean time before a drifting ionization electron is captured by an impurity. The surviving charge falls off exponentially with drift time, Q(t) = Q0 exp(−t/τ), so the electron lifetime τ must be regularly measured (e.g. from through-going tracks) and corrected for during reconstruction.'},
+{id:'lar-09', topic:'Liquid Argon Scintillation', sub:'Operation', diff:1,
+ q:'What is the approximate electron drift velocity in liquid argon at typical LArTPC field strengths (~500 V/cm), and why does it matter?',
+ a:'About 1.6 mm/µs. Combined with an absolute time reference (t0, from the fast scintillation light pulse), the drift time converts directly into a spatial coordinate — giving the third dimension of the 3D event image, alongside the two wire/pixel readout coordinates.'},
+{id:'lar-10', topic:'Liquid Argon Scintillation', sub:'Operation', diff:2,
+ q:'Why is the scintillation light signal important even though a LArTPC primarily reconstructs events from drifted ionization charge?',
+ a:'The charge signal alone only encodes relative timing (the drift time), not an absolute event time. The fast scintillation-light pulse supplies the t0 needed to convert drift time into absolute position, and also enables triggering on events with no external beam signal, such as a supernova burst or proton decay.'},
+{id:'lar-11', topic:'Liquid Argon Scintillation', sub:'Scintillation Physics', diff:2,
+ q:'Approximately what is the scintillation light yield of liquid argon for minimum-ionizing particles at zero electric field?',
+ a:'Roughly 40,000 photons/MeV — one of the highest light yields of any practical scintillator. Applying an extraction field reduces this yield, because more ionization electrons escape recombination instead of contributing recombination light.'},
+{id:'lar-12', topic:'Liquid Argon Scintillation', sub:'Purity', diff:1,
+ q:'Name two common methods used to purify argon in a TPC before or during operation.',
+ a:'Circulation of liquid or gas through molecular sieve and/or getter (e.g. copper-based) filters to remove water and oxygen, and continuous recirculation-and-purification loops that maintain purity throughout data-taking.'},
+{id:'lar-13', topic:'Liquid Argon Scintillation', sub:'Operation', diff:2,
+ q:'Why is argon a popular target/detection medium for both neutrino physics and dark-matter searches, and what background must be managed?',
+ a:'It is dense, relatively cheap and abundant, transparent to its own scintillation light after wavelength-shifting, produces abundant scintillation and ionization signals, and offers excellent pulse-shape discrimination. Its main background concern is cosmogenic ³⁹Ar, a beta emitter, which is why some experiments source argon extracted from deep underground where the ³⁹Ar concentration is far lower.'},
+
+// ============ NEUTRINO DETECTORS ============
+{id:'det-01', topic:'Neutrino Detectors', sub:'Cherenkov', diff:1,
+ q:'State the condition for Cherenkov radiation and the formula for its emission angle.',
+ a:'Cherenkov light is emitted when a charged particle\'s velocity exceeds the local phase velocity of light in the medium (v > c/n). The cone half-angle satisfies $$\\cos\\theta_c = \\frac{1}{n\\beta}$$'},
+{id:'det-02', topic:'Neutrino Detectors', sub:'Cherenkov', diff:1,
+ q:'Describe Super-Kamiokande\'s detector design and physics program.',
+ a:'A 50-kton (about 22.5 kton fiducial) ultra-pure water Cherenkov detector instrumented with roughly 11,000 PMTs, located in the Kamioka mine in Japan. It studies atmospheric and solar neutrinos, searches for proton decay, and can detect a supernova neutrino burst.'},
+{id:'det-03', topic:'Neutrino Detectors', sub:'Cherenkov', diff:2,
+ q:'What made SNO\'s detector design unique among water Cherenkov detectors, and what did it enable?',
+ a:'SNO used heavy water (D2O) as its target, which let it observe charged-current, neutral-current, and elastic-scattering reactions separately. This allowed it to measure the total active-flavor solar neutrino flux directly and resolve the solar neutrino problem.'},
+{id:'det-04', topic:'Neutrino Detectors', sub:'Cherenkov', diff:1,
+ q:'Describe the basic design of IceCube and what it is optimized to detect.',
+ a:'Roughly a cubic kilometer of clear Antarctic ice at the South Pole, instrumented with about 5,160 digital optical modules (DOMs) on vertical strings. It detects Cherenkov light from secondary charged particles produced by high-energy atmospheric and astrophysical neutrino interactions in or near the ice.'},
+{id:'det-05', topic:'Neutrino Detectors', sub:'LArTPC', diff:1,
+ q:'Explain the basic operating principle of a liquid argon time projection chamber (LArTPC).',
+ a:'Charged particles ionize argon along their track. An applied electric field drifts the ionization electrons to a segmented anode (wire planes or pixels); combined with the drift-time-derived depth coordinate, the signals reconstruct a detailed 2D/3D image of the event — functioning much like an electronic bubble chamber.'},
+{id:'det-06', topic:'Neutrino Detectors', sub:'LArTPC', diff:2,
+ q:'What is the Short-Baseline Neutrino (SBN) program at Fermilab, and what does it test?',
+ a:'Three LArTPC detectors — SBND, MicroBooNE, and ICARUS — placed at different distances along the same Booster neutrino beamline. Comparing near/mid/far event rates and spectra tests the sterile-neutrino hypothesis suggested by the LSND and MiniBooNE anomalies.'},
+{id:'det-07', topic:'Neutrino Detectors', sub:'LArTPC', diff:2,
+ q:'Describe DUNE\'s basic design and physics goals.',
+ a:'The Deep Underground Neutrino Experiment uses multiple ~17-kton liquid argon TPC far-detector modules, located about 1.5 km underground at SURF (South Dakota), 1,300 km from a new wide-band neutrino beam at Fermilab. Its goals include measuring CP violation and determining the neutrino mass ordering, searching for nucleon decay, and detecting supernova-burst neutrinos.'},
+{id:'det-08', topic:'Neutrino Detectors', sub:'Scintillator', diff:2,
+ q:'What is JUNO designed to measure, and what detector performance does that require?',
+ a:'A 20-kton liquid scintillator detector in China, designed to determine the neutrino mass ordering from the fine interference pattern in the reactor antineutrino energy spectrum at a baseline of about 53 km. This requires exceptional energy resolution, around 3%/√E(MeV).'},
+{id:'det-09', topic:'Neutrino Detectors', sub:'Scintillator', diff:2,
+ q:'What did KamLAND establish, and how?',
+ a:'Using a large liquid scintillator detector to observe reactor antineutrinos from many power plants at an average baseline of about 180 km, KamLAND saw clear spectral distortion consistent with oscillation, confirming the LMA-MSW solution to the solar neutrino problem with terrestrial reactor neutrinos.'},
+{id:'det-10', topic:'Neutrino Detectors', sub:'Historical', diff:1,
+ q:'Describe the Homestake experiment and its historical significance.',
+ a:'Ray Davis\'s radiochemical experiment used a large tank of chlorine-based fluid; solar neutrinos occasionally converted ³⁷Cl into ³⁷Ar via inverse beta decay, and counting the accumulated ³⁷Ar gave the first-ever solar neutrino detection — but at roughly a third of the predicted rate, launching the decades-long "solar neutrino problem".'},
+{id:'det-11', topic:'Neutrino Detectors', sub:'Scintillator', diff:2,
+ q:'What makes Borexino unique, and what did its extreme radiopurity enable?',
+ a:'Borexino is a real-time liquid scintillator detector built with exceptional radiopurity. This enabled it to measure the low-energy solar neutrino spectrum in detail, including pp, ⁷Be, and pep neutrinos, and, for the first time, CNO-cycle solar neutrinos.'},
+{id:'det-12', topic:'Neutrino Detectors', sub:'LArTPC', diff:2,
+ q:'What role does the scintillation light system play in the DUNE far-detector modules?',
+ a:'It provides the t0 signal needed to convert drift time into absolute position, which is essential for beam-independent physics like supernova bursts or proton decay that have no external trigger. Dedicated light-collection systems are also being developed to improve low-energy event sensitivity.'},
+{id:'det-13', topic:'Neutrino Detectors', sub:'Scintillator', diff:2,
+ q:'How do segmented tracking calorimeters like MINOS or NOvA differ in design goal from a homogeneous liquid scintillator detector like KamLAND?',
+ a:'They interleave scintillator with structural or absorber material, or use highly segmented planes, to preserve directional and tracking information needed for accelerator long-baseline oscillation measurements — rather than optimizing for the best possible energy resolution of one bulk homogeneous volume.'},
+
+// ============ ANALYSIS METHODS ============
+{id:'ana-01', topic:'Analysis Methods', sub:'Statistics', diff:2,
+ q:'Contrast the frequentist and Bayesian approaches to inference in particle physics.',
+ a:'Frequentist methods define probability as a long-run frequency and construct confidence intervals or p-values without needing a prior on the parameter of interest. Bayesian methods treat the parameter itself as having a probability distribution, requiring a prior, and yield a posterior distribution / credible interval. Both are used in practice, sometimes on the same analysis as cross-checks.'},
+{id:'ana-02', topic:'Analysis Methods', sub:'Statistics', diff:3,
+ q:'What does Wilks\' theorem say, and how is it used in likelihood-ratio tests?',
+ a:'Under suitable regularity conditions, −2·ln(likelihood ratio) between nested hypotheses asymptotically follows a χ² distribution, with degrees of freedom equal to the difference in the number of free parameters. This lets you convert a profile-likelihood test statistic directly into an approximate p-value.'},
+{id:'ana-03', topic:'Analysis Methods', sub:'Statistics', diff:1,
+ q:'What p-value corresponds to a "5σ" discovery threshold?',
+ a:'About 2.87×10⁻⁷ (a one-sided Gaussian tail probability).'},
+{id:'ana-04', topic:'Analysis Methods', sub:'Statistics', diff:2,
+ q:'What is the look-elsewhere effect, and why does it matter for a bump search?',
+ a:'When scanning many independent bins or mass points for a signal, the chance of a large local fluctuation appearing somewhere by chance is much higher than at one pre-specified location. The global significance, corrected for the number of independent trials, is therefore always lower than the local significance quoted at the best-fit point.'},
+{id:'ana-05', topic:'Analysis Methods', sub:'Statistics', diff:3,
+ q:'Why is the Feldman–Cousins construction preferred over a naive Neyman construction for measurements like neutrino mass-squared splittings or rare-decay rates?',
+ a:'It provides a unified, frequentist, coverage-guaranteed way to build confidence intervals near a physical boundary (e.g. a non-negative rate or mass-squared value), avoiding the empty or unphysical intervals that a naive construction can produce close to that boundary.'},
+{id:'ana-06', topic:'Analysis Methods', sub:'Reconstruction', diff:2,
+ q:'What quantity is commonly used for particle identification via calorimetric/ionization measurement, and how?',
+ a:'dE/dx as a function of residual range (the remaining distance to the end of the track). Different particle species (protons, muons, pions) trace out distinct dE/dx-vs-residual-range curves due to differing stopping power near the end of the track — especially useful in LArTPCs.'},
+{id:'ana-07', topic:'Analysis Methods', sub:'Reconstruction', diff:2,
+ q:'Give an example of how convolutional neural networks (CNNs) are used in modern LArTPC analyses.',
+ a:'Treating the wire-plane or pixel readout as an image, CNNs are trained to classify tracks vs. showers, identify particle species, or perform full semantic segmentation of an event — often outperforming traditional hand-crafted reconstruction algorithms.'},
+{id:'ana-08', topic:'Analysis Methods', sub:'Systematics', diff:1,
+ q:'Name the major categories of systematic uncertainty in an accelerator neutrino oscillation analysis.',
+ a:'Neutrino flux prediction (beam modeling, hadron production), neutrino-nucleus cross-section modeling, detector response and energy scale/resolution, and background estimation (e.g. cosmic-ray or beam-related backgrounds).'},
+{id:'ana-09', topic:'Analysis Methods', sub:'Systematics', diff:3,
+ q:'What is the "multisim" (or "multiverse") technique for propagating systematic uncertainties, and why is it useful?',
+ a:'Many pseudo-experiment "universes" are generated, each with systematic parameters — flux weights, cross-section parameters, and so on — thrown according to their uncertainties and correlations. The resulting spread in an observable builds a full covariance matrix that naturally captures bin-to-bin correlations, without requiring an analytic error-propagation formula.'},
+{id:'ana-10', topic:'Analysis Methods', sub:'Systematics', diff:1,
+ q:'Why do experiments perform "blind" analyses, and what does blinding typically involve?',
+ a:'To avoid experimenter bias — consciously or unconsciously tuning cuts and selections toward an expected or more favorable result. Typically the signal region, the true parameter value, or a subset of the data is hidden until the analysis procedure, cuts, and systematic treatment are fully frozen, after which the analysis is "unblinded".'},
+{id:'ana-11', topic:'Analysis Methods', sub:'Unfolding', diff:2,
+ q:'What problem does unfolding solve, and name two common unfolding methods.',
+ a:'Unfolding corrects a reconstructed distribution — smeared by resolution and affected by efficiency — back into an estimate of the true underlying distribution, by inverting the detector response. Common methods include regularized matrix inversion, the iterative D\'Agostini (Bayesian) method, and SVD-based unfolding.'},
+{id:'ana-12', topic:'Analysis Methods', sub:'Statistics', diff:1,
+ q:'What does a χ² goodness-of-fit test tell you, and what role do degrees of freedom play?',
+ a:'χ² sums the squared, weighted deviations between data and model predictions. Comparing the resulting χ² to the number of degrees of freedom (data points minus free fit parameters) gives a p-value for how well the model describes the data, with χ²/ndf ≈ 1 generally indicating a good fit.'},
+{id:'ana-13', topic:'Analysis Methods', sub:'Reconstruction', diff:2,
+ q:'In pulse-shape-discrimination-based particle ID (e.g. in liquid argon), what quantity is typically computed and compared between particle hypotheses?',
+ a:'An "f_prompt" or similar ratio, comparing the fast (prompt) light collected in an early time window to the total pulse integral. Nuclear recoils and other heavily-ionizing particles show a higher fast-fraction than electron recoils/minimum-ionizing particles, allowing statistical or event-by-event discrimination.'},
+
+// ============ CURRENT NEUTRINO ANALYSES ============
+{id:'cna-01', topic:'Current Neutrino Analyses', sub:'Nuclear Effects', diff:2,
+ q:'What is the 2p2h (two-particle two-hole) contribution in neutrino-nucleus scattering, and why does it matter for oscillation analyses?',
+ a:'2p2h refers to meson-exchange-current (MEC) interactions in which the neutrino couples to a correlated nucleon pair, ejecting two nucleons instead of one. It mimics the kinematic signature of quasi-elastic scattering but shifts the reconstructed neutrino energy, so unmodeled 2p2h strength biases the energy reconstruction used in oscillation fits (T2K, NOvA, MicroBooNE). It was historically underestimated by generators and remains a leading source of cross-section modeling systematic uncertainty today.'},
+{id:'cna-02', topic:'Current Neutrino Analyses', sub:'Nuclear Effects', diff:3,
+ q:'What is the Random Phase Approximation (RPA) correction in neutrino-nucleus interaction modeling?',
+ a:'RPA is a many-body correction accounting for long-range nucleon-nucleon correlations (collective, coherent effects) inside the nuclear medium. It suppresses the cross section at low momentum transfer relative to the free-nucleon (impulse approximation) prediction, and is an important ingredient for correctly modeling quasi-elastic-like interactions in oscillation experiments.'},
+{id:'cna-03', topic:'Current Neutrino Analyses', sub:'Nuclear Effects', diff:1,
+ q:'What is Pauli blocking, and how does it affect low-energy neutrino-nucleus scattering?',
+ a:'The Pauli exclusion principle forbids scattering into nucleon momentum states that are already occupied within the nuclear Fermi sea, which suppresses the cross section at low momentum/energy transfer. It is a basic but essential ingredient of any nuclear model used in neutrino generators, such as the relativistic Fermi gas model.'},
+{id:'cna-04', topic:'Current Neutrino Analyses', sub:'Nuclear Effects', diff:3,
+ q:'What are short-range correlations (SRC) in a nucleus, and why do they matter for neutrino event generators?',
+ a:'SRC are strongly-correlated nucleon pairs (predominantly neutron-proton pairs) with high relative momentum but low total momentum, existing beyond the simple mean-field/Fermi-gas picture. They populate the high-momentum tail of the nuclear spectral function and affect final-state kinematics and the number/momenta of knocked-out nucleons predicted by generators.'},
+{id:'cna-05', topic:'Current Neutrino Analyses', sub:'Generators & Modeling', diff:1,
+ q:'Name some widely used neutrino event generators, and what role do they play in an analysis?',
+ a:'GENIE, NEUT, NuWro, and GiBUU are Monte Carlo generators that simulate neutrino-nucleus interactions across all relevant channels — quasi-elastic, resonance, deep inelastic, 2p2h, and coherent scattering. They are essential for translating a measured event rate and topology into a physics interpretation in any oscillation or cross-section experiment.'},
+{id:'cna-06', topic:'Current Neutrino Analyses', sub:'Generators & Modeling', diff:2,
+ q:'Why is interaction-model uncertainty often the dominant systematic in an oscillation measurement, rather than detector effects?',
+ a:'An oscillation analysis must relate a measured (reconstructed) energy spectrum to the true neutrino energy, and that mapping depends sensitively on nuclear-effect modeling — 2p2h strength, RPA suppression, final-state interactions. Near-detector data helps constrain these models in situ, but residual model-dependence remains a leading uncertainty at current precision.'},
+{id:'cna-07', topic:'Current Neutrino Analyses', sub:'Generators & Modeling', diff:2,
+ q:'What is a final-state interaction (FSI), and why does it complicate neutrino event reconstruction?',
+ a:'An FSI occurs when a particle produced at the primary neutrino-nucleon vertex rescatters, is absorbed, or produces additional particles while still inside the nucleus, before it escapes. This can change particle multiplicity and kinematics, and can even alter the apparent interaction topology (e.g. absorbing a pion turns a pion-producing event into a "pionless" one) — making FSI modeling a major systematic in both cross-section and oscillation measurements.'},
+{id:'cna-08', topic:'Current Neutrino Analyses', sub:'Cross-Section Measurements', diff:2,
+ q:'What does it mean for a cross-section measurement to be "flux-integrated", and why is it reported that way?',
+ a:'At an accelerator-based experiment the incoming neutrino energy isn\'t known event-by-event with certainty — it must be inferred from the final-state particles. Cross sections are therefore typically reported integrated over the experiment\'s well-characterized neutrino flux, rather than as a function of true neutrino energy, which keeps the result largely generator-independent and directly comparable across experiments.'},
+{id:'cna-09', topic:'Current Neutrino Analyses', sub:'Cross-Section Measurements', diff:1,
+ q:'What role does a near detector play in a long-baseline oscillation experiment?',
+ a:'Positioned close to the neutrino source, before oscillation has had room to develop, the near detector measures the un-oscillated flux and interaction rate. This constrains flux and cross-section/nuclear-model systematics that would otherwise limit the precision of the oscillation measurement made at the far detector.'},
+{id:'cna-10', topic:'Current Neutrino Analyses', sub:'Oscillation Fits', diff:2,
+ q:'What did the first official joint T2K + NOvA oscillation analysis (published 2025) combine, and what did it find?',
+ a:'It combined T2K\'s shorter, near-vacuum-like baseline with NOvA\'s longer 810 km baseline (more sensitive to Earth matter effects), breaking degeneracies neither experiment can resolve alone. The joint fit pushed the precision on |Δm²32| below 2% — but found no statistically significant preference for either the normal or inverted mass ordering; if the inverted ordering is assumed, however, the result would constitute evidence for leptonic CP violation.'},
+{id:'cna-11', topic:'Current Neutrino Analyses', sub:'Oscillation Fits', diff:2,
+ q:'Is the neutrino mass ordering a settled question? Summarize the current picture.',
+ a:'Not yet. The combined 2025 T2K+NOvA fit shows no significant preference either way, while a separate T2K + Super-Kamiokande atmospheric joint fit shows only a mild preference for the normal ordering (under 2σ). The overall global picture remains inconclusive, and a definitive answer is one of the flagship goals of next-generation experiments like DUNE and Hyper-Kamiokande.'},
+{id:'cna-12', topic:'Current Neutrino Analyses', sub:'Open Questions', diff:1,
+ q:'What is the MiniBooNE "low-energy excess" (LEE), and why has it been so hard to interpret?',
+ a:'MiniBooNE observed a long-standing excess of low-energy electromagnetic-like events beyond expectation, consistent in normalization with the earlier LSND anomaly. It has been hard to interpret because a water Cherenkov detector cannot cleanly distinguish single electrons from single photons, so the excess is consistent with several very different explanations: an eV-scale sterile neutrino, an underestimated photon-producing background, or something else entirely.'},
+{id:'cna-13', topic:'Current Neutrino Analyses', sub:'Open Questions', diff:2,
+ q:'What did MicroBooNE conclude about the MiniBooNE low-energy excess, and what still remains open?',
+ a:'Using its much better electron/photon separation, a series of MicroBooNE analyses culminating in 2025 found no significant excess of electron-neutrino-like events and disfavored the eV-scale sterile-neutrino explanation, effectively ruling it out as the cause. The original anomaly itself, however, is still not explained — its true origin remains an open question, and photon-based backgrounds (e.g. neutral-current Δ radiative decay) are among the explanations still being actively investigated.'},
+
+];
+
+/* ================= CONFIG ================= */
+const BOX_INTERVALS = [0, 1, 3, 7, 16, 35]; // days until due, indexed by box level 0..5
+const TOPIC_PALETTE = ['#5FD4E3', '#9B87F5', '#F2B84B', '#5FD98A', '#F27F5F', '#7FA9F2', '#E38FD1', '#8FE3C0'];
+
+const NAV_ITEMS = [
+  {id:'overview', label:'Overview', icon:'ring'},
+  {id:'train', label:'Train', icon:'bolt'},
+  {id:'library', label:'Library', icon:'book'},
+  {id:'add', label:'Add card', icon:'plus'},
+];
+
+const ICONS = {
+  ring: '<circle cx="12" cy="12" r="2.4"/><circle cx="12" cy="12" r="6.5" fill="none" stroke="currentColor"/><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" opacity="0.5"/>',
+  bolt: '<path d="M13 2 4 14h6l-1 8 9-12h-6l1-8z" fill="currentColor"/>',
+  book: '<path d="M4 4.5A2.5 2.5 0 0 1 6.5 2H20v17H6.5A2.5 2.5 0 0 0 4 21.5v-17z" fill="none" stroke="currentColor"/><path d="M4 19.5V4.5" stroke="currentColor"/>',
+  plus: '<path d="M12 5v14M5 12h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>',
+};
+
+/* ================= STATE ================= */
+let state = {
+  customCards: [],       // user-added cards
+  progress: {},          // cardId -> {box, nextDue, correct, incorrect, lastReviewed}
+  meta: {totalReviews:0, correctReviews:0, runsCompleted:0},
+  loaded: false,
+};
+
+let session = null;      // active training session
+let currentView = 'overview';
+let diffSelected = 2;
+let newTopicMode = false;
+
+/* ================= STORAGE ================= */
+async function loadState(){
+  try{
+    const c = await window.storage.get('user-cards', false);
+    state.customCards = c ? JSON.parse(c.value) : [];
+  }catch(e){ state.customCards = []; }
+  try{
+    const p = await window.storage.get('progress', false);
+    state.progress = p ? JSON.parse(p.value) : {};
+  }catch(e){ state.progress = {}; }
+  try{
+    const m = await window.storage.get('meta', false);
+    state.meta = m ? JSON.parse(m.value) : {totalReviews:0, correctReviews:0, runsCompleted:0};
+  }catch(e){ state.meta = {totalReviews:0, correctReviews:0, runsCompleted:0}; }
+  state.loaded = true;
+}
+
+async function saveCustomCards(){
+  try{ await window.storage.set('user-cards', JSON.stringify(state.customCards), false); }
+  catch(e){ showToast('Could not save card — try again', 'bad'); }
+}
+async function saveProgress(){
+  try{ await window.storage.set('progress', JSON.stringify(state.progress), false); }
+  catch(e){ /* non-fatal */ }
+}
+async function saveMeta(){
+  try{ await window.storage.set('meta', JSON.stringify(state.meta), false); }
+  catch(e){ /* non-fatal */ }
+}
+
+/* ================= HELPERS ================= */
+function allCards(){ return BUILTIN_CARDS.concat(state.customCards); }
+
+function todayStr(){ return new Date().toISOString().slice(0,10); }
+function addDays(dateStr, n){
+  const d = new Date(dateStr + 'T00:00:00Z');
+  d.setUTCDate(d.getUTCDate() + n);
+  return d.toISOString().slice(0,10);
+}
+
+function getProgress(cardId){
+  return state.progress[cardId] || {box:0, nextDue: todayStr(), correct:0, incorrect:0, lastReviewed:null};
+}
+function isDue(cardId){
+  const p = state.progress[cardId];
+  if(!p) return true;
+  return p.nextDue <= todayStr();
+}
+function purityOf(cardId){
+  const p = state.progress[cardId];
+  if(!p) return 0;
+  return Math.round((p.box/5)*100);
+}
+
+function topicsInOrder(){
+  const order = [];
+  const seen = new Set();
+  allCards().forEach(c=>{ if(!seen.has(c.topic)){ seen.add(c.topic); order.push(c.topic); } });
+  return order;
+}
+function topicColor(topic){
+  const order = topicsInOrder();
+  const idx = order.indexOf(topic);
+  return TOPIC_PALETTE[idx % TOPIC_PALETTE.length];
+}
+function subtopicsForTopic(topic){
+  const set = new Set();
+  allCards().forEach(c=>{ if(c.topic===topic) set.add(c.sub); });
+  return [...set];
+}
+
+function topicStats(topic){
+  const cards = allCards().filter(c=>c.topic===topic);
+  const total = cards.length;
+  if(total===0) return {total:0, avgPurity:0, due:0, mastered:0};
+  let sum=0, due=0, mastered=0;
+  cards.forEach(c=>{
+    sum += purityOf(c.id);
+    if(isDue(c.id)) due++;
+    if((state.progress[c.id]||{}).box===5) mastered++;
+  });
+  return {total, avgPurity: Math.round(sum/total), due, mastered};
+}
+
+function escapeHtml(str){
+  return String(str).replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+}
+
+function renderMath(el){
+  if(window.renderMathInElement){
+    try{
+      renderMathInElement(el, {
+        delimiters: [
+          {left:'$$', right:'$$', display:true},
+          {left:'$', right:'$', display:false}
+        ],
+        throwOnError:false
+      });
+    }catch(e){ /* ignore */ }
+  }
+}
+
+function showToast(msg, kind){
+  const t = document.getElementById('toast');
+  const dot = t.querySelector('.toast-dot');
+  dot.style.background = kind==='bad' ? 'var(--bad)' : (kind==='amber' ? 'var(--amber)' : 'var(--good)');
+  document.getElementById('toastMsg').textContent = msg;
+  t.classList.add('show');
+  clearTimeout(window.__toastTimer);
+  window.__toastTimer = setTimeout(()=>t.classList.remove('show'), 2600);
+}
+
+/* ================= NAV / VIEWS ================= */
+function buildSidebar(){
+  const nav = document.getElementById('navList');
+  nav.innerHTML = NAV_ITEMS.map(item=>{
+    const due = item.id==='train' ? dueCountAll() : 0;
+    const badge = (item.id==='train' && due>0) ? `<span class="nav-badge">${due}</span>` : '';
+    return `<div class="nav-item ${item.id===currentView?'active':''}" onclick="goTo('${item.id}')">
+      <svg viewBox="0 0 24 24">${ICONS[item.icon]}</svg>
+      <span>${item.label}</span>${badge}
+    </div>`;
+  }).join('');
+}
+
+function dueCountAll(){
+  return allCards().filter(c=>isDue(c.id)).length;
+}
+
+function goTo(view){
+  currentView = view;
+  document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));
+  document.getElementById('view-'+view).classList.add('active');
+  buildSidebar();
+  if(view==='overview') renderOverview();
+  if(view==='train') renderTrainSetup();
+  if(view==='library') renderLibrary();
+  if(view==='add') renderAddForm();
+}
+
+/* ================= OVERVIEW ================= */
+function renderOverview(){
+  document.getElementById('runNumber').textContent = String(state.meta.runsCompleted+1).padStart(3,'0');
+
+  const total = allCards().length;
+  const due = dueCountAll();
+  const mastered = allCards().filter(c=>(state.progress[c.id]||{}).box===5).length;
+  const eff = state.meta.totalReviews>0 ? Math.round(100*state.meta.correctReviews/state.meta.totalReviews) : null;
+
+  document.getElementById('statRow').innerHTML = `
+    <div class="stat-card"><div class="stat-value">${total}</div><div class="stat-label">Total cards</div></div>
+    <div class="stat-card"><div class="stat-value amber">${due}</div><div class="stat-label">Due today</div></div>
+    <div class="stat-card"><div class="stat-value alt">${mastered}</div><div class="stat-label">Mastered (Box 5)</div></div>
+    <div class="stat-card"><div class="stat-value">${eff===null?'—':eff+'%'}</div><div class="stat-label">Efficiency (all-time)</div></div>
+  `;
+
+  const topics = topicsInOrder();
+  document.getElementById('topicHistogram').innerHTML = topics.map(t=>{
+    const s = topicStats(t);
+    const color = topicColor(t);
+    return `<div class="topic-row">
+      <div class="topic-label">
+        <div class="topic-name">${escapeHtml(t)}</div>
+        <div class="topic-count">${s.total} cards · ${s.mastered} mastered</div>
+      </div>
+      <div class="bar-track"><div class="bar-fill" style="width:${s.avgPurity}%;background:${color};color:${color};"></div></div>
+      <div class="topic-pct">${s.avgPurity}%</div>
+    </div>`;
+  }).join('') + `
+    <div style="margin-top:20px;text-align:right;">
+      <button class="btn btn-ghost" onclick="confirmReset()">Reset all progress</button>
+    </div>`;
+}
+
+function confirmReset(){
+  if(confirm('This clears all review progress (box levels, due dates, efficiency stats). Custom cards you added are kept. Continue?')){
+    state.progress = {};
+    state.meta = {totalReviews:0, correctReviews:0, runsCompleted:0};
+    saveProgress(); saveMeta();
+    showToast('Progress reset', 'amber');
+    renderOverview();
+    buildSidebar();
+  }
+}
+
+/* ================= TRAIN ================= */
+function renderTrainSetup(){
+  document.getElementById('trainSetup').style.display = '';
+  document.getElementById('trainStage').style.display = 'none';
+  document.getElementById('trainSummary').style.display = 'none';
+  document.getElementById('trainEmpty').style.display = 'none';
+
+  const topics = topicsInOrder();
+  const chipWrap = document.getElementById('topicChips');
+  if(!chipWrap.dataset.init){
+    chipWrap.innerHTML = topics.map(t=>`<div class="chip on" data-topic="${escapeHtml(t)}" onclick="toggleChip(this)">${escapeHtml(t)}</div>`).join('');
+    chipWrap.dataset.init = '1';
+  }
+}
+function toggleChip(el){ el.classList.toggle('on'); }
+
+function startSession(){
+  const activeTopics = [...document.querySelectorAll('#topicChips .chip.on')].map(c=>c.dataset.topic);
+  if(activeTopics.length===0){ showToast('Select at least one topic', 'bad'); return; }
+  const mode = document.getElementById('queueMode').value;
+  const shuffle = document.getElementById('shuffleToggle').checked;
+  const diffFilter = document.getElementById('diffFilter').value;
+
+  let pool = allCards().filter(c=>activeTopics.includes(c.topic));
+  if(diffFilter !== 'all') pool = pool.filter(c=>c.diff === parseInt(diffFilter, 10));
+  if(mode==='due') pool = pool.filter(c=>isDue(c.id));
+  if(mode==='weak') pool = pool.slice().sort((a,b)=>purityOf(a.id)-purityOf(b.id));
+  else if(shuffle) pool = pool.slice().sort(()=>Math.random()-0.5);
+
+  if(pool.length===0){
+    document.getElementById('trainSetup').style.display = '';
+    document.getElementById('trainEmpty').style.display = '';
+    document.getElementById('trainEmpty').innerHTML = `
+      <div class="empty-state">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg>
+        <h3>No cards match</h3>
+        <p>Nothing due for this topic/difficulty combination. Try "All cards (practice)" or widen the difficulty filter.</p>
+      </div>`;
+    return;
+  }
+
+  session = {queue: pool, pos:0, revealed:false, reviewed:0, correct:0, masteredDelta:0};
+  document.getElementById('trainSetup').style.display = 'none';
+  document.getElementById('trainEmpty').style.display = 'none';
+  document.getElementById('trainStage').style.display = '';
+  renderCard();
+}
+
+function renderCard(){
+  const card = session.queue[session.pos];
+  const p = getProgress(card.id);
+  session.revealed = false;
+
+  document.getElementById('sessionPos').textContent = `${session.pos+1} / ${session.queue.length}`;
+  document.getElementById('sessionFill').style.width = `${Math.round(100*session.pos/session.queue.length)}%`;
+  document.getElementById('sessionAcc').textContent = session.reviewed>0 ? `${Math.round(100*session.correct/session.reviewed)}% acc.` : '— acc.';
+
+  document.getElementById('cardTopic').textContent = card.topic;
+  document.getElementById('cardSub').textContent = card.sub;
+  document.getElementById('cardQuestion').innerHTML = escapeHtml(card.q).replace(/\n/g,'<br>');
+  document.getElementById('cardAnswer').innerHTML = escapeHtml(card.a).replace(/\n/g,'<br>');
+  document.getElementById('cardAnswer').classList.add('hidden');
+  document.getElementById('cardDiffTag').innerHTML = `<span class="difficulty-tag diff-${card.diff}">${['','foundational','intermediate','advanced'][card.diff]}</span>`;
+
+  const dots = [1,2,3,4,5].map(n=>`<div class="box-dot ${n<=p.box?'filled':''}"></div>`).join('');
+  document.getElementById('boxDots').innerHTML = dots;
+
+  document.getElementById('cardActionsReveal').style.display = '';
+  document.getElementById('cardActionsGrade').style.display = 'none';
+
+  renderMath(document.getElementById('cardQuestion'));
+  renderMath(document.getElementById('cardAnswer'));
+}
+
+function revealAnswer(){
+  if(session.revealed) return;
+  session.revealed = true;
+  document.getElementById('cardAnswer').classList.remove('hidden');
+  document.getElementById('cardActionsReveal').style.display = 'none';
+  document.getElementById('cardActionsGrade').style.display = '';
+}
+
+async function gradeCard(correct){
+  if(!session.revealed) return;
+  const card = session.queue[session.pos];
+  const p = getProgress(card.id);
+  const prevBox = p.box;
+  const newBox = correct ? Math.min(p.box+1, 5) : 0;
+
+  state.progress[card.id] = {
+    box: newBox,
+    nextDue: addDays(todayStr(), BOX_INTERVALS[newBox]),
+    correct: p.correct + (correct?1:0),
+    incorrect: p.incorrect + (correct?0:1),
+    lastReviewed: todayStr(),
+  };
+
+  session.reviewed++;
+  if(correct) session.correct++;
+  if(newBox===5 && prevBox!==5) session.masteredDelta++;
+
+  state.meta.totalReviews++;
+  if(correct) state.meta.correctReviews++;
+
+  await saveProgress();
+  await saveMeta();
+
+  session.pos++;
+  if(session.pos >= session.queue.length){
+    finishSession();
+  } else {
+    renderCard();
+  }
+  buildSidebar();
+}
+
+async function finishSession(){
+  state.meta.runsCompleted++;
+  await saveMeta();
+  document.getElementById('trainStage').style.display = 'none';
+  document.getElementById('trainSummary').style.display = '';
+  document.getElementById('sumReviewed').textContent = session.reviewed;
+  document.getElementById('sumAcc').textContent = session.reviewed>0 ? Math.round(100*session.correct/session.reviewed)+'%' : '0%';
+  document.getElementById('sumMastered').textContent = session.masteredDelta;
+  session = null;
+}
+
+function backToSetup(){
+  renderTrainSetup();
+}
+
+/* keyboard shortcuts during training */
+document.addEventListener('keydown', (e)=>{
+  if(currentView!=='train' || !session) return;
+  if(e.code==='Space'){ e.preventDefault(); if(!session.revealed) revealAnswer(); }
+  if(e.key==='1' && session.revealed) gradeCard(false);
+  if(e.key==='2' && session.revealed) gradeCard(true);
+});
+
+/* ================= LIBRARY ================= */
+function renderLibrary(){
+  const filterSel = document.getElementById('libTopicFilter');
+  if(!filterSel.dataset.init){
+    const topics = topicsInOrder();
+    filterSel.innerHTML = `<option value="">All topics</option>` + topics.map(t=>`<option value="${escapeHtml(t)}">${escapeHtml(t)}</option>`).join('');
+    filterSel.dataset.init = '1';
+  }
+
+  const q = document.getElementById('libSearch').value.trim().toLowerCase();
+  const topicFilter = filterSel.value;
+
+  let cards = allCards();
+  if(topicFilter) cards = cards.filter(c=>c.topic===topicFilter);
+  if(q) cards = cards.filter(c=>
+    c.q.toLowerCase().includes(q) || c.a.toLowerCase().includes(q) ||
+    c.sub.toLowerCase().includes(q) || c.topic.toLowerCase().includes(q)
+  );
+
+  if(cards.length===0){
+    document.getElementById('libraryList').innerHTML = `
+      <div class="empty-state">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg>
+        <h3>No cards match</h3><p>Try a different search or filter.</p>
+      </div>`;
+    return;
+  }
+
+  const groups = {};
+  cards.forEach(c=>{ groups[c.topic] = groups[c.topic] || []; groups[c.topic].push(c); });
+
+  const html = topicsInOrder().filter(t=>groups[t]).map(t=>{
+    const color = topicColor(t);
+    const items = groups[t].map(c=>{
+      const isCustom = c.id.startsWith('c-');
+      const pct = purityOf(c.id);
+      return `<div class="lib-card">
+        <div class="lib-card-body">
+          <div class="lib-card-q">${escapeHtml(c.q)}</div>
+          <div class="lib-card-a">${escapeHtml(c.a).slice(0,180)}${c.a.length>180?'…':''}</div>
+        </div>
+        <div class="lib-card-meta">
+          <span class="purity-pill">${pct}%</span>
+          ${isCustom ? `<button class="icon-btn" title="Delete card" onclick="deleteCard('${c.id}')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M9 7V4h6v3M6 7l1 14h10l1-14"/></svg></button>` : ''}
+        </div>
+      </div>`;
+    }).join('');
+    return `<div class="lib-group">
+      <div class="lib-group-head">
+        <div class="lib-group-dot" style="background:${color};"></div>
+        <div class="lib-group-title">${escapeHtml(t)}</div>
+        <div class="lib-group-count">${groups[t].length} cards</div>
+      </div>
+      ${items}
+    </div>`;
+  }).join('');
+
+  document.getElementById('libraryList').innerHTML = html;
+  renderMath(document.getElementById('libraryList'));
+}
+
+async function deleteCard(id){
+  if(!confirm('Delete this custom card? This cannot be undone.')) return;
+  state.customCards = state.customCards.filter(c=>c.id!==id);
+  delete state.progress[id];
+  await saveCustomCards();
+  await saveProgress();
+  showToast('Card deleted', 'amber');
+  renderLibrary();
+}
+
+/* ---- Export / Import as standalone .json packs ----
+   This keeps card content decoupled from the app itself: new topics or
+   deeper decks can be shipped as small .json files and loaded here,
+   instead of growing this HTML file forever. */
+function exportDeck(){
+  const payload = allCards().map(c=>({topic:c.topic, sub:c.sub, q:c.q, a:c.a, diff:c.diff}));
+  const blob = new Blob([JSON.stringify(payload, null, 2)], {type:'application/json'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'nuclide-deck-' + todayStr() + '.json';
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  URL.revokeObjectURL(url);
+  showToast(`Exported ${payload.length} cards`, 'good');
+}
+
+function triggerImportFile(){
+  document.getElementById('importFileInput').click();
+}
+
+async function onImportFileChosen(event){
+  const file = event.target.files[0];
+  event.target.value = ''; // allow re-selecting the same file later
+  if(!file) return;
+  try{
+    const text = await file.text();
+    const parsed = JSON.parse(text);
+    if(!Array.isArray(parsed)) throw new Error('Expected a JSON array of cards');
+
+    let added = 0, skipped = 0;
+    parsed.forEach(item=>{
+      if(!item || !item.topic || !item.sub || !item.q || !item.a){ skipped++; return; }
+      const diff = [1,2,3].includes(item.diff) ? item.diff : 2;
+      state.customCards.push({
+        id: 'c-' + Date.now().toString(36) + Math.random().toString(36).slice(2,6),
+        topic: String(item.topic).trim(),
+        sub: String(item.sub).trim(),
+        q: String(item.q).trim(),
+        a: String(item.a).trim(),
+        diff,
+      });
+      added++;
+    });
+
+    if(added>0) await saveCustomCards();
+    showToast(`Imported ${added} card${added===1?'':'s'}${skipped?`, skipped ${skipped}`:''}`, added>0?'good':'bad');
+    buildSidebar();
+    renderLibrary();
+  }catch(e){
+    showToast('Could not read that file — expecting a JSON array of {topic, sub, q, a, diff}', 'bad');
+  }
+}
+
+/* ================= ADD CARD ================= */
+function renderAddForm(){
+  const sel = document.getElementById('fTopicSelect');
+  const topics = topicsInOrder();
+  sel.innerHTML = topics.map(t=>`<option value="${escapeHtml(t)}">${escapeHtml(t)}</option>`).join('') + `<option value="__new__">+ New topic…</option>`;
+  onTopicSelectChange();
+  updateSubList();
+
+  document.querySelectorAll('.diff-opt').forEach(el=>{
+    el.onclick = ()=>{
+      document.querySelectorAll('.diff-opt').forEach(o=>o.classList.remove('sel'));
+      el.classList.add('sel');
+      diffSelected = parseInt(el.dataset.v, 10);
+    };
+  });
+}
+
+function onTopicSelectChange(){
+  const sel = document.getElementById('fTopicSelect');
+  newTopicMode = sel.value === '__new__';
+  document.getElementById('fNewTopicField').style.display = newTopicMode ? '' : 'none';
+  updateSubList();
+}
+
+function updateSubList(){
+  const sel = document.getElementById('fTopicSelect');
+  const dl = document.getElementById('subList');
+  if(newTopicMode){ dl.innerHTML=''; return; }
+  const subs = subtopicsForTopic(sel.value);
+  dl.innerHTML = subs.map(s=>`<option value="${escapeHtml(s)}">`).join('');
+}
+
+async function submitCard(){
+  const sel = document.getElementById('fTopicSelect');
+  let topic = sel.value === '__new__' ? document.getElementById('fNewTopic').value.trim() : sel.value;
+  const sub = document.getElementById('fSub').value.trim();
+  const q = document.getElementById('fQuestion').value.trim();
+  const a = document.getElementById('fAnswer').value.trim();
+
+  if(!topic){ showToast('Give this topic a name', 'bad'); return; }
+  if(!sub){ showToast('Add a subtopic label', 'bad'); return; }
+  if(!q || !a){ showToast('Question and answer are both required', 'bad'); return; }
+
+  const card = {
+    id: 'c-' + Date.now().toString(36) + Math.random().toString(36).slice(2,6),
+    topic, sub, q, a, diff: diffSelected,
+  };
+  state.customCards.push(card);
+  await saveCustomCards();
+
+  document.getElementById('fSub').value = '';
+  document.getElementById('fQuestion').value = '';
+  document.getElementById('fAnswer').value = '';
+  document.getElementById('fNewTopic').value = '';
+
+  showToast(`Added to ${topic}`, 'good');
+  buildSidebar();
+  renderAddForm();
+}
+
+/* ================= INIT ================= */
+async function init(){
+  document.getElementById('sidebarFoot').textContent = 'syncing…';
+  await loadState();
+  document.getElementById('sidebarFoot').innerHTML = `${allCards().length} cards loaded<br>local session</div>`;
+  buildSidebar();
+  goTo('overview');
+}
+init();
+
+</script>
+</body>
+</html>
