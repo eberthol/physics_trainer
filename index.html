@@ -754,34 +754,48 @@ let currentView = 'overview';
 let diffSelected = 2;
 let newTopicMode = false;
 
+
 /* ================= STORAGE ================= */
-async function loadState(){
-  try{
-    const c = await window.storage.get('user-cards', false);
-    state.customCards = c ? JSON.parse(c.value) : [];
-  }catch(e){ state.customCards = []; }
-  try{
-    const p = await window.storage.get('progress', false);
-    state.progress = p ? JSON.parse(p.value) : {};
-  }catch(e){ state.progress = {}; }
-  try{
-    const m = await window.storage.get('meta', false);
-    state.meta = m ? JSON.parse(m.value) : {totalReviews:0, correctReviews:0, runsCompleted:0};
-  }catch(e){ state.meta = {totalReviews:0, correctReviews:0, runsCompleted:0}; }
-  state.loaded = true;
+
+function loadJSON(key, fallback) {
+    try {
+        const value = localStorage.getItem(key);
+        return value ? JSON.parse(value) : fallback;
+    } catch (e) {
+        console.error(e);
+        return fallback;
+    }
 }
 
-async function saveCustomCards(){
-  try{ await window.storage.set('user-cards', JSON.stringify(state.customCards), false); }
-  catch(e){ showToast('Could not save card — try again', 'bad'); }
+function saveJSON(key, value) {
+    localStorage.setItem(key, JSON.stringify(value));
 }
-async function saveProgress(){
-  try{ await window.storage.set('progress', JSON.stringify(state.progress), false); }
-  catch(e){ /* non-fatal */ }
+
+async function loadState() {
+
+    state.customCards = loadJSON("user-cards", []);
+
+    state.progress = loadJSON("progress", {});
+
+    state.meta = loadJSON("meta", {
+        totalReviews: 0,
+        correctReviews: 0,
+        runsCompleted: 0,
+    });
+
+    state.loaded = true;
 }
-async function saveMeta(){
-  try{ await window.storage.set('meta', JSON.stringify(state.meta), false); }
-  catch(e){ /* non-fatal */ }
+
+async function saveCustomCards() {
+    saveJSON("user-cards", state.customCards);
+}
+
+async function saveProgress() {
+    saveJSON("progress", state.progress);
+}
+
+async function saveMeta() {
+    saveJSON("meta", state.meta);
 }
 
 /* ================= HELPERS ================= */
