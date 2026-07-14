@@ -301,7 +301,7 @@ button{font-family:inherit;}
     <section class="view" id="view-overview">
       <div class="page-head">
         <div>
-          <div class="page-eyebrow">Run <span id="runNumber">001</span></div>
+          <div class="page-eyebrow">Version <span id="appVersion">1.0.0</span></div>
           <div class="page-title">Overview</div>
           <div class="page-desc">System purity by topic. Purity rises as cards move through the review cycle and decays back to Box 0 on a missed recall.</div>
         </div>
@@ -896,7 +896,7 @@ function goTo(view){
 
 /* ================= OVERVIEW ================= */
 function renderOverview(){
-  document.getElementById('runNumber').textContent = String(state.meta.runsCompleted+1).padStart(3,'0');
+  // document.getElementById('runNumber').textContent = String(state.meta.runsCompleted+1).padStart(3,'0');
 
   const total = allCards().length;
   const due = dueCountAll();
