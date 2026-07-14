@@ -1,102 +1,105 @@
 const CACHE_NAME = "nuclide-cache";
-const VERSION_KEY = "__version__";
+const VERSION_URL = "./version.json";
+const VERSION_KEY = "__nuclide_version__";
 
-const FILES = [
-    "./",
-    "./index.html",
-    "./manifest.json",
-    "./icon-192.png",
-    "./icon-512.png"
+const APP_SHELL = [
+  "./",
+  "./index.html",
+  "./manifest.json",
+  "./version.json",
+  "./icon-192.png",
+  "./icon-512.png",
+  "https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css",
+  "https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js",
+  "https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js",
+  "https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
 ];
 
-async function getLatestVersion() {
-
-    const response = await fetch(
-        "version.json",
-        { cache: "no-store" }
-    );
-
-    return await response.json();
+async function fetchLatestVersion() {
+  const response = await fetch(VERSION_URL, { cache: "no-store" });
+  if (!response.ok) {
+    throw new Error(`version.json fetch failed: ${response.status}`);
+  }
+  const data = await response.json();
+  return String(data.version || "").trim();
 }
 
-async function cacheVersion(cache, version){
-
-    await cache.put(
-        VERSION_KEY,
-        new Response(version)
-    );
-
+async function getCachedVersion(cache) {
+  const response = await cache.match(VERSION_KEY);
+  return response ? (await response.text()).trim() : null;
 }
 
-async function currentVersion(cache){
-
-    const response = await cache.match(VERSION_KEY);
-
-    if(!response)
-        return null;
-
-    return await response.text();
-
+async function storeVersion(cache, version) {
+  await cache.put(
+    VERSION_KEY,
+    new Response(version, {
+      headers: { "Content-Type": "text/plain; charset=utf-8" },
+    })
+  );
 }
 
-async function updateCache(cache){
-
-    await cache.addAll(FILES);
-
+async function cacheAppShell(cache) {
+  await cache.addAll(APP_SHELL);
 }
 
-async function synchronize(){
+async function syncIfNeeded() {
+  const cache = await caches.open(CACHE_NAME);
+  const latest = await fetchLatestVersion();
+  const current = await getCachedVersion(cache);
 
-    const latest = await getLatestVersion();
+  if (current === latest) {
+    return { updated: false, version: latest };
+  }
 
-    const cache = await caches.open(CACHE_NAME);
-
-    const current = await currentVersion(cache);
-
-    if(current === latest.version){
-
-        console.log(
-            "NUCLIDE already up to date."
-        );
-
-        return;
-
-    }
-
-    console.log(
-        `Updating ${current} → ${latest.version}`
-    );
-
-    await updateCache(cache);
-
-    await cacheVersion(
-        cache,
-        latest.version
-    );
-
+  await cacheAppShell(cache);
+  await storeVersion(cache, latest);
+  return { updated: true, version: latest, previous: current };
 }
 
-self.addEventListener(
-    "activate",
-    event => {
+self.addEventListener("install", (event) => {
+  event.waitUntil(
+    (async () => {
+      const result = await syncIfNeeded();
+      console.log(
+        result.updated
+          ? `NUCLIDE installed/updated to v${result.version}`
+          : `NUCLIDE already at v${result.version}`
+      );
+      await self.skipWaiting();
+    })()
+  );
+});
 
-        event.waitUntil(
-            synchronize()
-        );
+self.addEventListener("activate", (event) => {
+  event.waitUntil(
+    (async () => {
+      const result = await syncIfNeeded();
+      console.log(
+        result.updated
+          ? `NUCLIDE activated at v${result.version}`
+          : `NUCLIDE activated (v${result.version})`
+      );
+      await self.clients.claim();
+    })()
+  );
+});
 
-    }
-);
+self.addEventListener("fetch", (event) => {
+  event.respondWith(
+    (async () => {
+      const request = event.request;
 
-self.addEventListener(
-    "fetch",
-    event => {
+      try {
+        const cached = await caches.match(request);
+        if (cached) return cached;
 
-        event.respondWith(
-
-            caches.match(event.request)
-                .then(r => r || fetch(event.request))
-
-        );
-
-    }
-);
+        const response = await fetch(request);
+        return response;
+      } catch {
+        const cached = await caches.match(request);
+        if (cached) return cached;
+        throw new Error("Offline and not cached");
+      }
+    })()
+  );
+});
