@@ -1268,6 +1268,7 @@ async function loadAppVersion() {
   try {
     const response = await fetch("version.json", { cache: "no-store" });
     if (!response.ok) return "unknown";
+
     const data = await response.json();
     return String(data.version || "unknown");
   } catch {
@@ -1279,9 +1280,9 @@ async function loadAppVersion() {
 async function init(){
   document.getElementById('sidebarFoot').textContent = 'syncing…';
   const version = await loadAppVersion();
+  document.getElementById('appVersion').textContent = version;
   await loadState();
-  // document.getElementById('sidebarFoot').innerHTML = `${allCards().length} cards loaded<br>local session</div>`;
-  document.getElementById('sidebarFoot').innerHTML = `v${version}<br>${allCards().length} cards loaded<br>local session`;
+  document.getElementById('sidebarFoot').innerHTML = `Version ${version}<br>${allCards().length} cards loaded<br>local session`;
   buildSidebar();
   goTo('overview');
 }
