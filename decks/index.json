@@ -1,0 +1,12 @@
+[
+  {
+    "id": "book-experimental-techniques",
+    "title": "Experimental Techniques in Nuclear and Particle Physics",
+    "file": "decks/book-experimental-techniques.json"
+  },
+  {
+    "id": "test2",
+    "title": "Test decks 2",
+    "file": "decks/test2.json"
+  }
+]

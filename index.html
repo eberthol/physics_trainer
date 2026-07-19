@@ -304,6 +304,10 @@ button{font-family:inherit;}
           <div class="page-eyebrow">Version <span id="appVersion">1.0.0</span></div>
           <div class="page-title">Overview</div>
           <div class="page-desc">System purity by topic. Purity rises as cards move through the review cycle and decays back to Box 0 on a missed recall.</div>
+          <div style="margin-top:18px;">
+            <label class="form-label">Deck</label><br>
+            <select class="select" id="deckSelect"></select>
+        </div>
         </div>
         <button class="btn btn-primary" onclick="goTo('train')">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 3l14 9-14 9V3z"/></svg>
@@ -742,6 +746,10 @@ const ICONS = {
 };
 
 /* ================= STATE ================= */
+let deckCatalog = [];     // list from decks/index.json
+let currentDeck = null;   // id of the selected deck
+let deckCards = [];       // cards from the currently loaded deck
+
 let state = {
   customCards: [],       // user-added cards
   progress: {},          // cardId -> {box, nextDue, correct, incorrect, lastReviewed}
@@ -756,6 +764,9 @@ let newTopicMode = false;
 
 
 /* ================= STORAGE ================= */
+function storageKey(name) {
+    return `${name}:${currentDeck}`;
+}
 
 function loadJSON(key, fallback) {
     try {
@@ -773,11 +784,11 @@ function saveJSON(key, value) {
 
 async function loadState() {
 
-    state.customCards = loadJSON("user-cards", []);
+    state.customCards = loadJSON(storageKey("user-cards"), []);
 
-    state.progress = loadJSON("progress", {});
+    state.progress = loadJSON(storageKey("progress"), {});
 
-    state.meta = loadJSON("meta", {
+    state.meta = loadJSON(storageKey("meta"), {
         totalReviews: 0,
         correctReviews: 0,
         runsCompleted: 0,
@@ -787,19 +798,54 @@ async function loadState() {
 }
 
 async function saveCustomCards() {
-    saveJSON("user-cards", state.customCards);
+    saveJSON(storageKey("user-cards"), state.customCards);
 }
 
 async function saveProgress() {
-    saveJSON("progress", state.progress);
+    saveJSON(storageKey("progress"), state.progress);
 }
 
 async function saveMeta() {
-    saveJSON("meta", state.meta);
+    saveJSON(storageKey("meta"), state.meta);
+}
+
+async function loadDeckCatalog() {
+
+    const response = await fetch("decks/index.json", {
+        cache: "no-store"
+    });
+
+    if (!response.ok) {
+        throw new Error("Cannot load deck catalog");
+    }
+
+    deckCatalog = await response.json();
+}
+
+async function loadDeck(deckId) {
+
+    const info = deckCatalog.find(d => d.id === deckId);
+
+    if (!info) {
+        throw new Error(`Unknown deck "${deckId}"`);
+    }
+
+    const response = await fetch(info.file, {
+        cache: "no-store"
+    });
+
+    if (!response.ok) {
+        throw new Error(`Cannot load ${info.file}`);
+    }
+
+    const deck = await response.json();
+
+    currentDeck = deck.id;
+    deckCards = deck.cards;
 }
 
 /* ================= HELPERS ================= */
-function allCards(){ return BUILTIN_CARDS.concat(state.customCards); }
+function allCards(){ return deckCards.concat(state.customCards); }
 
 function todayStr(){ return new Date().toISOString().slice(0,10); }
 function addDays(dateStr, n){
@@ -906,6 +952,38 @@ function goTo(view){
   if(view==='train') renderTrainSetup();
   if(view==='library') renderLibrary();
   if(view==='add') renderAddForm();
+}
+
+function buildDeckSelector() {
+
+    const sel = document.getElementById("deckSelect");
+
+    sel.innerHTML = deckCatalog.map(deck => `
+        <option value="${deck.id}">
+            ${deck.title}
+        </option>
+    `).join("");
+
+    sel.value = currentDeck;
+
+    sel.onchange = async () => {
+
+        await switchDeck(sel.value);
+
+    };
+}
+
+async function switchDeck(deckId) {
+
+    await loadDeck(deckId);
+
+    localStorage.setItem("selectedDeck", deckId);
+
+    await loadState();
+
+    buildSidebar();
+
+    goTo(currentView);
 }
 
 /* ================= OVERVIEW ================= */
@@ -1295,9 +1373,23 @@ async function init(){
   document.getElementById('sidebarFoot').textContent = 'syncing…';
   const version = await loadAppVersion();
   document.getElementById('appVersion').textContent = version;
+  // currentDeck = "builtin";
+  // deckCards = BUILTIN_CARDS;
+
+  await loadDeckCatalog();
+  const savedDeck = localStorage.getItem("selectedDeck");
+  const deckExists = deckCatalog.some(
+      deck => deck.id === savedDeck
+  );
+  const deckToLoad = deckExists
+      ? savedDeck
+      : deckCatalog[0].id;
+  await loadDeck(deckToLoad);
+
   await loadState();
   document.getElementById('sidebarFoot').innerHTML = `Version ${version}<br>${allCards().length} cards loaded<br>local session`;
   buildSidebar();
+  buildDeckSelector();
   goTo('overview');
 }
 init();

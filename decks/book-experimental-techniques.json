@@ -1,0 +1,342 @@
+{
+  "id": "book-experimental-techniques",
+  "title": "Experimental Techniques in Nuclear and Particle Physics",
+  "cards": [
+    {
+      "id": "exp-001",
+      "topic": "Ch.1: Introduction",
+      "sub": "Units & Constants",
+      "diff": 1,
+      "q": "How is mass usually expressed in nuclear and particle physics, and what is the proton mass in these units?",
+      "a": "Via the relation E = mc², as an equivalent energy rather than in kg. The proton mass is 938.272 MeV/c², meaning m_proton·c² = 938.272 MeV."
+    },
+    {
+      "id": "exp-002",
+      "topic": "Ch.1: Introduction",
+      "sub": "Units & Constants",
+      "diff": 2,
+      "q": "What is the value of ħc, and why is this combination useful?",
+      "a": "ħc ≈ 197.3 MeV·fm. Since factors of c and ħ are often carried explicitly in nuclear/particle physics formulas, this constant is the standard conversion between energy and length (or momentum and inverse length) scales, e.g. relating a particle's momentum to its associated de Broglie wavelength."
+    },
+    {
+      "id": "exp-003",
+      "topic": "Ch.1: Introduction",
+      "sub": "Special Relativity",
+      "diff": 2,
+      "q": "Write the relativistic energy-momentum relation for a particle of rest mass m0.",
+      "a": "m0²c⁴ = E² − P²c², equivalently E² = (Pc)² + (m0c²)². This holds because energy and momentum transform together under the Lorentz transformation, just like time and position."
+    },
+    {
+      "id": "exp-004",
+      "topic": "Ch.1: Introduction",
+      "sub": "Special Relativity",
+      "diff": 2,
+      "q": "Give the relativistic expressions for a particle's total energy and momentum in terms of β and γ, and state what they simplify to when the energy is much larger than the rest mass.",
+      "a": "E = γm0c² and P = βγm0c. When E ≫ m0c² (ultra-relativistic limit), both expressions converge: Ekinetic ≈ E ≈ Pc."
+    },
+    {
+      "id": "exp-005",
+      "topic": "Ch.1: Introduction",
+      "sub": "Special Relativity",
+      "diff": 1,
+      "q": "Why must relativistic kinematics be used for electrons in nuclear decays, but non-relativistic kinematics is usually fine for alpha particles?",
+      "a": "Relativity matters once kinetic energy becomes comparable to rest-mass energy. A 1 MeV electron (rest mass 0.511 MeV) already moves at about 95% of the speed of light, while a 1 MeV proton or alpha particle (rest mass ~1000x larger) moves at only a few percent of the speed of light — alpha particles and nuclear fragments stay non-relativistic in essentially all nuclear-physics contexts."
+    },
+    {
+      "id": "exp-006",
+      "topic": "Ch.1: Introduction",
+      "sub": "Probability & Statistics",
+      "diff": 1,
+      "q": "State the Gaussian (normal) probability density function, and the relation between its FWHM and its standard deviation σ.",
+      "a": "f(x) = (1/√(2πσ²))·exp(−(x−μ)²/2σ²). Its full width at half maximum is FWHM = σ·√(8 ln2) ≈ 2.355σ."
+    },
+    {
+      "id": "exp-007",
+      "topic": "Ch.1: Introduction",
+      "sub": "Probability & Statistics",
+      "diff": 2,
+      "q": "Under what two conditions does a counting process follow a Poisson distribution, and what happens to that distribution for large mean value λ?",
+      "a": "A Poisson distribution arises when (1) a large number of independent primary events or opportunities exist, and (2) each has only a small probability of producing the observed outcome, with no correlation between them — exactly the situation for counting decays from a large sample of radioactive nuclei. For large λ (more than a few tens), the Poisson distribution is well approximated by a Gaussian with the same mean and with FWHM = 2.355√λ."
+    },
+    {
+      "id": "exp-008",
+      "topic": "Ch.1: Introduction",
+      "sub": "Probability & Statistics",
+      "diff": 1,
+      "q": "If z = x + y for two independent statistical variables x and y, how do their means and variances combine?",
+      "a": "The means add directly, z̄ = x̄ + ȳ, and the variances add, σz² = σx² + σy² — this holds for any probability distributions of x and y, not just Gaussian ones."
+    },
+    {
+      "id": "exp-009",
+      "topic": "Ch.1: Introduction",
+      "sub": "Structure of Matter",
+      "diff": 1,
+      "q": "What are the four fundamental forces, and why do only two of them shape everyday macroscopic experience?",
+      "a": "Gravity, electromagnetism, the weak force, and the strong (colour) force. The weak and strong forces are short-range and only manifest at subatomic distance scales, so only gravity and electromagnetism are apparent in the macroscopic world — at the scale of a single atom or nucleus, gravity itself becomes negligible compared to electromagnetism (about 40 orders of magnitude weaker between an electron and a proton)."
+    },
+    {
+      "id": "exp-010",
+      "topic": "Ch.1: Introduction",
+      "sub": "Structure of Matter",
+      "diff": 2,
+      "q": "Why can quarks and gluons never be observed as free, isolated particles?",
+      "a": "This is colour confinement: unlike the electromagnetic force, the strong colour force between colour-charged objects does not weaken with distance, so separating two quarks would take an infinite amount of energy. Only colour-neutral combinations can exist as free particles — a quark and an antiquark (mesons), or three quarks / three antiquarks (baryons / antibaryons)."
+    },
+    {
+      "id": "exp-011",
+      "topic": "Ch.1: Introduction",
+      "sub": "Structure of Matter",
+      "diff": 3,
+      "q": "Using the energy-time uncertainty relation, explain why the weak force has such a short range, given that its carriers (the W and Z bosons) are so heavy.",
+      "a": "A virtual W or Z boson (mass ~80–90x the proton mass) can only exist for a time set by ΔE·Δt ≳ ħ. Over that brief allowed time, even travelling near the speed of light, it can cover only ct ≈ ħc/(90 GeV) ≈ 10⁻¹⁸ m. The force is short-ranged not because it's intrinsically 'weak', but because its force-carrying quanta are so massive."
+    },
+    {
+      "id": "exp-012",
+      "topic": "Ch.1: Introduction",
+      "sub": "Structure of Matter",
+      "diff": 2,
+      "q": "Roughly how does the characteristic energy-level spacing compare between electrons in atoms, nucleons in nuclei, and quarks in hadrons — and what simple model explains the trend?",
+      "a": "Roughly eV–keV in atoms, keV–MeV in nuclei, and ~GeV in hadrons. The 'particle in a box' result, En ∝ 1/a² for a particle confined to size a, explains the pattern: the more tightly a particle is confined, the larger its characteristic level spacing — and hadrons (~10⁻15 m) confine quarks far more tightly than nuclei confine nucleons, which in turn confine far more tightly than atoms confine electrons."
+    },
+    {
+      "id": "exp-013",
+      "topic": "Ch.1: Introduction",
+      "sub": "Nuclear Decay",
+      "diff": 1,
+      "q": "Write the β⁻ and β⁺ decay reactions for a nucleus in (Z, A) notation.",
+      "a": "β⁻: (Z, A) → (Z+1, A) + e⁻ + ν̄e.  β⁺: (Z, A) → (Z−1, A) + e⁺ + νe. Both proceed via the weak force (W-boson exchange), which is why beta-decay lifetimes can be so long compared to strong- or electromagnetic-force timescales."
+    },
+    {
+      "id": "exp-014",
+      "topic": "Ch.1: Introduction",
+      "sub": "Nuclear Decay",
+      "diff": 2,
+      "q": "Why is the electron energy spectrum in beta decay continuous rather than a single sharp line, and what does 'Emax' refer to?",
+      "a": "Because the final state has three particles (daughter nucleus, electron, neutrino), the fixed total energy released (the Q-value) can be shared between the electron and neutrino in a continuous range of proportions — unlike a two-body decay, which would give a single fixed electron energy. Emax is the electron's maximum possible kinetic energy, reached when the neutrino carries away almost none of the available energy; since the recoiling nucleus is so much heavier than the electron or neutrino, essentially all of Q is available to be split between them."
+    },
+    {
+      "id": "exp-015",
+      "topic": "Ch.1: Introduction",
+      "sub": "Nuclear Decay",
+      "diff": 2,
+      "q": "Alpha decay is mediated by the strong force, yet some alpha-emitting isotopes have half-lives of many years. Why isn't the decay instantaneous?",
+      "a": "The alpha particle must quantum-mechanically tunnel through the Coulomb barrier surrounding the nucleus before it can escape. The tunneling probability is extremely sensitive to the decay's Q-value, so small differences in Q-value between isotopes translate into enormous differences in half-life — from microseconds to billions of years."
+    },
+    {
+      "id": "exp-016",
+      "topic": "Ch.1: Introduction",
+      "sub": "Nuclear Decay",
+      "diff": 2,
+      "q": "What is a nuclear isomer, and how is it typically labeled?",
+      "a": "A nucleus trapped in a long-lived excited (metastable) state because the usual fast gamma-decay route to a lower level is forbidden — often because the transition would require a large change in nuclear spin. It's denoted with a lowercase 'm' after the mass number, for example ⁶⁰ᵐCo."
+    },
+    {
+      "id": "exp-017",
+      "topic": "Ch.1: Introduction",
+      "sub": "Nuclear Decay",
+      "diff": 3,
+      "q": "Compare electron capture and internal conversion: what do they have in common, and how do their end products differ?",
+      "a": "Both processes directly involve an atomic electron (usually from the K-shell) rather than emitting a beta particle or gamma ray in the conventional sense. In electron capture, p + e⁻ → n + νe, an alternative route to β⁺ decay for the same nuclear transition — and the dominant one whenever the transition energy is below 511 keV, since β⁺ becomes energetically forbidden below that threshold. In internal conversion, competing with gamma emission, the nuclear excitation energy is transferred directly to an atomic electron, which is then ejected with a fixed, mono-energetic kinetic energy — unlike the continuous spectrum of beta decay."
+    },
+    {
+      "id": "exp-018",
+      "topic": "Ch.1: Introduction",
+      "sub": "Nuclear Decay",
+      "diff": 1,
+      "q": "State the exponential radioactive decay law, and the relation between the mean lifetime τ and the half-life T½.",
+      "a": "N(t) = N0·e^(−t/τ) = N0·e^(−λt), where the decay constant λ = 1/τ. The half-life relates to the mean lifetime by T½ = τ·ln2 (equivalently λ = ln2/T½)."
+    },
+    {
+      "id": "exp-019",
+      "topic": "Ch.2: Interactions of Particles in Matter",
+      "sub": "Cross Section & Mean Free Path",
+      "diff": 1,
+      "q": "How is the cross section σ defined via the interaction probability in a thin slab of material?",
+      "a": "dW = dx·N·σ, where dW is the probability of an interaction while crossing a slab of thickness dx containing N scattering centres per unit volume. The cross section has units of area; the standard unit is the barn, 1 b = 10⁻²⁴ cm²."
+    },
+    {
+      "id": "exp-020",
+      "topic": "Ch.2: Interactions of Particles in Matter",
+      "sub": "Cross Section & Mean Free Path",
+      "diff": 2,
+      "q": "Starting from the definition of cross section, what is the resulting probability distribution for the distance travelled before a first interaction, and what is the mean free path?",
+      "a": "The survival probability falls off exponentially, [1 − P(x)] = e^(−xNσ), giving an exponentially-distributed interaction distance with mean free path λ = 1/(Nσ)."
+    },
+    {
+      "id": "exp-021",
+      "topic": "Ch.2: Interactions of Particles in Matter",
+      "sub": "Cross Section & Mean Free Path",
+      "diff": 1,
+      "q": "If a material contains two different types of scattering centres X and Y, how do you combine their individual mean free paths?",
+      "a": "The interaction rates simply add: 1/λ = 1/λX + 1/λY = NXσX + NYσY, where λX = 1/(NXσX) and λY = 1/(NYσY) are the mean free paths for each type alone."
+    },
+    {
+      "id": "exp-022",
+      "topic": "Ch.2: Interactions of Particles in Matter",
+      "sub": "Ionization Energy Loss",
+      "diff": 2,
+      "q": "In elastic Coulomb scattering of a charged particle through matter, why does energy loss come mainly from collisions with electrons, while direction change comes mainly from collisions with nuclei?",
+      "a": "The maximum energy transferable in an elastic collision scales as ~4mM/(m+M)² times the kinetic energy: this is small when the projectile collides with a much heavier nucleus, but can be large in a collision with a similar- or lighter-mass electron. Conversely, a collision with a much heavier nucleus can still deflect the (lighter) projectile through a large angle, while an electron is too light to meaningfully deflect it."
+    },
+    {
+      "id": "exp-023",
+      "topic": "Ch.2: Interactions of Particles in Matter",
+      "sub": "Ionization Energy Loss",
+      "diff": 2,
+      "q": "Qualitatively, what does the Bethe-Bloch equation describe, and what are its main dependences?",
+      "a": "It gives dE/dx, the average rate of energy loss of a fast charged particle to ionization and excitation of atomic electrons. It scales as Z²(particle)/β², depends logarithmically on the maximum single-collision energy transfer and on the medium's mean excitation energy I, and includes a density-effect correction δ(β) that suppresses the relativistic rise of dE/dx at very high energy."
+    },
+    {
+      "id": "exp-024",
+      "topic": "Ch.2: Interactions of Particles in Matter",
+      "sub": "Ionization Energy Loss",
+      "diff": 2,
+      "q": "Describe the qualitative shape of dE/dx vs. kinetic energy for a heavy charged particle such as a muon or proton, across its full energy range.",
+      "a": "dE/dx falls steeply at low velocity (roughly ∝1/β²), reaches a broad minimum around a few hundred MeV/c of momentum (the 'minimum ionizing' region), then rises slowly at higher energy (the relativistic rise) before flattening out at very high energy due to the density effect."
+    },
+    {
+      "id": "exp-025",
+      "topic": "Ch.2: Interactions of Particles in Matter",
+      "sub": "Ionization Energy Loss",
+      "diff": 1,
+      "q": "What is the Bragg peak, and why does it occur?",
+      "a": "It's the sharp maximum in energy-loss rate that occurs just before a charged particle comes to rest, because dE/dx increases as the particle slows down (roughly ∝1/β²) right up until it stops, at which point the energy loss abruptly drops to zero. This is the physical basis for proton/ion radiotherapy, which aims the Bragg peak at a tumour to concentrate dose there while sparing tissue along the entry path."
+    },
+    {
+      "id": "exp-026",
+      "topic": "Ch.2: Interactions of Particles in Matter",
+      "sub": "Multiple Scattering",
+      "diff": 2,
+      "q": "What is the radiation length X0, and what two related phenomena does it characterize?",
+      "a": "X0 is a material-dependent length scale — roughly, the thickness of material after which a high-energy electron has radiated away all but 1/e of its energy via bremsstrahlung. The same quantity also sets the characteristic angular scale of multiple Coulomb scattering for a charged particle crossing the material. It depends on the density and nuclear charge of the medium."
+    },
+    {
+      "id": "exp-027",
+      "topic": "Ch.2: Interactions of Particles in Matter",
+      "sub": "Multiple Scattering",
+      "diff": 1,
+      "q": "Why are electron trajectories in matter much more strongly distorted by multiple scattering than proton or alpha-particle trajectories at similar (MeV-scale) energy?",
+      "a": "Electrons are light enough to penetrate a significant fraction of a radiation length before stopping, so they accumulate many small deflections along the way (and can occasionally scatter through large angles). Protons and alpha particles of a few MeV, by contrast, have ranges far shorter than a radiation length, so they travel in essentially straight lines before losing all their energy."
+    },
+    {
+      "id": "exp-028",
+      "topic": "Ch.2: Interactions of Particles in Matter",
+      "sub": "Cherenkov Radiation",
+      "diff": 1,
+      "q": "State the threshold condition and the emission-angle formula for Cherenkov radiation.",
+      "a": "Cherenkov light is emitted when a charged particle's velocity v exceeds the phase velocity of light in the medium, c/n. The light is emitted in a cone with half-angle θc given by cos θc = c/(nv) = 1/(nβ)."
+    },
+    {
+      "id": "exp-029",
+      "topic": "Ch.2: Interactions of Particles in Matter",
+      "sub": "Cherenkov Radiation",
+      "diff": 2,
+      "q": "Physically (via Huygens' principle), why does Cherenkov radiation only appear once a charged particle exceeds the local speed of light in a medium?",
+      "a": "As the particle moves, it polarizes and then depolarizes the surrounding medium, and each such perturbation propagates outward at the medium's speed of light. Below the Cherenkov threshold, these perturbations arrive at any fixed point out of phase and cancel; above threshold, the particle outruns its own perturbations, which then pile up coherently along a cone — forming a coherent shockwave-like wavefront, directly analogous to a sonic boom from a supersonic aircraft."
+    },
+    {
+      "id": "exp-030",
+      "topic": "Ch.2: Interactions of Particles in Matter",
+      "sub": "Transition Radiation",
+      "diff": 2,
+      "q": "What causes transition radiation, and what physical quantity primarily governs the energy of the emitted photons?",
+      "a": "It's emitted whenever a charged particle crosses a boundary between two media with different dielectric properties (e.g. vacuum into a foil), due to the abrupt change in the polarization field around the particle. Both the typical photon energy and the total radiated energy scale with the particle's Lorentz factor γ and with the medium's plasma frequency ωp — which is why, using a stack of many thin foils, transition radiation can help distinguish very relativistic particles like electrons from heavier particles of the same momentum."
+    },
+    {
+      "id": "exp-031",
+      "topic": "Ch.2: Interactions of Particles in Matter",
+      "sub": "Bremsstrahlung",
+      "diff": 2,
+      "q": "Write the average bremsstrahlung energy-loss relation for a high-energy electron in terms of the radiation length, and give the approximate formula for the critical energy Ec.",
+      "a": "dE/dx = −E/X0, so E(x) = E0·e^(−x/X0). The critical energy — the energy above which bremsstrahlung losses exceed ionization losses for electrons — is approximately Ec ≈ 800 MeV / (Z + 1.2), where Z is the nuclear charge of the medium."
+    },
+    {
+      "id": "exp-032",
+      "topic": "Ch.2: Interactions of Particles in Matter",
+      "sub": "Bremsstrahlung",
+      "diff": 2,
+      "q": "Why is bremsstrahlung negligible for muons or protons at typical energies, even though it dominates the energy loss of high-energy electrons?",
+      "a": "The bremsstrahlung emission rate for a particle of mass M is suppressed relative to an electron of the same energy by a factor (melectron/M)². For a muon (M ≈ 207 me) or a proton (M ≈ 1836 me), this suppression is so large that bremsstrahlung only becomes relevant at energies far beyond 1 TeV."
+    },
+    {
+      "id": "exp-033",
+      "topic": "Ch.2: Interactions of Particles in Matter",
+      "sub": "Photon Interactions",
+      "diff": 1,
+      "q": "Name the three dominant gamma-ray interaction mechanisms in matter, and roughly which energy range each dominates.",
+      "a": "Photoelectric effect (dominant roughly 1–100 keV; the cross section falls steeply, ~1/E^3.5, and rises strongly with nuclear charge Z); Compton scattering (dominant roughly 100 keV to a few MeV); and electron-positron pair production (dominant above a few MeV, requiring the photon energy to exceed 2·mec² and requiring a nearby nucleus to absorb recoil momentum)."
+    },
+    {
+      "id": "exp-034",
+      "topic": "Ch.2: Interactions of Particles in Matter",
+      "sub": "Photon Interactions",
+      "diff": 2,
+      "q": "In the photoelectric effect, what happens to the inner-shell vacancy left behind, and what are the two competing ways it can be filled?",
+      "a": "The vacancy (usually in the K-shell) is filled by an electron dropping in from an outer shell. The released energy is then emitted either as a characteristic X-ray, or, alternatively, transferred directly to another atomic electron, ejecting it as an Auger electron."
+    },
+    {
+      "id": "exp-035",
+      "topic": "Ch.2: Interactions of Particles in Matter",
+      "sub": "Photon Interactions",
+      "diff": 3,
+      "q": "Give the Compton scattering formula relating the scattered photon energy ω' to the incident photon energy ω and scattering angle θ, and describe how the total cross section behaves in the low- and high-energy limits.",
+      "a": "ω' = ω / [1 + (ω/mec²)(1 − cosθ)], the Klein-Nishina kinematic relation. The total cross section is roughly independent of energy for ω ≪ mec², and falls off approximately as 1/ω for ω ≫ mec²."
+    },
+    {
+      "id": "exp-036",
+      "topic": "Ch.2: Interactions of Particles in Matter",
+      "sub": "Photon Interactions",
+      "diff": 3,
+      "q": "Why can't a photon convert into an electron-positron pair in empty space, and what makes this process possible in matter?",
+      "a": "Energy and momentum cannot both be conserved for a lone photon converting to a pair in vacuum — going to the pair's centre-of-mass frame would require the original photon to carry zero net momentum, which is impossible for a real photon. In matter, a nearby nucleus can absorb the necessary recoil momentum, which is enough to make the process kinematically allowed."
+    },
+    {
+      "id": "exp-037",
+      "topic": "Ch.2: Interactions of Particles in Matter",
+      "sub": "EM Showers",
+      "diff": 2,
+      "q": "Describe qualitatively how an electromagnetic shower develops when a high-energy electron or photon enters a dense absorber.",
+      "a": "A high-energy photon pair-produces an e⁺e⁻ pair (roughly once every radiation length); the resulting electron and positron then radiate bremsstrahlung photons, losing about half their energy per radiation length; those secondary photons pair-produce again, and so on. The number of particles grows roughly exponentially while the average energy per particle falls, until particles drop below the critical energy and the cascade dies out."
+    },
+    {
+      "id": "exp-038",
+      "topic": "Ch.2: Interactions of Particles in Matter",
+      "sub": "Strong-Force Interactions",
+      "diff": 2,
+      "q": "What is the hadronic interaction length, and how does the underlying mean free path scale with a nucleus's mass number A?",
+      "a": "It's the mean free path for a high-energy hadron to undergo a strong nuclear interaction. A simple geometric estimate — treating the nuclear cross section as scaling like A^(2/3) — gives a mean free path scaling as λ ∝ A^(1/3)/ρ; by convention, the numerical mass-thickness coefficient used in this formula is taken to be about 35 g/cm²."
+    },
+    {
+      "id": "exp-039",
+      "topic": "Ch.2: Interactions of Particles in Matter",
+      "sub": "Strong-Force Interactions",
+      "diff": 2,
+      "q": "What is spallation, and why does a high-energy proton striking a heavy nucleus produce so many secondary neutrons?",
+      "a": "Spallation is the break-up of a heavy nucleus following a high-energy hadronic collision. Because heavy nuclei carry a substantial neutron excess relative to protons (needed for stability), the unstable fragments produced rapidly shed that excess as free neutrons — a ~1 GeV proton striking a heavy target like lead produces on the order of 25 secondary neutrons on average, making spallation an efficient way to generate neutrons."
+    },
+    {
+      "id": "exp-040",
+      "topic": "Ch.2: Interactions of Particles in Matter",
+      "sub": "Neutrino Interactions",
+      "diff": 1,
+      "q": "How are 'charged current' and 'neutral current' neutrino interactions distinguished?",
+      "a": "By which weak boson mediates them. Charged-current interactions proceed via W± exchange and convert the neutrino into its charged-lepton partner (e.g. νe + n → e⁻ + p). Neutral-current interactions proceed via Z exchange, and the neutrino remains a neutrino, only revealing itself through the recoiling target."
+    },
+    {
+      "id": "exp-041",
+      "topic": "Ch.2: Interactions of Particles in Matter",
+      "sub": "Neutrino Interactions",
+      "diff": 2,
+      "q": "What historic experiment first directly detected the neutrino, and what reaction and signature did it exploit?",
+      "a": "Reines and Cowan's 1959 experiment at the Savannah River nuclear reactor. It detected reactor electron antineutrinos via inverse beta decay, ν̄e + p → n + e⁺, identifying the characteristic coincidence of the positron's annihilation gammas with a slightly delayed gamma signal from the neutron being captured shortly afterward."
+    },
+    {
+      "id": "exp-042",
+      "topic": "Ch.2: Interactions of Particles in Matter",
+      "sub": "Neutrino Interactions",
+      "diff": 2,
+      "q": "Despite an enormous flux, reactor antineutrinos are extremely hard to detect. Roughly what interaction cross section and mean free path are involved, and how is a usable interaction rate achieved anyway?",
+      "a": "The relevant cross section is tiny, of order 10⁻⁴³ cm² for reactor antineutrinos on free protons, corresponding to a mean free path in ordinary matter on the order of a light-year. A usable rate is only achieved by combining an intense source (close to a multi-gigawatt reactor core) with a large, carefully shielded, low-background detector — yielding, for example, several hundred interactions per hour in a cubic metre of water tens of metres from a large reactor."
+    }
+  ]
+}
