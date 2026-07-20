@@ -74,8 +74,19 @@
       </div>
 
       <div class="panel" id="trainSetup">
-        <div class="panel-title">Session setup</div>
-        <div class="panel-sub">Pick topics and a queue mode, then start.</div>
+        <div class="panel-title" id="trainDeckTitle"></div>
+        <div class="panel-sub" id="trainDeckSubtitle"></div>
+        <!-- <div class="chip-row" id="topicChips" style="margin-bottom:16px;"></div> -->
+        <div style="display:flex; gap:10px; margin-bottom:12px;">
+          <button class="btn btn-ghost" onclick="setAllTopics(true)">
+              Select all
+          </button>
+
+          <button class="btn btn-ghost" onclick="setAllTopics(false)">
+              Clear all
+          </button>
+      </div>
+
         <div class="chip-row" id="topicChips" style="margin-bottom:16px;"></div>
         <div class="train-controls">
           <select class="select" id="queueMode">

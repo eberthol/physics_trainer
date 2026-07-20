@@ -311,6 +311,8 @@ function confirmReset(){
 
 /* ================= TRAIN ================= */
 function renderTrainSetup(){
+  document.getElementById("trainDeckTitle").textContent = currentDeckInfo.title;
+  document.getElementById("trainDeckSubtitle").textContent = "Select the topics you want to study.";
   document.getElementById('trainSetup').style.display = '';
   document.getElementById('trainStage').style.display = 'none';
   document.getElementById('trainSummary').style.display = 'none';
@@ -324,6 +326,13 @@ function renderTrainSetup(){
   }
 }
 function toggleChip(el){ el.classList.toggle('on'); }
+
+function setAllTopics(selected) {
+
+    document.querySelectorAll("#topicChips .chip").forEach(chip => {
+            chip.classList.toggle("on", selected);
+        });
+}
 
 function startSession(){
   const activeTopics = [...document.querySelectorAll('#topicChips .chip.on')].map(c=>c.dataset.topic);
