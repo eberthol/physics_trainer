@@ -30,9 +30,11 @@ let state = {
 };
 
 let session = null;      // active training session
+let expandedLibraryCard = null;
 let currentView = 'overview';
 let diffSelected = 2;
 let newTopicMode = false;
+
 
 
 /* ================= STORAGE ================= */
@@ -113,10 +115,36 @@ async function loadDeck(deckId) {
 
     currentDeck = deck.id;
     currentDeckInfo = deck;
-    deckCards = deck.cards;
+    deckCards = deck.cards.map(card => ({
+    ...card,
+    id: makeCardId(deck.id, card)
+}));
 }
 
 /* ================= HELPERS ================= */
+function hashString(str) {
+    let h = 0;
+
+    for (let i = 0; i < str.length; i++) {
+        h = ((h << 5) - h) + str.charCodeAt(i);
+        h |= 0;   // keep as 32-bit integer
+    }
+
+    return Math.abs(h).toString(36);
+}
+
+function makeCardId(deckId, card) {
+
+    const key = [
+        card.topic.trim(),
+        card.sub.trim(),
+        card.q.trim()
+    ].join("|");
+
+    return `${deckId}:${hashString(key)}`;
+}
+
+
 function allCards(){ return deckCards.concat(state.customCards); }
 
 function todayStr(){ return new Date().toISOString().slice(0,10); }
@@ -325,7 +353,18 @@ function renderTrainSetup(){
     chipWrap.dataset.init = '1';
   }
 }
+
 function toggleChip(el){ el.classList.toggle('on'); }
+
+function toggleLibraryCard(cardId) {
+
+    if (expandedLibraryCard === cardId)
+        expandedLibraryCard = null;
+    else
+        expandedLibraryCard = cardId;
+
+    renderLibrary();
+}
 
 function setAllTopics(selected) {
 
@@ -493,11 +532,25 @@ function renderLibrary(){
     const items = groups[t].map(c=>{
       const isCustom = c.id.startsWith('c-');
       const pct = purityOf(c.id);
-      return `<div class="lib-card">
+      const expanded = expandedLibraryCard === c.id;
+      const answer = expanded
+          ? escapeHtml(c.a)
+          : escapeHtml(c.a).slice(0,180) +
+            (c.a.length > 180 ? "…" : "");
+      return `<div class="lib-card" onclick="toggleLibraryCard('${c.id}')">
         <div class="lib-card-body">
           <div class="lib-card-q">${escapeHtml(c.q)}</div>
-          <div class="lib-card-a">${escapeHtml(c.a).slice(0,180)}${c.a.length>180?'…':''}</div>
+          <div class="lib-card-a">${answer}</div>
+
+          <div style="
+              margin-top:8px;
+              font-size:11px;
+              color:var(--text-faint);
+          ">
+              ${expanded ? "▲ Click to collapse" : "▼ Click to expand"}
+          </div>
         </div>
+        
         <div class="lib-card-meta">
           <span class="purity-pill">${pct}%</span>
           ${isCustom ? `<button class="icon-btn" title="Delete card" onclick="deleteCard('${c.id}')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M9 7V4h6v3M6 7l1 14h10l1-14"/></svg></button>` : ''}
