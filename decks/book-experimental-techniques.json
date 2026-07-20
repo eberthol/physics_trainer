@@ -14,8 +14,165 @@
       "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
       "sub": "Alpha Decay",
       "diff": 1,
-      "q": "Why $\\alpha$ particles are usually emitted and not single nucleons?",
-      "a": "The emission of such a nucleon cluster as a whole rather than the emission of single nucleons is energetically more advantageous because of the particularly high binding energy of the $\\alpha$-particle."
+      "q": "Why do heavy nuclei emit $\\alpha$ particles rather than individual protons or neutrons?",
+      "a": "The emission of such a nucleon cluster as a whole rather than the emission of single nucleons is energetically more advantageous because of the particularly high binding energy of the $\\alpha$-particle. An $\\alpha$ particle has an exceptionally high binding energy (about 28.3 MeV), making it much more energetically favorable to emit a tightly bound cluster of two protons and two neutrons than to emit the nucleons individually. The emitted $\\alpha$ particle must still tunnel through the Coulomb barrier, which determines the decay probability and hence the half-life."
+    },
+    {
+      "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
+      "sub": "Alpha Decay",
+      "diff": 1,
+      "q": "Describe the energy spectrum of an $\\alpha$ emitter.",
+      "a": "Unlike $\\beta$ decay, $\\alpha$ decay is a two-body process, so conservation of energy and momentum gives the emitted $\\alpha$ particle a well-defined kinetic energy. Most emitters therefore produce one monoenergetic $\\alpha$ line, corresponding to a transition to the ground state of the daughter nucleus. If the daughter nucleus has accessible excited states, additional monoenergetic lines appear, each corresponding to a decay to a different excited state."
+    },
+    {
+      "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
+      "sub": "Alpha Decay",
+      "diff": 2,
+      "q": "What is the energy range for naturally occurring $\\alpha$ emitters and why?",
+      "a": "The probability of $\\alpha$ decay depends exponentially on the tunneling probability through the Coulomb barrier. Higher-energy $\\alpha$ particles tunnel much more easily, leading to much shorter half-lives (Geiger–Nuttall law). As a result, nuclei emitting significantly higher-energy $\\alpha$ particles decay too rapidly to be commonly observed in nature, while lower-energy emitters have extremely long half-lives. Consequently, most naturally occurring $\\alpha$ emitters have energies in the range of roughly 4–6 MeV."
+    },
+    {
+      "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
+      "sub": "Alpha Decay",
+      "diff": 2,
+      "q": "Why do most $\\alpha$ decays proceed to the ground state of the daughter nucleus?",
+      "a": "Decay to the ground state releases the largest $Q$-value, producing the highest-energy $\\alpha$ particle. Since the tunneling probability increases rapidly with energy, transitions to the ground state are generally much more probable than transitions to excited states of the daughter nucleus."
+    },
+    {
+      "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
+      "sub": "Alpha Particles",
+      "diff": 1,
+      "q": "Why do $\\alpha$ particles have such a short range in matter?",
+      "a": "$\\alpha$ particles carry a charge of +2e and therefore interact very strongly with the electrons of the material they traverse. They lose energy rapidly through ionization and excitation, giving them a very high stopping power and consequently a very short range."
+    },
+    {
+      "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
+      "sub": "Alpha Particles",
+      "diff": 1,
+      "q": "What is the typical range of a 5 MeV $\\alpha$ particle in air?",
+      "a": "Only a few centimeters. Because of their large energy loss in matter, even energetic $\\alpha$ particles travel only a short distance in air and can be stopped by a thin sheet of material."
+    },
+    {
+      "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
+      "sub": "Alpha Sources",
+      "diff": 2,
+      "q": "Why must $\\alpha$ sources be made as thin as possible, and how are they typically constructed?",
+      "a": "Since $\\alpha$ particles lose energy very rapidly in matter, any material covering the radioactive isotope reduces their energy or absorbs them completely. Therefore, $\\alpha$ sources are usually prepared by depositing the radioactive isotope on the surface of a backing material and covering it with an extremely thin protective metal foil."
+    },
+
+    {
+      "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
+      "sub": "Beta Decay",
+      "diff": 1,
+      "q": "What are $\\beta$ particles, and what interaction is responsible for $\\beta$ decay?",
+      "a": "$\\beta$ particles are high-energy electrons ($\\beta^-$) or positrons ($\\beta^+$) emitted during radioactive decay. Beta decay is mediated by the weak interaction and occurs when a neutron or proton inside the nucleus transforms into the other."
+    },
+    {
+      "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
+      "sub": "Beta Decay",
+      "diff": 1,
+      "q": "Write the reaction for $\\beta^-$ decay. How does it change the daughter nucleus?",
+      "a": "$$n \\rightarrow p + e^- + \\bar{\\nu}_e$$\n\nInside the nucleus, a neutron is converted into a proton while emitting an electron and an electron antineutrino. The daughter nucleus has the same mass number $A$, but its atomic number increases by one."
+    },
+    {
+      "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
+      "sub": "Beta Decay",
+      "diff": 1,
+      "q": "Write the reaction for $\\beta^+$ decay. How does it change the daughter nucleus?",
+      "a": "$$p \\rightarrow n + e^+ + \\nu_e$$\n\nA proton is converted into a neutron while emitting a positron and an electron neutrino. The daughter nucleus keeps the same mass number $A$, but its atomic number decreases by one."
+    },
+    {
+      "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
+      "sub": "Beta Decay",
+      "diff": 2,
+      "q": "Why do $\\beta$ particles have a continuous energy spectrum, unlike $\\alpha$ particles?",
+      "a": "$\\beta$ decay is a three-body process. The available decay energy (the Q-value) is shared between the emitted electron or positron, the (anti)neutrino, and, to a much smaller extent, the recoiling daughter nucleus. Since the neutrino can carry away a variable amount of energy, the $\\beta$ particle is emitted with a continuous range of energies."
+    },
+    {
+      "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
+      "sub": "Beta Decay",
+      "diff": 2,
+      "q": "What determines the maximum energy of a $\\beta$ spectrum, and what is its typical range?",
+      "a": "Ignoring the small recoil of the daughter nucleus, the maximum kinetic energy (endpoint energy) of the $\\beta$ spectrum is equal to the decay Q-value. For most radioactive sources, endpoint energies range from a few tens of keV to a few MeV."
+    },
+    {
+      "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
+      "sub": "Beta Decay",
+      "diff": 1,
+      "q": "Why are many $\\beta$ sources also $\\gamma$ sources?",
+      "a": "After $\\beta$ decay, the daughter nucleus is often left in an excited state. It promptly de-excites by emitting one or more $\\gamma$ rays. As a result, most radioactive $\\beta$ sources emit both $\\beta$ particles and $\\gamma$ radiation."
+    },
+    {
+      "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
+      "sub": "Beta Decay",
+      "diff": 1,
+      "q": "What is a pure $\\beta$ emitter?",
+      "a": "A pure $\\beta$ emitter is a radioactive source whose daughter nucleus is produced directly in its ground state, so no $\\gamma$ rays are emitted following the $\\beta$ decay. Pure $\\beta$ emitters are relatively uncommon."
+    },
+    {
+      "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
+      "sub": "Beta Decay",
+      "diff": 2,
+      "q": "What is meant by multiple $\\beta$-decay branches?",
+      "a": "Some nuclei can undergo $\\beta$ decay to several different excited states of the daughter nucleus. Each transition is called a decay branch and has its own decay probability (branching ratio) and its own endpoint energy."
+    },
+    {
+      "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
+      "sub": "Beta Decay",
+      "diff": 2,
+      "q": "How does the presence of multiple $\\beta$-decay branches affect the observed $\\beta$ spectrum?",
+      "a": "Each decay branch produces its own continuous $\\beta$ spectrum with an endpoint energy determined by the corresponding nuclear transition. The observed spectrum is the weighted sum of all these individual spectra, with the weights given by the branching ratios."
+    },
+    {
+      "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
+      "sub": "Beta Sources",
+      "diff": 1,
+      "q": "Why must $\\beta$ sources be made as thin as possible?",
+      "a": "$\\beta$ particles lose energy readily in matter through ionization and excitation. A thick source causes energy loss and absorption before the particles escape, distorting the measured $\\beta$ spectrum."
+    },
+    {
+      "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
+      "sub": "Beta Sources",
+      "diff": 2,
+      "q": "Why is source thickness particularly important for positron ($\\beta^+$) sources?",
+      "a": "Positrons can annihilate with electrons inside the source or its surrounding material before escaping. A thick $\\beta^+$ source therefore reduces the number of detected positrons, distorts the measured spectrum, and produces an intense background of 511 keV annihilation photons."
+    },
+    {
+      "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
+      "sub": "Electron Capture",
+      "diff": 1,
+      "q": "What is electron capture (EC)? Write the reaction.",
+      "a": "Electron capture is a radioactive decay process in which a proton-rich nucleus captures one of its own atomic electrons, converting a proton into a neutron. The reaction is\n\n$$e^- + p \\rightarrow n + \\nu_e$$\n\nThe daughter nucleus has the same mass number $A$, while its atomic number decreases by one."
+    },
+    {
+      "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
+      "sub": "Electron Capture",
+      "diff": 2,
+      "q": "How is electron capture related to $\\beta^+$ decay?",
+      "a": "Electron capture and $\\beta^+$ decay are two competing decay modes of proton-rich nuclei. Both convert a proton into a neutron via the weak interaction and therefore produce the same daughter nucleus. The only difference is that $\\beta^+$ decay emits a positron, whereas electron capture absorbs an orbital electron."
+    },
+    {
+      "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
+      "sub": "Electron Capture",
+      "diff": 2,
+      "q": "How is electron capture experimentally detected if only a neutrino is emitted?",
+      "a": "Capturing an atomic electron leaves a vacancy in the electron shell. As higher-shell electrons fill this vacancy, the atom emits characteristic X-rays or Auger electrons. These radiations are detected as the signature of electron capture."
+    },
+    {
+      "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
+      "sub": "Electron Capture",
+      "diff": 1,
+      "q": "From which atomic shell is the captured electron most likely to originate?",
+      "a": "Electron capture occurs predominantly from the K shell, since K-shell electrons have the greatest probability density at the nucleus. Capture from higher shells (such as the L shell) is also possible but occurs with much lower probability."
+    },
+    {
+      "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
+      "sub": "Electron Capture",
+      "diff": 2,
+      "q": "Why can electron capture occur even when $\\beta^+$ decay is energetically forbidden?",
+      "a": "Producing a positron requires at least 1.022 MeV of energy (twice the electron rest mass). Electron capture does not create a positron and therefore has no such energy threshold. Consequently, some proton-rich nuclei can decay only by electron capture."
     }
+
+
   ]
 }
