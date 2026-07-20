@@ -477,255 +477,6 @@ button{font-family:inherit;}
 <div class="toast" id="toast"><div class="toast-dot"></div><span id="toastMsg"></span></div>
 
 <script>
-const BUILTIN_CARDS = [
-
-// ============ NUCLEAR PHYSICS ============
-{id:'nuc-01', topic:'Nuclear Physics', sub:'Binding Energy', diff:2,
- q:'Write the semi-empirical mass formula (SEMF / Weizsäcker formula) for nuclear binding energy $B(A,Z)$, and name its five terms.',
- a:'$$B(A,Z) = a_V A - a_S A^{2/3} - a_C \\frac{Z(Z-1)}{A^{1/3}} - a_A \\frac{(A-2Z)^2}{A} + \\delta(A,Z)$$ The terms are, in order: volume, surface, Coulomb, asymmetry, and pairing energy.'},
-{id:'nuc-02', topic:'Nuclear Physics', sub:'Binding Energy', diff:1,
- q:'Why does binding energy per nucleon peak near A ≈ 56–62 (Fe/Ni)?',
- a:'The short-range nuclear force saturates and dominates for light/medium nuclei (surface and volume terms), while the long-range Coulomb repulsion grows roughly as Z² and increasingly penalizes heavier nuclei. The peak sits where this balance between attraction and Coulomb cost is most favorable per nucleon.'},
-{id:'nuc-03', topic:'Nuclear Physics', sub:'Structure & Models', diff:1,
- q:'What are the nuclear "magic numbers", and what causes them?',
- a:'2, 8, 20, 28, 50, 82, 126 — these correspond to closed shells in the nuclear shell model. They arise because a strong spin–orbit coupling term, added to the mean-field potential by Mayer and Jensen (1949), splits the naive harmonic-oscillator/Woods-Saxon levels into the observed shell gaps.'},
-{id:'nuc-04', topic:'Nuclear Physics', sub:'Structure & Models', diff:1,
- q:'Contrast the liquid-drop model and the shell model of the nucleus.',
- a:'The liquid-drop model treats the nucleus as an incompressible charged fluid — it captures smooth, collective trends like binding energy and fission barriers well, but says nothing about individual quantum states. The shell model treats nucleons as independent particles moving in a mean-field potential, correctly predicting magic numbers and the spins/parities of ground states, but is harder to apply to collective phenomena.'},
-{id:'nuc-05', topic:'Nuclear Physics', sub:'Decay & Radioactivity', diff:2,
- q:'Write the general alpha-decay reaction. Why do heavy nuclei favor emitting an alpha particle over a single nucleon?',
- a:'$${}^{A}_{Z}X \\rightarrow {}^{A-4}_{Z-2}Y + \\alpha$$ The alpha particle is unusually tightly bound (about 28.3 MeV), so packaging four nucleons together and ejecting them is energetically favorable compared with emitting a single nucleon. The alpha still must tunnel through the Coulomb barrier, which is the basis of Gamow\'s theory of alpha decay.'},
-{id:'nuc-06', topic:'Nuclear Physics', sub:'Decay & Radioactivity', diff:2,
- q:'What does the Geiger–Nuttall law relate, and how was it later explained?',
- a:'It is an empirical linear relation between log(decay constant λ) and 1/√Q for alpha emitters within an isotopic chain. Gamow later explained it as a direct consequence of quantum-mechanical tunneling through the Coulomb barrier: small changes in Q produce huge changes in tunneling probability, hence in λ.'},
-{id:'nuc-07', topic:'Nuclear Physics', sub:'Decay & Radioactivity', diff:1,
- q:'Give the three types of beta decay and one example nuclide for each.',
- a:'β⁻: n → p + e⁻ + ν̄e (e.g. ¹⁴C → ¹⁴N). β⁺: p → n + e⁺ + νe (e.g. ¹¹C → ¹¹B). Electron capture: p + e⁻ → n + νe (e.g. ⁷Be → ⁷Li).'},
-{id:'nuc-08', topic:'Nuclear Physics', sub:'Decay & Radioactivity', diff:3,
- q:'What distinguishes a Fermi transition from a Gamow–Teller transition in beta decay?',
- a:'In a Fermi transition the emitted electron/antineutrino spins are antiparallel, giving ΔJ = 0 with no parity change (these connect isobaric-analogue states). In a Gamow–Teller transition the emitted spins are parallel, giving ΔJ = 0, ±1 (but not 0→0) with no parity change.'},
-{id:'nuc-09', topic:'Nuclear Physics', sub:'Reactions', diff:1,
- q:'Define cross section, and give its typical unit in nuclear physics.',
- a:'σ = (reaction rate) / (incident flux × number of target nuclei). It has units of area; the conventional unit is the barn, 1 b = 10⁻²⁸ m² = 10⁻²⁴ cm².'},
-{id:'nuc-10', topic:'Nuclear Physics', sub:'Reactions', diff:2,
- q:'What is a compound-nucleus reaction, and what is the Bohr independence hypothesis?',
- a:'A compound-nucleus reaction proceeds by the projectile and target fusing into an excited intermediate nucleus that thermalizes before decaying. The Bohr independence hypothesis states that the decay mode of this compound state is statistically independent of how it was formed — only its excitation energy, spin, and parity matter.'},
-{id:'nuc-11', topic:'Nuclear Physics', sub:'Reactions', diff:1,
- q:'Give the empirical formula for the nuclear radius.',
- a:'$$R = r_0 A^{1/3}, \\quad r_0 \\approx 1.2\\text{ fm}$$'},
-{id:'nuc-12', topic:'Nuclear Physics', sub:'Astrophysics', diff:2,
- q:'Distinguish the s-process and r-process of nucleosynthesis.',
- a:'The s-process (slow neutron capture) proceeds on a timescale long compared to beta decay, so the reaction path hugs the valley of stability; it happens in AGB stars. The r-process (rapid capture) is faster than beta decay, driving nuclei far into neutron-rich territory before they decay back toward stability — this is required to build the heaviest elements, and occurs in neutron-star mergers and core-collapse supernovae.'},
-{id:'nuc-13', topic:'Nuclear Physics', sub:'Astrophysics', diff:1,
- q:'Why can\'t nuclear fusion release net energy beyond iron-peak elements?',
- a:'Beyond the binding-energy-per-nucleon peak near Fe/Ni, fusion products are less tightly bound per nucleon than their reactants, making the reaction endothermic. Releasing further energy from very heavy nuclei instead requires fission, not fusion.'},
-
-// ============ NEUTRINO PHYSICS ============
-{id:'neu-01', topic:'Neutrino Physics', sub:'Oscillations', diff:2,
- q:'Write the two-flavor vacuum oscillation probability, with L in km, E in GeV, and Δm² in eV².',
- a:'$$P(\\nu_\\alpha \\to \\nu_\\beta) = \\sin^2(2\\theta)\\,\\sin^2\\!\\left(1.267\\,\\frac{\\Delta m^2\\,[\\text{eV}^2]\\; L\\,[\\text{km}]}{E\\,[\\text{GeV}]}\\right)$$'},
-{id:'neu-02', topic:'Neutrino Physics', sub:'Oscillations', diff:1,
- q:'What three angles and one CP phase parametrize the PMNS mixing matrix (Dirac case)?',
- a:'θ12 (the "solar" angle), θ23 (the "atmospheric" angle), θ13 (the "reactor" angle), and the CP-violating phase δCP. If neutrinos are Majorana particles, two additional Majorana phases appear, though they do not affect oscillation probabilities.'},
-{id:'neu-03', topic:'Neutrino Physics', sub:'Oscillations', diff:2,
- q:'Roughly what are the two independent mass-squared splittings measured by oscillation experiments?',
- a:'Δm²21 ≈ 7.4×10⁻⁵ eV² (the solar splitting) and |Δm²31| ≈ 2.5×10⁻³ eV² (the atmospheric splitting).'},
-{id:'neu-04', topic:'Neutrino Physics', sub:'Mass & Hierarchy', diff:1,
- q:'Define the normal and inverted neutrino mass orderings.',
- a:'Normal ordering: m3 is the heaviest state, with m1 < m2 ≪ m3 — mirroring the pattern seen in charged leptons and quarks. Inverted ordering: m3 is the lightest, with m3 ≪ m1 < m2.'},
-{id:'neu-05', topic:'Neutrino Physics', sub:'Mass & Hierarchy', diff:2,
- q:'What experimental signature would directly establish that neutrinos are Majorana particles?',
- a:'Observation of neutrinoless double-beta decay (0νββ) — a lepton-number-violating nuclear process that is only possible if the neutrino is its own antiparticle.'},
-{id:'neu-06', topic:'Neutrino Physics', sub:'Sources', diff:2,
- q:'How did the SNO experiment resolve the solar neutrino problem?',
- a:'SNO used heavy water (D2O), which let it separately measure charged-current (νe only), neutral-current (all active flavors), and elastic-scattering reactions. The neutral-current rate matched the Standard Solar Model prediction for the total flux, while the charged-current rate showed the well-known deficit — proving that solar νe were oscillating into νµ/ντ rather than the solar model being wrong.'},
-{id:'neu-07', topic:'Neutrino Physics', sub:'Sources', diff:1,
- q:'What did Super-Kamiokande discover about atmospheric neutrinos in 1998?',
- a:'A zenith-angle-dependent deficit of muon neutrinos: fewer νµ arrived from below (after traveling through the whole Earth) than from directly overhead. This was the first strong evidence for neutrino oscillation, attributed to νµ → ντ.'},
-{id:'neu-08', topic:'Neutrino Physics', sub:'Sources', diff:2,
- q:'At what baseline do reactor experiments best measure θ13, and why?',
- a:'About 1–2 km. This is roughly where the atmospheric-scale oscillation (driven by Δm²31) reaches its first maximum for typical reactor ν̄e energies (a few MeV), maximizing sensitivity to the small θ13-driven ν̄e disappearance — as used by Daya Bay, RENO, and Double Chooz.'},
-{id:'neu-09', topic:'Neutrino Physics', sub:'Interactions', diff:2,
- q:'Name the three main regimes of neutrino–nucleon interaction, ordered by energy, from lowest to highest.',
- a:'Quasi-elastic scattering (≲ 1 GeV), resonance production such as Δ(1232) (~1 GeV), and deep inelastic scattering (≳ a few GeV).'},
-{id:'neu-10', topic:'Neutrino Physics', sub:'Interactions', diff:1,
- q:'Distinguish charged-current (CC) and neutral-current (NC) neutrino interactions.',
- a:'CC interactions exchange a W boson and convert the neutrino into its charged-lepton partner (e.g. νµ N → µ⁻ X), making the flavor identifiable. NC interactions exchange a Z boson; the neutrino remains a neutrino and is only visible indirectly, through the recoiling hadronic system.'},
-{id:'neu-11', topic:'Neutrino Physics', sub:'CP Violation', diff:2,
- q:'How is leptonic CP violation experimentally probed in long-baseline experiments like DUNE or T2K?',
- a:'By comparing the νµ → νe appearance probability to the ν̄µ → ν̄e appearance probability. An asymmetry beyond what matter effects alone predict signals δCP ≠ 0, π.'},
-{id:'neu-12', topic:'Neutrino Physics', sub:'Sources', diff:2,
- q:'What made the neutrino detection from SN1987A significant?',
- a:'Kamiokande-II, IMB, and Baksan jointly detected a burst of roughly two dozen neutrinos over about 13 seconds, with energies of 20-25 MeV, from the core collapse of SN1987A. This confirmed that ~99% of a core-collapse supernova\'s gravitational binding energy is released as neutrinos, matching core-collapse theory.'},
-{id:'neu-13', topic:'Neutrino Physics', sub:'Sources', diff:2,
- q:'What anomaly motivated the sterile-neutrino hypothesis, and roughly what mass-squared scale does it point to?',
- a:'Short-baseline appearance/disappearance anomalies (LSND, MiniBooNE, and reactor/gallium anomalies) hinted at oscillations with Δm² ~ 1 eV² — too large to fit within the standard three-flavor picture, motivating a light, non-weakly-interacting ("sterile") fourth neutrino.'},
-
-// ============ LIQUID ARGON SCINTILLATION ============
-{id:'lar-01', topic:'Liquid Argon Scintillation', sub:'Scintillation Physics', diff:1,
- q:'What is the wavelength of liquid argon\'s intrinsic scintillation light, and what physically produces it?',
- a:'128 nm, in the vacuum ultraviolet. It is emitted when excited argon dimers (excimers, Ar2*) in singlet or triplet states decay back to the dissociative ground state, which promptly falls apart into two ground-state argon atoms.'},
-{id:'lar-02', topic:'Liquid Argon Scintillation', sub:'Scintillation Physics', diff:1,
- q:'Name the two scintillation decay-time components in liquid argon and their approximate lifetimes.',
- a:'A fast/singlet component with a lifetime of about 6 ns, and a slow/triplet component with a lifetime of about 1.5 µs.'},
-{id:'lar-03', topic:'Liquid Argon Scintillation', sub:'Scintillation Physics', diff:2,
- q:'How is the singlet-to-triplet light ratio used for particle identification in liquid argon?',
- a:'The relative population of singlet vs. triplet excimer states depends on ionization density (dE/dx). Heavily-ionizing particles (nuclear recoils, alphas) produce relatively more fast (singlet) light than minimum-ionizing electrons or muons, so the fast-fraction of the pulse discriminates particle type — the basis of pulse-shape discrimination (PSD), critical for LAr dark-matter searches.'},
-{id:'lar-04', topic:'Liquid Argon Scintillation', sub:'Scintillation Physics', diff:2,
- q:'What is recombination in a LArTPC, and how does it affect the light and charge signals?',
- a:'Some ionization electrons recombine with their parent Ar⁺ ions rather than drifting away, releasing additional scintillation photons in the process. Recombination is stronger for denser ionization (higher dE/dx) and is suppressed by a stronger applied electric field — so both the charge and light yields depend on the drift field and on particle type.'},
-{id:'lar-05', topic:'Liquid Argon Scintillation', sub:'Light Detection', diff:1,
- q:'Why is a wavelength shifter needed to detect liquid argon\'s scintillation light?',
- a:'Standard PMT windows and SiPM surfaces are not efficient — and typical construction materials are not transparent — at 128 nm VUV. A wavelength-shifting coating, most commonly TPB (tetraphenyl butadiene), absorbs the 128 nm photons and re-emits around 430 nm (blue) visible light that ordinary photosensors can detect.'},
-{id:'lar-06', topic:'Liquid Argon Scintillation', sub:'Light Detection', diff:2,
- q:'What is the purpose of xenon doping in liquid argon detectors?',
- a:'Trace xenon doping (ppm level) shifts and can enhance the VUV scintillation emission through energy transfer from argon excimers to xenon excimers. This improves light yield and uniformity, and can enable more efficient light collection with reduced reliance on a separate wavelength shifter.'},
-{id:'lar-07', topic:'Liquid Argon Scintillation', sub:'Purity', diff:1,
- q:'Why must liquid argon be kept extremely pure for a LArTPC, and what are the main contaminants of concern?',
- a:'Electronegative impurities such as O2 and H2O capture drifting ionization electrons, attenuating the charge signal as it travels to the anode. Contamination must be kept at sub-ppb O2-equivalent levels to achieve electron lifetimes long enough for meter-scale drift distances.'},
-{id:'lar-08', topic:'Liquid Argon Scintillation', sub:'Purity', diff:2,
- q:'What is "electron lifetime" in a LArTPC, and how is the resulting signal loss modeled?',
- a:'It is the mean time before a drifting ionization electron is captured by an impurity. The surviving charge falls off exponentially with drift time, Q(t) = Q0 exp(−t/τ), so the electron lifetime τ must be regularly measured (e.g. from through-going tracks) and corrected for during reconstruction.'},
-{id:'lar-09', topic:'Liquid Argon Scintillation', sub:'Operation', diff:1,
- q:'What is the approximate electron drift velocity in liquid argon at typical LArTPC field strengths (~500 V/cm), and why does it matter?',
- a:'About 1.6 mm/µs. Combined with an absolute time reference (t0, from the fast scintillation light pulse), the drift time converts directly into a spatial coordinate — giving the third dimension of the 3D event image, alongside the two wire/pixel readout coordinates.'},
-{id:'lar-10', topic:'Liquid Argon Scintillation', sub:'Operation', diff:2,
- q:'Why is the scintillation light signal important even though a LArTPC primarily reconstructs events from drifted ionization charge?',
- a:'The charge signal alone only encodes relative timing (the drift time), not an absolute event time. The fast scintillation-light pulse supplies the t0 needed to convert drift time into absolute position, and also enables triggering on events with no external beam signal, such as a supernova burst or proton decay.'},
-{id:'lar-11', topic:'Liquid Argon Scintillation', sub:'Scintillation Physics', diff:2,
- q:'Approximately what is the scintillation light yield of liquid argon for minimum-ionizing particles at zero electric field?',
- a:'Roughly 40,000 photons/MeV — one of the highest light yields of any practical scintillator. Applying an extraction field reduces this yield, because more ionization electrons escape recombination instead of contributing recombination light.'},
-{id:'lar-12', topic:'Liquid Argon Scintillation', sub:'Purity', diff:1,
- q:'Name two common methods used to purify argon in a TPC before or during operation.',
- a:'Circulation of liquid or gas through molecular sieve and/or getter (e.g. copper-based) filters to remove water and oxygen, and continuous recirculation-and-purification loops that maintain purity throughout data-taking.'},
-{id:'lar-13', topic:'Liquid Argon Scintillation', sub:'Operation', diff:2,
- q:'Why is argon a popular target/detection medium for both neutrino physics and dark-matter searches, and what background must be managed?',
- a:'It is dense, relatively cheap and abundant, transparent to its own scintillation light after wavelength-shifting, produces abundant scintillation and ionization signals, and offers excellent pulse-shape discrimination. Its main background concern is cosmogenic ³⁹Ar, a beta emitter, which is why some experiments source argon extracted from deep underground where the ³⁹Ar concentration is far lower.'},
-
-// ============ NEUTRINO DETECTORS ============
-{id:'det-01', topic:'Neutrino Detectors', sub:'Cherenkov', diff:1,
- q:'State the condition for Cherenkov radiation and the formula for its emission angle.',
- a:'Cherenkov light is emitted when a charged particle\'s velocity exceeds the local phase velocity of light in the medium (v > c/n). The cone half-angle satisfies $$\\cos\\theta_c = \\frac{1}{n\\beta}$$'},
-{id:'det-02', topic:'Neutrino Detectors', sub:'Cherenkov', diff:1,
- q:'Describe Super-Kamiokande\'s detector design and physics program.',
- a:'A 50-kton (about 22.5 kton fiducial) ultra-pure water Cherenkov detector instrumented with roughly 11,000 PMTs, located in the Kamioka mine in Japan. It studies atmospheric and solar neutrinos, searches for proton decay, and can detect a supernova neutrino burst.'},
-{id:'det-03', topic:'Neutrino Detectors', sub:'Cherenkov', diff:2,
- q:'What made SNO\'s detector design unique among water Cherenkov detectors, and what did it enable?',
- a:'SNO used heavy water (D2O) as its target, which let it observe charged-current, neutral-current, and elastic-scattering reactions separately. This allowed it to measure the total active-flavor solar neutrino flux directly and resolve the solar neutrino problem.'},
-{id:'det-04', topic:'Neutrino Detectors', sub:'Cherenkov', diff:1,
- q:'Describe the basic design of IceCube and what it is optimized to detect.',
- a:'Roughly a cubic kilometer of clear Antarctic ice at the South Pole, instrumented with about 5,160 digital optical modules (DOMs) on vertical strings. It detects Cherenkov light from secondary charged particles produced by high-energy atmospheric and astrophysical neutrino interactions in or near the ice.'},
-{id:'det-05', topic:'Neutrino Detectors', sub:'LArTPC', diff:1,
- q:'Explain the basic operating principle of a liquid argon time projection chamber (LArTPC).',
- a:'Charged particles ionize argon along their track. An applied electric field drifts the ionization electrons to a segmented anode (wire planes or pixels); combined with the drift-time-derived depth coordinate, the signals reconstruct a detailed 2D/3D image of the event — functioning much like an electronic bubble chamber.'},
-{id:'det-06', topic:'Neutrino Detectors', sub:'LArTPC', diff:2,
- q:'What is the Short-Baseline Neutrino (SBN) program at Fermilab, and what does it test?',
- a:'Three LArTPC detectors — SBND, MicroBooNE, and ICARUS — placed at different distances along the same Booster neutrino beamline. Comparing near/mid/far event rates and spectra tests the sterile-neutrino hypothesis suggested by the LSND and MiniBooNE anomalies.'},
-{id:'det-07', topic:'Neutrino Detectors', sub:'LArTPC', diff:2,
- q:'Describe DUNE\'s basic design and physics goals.',
- a:'The Deep Underground Neutrino Experiment uses multiple ~17-kton liquid argon TPC far-detector modules, located about 1.5 km underground at SURF (South Dakota), 1,300 km from a new wide-band neutrino beam at Fermilab. Its goals include measuring CP violation and determining the neutrino mass ordering, searching for nucleon decay, and detecting supernova-burst neutrinos.'},
-{id:'det-08', topic:'Neutrino Detectors', sub:'Scintillator', diff:2,
- q:'What is JUNO designed to measure, and what detector performance does that require?',
- a:'A 20-kton liquid scintillator detector in China, designed to determine the neutrino mass ordering from the fine interference pattern in the reactor antineutrino energy spectrum at a baseline of about 53 km. This requires exceptional energy resolution, around 3%/√E(MeV).'},
-{id:'det-09', topic:'Neutrino Detectors', sub:'Scintillator', diff:2,
- q:'What did KamLAND establish, and how?',
- a:'Using a large liquid scintillator detector to observe reactor antineutrinos from many power plants at an average baseline of about 180 km, KamLAND saw clear spectral distortion consistent with oscillation, confirming the LMA-MSW solution to the solar neutrino problem with terrestrial reactor neutrinos.'},
-{id:'det-10', topic:'Neutrino Detectors', sub:'Historical', diff:1,
- q:'Describe the Homestake experiment and its historical significance.',
- a:'Ray Davis\'s radiochemical experiment used a large tank of chlorine-based fluid; solar neutrinos occasionally converted ³⁷Cl into ³⁷Ar via inverse beta decay, and counting the accumulated ³⁷Ar gave the first-ever solar neutrino detection — but at roughly a third of the predicted rate, launching the decades-long "solar neutrino problem".'},
-{id:'det-11', topic:'Neutrino Detectors', sub:'Scintillator', diff:2,
- q:'What makes Borexino unique, and what did its extreme radiopurity enable?',
- a:'Borexino is a real-time liquid scintillator detector built with exceptional radiopurity. This enabled it to measure the low-energy solar neutrino spectrum in detail, including pp, ⁷Be, and pep neutrinos, and, for the first time, CNO-cycle solar neutrinos.'},
-{id:'det-12', topic:'Neutrino Detectors', sub:'LArTPC', diff:2,
- q:'What role does the scintillation light system play in the DUNE far-detector modules?',
- a:'It provides the t0 signal needed to convert drift time into absolute position, which is essential for beam-independent physics like supernova bursts or proton decay that have no external trigger. Dedicated light-collection systems are also being developed to improve low-energy event sensitivity.'},
-{id:'det-13', topic:'Neutrino Detectors', sub:'Scintillator', diff:2,
- q:'How do segmented tracking calorimeters like MINOS or NOvA differ in design goal from a homogeneous liquid scintillator detector like KamLAND?',
- a:'They interleave scintillator with structural or absorber material, or use highly segmented planes, to preserve directional and tracking information needed for accelerator long-baseline oscillation measurements — rather than optimizing for the best possible energy resolution of one bulk homogeneous volume.'},
-
-// ============ ANALYSIS METHODS ============
-{id:'ana-01', topic:'Analysis Methods', sub:'Statistics', diff:2,
- q:'Contrast the frequentist and Bayesian approaches to inference in particle physics.',
- a:'Frequentist methods define probability as a long-run frequency and construct confidence intervals or p-values without needing a prior on the parameter of interest. Bayesian methods treat the parameter itself as having a probability distribution, requiring a prior, and yield a posterior distribution / credible interval. Both are used in practice, sometimes on the same analysis as cross-checks.'},
-{id:'ana-02', topic:'Analysis Methods', sub:'Statistics', diff:3,
- q:'What does Wilks\' theorem say, and how is it used in likelihood-ratio tests?',
- a:'Under suitable regularity conditions, −2·ln(likelihood ratio) between nested hypotheses asymptotically follows a χ² distribution, with degrees of freedom equal to the difference in the number of free parameters. This lets you convert a profile-likelihood test statistic directly into an approximate p-value.'},
-{id:'ana-03', topic:'Analysis Methods', sub:'Statistics', diff:1,
- q:'What p-value corresponds to a "5σ" discovery threshold?',
- a:'About 2.87×10⁻⁷ (a one-sided Gaussian tail probability).'},
-{id:'ana-04', topic:'Analysis Methods', sub:'Statistics', diff:2,
- q:'What is the look-elsewhere effect, and why does it matter for a bump search?',
- a:'When scanning many independent bins or mass points for a signal, the chance of a large local fluctuation appearing somewhere by chance is much higher than at one pre-specified location. The global significance, corrected for the number of independent trials, is therefore always lower than the local significance quoted at the best-fit point.'},
-{id:'ana-05', topic:'Analysis Methods', sub:'Statistics', diff:3,
- q:'Why is the Feldman–Cousins construction preferred over a naive Neyman construction for measurements like neutrino mass-squared splittings or rare-decay rates?',
- a:'It provides a unified, frequentist, coverage-guaranteed way to build confidence intervals near a physical boundary (e.g. a non-negative rate or mass-squared value), avoiding the empty or unphysical intervals that a naive construction can produce close to that boundary.'},
-{id:'ana-06', topic:'Analysis Methods', sub:'Reconstruction', diff:2,
- q:'What quantity is commonly used for particle identification via calorimetric/ionization measurement, and how?',
- a:'dE/dx as a function of residual range (the remaining distance to the end of the track). Different particle species (protons, muons, pions) trace out distinct dE/dx-vs-residual-range curves due to differing stopping power near the end of the track — especially useful in LArTPCs.'},
-{id:'ana-07', topic:'Analysis Methods', sub:'Reconstruction', diff:2,
- q:'Give an example of how convolutional neural networks (CNNs) are used in modern LArTPC analyses.',
- a:'Treating the wire-plane or pixel readout as an image, CNNs are trained to classify tracks vs. showers, identify particle species, or perform full semantic segmentation of an event — often outperforming traditional hand-crafted reconstruction algorithms.'},
-{id:'ana-08', topic:'Analysis Methods', sub:'Systematics', diff:1,
- q:'Name the major categories of systematic uncertainty in an accelerator neutrino oscillation analysis.',
- a:'Neutrino flux prediction (beam modeling, hadron production), neutrino-nucleus cross-section modeling, detector response and energy scale/resolution, and background estimation (e.g. cosmic-ray or beam-related backgrounds).'},
-{id:'ana-09', topic:'Analysis Methods', sub:'Systematics', diff:3,
- q:'What is the "multisim" (or "multiverse") technique for propagating systematic uncertainties, and why is it useful?',
- a:'Many pseudo-experiment "universes" are generated, each with systematic parameters — flux weights, cross-section parameters, and so on — thrown according to their uncertainties and correlations. The resulting spread in an observable builds a full covariance matrix that naturally captures bin-to-bin correlations, without requiring an analytic error-propagation formula.'},
-{id:'ana-10', topic:'Analysis Methods', sub:'Systematics', diff:1,
- q:'Why do experiments perform "blind" analyses, and what does blinding typically involve?',
- a:'To avoid experimenter bias — consciously or unconsciously tuning cuts and selections toward an expected or more favorable result. Typically the signal region, the true parameter value, or a subset of the data is hidden until the analysis procedure, cuts, and systematic treatment are fully frozen, after which the analysis is "unblinded".'},
-{id:'ana-11', topic:'Analysis Methods', sub:'Unfolding', diff:2,
- q:'What problem does unfolding solve, and name two common unfolding methods.',
- a:'Unfolding corrects a reconstructed distribution — smeared by resolution and affected by efficiency — back into an estimate of the true underlying distribution, by inverting the detector response. Common methods include regularized matrix inversion, the iterative D\'Agostini (Bayesian) method, and SVD-based unfolding.'},
-{id:'ana-12', topic:'Analysis Methods', sub:'Statistics', diff:1,
- q:'What does a χ² goodness-of-fit test tell you, and what role do degrees of freedom play?',
- a:'χ² sums the squared, weighted deviations between data and model predictions. Comparing the resulting χ² to the number of degrees of freedom (data points minus free fit parameters) gives a p-value for how well the model describes the data, with χ²/ndf ≈ 1 generally indicating a good fit.'},
-{id:'ana-13', topic:'Analysis Methods', sub:'Reconstruction', diff:2,
- q:'In pulse-shape-discrimination-based particle ID (e.g. in liquid argon), what quantity is typically computed and compared between particle hypotheses?',
- a:'An "f_prompt" or similar ratio, comparing the fast (prompt) light collected in an early time window to the total pulse integral. Nuclear recoils and other heavily-ionizing particles show a higher fast-fraction than electron recoils/minimum-ionizing particles, allowing statistical or event-by-event discrimination.'},
-
-// ============ CURRENT NEUTRINO ANALYSES ============
-{id:'cna-01', topic:'Current Neutrino Analyses', sub:'Nuclear Effects', diff:2,
- q:'What is the 2p2h (two-particle two-hole) contribution in neutrino-nucleus scattering, and why does it matter for oscillation analyses?',
- a:'2p2h refers to meson-exchange-current (MEC) interactions in which the neutrino couples to a correlated nucleon pair, ejecting two nucleons instead of one. It mimics the kinematic signature of quasi-elastic scattering but shifts the reconstructed neutrino energy, so unmodeled 2p2h strength biases the energy reconstruction used in oscillation fits (T2K, NOvA, MicroBooNE). It was historically underestimated by generators and remains a leading source of cross-section modeling systematic uncertainty today.'},
-{id:'cna-02', topic:'Current Neutrino Analyses', sub:'Nuclear Effects', diff:3,
- q:'What is the Random Phase Approximation (RPA) correction in neutrino-nucleus interaction modeling?',
- a:'RPA is a many-body correction accounting for long-range nucleon-nucleon correlations (collective, coherent effects) inside the nuclear medium. It suppresses the cross section at low momentum transfer relative to the free-nucleon (impulse approximation) prediction, and is an important ingredient for correctly modeling quasi-elastic-like interactions in oscillation experiments.'},
-{id:'cna-03', topic:'Current Neutrino Analyses', sub:'Nuclear Effects', diff:1,
- q:'What is Pauli blocking, and how does it affect low-energy neutrino-nucleus scattering?',
- a:'The Pauli exclusion principle forbids scattering into nucleon momentum states that are already occupied within the nuclear Fermi sea, which suppresses the cross section at low momentum/energy transfer. It is a basic but essential ingredient of any nuclear model used in neutrino generators, such as the relativistic Fermi gas model.'},
-{id:'cna-04', topic:'Current Neutrino Analyses', sub:'Nuclear Effects', diff:3,
- q:'What are short-range correlations (SRC) in a nucleus, and why do they matter for neutrino event generators?',
- a:'SRC are strongly-correlated nucleon pairs (predominantly neutron-proton pairs) with high relative momentum but low total momentum, existing beyond the simple mean-field/Fermi-gas picture. They populate the high-momentum tail of the nuclear spectral function and affect final-state kinematics and the number/momenta of knocked-out nucleons predicted by generators.'},
-{id:'cna-05', topic:'Current Neutrino Analyses', sub:'Generators & Modeling', diff:1,
- q:'Name some widely used neutrino event generators, and what role do they play in an analysis?',
- a:'GENIE, NEUT, NuWro, and GiBUU are Monte Carlo generators that simulate neutrino-nucleus interactions across all relevant channels — quasi-elastic, resonance, deep inelastic, 2p2h, and coherent scattering. They are essential for translating a measured event rate and topology into a physics interpretation in any oscillation or cross-section experiment.'},
-{id:'cna-06', topic:'Current Neutrino Analyses', sub:'Generators & Modeling', diff:2,
- q:'Why is interaction-model uncertainty often the dominant systematic in an oscillation measurement, rather than detector effects?',
- a:'An oscillation analysis must relate a measured (reconstructed) energy spectrum to the true neutrino energy, and that mapping depends sensitively on nuclear-effect modeling — 2p2h strength, RPA suppression, final-state interactions. Near-detector data helps constrain these models in situ, but residual model-dependence remains a leading uncertainty at current precision.'},
-{id:'cna-07', topic:'Current Neutrino Analyses', sub:'Generators & Modeling', diff:2,
- q:'What is a final-state interaction (FSI), and why does it complicate neutrino event reconstruction?',
- a:'An FSI occurs when a particle produced at the primary neutrino-nucleon vertex rescatters, is absorbed, or produces additional particles while still inside the nucleus, before it escapes. This can change particle multiplicity and kinematics, and can even alter the apparent interaction topology (e.g. absorbing a pion turns a pion-producing event into a "pionless" one) — making FSI modeling a major systematic in both cross-section and oscillation measurements.'},
-{id:'cna-08', topic:'Current Neutrino Analyses', sub:'Cross-Section Measurements', diff:2,
- q:'What does it mean for a cross-section measurement to be "flux-integrated", and why is it reported that way?',
- a:'At an accelerator-based experiment the incoming neutrino energy isn\'t known event-by-event with certainty — it must be inferred from the final-state particles. Cross sections are therefore typically reported integrated over the experiment\'s well-characterized neutrino flux, rather than as a function of true neutrino energy, which keeps the result largely generator-independent and directly comparable across experiments.'},
-{id:'cna-09', topic:'Current Neutrino Analyses', sub:'Cross-Section Measurements', diff:1,
- q:'What role does a near detector play in a long-baseline oscillation experiment?',
- a:'Positioned close to the neutrino source, before oscillation has had room to develop, the near detector measures the un-oscillated flux and interaction rate. This constrains flux and cross-section/nuclear-model systematics that would otherwise limit the precision of the oscillation measurement made at the far detector.'},
-{id:'cna-10', topic:'Current Neutrino Analyses', sub:'Oscillation Fits', diff:2,
- q:'What did the first official joint T2K + NOvA oscillation analysis (published 2025) combine, and what did it find?',
- a:'It combined T2K\'s shorter, near-vacuum-like baseline with NOvA\'s longer 810 km baseline (more sensitive to Earth matter effects), breaking degeneracies neither experiment can resolve alone. The joint fit pushed the precision on |Δm²32| below 2% — but found no statistically significant preference for either the normal or inverted mass ordering; if the inverted ordering is assumed, however, the result would constitute evidence for leptonic CP violation.'},
-{id:'cna-11', topic:'Current Neutrino Analyses', sub:'Oscillation Fits', diff:2,
- q:'Is the neutrino mass ordering a settled question? Summarize the current picture.',
- a:'Not yet. The combined 2025 T2K+NOvA fit shows no significant preference either way, while a separate T2K + Super-Kamiokande atmospheric joint fit shows only a mild preference for the normal ordering (under 2σ). The overall global picture remains inconclusive, and a definitive answer is one of the flagship goals of next-generation experiments like DUNE and Hyper-Kamiokande.'},
-{id:'cna-12', topic:'Current Neutrino Analyses', sub:'Open Questions', diff:1,
- q:'What is the MiniBooNE "low-energy excess" (LEE), and why has it been so hard to interpret?',
- a:'MiniBooNE observed a long-standing excess of low-energy electromagnetic-like events beyond expectation, consistent in normalization with the earlier LSND anomaly. It has been hard to interpret because a water Cherenkov detector cannot cleanly distinguish single electrons from single photons, so the excess is consistent with several very different explanations: an eV-scale sterile neutrino, an underestimated photon-producing background, or something else entirely.'},
-{id:'cna-13', topic:'Current Neutrino Analyses', sub:'Open Questions', diff:2,
- q:'What did MicroBooNE conclude about the MiniBooNE low-energy excess, and what still remains open?',
- a:'Using its much better electron/photon separation, a series of MicroBooNE analyses culminating in 2025 found no significant excess of electron-neutrino-like events and disfavored the eV-scale sterile-neutrino explanation, effectively ruling it out as the cause. The original anomaly itself, however, is still not explained — its true origin remains an open question, and photon-based backgrounds (e.g. neutral-current Δ radiative decay) are among the explanations still being actively investigated.'},
-
-];
 
 /* ================= CONFIG ================= */
 const BOX_INTERVALS = [0, 1, 3, 7, 16, 35]; // days until due, indexed by box level 0..5
@@ -748,6 +499,7 @@ const ICONS = {
 /* ================= STATE ================= */
 let deckCatalog = [];     // list from decks/index.json
 let currentDeck = null;   // id of the selected deck
+let currentDeckInfo = null;
 let deckCards = [];       // cards from the currently loaded deck
 
 let state = {
@@ -823,7 +575,6 @@ async function loadDeckCatalog() {
 }
 
 async function loadDeck(deckId) {
-
     const info = deckCatalog.find(d => d.id === deckId);
 
     if (!info) {
@@ -841,6 +592,7 @@ async function loadDeck(deckId) {
     const deck = await response.json();
 
     currentDeck = deck.id;
+    currentDeckInfo = deck;
     deckCards = deck.cards;
 }
 
@@ -959,9 +711,9 @@ function buildDeckSelector() {
     const sel = document.getElementById("deckSelect");
 
     sel.innerHTML = deckCatalog.map(deck => `
-        <option value="${deck.id}">
-            ${deck.title}
-        </option>
+      <option value="${deck.id}">
+          ${deck.title}
+      </option>
     `).join("");
 
     sel.value = currentDeck;
