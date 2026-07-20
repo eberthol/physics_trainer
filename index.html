@@ -974,26 +974,32 @@ function buildDeckSelector() {
 }
 
 async function switchDeck(deckId) {
+  await loadDeck(deckId);
+  localStorage.setItem("selectedDeck", deckId);
+  await loadState();
 
-    await loadDeck(deckId);
+  const deckSelect = document.getElementById("deckSelect");
+  if (deckSelect) deckSelect.value = currentDeck;
 
-    localStorage.setItem("selectedDeck", deckId);
+  const topicChips = document.getElementById("topicChips");
+  if (topicChips) delete topicChips.dataset.init;
 
-    await loadState();
+  const libTopicFilter = document.getElementById("libTopicFilter");
+  if (libTopicFilter) delete libTopicFilter.dataset.init;
 
-    buildSidebar();
-
-    goTo(currentView);
+  buildSidebar();
+  goTo(currentView);
 }
 
 /* ================= OVERVIEW ================= */
 function renderOverview(){
-  // document.getElementById('runNumber').textContent = String(state.meta.runsCompleted+1).padStart(3,'0');
 
   const total = allCards().length;
   const due = dueCountAll();
   const mastered = allCards().filter(c=>(state.progress[c.id]||{}).box===5).length;
   const eff = state.meta.totalReviews>0 ? Math.round(100*state.meta.correctReviews/state.meta.totalReviews) : null;
+  const deckSelect = document.getElementById("deckSelect");
+  if (deckSelect) deckSelect.value = currentDeck;
 
   document.getElementById('statRow').innerHTML = `
     <div class="stat-card"><div class="stat-value">${total}</div><div class="stat-label">Total cards</div></div>

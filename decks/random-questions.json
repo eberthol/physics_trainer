@@ -1,0 +1,22 @@
+{
+  "id": "various-questions",
+  "title": "Random Questions",
+  "cards": [
+    {
+      "id": "var-001",
+      "topic": "Units & Constants",
+      "sub": "Units & Constants",
+      "diff": 1,
+      "q": "How is mass usually expressed in nuclear and particle physics, and what is the proton mass in these units?",
+      "a": "Via the relation $E = mc^2$, as an equivalent energy rather than in kg. The proton mass is $938.272\\text{ MeV}/c^2$, meaning $m_p c^2 = 938.272\\text{ MeV}$."
+    },
+    {
+      "id": "var-002",
+      "topic": "Units & Constants",
+      "sub": "Units & Constants",
+      "diff": 2,
+      "q": "What is the value of $\\hbar c$, and why is this combination useful?",
+      "a": "$\\hbar c \\approx 197.3\\text{ MeV}\\cdot\\text{fm}$. Since factors of $c$ and $\\hbar$ are often carried explicitly in nuclear/particle physics formulas, this constant is the standard conversion between energy and length (or momentum and inverse length) scales, e.g. relating a particle's momentum to its associated de Broglie wavelength."
+    }
+  ]
+}
