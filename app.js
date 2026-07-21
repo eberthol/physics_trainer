@@ -6,8 +6,7 @@ const NAV_ITEMS = [
   {id:'overview', label:'Overview', icon:'ring'},
   {id:'collections', label:'Collections', icon:'book'},
   {id:'train', label:'Train', icon:'bolt'},
-  {id:'library', label:'Library', icon:'book'},
-  {id:'add', label:'Add card', icon:'plus'},
+  {id:'library', label:'Library', icon:'book'}
 ];
 
 const ICONS = {
@@ -38,9 +37,6 @@ let session = null;      // active training session
 let expandedLibraryCard = null;
 let currentView = 'overview';
 let diffSelected = 2;
-let newTopicMode = false;
-
-
 
 /* ================= STORAGE ================= */
 function storageKey(name) {
@@ -359,7 +355,6 @@ function goTo(view){
   if(view==='collections') renderCollections();
   if(view==='train') renderTrainSetup();
   if(view==='library') renderLibrary();
-  if(view==='add') renderAddForm();
 }
 
 function decksInCurrentCollection() {

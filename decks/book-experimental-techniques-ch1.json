@@ -57,7 +57,6 @@
       "q": "Why must $\\alpha$ sources be made as thin as possible, and how are they typically constructed?",
       "a": "Since $\\alpha$ particles lose energy very rapidly in matter, any material covering the radioactive isotope reduces their energy or absorbs them completely. Therefore, $\\alpha$ sources are usually prepared by depositing the radioactive isotope on the surface of a backing material and covering it with an extremely thin protective metal foil."
     },
-
     {
       "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
       "sub": "Beta Decay",
@@ -206,7 +205,6 @@
       "q": "How are nuclear isomers denoted?",
       "a": "A metastable nuclear state is indicated by the letter 'm' following the mass number, for example $^{60m}$Co or $^{69m}$Zn."
     },
-
     {
       "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
       "sub": "Annihilation Radiation",
@@ -342,18 +340,196 @@
       "a": "$(\\gamma,n)$ sources produce neutrons with a much narrower (nearly monoenergetic) energy distribution because the incident gamma rays do not lose energy before the reaction. However, their neutron yield is typically one to two orders of magnitude lower than that of $(\\alpha,n)$ sources, and they are accompanied by a significant gamma-ray background."
     },
     {
+    "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
+    "sub": "Alpha-Neutron Sources",
+    "diff": 2,
+    "q": "Why is beryllium the most common target material in $(\\alpha,n)$ neutron sources?",
+    "a": "Beryllium has one of the largest $(\\alpha,n)$ reaction yields among practical target materials, making it the preferred choice for compact laboratory neutron sources such as Am-Be and Pu-Be."
+    },
+
+    {
       "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
-      "sub": "Alpha-Neutron Sources",
+      "sub": "Source Activity Units",
+      "diff": 1,
+      "q": "What is the activity of a radioactive source?",
+      "a": "The activity of a radioactive source is the mean number of nuclear disintegrations per unit time. It is an extrinsic quantity, meaning it depends on the amount of radioactive material present."
+    },
+    {
+      "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
+      "sub": "Source Activity Units",
+      "diff": 1,
+      "q": "Why is activity considered an extrinsic quantity?",
+      "a": "Activity is an extrinsic quantity because it depends on the amount of radioactive material in the sample. A larger sample contains more radioactive nuclei and therefore undergoes more decays per unit time."
+    },
+    {
+      "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
+      "sub": "Source Activity Units",
       "diff": 2,
-      "q": "Why is beryllium the most common target material in $(\\alpha,n)$ neutron sources?",
-      "a": "Beryllium has one of the largest $(\\alpha,n)$ reaction yields among practical target materials, making it the preferred choice for compact laboratory neutron sources such as Am-Be and Pu-Be."
+      "q": "Is the activity of a source necessarily equal to its radiation output?",
+      "a": "No. Activity measures the number of nuclear decays per unit time, whereas the radiation output depends on the decay scheme. The two are identical only when every decay produces a single unique radiative transition."
+    },
+    {
+      "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
+      "sub": "Source Activity Units",
+      "diff": 2,
+      "q": "Give two reasons why the radiation output of a source may differ from its activity.",
+      "a": "1. The daughter nucleus may itself be radioactive and emit additional radiation.\\n2. A nuclide may decay through several competing channels (e.g. $\\beta^+$ decay and electron capture), so only a fraction of the decays produces a particular radiation."
+    },
+    {
+      "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
+      "sub": "Source Activity Units",
+      "diff": 1,
+      "q": "What is the Curie (Ci)?",
+      "a": "The Curie is a traditional unit of activity defined as $$1\\,\\mathrm{Ci}=3.7\\times10^{10}\\ \\mathrm{disintegrations/s}.$$ Historically, it was defined as the activity of 1 g of Ra-226."
+    },
+    {
+      "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
+      "sub": "Source Activity Units",
+      "diff": 1,
+      "q": "Why are laboratory radioactive sources usually specified in $\\mu$Ci rather than Ci?",
+      "a": "The Curie is a very large unit. Typical laboratory radioactive sources have activities of only tens to hundreds of microcuries ($\\mu$Ci)."
+    },
+    {
+      "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
+      "sub": "Source Activity Units",
+      "diff": 1,
+      "q": "What is the Becquerel (Bq)?",
+      "a": "The Becquerel is the SI unit of activity, defined as $$1\\,\\mathrm{Bq}=1\\ \\mathrm{disintegration/s}.$$"
+    },
+    {
+      "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
+      "sub": "Source Activity Units",
+      "diff": 1,
+      "q": "Which unit of activity belongs to the SI system?",
+      "a": "The Becquerel (Bq) is the SI unit of radioactive activity."
+    },
+    {
+      "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
+      "sub": "Source Activity Units",
+      "diff": 2,
+      "q": "What is the difference between activity units (Bq, Ci) and dose units (Gy, Sv)?",
+      "a": "Activity units (Bq, Ci) measure the rate of radioactive disintegrations in the source. Dose units (Gy, Sv) measure the effect of radiation absorbed by matter or by a person."
+    },
+    {
+      "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
+      "sub": "Source Activity Units",
+      "diff": 1,
+      "q": "What does an activity of 1000 Bq mean?",
+      "a": "An activity of 1000 Bq means that, on average, the source undergoes 1000 nuclear disintegrations every second."
+    },
+
+    {
+      "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
+      "sub": "Radioactive Decay Law",
+      "diff": 1,
+      "q": "What does the radioactive decay law state?",
+      "a": "The radioactive decay law states that the number of radioactive nuclei (and therefore the activity) decreases exponentially with time."
+    },
+    {
+      "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
+      "sub": "Radioactive Decay Law",
+      "diff": 2,
+      "q": "What is the physical meaning of the decay constant $\\lambda$?",
+      "a": "The decay constant $\\lambda$ is the probability per unit time that a nucleus will decay. It is a characteristic property of a given radioactive nuclide."
+    },
+    {
+      "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
+      "sub": "Radioactive Decay Law",
+      "diff": 2,
+      "q": "How is the total decay constant related to multiple decay modes?",
+      "a": "If a nuclide can decay through several competing channels, the total decay constant is the sum of the partial decay constants: $$\\lambda=\\lambda_1+\\lambda_2+\\cdots$$"
+    },
+    {
+      "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
+      "sub": "Radioactive Decay Law",
+      "diff": 2,
+      "q": "What is the differential form of the radioactive decay law?",
+      "a": "$$dN=-\\lambda N\\,dt$$ where $N$ is the number of radioactive nuclei and $\\lambda$ is the decay constant."
+    },
+    {
+      "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
+      "sub": "Radioactive Decay Law",
+      "diff": 2,
+      "q": "What is the integrated form of the radioactive decay law?",
+      "a": "$$N(t)=N_0e^{-\\lambda t}$$ where $N_0$ is the initial number of radioactive nuclei."
+    },
+    {
+      "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
+      "sub": "Radioactive Decay Law",
+      "diff": 1,
+      "q": "What is the mean lifetime $\\tau_m$ of a radioactive nuclide?",
+      "a": "The mean lifetime is the inverse of the decay constant: $$\\tau=\\frac{1}{\\lambda}.$$ It is the time after which the number of radioactive nuclei has decreased to $1/e$ of its initial value."
+    },
+    {
+      "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
+      "sub": "Radioactive Decay Law",
+      "diff": 1,
+      "q": "What is the half-life $T_{1/2}$?",
+      "a": "The half-life is the time required for the number of radioactive nuclei (or the activity) to decrease to one-half of its initial value."
+    },
+    {
+      "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
+      "sub": "Radioactive Decay Law",
+      "diff": 2,
+      "q": "What is the relationship between the half-life and the decay constant?",
+      "a": "$$T_{1/2}=\\frac{\\ln2}{\\lambda}.$$"
+    },
+    {
+      "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
+      "sub": "Fluctuations in Radioactive Decay",
+      "diff": 1,
+      "q": "Why do repeated measurements of the number of radioactive decays give different results?",
+      "a": "Because radioactive decay is an inherently statistical quantum process. The exact time at which a nucleus decays cannot be predicted—only the probability of decay can be calculated."
+    },
+    {
+      "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
+      "sub": "Fluctuations in Radioactive Decay",
+      "diff": 2,
+      "q": "Why can the activity be considered constant during a counting interval $\\Delta t$?",
+      "a": "If the counting interval $\\Delta t$ is much shorter than the half-life of the source, the number of undecayed nuclei changes negligibly during the measurement, so the activity can be treated as constant."
+    },
+    {
+      "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
+      "sub": "Fluctuations in Radioactive Decay",
+      "diff": 2,
+      "q": "Which probability distribution describes the number of radioactive decays observed in a fixed time interval?",
+      "a": "The number of decays observed in a fixed time interval follows a Poisson distribution: $$P(n, \\Delta t)=\\frac{m^n}{n!}e^{-m},$$ where $m$ is the expected (mean) number of counts."
+    },
+    {
+      "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
+      "sub": "Fluctuations in Radioactive Decay",
+      "diff": 1,
+      "q": "What does the parameter $m$ represent in the Poisson distribution?",
+      "a": "$m$ is the expected (average) number of counts recorded during the counting interval $\\Delta t$."
+    },
+    {
+      "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
+      "sub": "Fluctuations in Radioactive Decay",
+      "diff": 2,
+      "q": "What is the standard deviation of a Poisson distribution?",
+      "a": "For a Poisson distribution, the standard deviation is $$\\sigma=\\sqrt{m},$$ where $m$ is the mean number of counts."
+    },
+    {
+      "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
+      "sub": "Fluctuations in Radioactive Decay",
+      "diff": 2,
+      "q": "How does the relative statistical uncertainty change as the number of counts increases?",
+      "a": "The relative statistical uncertainty is $$\\frac{\\sigma}{m}=\\frac{1}{\\sqrt{m}}.$$ Therefore, collecting more counts reduces the relative uncertainty."
+    },
+    {
+      "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
+      "sub": "Fluctuations in Radioactive Decay",
+      "diff": 3,
+      "q": "Why does collecting data for a longer time improve the statistical precision of a radioactive measurement?",
+      "a": "A longer counting time increases the mean number of detected counts $m$. Since Poisson fluctuations grow as $\\sqrt{m}$ while the signal grows as $m$, the relative uncertainty decreases as $1/\\sqrt{m}$."
+    }, 
+    {
+      "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
+      "sub": "Radioactive Decay Law",
+      "diff": 2,
+      "q": "What is the relationship between the half-life and the mean lifetime?",
+      "a": "$$T_{1/2}=T_m\\ln2\\approx0.693\\,T_m.$$ Equivalently, $$T_m=\\frac{T_{1/2}}{\\ln2}\\approx1.44\\,T_{1/2}.$$"
     }
-
-
-
-
-
-
 
   ]
 }

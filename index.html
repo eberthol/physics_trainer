@@ -200,51 +200,6 @@
       <div id="libraryList"></div>
     </section>
 
-    <!-- ADD -->
-    <section class="view" id="view-add">
-      <div class="page-head">
-        <div>
-          <div class="page-eyebrow">Extend the set</div>
-          <div class="page-title">Add a card</div>
-          <div class="page-desc">Add depth to an existing topic, or start a brand new one. Use $…$ for inline LaTeX (KaTeX-rendered).</div>
-        </div>
-      </div>
-      <div class="panel">
-        <div class="form-grid">
-          <div class="form-field">
-            <label class="form-label">Topic</label>
-            <select class="select" id="fTopicSelect" onchange="onTopicSelectChange()"></select>
-          </div>
-          <div class="form-field" id="fNewTopicField" style="display:none;">
-            <label class="form-label">New topic name</label>
-            <input class="text-input" id="fNewTopic" placeholder="e.g. Dark Matter Direct Detection">
-          </div>
-          <div class="form-field" id="fSubField">
-            <label class="form-label">Subtopic</label>
-            <input class="text-input" id="fSub" list="subList" placeholder="e.g. Pulse Shape Discrimination">
-            <datalist id="subList"></datalist>
-          </div>
-          <div class="form-field">
-            <label class="form-label">Difficulty</label>
-            <div class="diff-select" id="fDiff">
-              <div class="diff-opt" data-v="1">Foundational</div>
-              <div class="diff-opt sel" data-v="2">Intermediate</div>
-              <div class="diff-opt" data-v="3">Advanced</div>
-            </div>
-          </div>
-          <div class="form-field full">
-            <label class="form-label">Question</label>
-            <textarea id="fQuestion" placeholder="What is…"></textarea>
-          </div>
-          <div class="form-field full">
-            <label class="form-label">Answer</label>
-            <textarea id="fAnswer" placeholder="Explain the answer…" style="min-height:100px;"></textarea>
-            <div class="form-hint">Tip: wrap formulas in $…$, e.g. $\Delta m^2_{21}$</div>
-          </div>
-        </div>
-        <button class="btn btn-primary" style="margin-top:18px;" onclick="submitCard()">Add card to deck</button>
-      </div>
-    </section>
   </main>
 </div>
 
