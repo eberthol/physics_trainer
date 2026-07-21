@@ -138,6 +138,33 @@ async function loadDeck(deckId) {
 }
 
 /* ================= HELPERS ================= */
+function onLibraryTopicChange() {
+
+    const topic =
+        document.getElementById("libTopicFilter").value;
+
+    const sectionSel =
+        document.getElementById("libSectionFilter");
+
+    const sections = [...new Set(
+        allCards()
+            .filter(card =>
+                !topic || card.topic === topic
+            )
+            .map(card => card.sub)
+    )];
+
+    sectionSel.innerHTML =
+        `<option value="">All sections</option>` +
+        sections.map(section =>
+            `<option value="${escapeHtml(section)}">
+                ${escapeHtml(section)}
+            </option>`
+        ).join("");
+
+    renderLibrary();
+}
+
 async function loadDeckMetadata() {
 
     deckIndex = {};
@@ -749,18 +776,41 @@ document.addEventListener('keydown', (e)=>{
 
 /* ================= LIBRARY ================= */
 function renderLibrary(){
-  const filterSel = document.getElementById('libTopicFilter');
-  if(!filterSel.dataset.init){
+  const topicSel = document.getElementById("libTopicFilter");
+
+if (!topicSel.dataset.init) {
+
     const topics = topicsInOrder();
-    filterSel.innerHTML = `<option value="">All topics</option>` + topics.map(t=>`<option value="${escapeHtml(t)}">${escapeHtml(t)}</option>`).join('');
-    filterSel.dataset.init = '1';
-  }
+
+    topicSel.innerHTML =
+        `<option value="">All topics</option>` +
+        topics.map(topic =>
+            `<option value="${escapeHtml(topic)}">${escapeHtml(topic)}</option>`
+        ).join("");
+
+    topicSel.dataset.init = "1";
+
+    // Populate the section selector the first time
+    onLibraryTopicChange();
+}
 
   const q = document.getElementById('libSearch').value.trim().toLowerCase();
-  const topicFilter = filterSel.value;
+  const topicFilter =
+    document.getElementById("libTopicFilter").value;
+
+  const sectionFilter =
+      document.getElementById("libSectionFilter").value;
 
   let cards = allCards();
-  if(topicFilter) cards = cards.filter(c=>c.topic===topicFilter);
+  if (topicFilter)
+    cards = cards.filter(
+        c => c.topic === topicFilter
+    );
+
+  if (sectionFilter)
+      cards = cards.filter(
+          c => c.sub === sectionFilter
+      );
   if(q) cards = cards.filter(c=>
     c.q.toLowerCase().includes(q) || c.a.toLowerCase().includes(q) ||
     c.sub.toLowerCase().includes(q) || c.topic.toLowerCase().includes(q)

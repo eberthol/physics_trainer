@@ -59,10 +59,7 @@
           Start training
         </button>
       </div>
-
-
       <div class="stat-row" id="statRow"></div>
-
       <div class="panel">
         <div class="panel-title">Purity by topic</div>
         <div class="panel-sub">Average mastery (Leitner box level ÷ 5) across all cards in each topic</div>
@@ -195,7 +192,15 @@
       </div>
       <div class="lib-search">
         <input class="text-input" id="libSearch" placeholder="Search questions, answers, tags…" oninput="renderLibrary()">
-        <select class="select" id="libTopicFilter" onchange="renderLibrary()"></select>
+        <select class="select"
+                id="libTopicFilter"
+                onchange="onLibraryTopicChange()">
+        </select>
+
+        <select class="select"
+                id="libSectionFilter"
+                onchange="renderLibrary()">
+        </select>
       </div>
       <div id="libraryList"></div>
     </section>
