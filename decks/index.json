@@ -1,12 +1,20 @@
 [
   {
-    "id": "book-experimental-techniques",
-    "title": "Experimental Techniques in Nuclear and Particle Physics",
-    "file": "decks/book-experimental-techniques.json"
+    "id":    "book-exptech-ch1",
+    "collection": "Experimental Techniques in Nuclear and Particle Physics",
+    "name":  "Chapter 1 - Basic Nuclear Processes in Radioactive Sources",
+    "level": "Detailed",
+    "file":   "decks/book-experimental-techniques-ch1.json"
   },
   {
-    "id": "random-questions",
-    "title": "Random Questions",
-    "file": "decks/random-questions.json"
-  }
+  "id": "book-exptech-summary",
+  "collection": "Experimental Techniques in Nuclear and Particle Physics",
+  "name": "Summary",
+  "level": "Summary",
+  "file": "decks/book-experimental-techniques-summary.json"
+}
+
+
+
+  
 ]

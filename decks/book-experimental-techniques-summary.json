@@ -1,0 +1,55 @@
+{
+  "id": "book-exptech-summary",
+  "title": "Summary",
+  "cards": [
+    {
+      "topic": "Chapter 1 Summary",
+      "sub": "Overview",
+      "diff": 1,
+      "q": "What are the main nuclear processes discussed in this chapter?",
+      "a": "• $\\alpha$ decay\n• $\\beta^-$ decay\n• $\\beta^+$ decay\n• Electron capture (EC)\n• $\\gamma$ emission\n• Internal conversion\n• Auger electron emission\n• Neutron production (spontaneous fission and nuclear reactions)"
+    },
+    {
+      "topic": "Chapter 1 Summary",
+      "sub": "Overview",
+      "diff": 2,
+      "q": "Classify the main radioactive emissions as charged particles, neutral particles, or photons.",
+      "a": "Charged particles:\n• $\\alpha$\n• $\\beta^-$\n• $\\beta^+$\n• Internal conversion electrons\n• Auger electrons\n\nNeutral particles:\n• Neutrons\n• Neutrinos\n\nPhotons:\n• $\\gamma$ rays\n• Characteristic X-rays\n• 511 keV annihilation photons"
+    },
+    {
+      "topic": "Chapter 1 Summary",
+      "sub": "Overview",
+      "diff": 2,
+      "q": "Compare the principal radioactive decay modes.",
+      "a": "| Process | Physical change |\n|---|---|\n| $\\alpha$ | Emits a $^4$He nucleus |\n| $\\beta^-$ | $n\\rightarrow p$ |\n| $\\beta^+$ | $p\\rightarrow n$ |\n| Electron capture | $p+e^-\\rightarrow n$ |\n| $\\gamma$ | Nuclear de-excitation |"
+    },
+    {
+      "topic": "Chapter 1 Summary",
+      "sub": "Overview",
+      "diff": 2,
+      "q": "Which emissions are monoenergetic, and which have continuous energy spectra?",
+      "a": "Monoenergetic:\n• $\\alpha$\n• $\\gamma$\n• Internal conversion electrons\n• Auger electrons\n• Characteristic X-rays\n• Annihilation photons\n\nContinuous:\n• $\\beta^-$\n• $\\beta^+$\n• Neutron spectra from most laboratory sources"
+    },
+    {
+      "topic": "Chapter 1 Summary",
+      "sub": "Overview",
+      "diff": 2,
+      "q": "What are the characteristic experimental signatures of the different radioactive processes?",
+      "a": "• Electron capture → characteristic X-rays or Auger electrons\n• Positron emission → two 511 keV annihilation photons\n• $\\gamma$ emission → discrete photon lines\n• Internal conversion → monoenergetic electrons\n• Auger emission → low-energy monoenergetic electrons"
+    },
+    {
+      "topic": "Chapter 1 Summary",
+      "sub": "Overview",
+      "diff": 2,
+      "q": "Order the main radiations by increasing penetrating power.",
+      "a": "$\\alpha$ < Auger electrons < $\\beta$ < $\\gamma$ < neutrons"
+    },
+    {
+      "topic": "Chapter 1 Summary",
+      "sub": "Overview",
+      "diff": 2,
+      "q": "What are the main laboratory neutron sources, and what are their advantages?",
+      "a": "• Spontaneous fission (e.g. $^{252}$Cf): simple, broad neutron spectrum.\n• $(\\alpha,n)$ sources (e.g. Am-Be): high neutron yield, broad spectrum.\n• $(\\gamma,n)$ sources: lower neutron yield but nearly monoenergetic neutrons."
+    }
+  ]
+}

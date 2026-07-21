@@ -1,0 +1,361 @@
+{
+  "id": "book-exptech-ch1",
+  "title": "Chapter 1 - Basic Nuclear Processes in Radioactive Sources",
+  "cards": [
+
+    {
+      "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
+      "sub": "Alpha Decay",
+      "diff": 1,
+      "q": "What are $\\alpha$ particles and what is an alpha decay",
+      "a": "Alpha particles are $^4$He nuclei, i.e., a bound system of two protons and two neutrons, and are generally emitted by very heavy nuclei containing too many nucleons to remain stable. $$(Z,A) \\to (Z-2, A-4) + \\alpha$$"
+    },
+    {
+      "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
+      "sub": "Alpha Decay",
+      "diff": 1,
+      "q": "Why do heavy nuclei emit $\\alpha$ particles rather than individual protons or neutrons?",
+      "a": "An $\\alpha$ particle has an exceptionally high binding energy (about 28.3 MeV), making it much more energetically favorable to emit a tightly bound cluster of two protons and two neutrons than to emit the nucleons individually. The emitted $\\alpha$ particle must still tunnel through the Coulomb barrier, which determines the decay probability and hence the half-life."
+    },
+    {
+      "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
+      "sub": "Alpha Decay",
+      "diff": 1,
+      "q": "Describe the energy spectrum of an $\\alpha$ emitter.",
+      "a": "Unlike $\\beta$ decay, $\\alpha$ decay is a two-body process, so conservation of energy and momentum gives the emitted $\\alpha$ particle a well-defined kinetic energy. Most emitters therefore produce one monoenergetic $\\alpha$ line, corresponding to a transition to the ground state of the daughter nucleus. If the daughter nucleus has accessible excited states, additional monoenergetic lines appear, each corresponding to a decay to a different excited state."
+    },
+    {
+      "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
+      "sub": "Alpha Decay",
+      "diff": 2,
+      "q": "What is the energy range for naturally occurring $\\alpha$ emitters and why?",
+      "a": "The probability of $\\alpha$ decay depends exponentially on the tunneling probability through the Coulomb barrier. Higher-energy $\\alpha$ particles tunnel much more easily, leading to much shorter half-lives (Geiger–Nuttall law). As a result, nuclei emitting significantly higher-energy $\\alpha$ particles decay too rapidly to be commonly observed in nature, while lower-energy emitters have extremely long half-lives. Consequently, most naturally occurring $\\alpha$ emitters have energies in the range of roughly 4–6 MeV."
+    },
+    {
+      "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
+      "sub": "Alpha Decay",
+      "diff": 2,
+      "q": "Why do most $\\alpha$ decays proceed to the ground state of the daughter nucleus?",
+      "a": "Decay to the ground state releases the largest $Q$-value, producing the highest-energy $\\alpha$ particle. Since the tunneling probability increases rapidly with energy, transitions to the ground state are generally much more probable than transitions to excited states of the daughter nucleus."
+    },
+    {
+      "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
+      "sub": "Alpha Particles",
+      "diff": 1,
+      "q": "Why do $\\alpha$ particles have such a short range in matter?",
+      "a": "$\\alpha$ particles carry a charge of +2e and therefore interact very strongly with the electrons of the material they traverse. They lose energy rapidly through ionization and excitation, giving them a very high stopping power and consequently a very short range."
+    },
+    {
+      "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
+      "sub": "Alpha Particles",
+      "diff": 1,
+      "q": "What is the typical range of a 5 MeV $\\alpha$ particle in air?",
+      "a": "Only a few centimeters. Because of their large energy loss in matter, even energetic $\\alpha$ particles travel only a short distance in air and can be stopped by a thin sheet of material."
+    },
+    {
+      "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
+      "sub": "Alpha Sources",
+      "diff": 2,
+      "q": "Why must $\\alpha$ sources be made as thin as possible, and how are they typically constructed?",
+      "a": "Since $\\alpha$ particles lose energy very rapidly in matter, any material covering the radioactive isotope reduces their energy or absorbs them completely. Therefore, $\\alpha$ sources are usually prepared by depositing the radioactive isotope on the surface of a backing material and covering it with an extremely thin protective metal foil."
+    },
+
+    {
+      "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
+      "sub": "Beta Decay",
+      "diff": 1,
+      "q": "What are $\\beta$ particles, and what interaction is responsible for $\\beta$ decay?",
+      "a": "$\\beta$ particles are high-energy electrons ($\\beta^-$) or positrons ($\\beta^+$) emitted during radioactive decay. Beta decay is mediated by the weak interaction and occurs when a neutron or proton inside the nucleus transforms into the other."
+    },
+    {
+      "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
+      "sub": "Beta Decay",
+      "diff": 1,
+      "q": "Write the reaction for $\\beta^-$ decay. How does it change the daughter nucleus?",
+      "a": "$$n \\rightarrow p + e^- + \\bar{\\nu}_e$$\n\nInside the nucleus, a neutron is converted into a proton while emitting an electron and an electron antineutrino. The daughter nucleus has the same mass number $A$, but its atomic number increases by one."
+    },
+    {
+      "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
+      "sub": "Beta Decay",
+      "diff": 1,
+      "q": "Write the reaction for $\\beta^+$ decay. How does it change the daughter nucleus?",
+      "a": "$$p \\rightarrow n + e^+ + \\nu_e$$\n\nA proton is converted into a neutron while emitting a positron and an electron neutrino. The daughter nucleus keeps the same mass number $A$, but its atomic number decreases by one."
+    },
+    {
+      "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
+      "sub": "Beta Decay",
+      "diff": 2,
+      "q": "Why do $\\beta$ particles have a continuous energy spectrum, unlike $\\alpha$ particles?",
+      "a": "$\\beta$ decay is a three-body process. The available decay energy (the Q-value) is shared between the emitted electron or positron, the (anti)neutrino, and, to a much smaller extent, the recoiling daughter nucleus. Since the neutrino can carry away a variable amount of energy, the $\\beta$ particle is emitted with a continuous range of energies."
+    },
+    {
+      "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
+      "sub": "Beta Decay",
+      "diff": 2,
+      "q": "What determines the maximum energy of a $\\beta$ spectrum, and what is its typical range?",
+      "a": "Ignoring the small recoil of the daughter nucleus, the maximum kinetic energy (endpoint energy) of the $\\beta$ spectrum is equal to the decay Q-value. For most radioactive sources, endpoint energies range from a few tens of keV to a few MeV."
+    },
+    {
+      "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
+      "sub": "Beta Decay",
+      "diff": 1,
+      "q": "Why are many $\\beta$ sources also $\\gamma$ sources?",
+      "a": "After $\\beta$ decay, the daughter nucleus is often left in an excited state. It promptly de-excites by emitting one or more $\\gamma$ rays. As a result, most radioactive $\\beta$ sources emit both $\\beta$ particles and $\\gamma$ radiation."
+    },
+    {
+      "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
+      "sub": "Beta Decay",
+      "diff": 1,
+      "q": "What is a pure $\\beta$ emitter?",
+      "a": "A pure $\\beta$ emitter is a radioactive source whose daughter nucleus is produced directly in its ground state, so no $\\gamma$ rays are emitted following the $\\beta$ decay. Pure $\\beta$ emitters are relatively uncommon."
+    },
+    {
+      "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
+      "sub": "Beta Decay",
+      "diff": 2,
+      "q": "What is meant by multiple $\\beta$-decay branches?",
+      "a": "Some nuclei can undergo $\\beta$ decay to several different excited states of the daughter nucleus. Each transition is called a decay branch and has its own decay probability (branching ratio) and its own endpoint energy."
+    },
+    {
+      "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
+      "sub": "Beta Decay",
+      "diff": 2,
+      "q": "How does the presence of multiple $\\beta$-decay branches affect the observed $\\beta$ spectrum?",
+      "a": "Each decay branch produces its own continuous $\\beta$ spectrum with an endpoint energy determined by the corresponding nuclear transition. The observed spectrum is the weighted sum of all these individual spectra, with the weights given by the branching ratios."
+    },
+    {
+      "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
+      "sub": "Beta Sources",
+      "diff": 1,
+      "q": "Why must $\\beta$ sources be made as thin as possible?",
+      "a": "$\\beta$ particles lose energy readily in matter through ionization and excitation. A thick source causes energy loss and absorption before the particles escape, distorting the measured $\\beta$ spectrum."
+    },
+    {
+      "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
+      "sub": "Beta Sources",
+      "diff": 2,
+      "q": "Why is source thickness particularly important for positron ($\\beta^+$) sources?",
+      "a": "Positrons can annihilate with electrons inside the source or its surrounding material before escaping. A thick $\\beta^+$ source therefore reduces the number of detected positrons, distorts the measured spectrum, and produces an intense background of 511 keV annihilation photons."
+    },
+    {
+      "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
+      "sub": "Electron Capture",
+      "diff": 1,
+      "q": "What is electron capture (EC)? Write the reaction.",
+      "a": "Electron capture is a radioactive decay process in which a proton-rich nucleus captures one of its own atomic electrons, converting a proton into a neutron. The reaction is\n\n$$e^- + p \\rightarrow n + \\nu_e$$\n\nThe daughter nucleus has the same mass number $A$, while its atomic number decreases by one."
+    },
+    {
+      "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
+      "sub": "Electron Capture",
+      "diff": 2,
+      "q": "How is electron capture related to $\\beta^+$ decay?",
+      "a": "Electron capture and $\\beta^+$ decay are two competing decay modes of proton-rich nuclei. Both convert a proton into a neutron via the weak interaction and therefore produce the same daughter nucleus. The only difference is that $\\beta^+$ decay emits a positron, whereas electron capture absorbs an orbital electron."
+    },
+    {
+      "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
+      "sub": "Electron Capture",
+      "diff": 2,
+      "q": "How is electron capture experimentally detected if only a neutrino is emitted?",
+      "a": "Capturing an atomic electron leaves a vacancy in the electron shell. As higher-shell electrons fill this vacancy, the atom emits characteristic X-rays or Auger electrons. These radiations are detected as the signature of electron capture."
+    },
+    {
+      "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
+      "sub": "Electron Capture",
+      "diff": 1,
+      "q": "From which atomic shell is the captured electron most likely to originate?",
+      "a": "Electron capture occurs predominantly from the K shell, since K-shell electrons have the greatest probability density at the nucleus. Capture from higher shells (such as the L shell) is also possible but occurs with much lower probability."
+    },
+    {
+      "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
+      "sub": "Electron Capture",
+      "diff": 2,
+      "q": "Why can electron capture occur even when $\\beta^+$ decay is energetically forbidden?",
+      "a": "Producing a positron requires at least 1.022 MeV of energy (twice the electron rest mass). Electron capture does not create a positron and therefore has no such energy threshold. Consequently, some proton-rich nuclei can decay only by electron capture."
+    },
+
+    {
+      "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
+      "sub": "Gamma Emission",
+      "diff": 1,
+      "q": "What are $\\gamma$ rays, and how are they produced?",
+      "a": "$\\gamma$ rays are high-energy photons emitted when an excited nucleus transitions to a lower-energy nuclear state. The photon energy is equal to the difference in energy between the two nuclear levels."
+    },
+    {
+      "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
+      "sub": "Gamma Emission",
+      "diff": 1,
+      "q": "Why do $\\gamma$ emitters produce discrete spectral lines?",
+      "a": "Like atoms, nuclei possess discrete energy levels. Since $\\gamma$ rays are emitted during transitions between these levels, only photons with energies equal to the allowed level spacings can be emitted. Each nucleus therefore has a characteristic $\\gamma$-ray spectrum."
+    },
+    {
+      "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
+      "sub": "Gamma Emission",
+      "diff": 1,
+      "q": "What is the typical energy range of $\\gamma$ rays emitted by radioactive nuclei?",
+      "a": "$\\gamma$ rays emitted by radioactive nuclei typically have energies ranging from a few hundred keV to a few MeV, reflecting the large energy spacing between nuclear levels."
+    },
+    {
+      "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
+      "sub": "Isomeric States",
+      "diff": 2,
+      "q": "What is a nuclear isomer?",
+      "a": "A nuclear isomer is a long-lived excited state of a nucleus. Its de-excitation is hindered, usually because the transition to a lower-energy state requires a large change in nuclear spin (a highly forbidden transition). As a result, its lifetime may range from seconds to years."
+    },
+    {
+      "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
+      "sub": "Isomeric States",
+      "diff": 1,
+      "q": "How are nuclear isomers denoted?",
+      "a": "A metastable nuclear state is indicated by the letter 'm' following the mass number, for example $^{60m}$Co or $^{69m}$Zn."
+    },
+
+    {
+      "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
+      "sub": "Annihilation Radiation",
+      "diff": 1,
+      "q": "What is annihilation radiation?",
+      "a": "Annihilation radiation is produced when a positron encounters an electron and the two particles annihilate. Their rest mass is converted into electromagnetic radiation, producing two $\\gamma$ rays."
+    },
+    {
+      "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
+      "sub": "Annihilation Radiation",
+      "diff": 2,
+      "q": "Why does positron-electron annihilation produce two 511 keV photons emitted in opposite directions?",
+      "a": "When a positron annihilates with an electron, their combined rest-mass energy ($2m_ec^2 = 1.022$ MeV) is converted into two photons. Each photon therefore has an energy of 511 keV. If the electron and positron are approximately at rest, conservation of momentum requires the two photons to be emitted back-to-back."
+    },
+    {
+      "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
+      "sub": "Annihilation Radiation",
+      "diff": 1,
+      "q": "What characteristic feature appears in the $\\gamma$ spectrum of a thick positron source?",
+      "a": "A thick positron source produces a prominent 511 keV photopeak due to positron-electron annihilation. This peak appears in addition to any characteristic $\\gamma$ rays emitted by the daughter nucleus."
+    },
+    {
+      "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
+      "sub": "Internal Conversion",
+      "diff": 1,
+      "q": "What is internal conversion?",
+      "a": "Internal conversion is a mode of nuclear de-excitation in which the nucleus transfers its excitation energy directly to one of the atom's orbital electrons instead of emitting a $\\gamma$ ray. The electron is then ejected from the atom."
+    },
+    {
+      "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
+      "sub": "Internal Conversion",
+      "diff": 2,
+      "q": "What determines the kinetic energy of an internal conversion electron?",
+      "a": "The kinetic energy of the emitted electron is\n\n$$E_e = E_{\\mathrm{exc}} - E_{\\mathrm{binding}},$$\n\nwhere $E_{\\mathrm{exc}}$ is the nuclear excitation energy and $E_{\\mathrm{binding}}$ is the binding energy of the atomic shell from which the electron is emitted."
+    },
+    {
+      "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
+      "sub": "Internal Conversion",
+      "diff": 2,
+      "q": "Why are internal conversion electrons monoenergetic, whereas $\\beta$ particles have a continuous energy spectrum?",
+      "a": "Internal conversion is effectively a two-body process: the nuclear transition energy is transferred directly to an orbital electron, giving it a well-defined kinetic energy. In contrast, $\\beta$ decay is a three-body process in which the decay energy is shared between the electron (or positron), the neutrino, and the recoiling nucleus, producing a continuous energy spectrum."
+    },
+    {
+      "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
+      "sub": "Internal Conversion",
+      "diff": 2,
+      "q": "Why can an internal conversion source produce several electron lines?",
+      "a": "Although K-shell electrons are most likely to be emitted, electrons from higher shells (L, M, ...) can also undergo internal conversion. Since each shell has a different binding energy, each produces a different monoenergetic electron line."
+    },
+    {
+      "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
+      "sub": "Internal Conversion",
+      "diff": 1,
+      "q": "Why are internal conversion sources useful for detector calibration?",
+      "a": "Internal conversion sources emit monoenergetic electrons with well-defined energies, typically from a few hundred keV to a few MeV. They are therefore widely used to calibrate electron detectors and spectrometers."
+    },
+    {
+      "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
+      "sub": "Auger Electrons",
+      "diff": 1,
+      "q": "What is an Auger electron, and how is it produced?",
+      "a": "An Auger electron is emitted when an excited atom transfers the energy released by an electronic-shell transition directly to another atomic electron instead of emitting a characteristic X-ray. The second electron is then ejected from the atom. Auger emission commonly follows processes such as electron capture."
+    },
+    {
+      "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
+      "sub": "Auger Electrons",
+      "diff": 2,
+      "q": "What is the difference between an Auger electron and an internal conversion electron?",
+      "a": "An Auger electron originates from an atomic-shell transition: the energy released when an electron fills an inner-shell vacancy is transferred to another atomic electron. An internal conversion electron originates from a nuclear transition: the nucleus transfers its excitation energy directly to an atomic electron. Both processes produce monoenergetic electrons."
+    },
+    {
+      "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
+      "sub": "Auger Electrons",
+      "diff": 1,
+      "q": "Why are Auger electrons difficult to detect?",
+      "a": "Auger electrons typically have energies of only a few keV, reflecting atomic rather than nuclear energy scales. Their low energy gives them a very short range in matter, making them highly susceptible to self-absorption before they escape the source."
+    },
+
+    {
+      "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
+      "sub": "Neutron Sources",
+      "diff": 1,
+      "q": "What are the two main methods used to produce neutrons in laboratory radioactive sources?",
+      "a": "Laboratory neutron sources are based either on spontaneous fission or on nuclear reactions, most commonly $(\\alpha,n)$ and $(\\gamma,n)$ reactions."
+    },
+    {
+      "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
+      "sub": "Spontaneous Fission",
+      "diff": 1,
+      "q": "How does a spontaneous-fission neutron source produce neutrons?",
+      "a": "Heavy transuranium nuclei, such as $^{252}$Cf, can undergo spontaneous fission, producing two fission fragments together with several neutrons. The fission fragments also emit $\\beta$ and $\\gamma$ radiation, but these can be largely absorbed by suitable shielding while the neutrons escape."
+    },
+    {
+      "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
+      "sub": "Spontaneous Fission",
+      "diff": 2,
+      "q": "Which isotope is the most common spontaneous-fission neutron source, and what is the approximate temperature parameter of its neutron spectrum?",
+      "a": "$^{252}$Cf is the most widely used spontaneous-fission neutron source. Its neutron energy spectrum is approximately described by a Watt spectrum with an effective temperature parameter of about $T=1.3\\,\\mathrm{MeV}$."
+    },
+    {
+      "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
+      "sub": "Alpha-Neutron Sources",
+      "diff": 1,
+      "q": "How does an Am-Be neutron source produce neutrons?",
+      "a": "Alpha particles emitted by $^{241}$Am interact with beryllium nuclei through an $(\\alpha,n)$ reaction. An excited $^{13}$C nucleus is first formed, which subsequently decays by emitting a neutron."
+    },
+    {
+      "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
+      "sub": "Alpha-Neutron Sources",
+      "diff": 2,
+      "q": "Write the main reaction responsible for neutron production in an Am-Be source.",
+      "a": "$$\\alpha + {}^9\\mathrm{Be} \\rightarrow {}^{13}\\mathrm{C}^* \\rightarrow {}^{12}\\mathrm{C}^{(*)} + n$$\n\nThe excited $^{13}$C nucleus may decay through several channels, but the dominant one produces $^{12}$C (ground or excited state) together with a neutron."
+    },
+    {
+      "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
+      "sub": "Alpha-Neutron Sources",
+      "diff": 2,
+      "q": "Why is the neutron spectrum from an $(\\alpha,n)$ source broad rather than monoenergetic?",
+      "a": "Although a single nuclear transition would produce monoenergetic neutrons, the emitted alpha particles lose energy before interacting in the target, producing a range of reaction energies. Additional Doppler broadening further widens the neutron spectrum."
+    },
+    {
+      "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
+      "sub": "Gamma-Neutron Sources",
+      "diff": 1,
+      "q": "Which target materials are commonly used in $(\\gamma,n)$ neutron sources?",
+      "a": "Only beryllium and deuterium are commonly used. Their reactions are\n\n$$^9\\mathrm{Be}(\\gamma,n)^8\\mathrm{Be}$$\n\nand\n\n$$^2\\mathrm{H}(\\gamma,n)^1\\mathrm{H}.$$"
+    },
+    {
+      "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
+      "sub": "Gamma-Neutron Sources",
+      "diff": 2,
+      "q": "Compare $(\\gamma,n)$ and $(\\alpha,n)$ neutron sources.",
+      "a": "$(\\gamma,n)$ sources produce neutrons with a much narrower (nearly monoenergetic) energy distribution because the incident gamma rays do not lose energy before the reaction. However, their neutron yield is typically one to two orders of magnitude lower than that of $(\\alpha,n)$ sources, and they are accompanied by a significant gamma-ray background."
+    },
+    {
+      "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
+      "sub": "Alpha-Neutron Sources",
+      "diff": 2,
+      "q": "Why is beryllium the most common target material in $(\\alpha,n)$ neutron sources?",
+      "a": "Beryllium has one of the largest $(\\alpha,n)$ reaction yields among practical target materials, making it the preferred choice for compact laboratory neutron sources such as Am-Be and Pu-Be."
+    }
+
+
+
+
+
+
+
+  ]
+}

@@ -113,12 +113,13 @@ async function loadDeck(deckId) {
 
     const deck = await response.json();
 
-    currentDeck = deck.id;
-    currentDeckInfo = deck;
-    deckCards = deck.cards.map(card => ({
-    ...card,
-    id: makeCardId(deck.id, card)
-}));
+    currentDeck = info.id;
+    currentDeckInfo = info;
+
+    deckCards = (deck.cards || []).map(card => ({
+        ...card,
+        id: makeCardId(info.id, card)
+    }));
 }
 
 /* ================= HELPERS ================= */
@@ -258,11 +259,39 @@ function buildDeckSelector() {
 
     const sel = document.getElementById("deckSelect");
 
-    sel.innerHTML = deckCatalog.map(deck => `
-      <option value="${deck.id}">
-          ${deck.title}
-      </option>
-    `).join("");
+    // Group decks by collection
+    const collections = {};
+
+    for (const deck of deckCatalog) {
+
+        if (!collections[deck.collection]) {
+            collections[deck.collection] = [];
+        }
+
+        collections[deck.collection].push(deck);
+    }
+
+    // Build selector
+    sel.innerHTML = "";
+
+    for (const [collection, decks] of Object.entries(collections)) {
+
+        const group = document.createElement("optgroup");
+        group.label = collection;
+
+        for (const deck of decks) {
+
+            const option = document.createElement("option");
+
+            option.value = deck.id;
+
+            option.textContent = deck.name;
+
+            group.appendChild(option);
+        }
+
+        sel.appendChild(group);
+    }
 
     sel.value = currentDeck;
 
@@ -274,21 +303,24 @@ function buildDeckSelector() {
 }
 
 async function switchDeck(deckId) {
-  await loadDeck(deckId);
-  localStorage.setItem("selectedDeck", deckId);
-  await loadState();
+    await loadDeck(deckId);
+    localStorage.setItem("selectedDeck", deckId);
+    await loadState();
 
-  const deckSelect = document.getElementById("deckSelect");
-  if (deckSelect) deckSelect.value = currentDeck;
+    expandedLibraryCard = null;
+    session = null;
 
-  const topicChips = document.getElementById("topicChips");
-  if (topicChips) delete topicChips.dataset.init;
+    const deckSelect = document.getElementById("deckSelect");
+    if (deckSelect) deckSelect.value = currentDeck;
 
-  const libTopicFilter = document.getElementById("libTopicFilter");
-  if (libTopicFilter) delete libTopicFilter.dataset.init;
+    const topicChips = document.getElementById("topicChips");
+    if (topicChips) delete topicChips.dataset.init;
 
-  buildSidebar();
-  goTo(currentView);
+    const libTopicFilter = document.getElementById("libTopicFilter");
+    if (libTopicFilter) delete libTopicFilter.dataset.init;
+
+    buildSidebar();
+    goTo(currentView);
 }
 
 /* ================= OVERVIEW ================= */
@@ -339,7 +371,8 @@ function confirmReset(){
 
 /* ================= TRAIN ================= */
 function renderTrainSetup(){
-  document.getElementById("trainDeckTitle").textContent = currentDeckInfo.title;
+  // document.getElementById("trainDeckTitle").textContent = currentDeckInfo.title;
+  document.getElementById("trainDeckTitle").textContent = currentDeckInfo?.name ?? "Train";
   document.getElementById("trainDeckSubtitle").textContent = "Select the topics you want to study.";
   document.getElementById('trainSetup').style.display = '';
   document.getElementById('trainStage').style.display = 'none';
