@@ -565,33 +565,41 @@ function renderCollections() {
 }
 
 /* ================= TRAIN ================= */
-function renderTrainSetup(){
-  // document.getElementById("trainDeckTitle").textContent = currentDeckInfo.title;
-  document.getElementById("trainDeckTitle").textContent = currentDeckInfo?.name ?? "Train";
-  document.getElementById("trainDeckSubtitle").textContent = "Select the topics you want to study.";
-  document.getElementById('trainSetup').style.display = '';
-  document.getElementById('trainStage').style.display = 'none';
-  document.getElementById('trainSummary').style.display = 'none';
-  document.getElementById('trainEmpty').style.display = 'none';
+function renderTrainSetup() {
 
-  const sections = sectionsInOrder();
-  const chipWrap = document.getElementById("topicChips");
-  if (!chipWrap.dataset.init) {
-      chipWrap.innerHTML = sections.map(section => {
-          const nCards = allCards().filter(
-              c => c.sub === section
-          ).length;
-          return `
-              <div class="chip on"
-                  data-section="${escapeHtml(section)}"
-                  onclick="toggleChip(this)">
-                  ${escapeHtml(section)}
-                  <span style="opacity:.65">(${nCards})</span>
-              </div>
-          `;
-      }).join("");
-      chipWrap.dataset.init = "1";
-  }
+    document.getElementById("trainCollectionTitle").textContent =
+        currentDeckInfo.collection;
+
+    document.getElementById("trainDeckTitle").textContent =
+        currentDeckInfo.name;
+
+    document.getElementById("trainSetup").style.display = "";
+    document.getElementById("trainStage").style.display = "none";
+    document.getElementById("trainSummary").style.display = "none";
+    document.getElementById("trainEmpty").style.display = "none";
+
+    const sections = sectionsInOrder();
+
+    const chipWrap = document.getElementById("topicChips");
+
+    chipWrap.innerHTML = sections.map(section => {
+
+        const nCards = allCards().filter(
+            c => c.sub === section
+        ).length;
+
+        return `
+            <div class="chip on"
+                 data-section="${escapeHtml(section)}"
+                 onclick="toggleChip(this)">
+
+                ${escapeHtml(section)}
+                <span style="opacity:.65">(${nCards})</span>
+
+            </div>
+        `;
+
+    }).join("");
 }
 
 function toggleChip(el){ el.classList.toggle('on'); }
@@ -617,7 +625,11 @@ function startSession(){
   const activeSections =
     [...document.querySelectorAll("#topicChips .chip.on")]
         .map(c => c.dataset.section);
-  if(activeSections.length===0){ showToast('Select at least one topic', 'bad'); return; }
+
+  if (activeSections.length === 0) {
+      showToast("Select at least one section", "bad");
+      return;
+  }
   const mode = document.getElementById('queueMode').value;
   const shuffle = document.getElementById('shuffleToggle').checked;
   const diffFilter = document.getElementById('diffFilter').value;

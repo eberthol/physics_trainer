@@ -109,6 +109,21 @@ button{font-family:inherit;}
 .panel{background:var(--bg-panel);border:1px solid var(--border-soft);border-radius:var(--radius);padding:24px;margin-bottom:20px;}
 .panel-title{font-family:var(--font-display);font-size:15px;font-weight:600;margin-bottom:4px;}
 .panel-sub{color:var(--text-faint);font-size:12px;margin-bottom:18px;}
+.collection-title{
+  font-family:var(--font-display);
+  font-size:30px;
+  font-weight:700;
+  line-height:1.1;
+  margin-bottom:6px;
+}
+
+.deck-title{
+  font-family:var(--font-display);
+  font-size:18px;
+  font-weight:500;
+  color:var(--text-dim);
+  margin-bottom:18px;
+}
 
 /* ---------- Topic histogram ---------- */
 .topic-row{display:flex;align-items:center;gap:16px;margin-bottom:16px;}
