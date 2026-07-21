@@ -244,6 +244,22 @@ function subtopicsForTopic(topic){
   allCards().forEach(c=>{ if(c.topic===topic) set.add(c.sub); });
   return [...set];
 }
+function sectionsInOrder() {
+
+    const order = [];
+    const seen = new Set();
+
+    allCards().forEach(card => {
+
+        if (!seen.has(card.sub)) {
+            seen.add(card.sub);
+            order.push(card.sub);
+        }
+
+    });
+
+    return order;
+}
 
 function topicStats(topic){
   const cards = allCards().filter(c=>c.topic===topic);
@@ -558,11 +574,23 @@ function renderTrainSetup(){
   document.getElementById('trainSummary').style.display = 'none';
   document.getElementById('trainEmpty').style.display = 'none';
 
-  const topics = topicsInOrder();
-  const chipWrap = document.getElementById('topicChips');
-  if(!chipWrap.dataset.init){
-    chipWrap.innerHTML = topics.map(t=>`<div class="chip on" data-topic="${escapeHtml(t)}" onclick="toggleChip(this)">${escapeHtml(t)}</div>`).join('');
-    chipWrap.dataset.init = '1';
+  const sections = sectionsInOrder();
+  const chipWrap = document.getElementById("topicChips");
+  if (!chipWrap.dataset.init) {
+      chipWrap.innerHTML = sections.map(section => {
+          const nCards = allCards().filter(
+              c => c.sub === section
+          ).length;
+          return `
+              <div class="chip on"
+                  data-section="${escapeHtml(section)}"
+                  onclick="toggleChip(this)">
+                  ${escapeHtml(section)}
+                  <span style="opacity:.65">(${nCards})</span>
+              </div>
+          `;
+      }).join("");
+      chipWrap.dataset.init = "1";
   }
 }
 
@@ -586,13 +614,17 @@ function setAllTopics(selected) {
 }
 
 function startSession(){
-  const activeTopics = [...document.querySelectorAll('#topicChips .chip.on')].map(c=>c.dataset.topic);
-  if(activeTopics.length===0){ showToast('Select at least one topic', 'bad'); return; }
+  const activeSections =
+    [...document.querySelectorAll("#topicChips .chip.on")]
+        .map(c => c.dataset.section);
+  if(activeSections.length===0){ showToast('Select at least one topic', 'bad'); return; }
   const mode = document.getElementById('queueMode').value;
   const shuffle = document.getElementById('shuffleToggle').checked;
   const diffFilter = document.getElementById('diffFilter').value;
 
-  let pool = allCards().filter(c=>activeTopics.includes(c.topic));
+  let pool = allCards().filter(
+    c => activeSections.includes(c.sub)
+    );
   if(diffFilter !== 'all') pool = pool.filter(c=>c.diff === parseInt(diffFilter, 10));
   if(mode==='due') pool = pool.filter(c=>isDue(c.id));
   if(mode==='weak') pool = pool.slice().sort((a,b)=>purityOf(a.id)-purityOf(b.id));
