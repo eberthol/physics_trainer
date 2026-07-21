@@ -20,7 +20,10 @@ const ICONS = {
 let deckCatalog = [];     // list from decks/index.json
 let currentDeck = null;   // id of the selected deck
 let currentDeckInfo = null;
+let currentCollection = null;
 let deckCards = [];       // cards from the currently loaded deck
+
+let lastDeckByCollection = {};
 
 let state = {
   customCards: [],       // user-added cards
@@ -56,6 +59,20 @@ function saveJSON(key, value) {
     localStorage.setItem(key, JSON.stringify(value));
 }
 
+function loadCollectionMemory() {
+    lastDeckByCollection = loadJSON(
+        "lastDeckByCollection",
+        {}
+    );
+}
+
+function saveCollectionMemory() {
+    saveJSON(
+        "lastDeckByCollection",
+        lastDeckByCollection
+    );
+}
+
 async function loadState() {
 
     state.customCards = loadJSON(storageKey("user-cards"), []);
@@ -85,7 +102,7 @@ async function saveMeta() {
 
 async function loadDeckCatalog() {
 
-    const response = await fetch("decks/index.json", {
+    const response = await fetch("decks/catalog.json", {
         cache: "no-store"
     });
 
@@ -116,13 +133,31 @@ async function loadDeck(deckId) {
     currentDeck = info.id;
     currentDeckInfo = info;
 
-    deckCards = (deck.cards || []).map(card => ({
+    deckCards = deck.cards.map(card => ({
         ...card,
         id: makeCardId(info.id, card)
     }));
 }
 
 /* ================= HELPERS ================= */
+function selectDeckForCollection(collection) {
+
+    const decks = deckCatalog
+        .filter(deck => deck.collection === collection)
+        .sort((a, b) => (a.order ?? 999) - (b.order ?? 999));
+
+    const remembered = lastDeckByCollection[collection];
+
+    if (
+        remembered &&
+        decks.some(deck => deck.id === remembered)
+    ) {
+        return remembered;
+    }
+
+    return decks[0]?.id ?? null;
+}
+
 function hashString(str) {
     let h = 0;
 
@@ -255,72 +290,90 @@ function goTo(view){
   if(view==='add') renderAddForm();
 }
 
+function decksInCurrentCollection() {
+    return deckCatalog
+        .filter(deck => deck.collection === currentCollection)
+        .sort((a, b) => (a.order ?? 999) - (b.order ?? 999));
+}
+
+function buildCollectionSelector() {
+
+    const sel = document.getElementById("collectionSelect");
+
+    const collections = [...new Set(
+        deckCatalog.map(deck => deck.collection)
+    )];
+
+    sel.innerHTML = collections.map(collection =>
+        `<option value="${collection}">${collection}</option>`
+    ).join("");
+
+    if (!currentCollection) {
+        currentCollection = collections[0];
+    }
+
+    sel.value = currentCollection;
+
+    sel.onchange = async () => {
+
+        currentCollection = sel.value;
+
+        buildDeckSelector();
+
+        const deckId = selectDeckForCollection(currentCollection);
+
+        if (deckId) {
+            await switchDeck(deckId);
+        }
+    };
+}
+
 function buildDeckSelector() {
 
     const sel = document.getElementById("deckSelect");
 
-    // Group decks by collection
-    const collections = {};
+    const decks = decksInCurrentCollection();
 
-    for (const deck of deckCatalog) {
+    // Populate the selector
+    sel.innerHTML = decks.map(deck =>
+        `<option value="${deck.id}">${deck.name}</option>`
+    ).join("");
 
-        if (!collections[deck.collection]) {
-            collections[deck.collection] = [];
-        }
+    // Select the current deck if it belongs to this collection.
+    // Otherwise select the first deck.
+    const selected =
+        decks.some(deck => deck.id === currentDeck)
+            ? currentDeck
+            : decks[0]?.id;
 
-        collections[deck.collection].push(deck);
+    if (selected) {
+        sel.value = selected;
     }
 
-    // Build selector
-    sel.innerHTML = "";
-
-    for (const [collection, decks] of Object.entries(collections)) {
-
-        const group = document.createElement("optgroup");
-        group.label = collection;
-
-        for (const deck of decks) {
-
-            const option = document.createElement("option");
-
-            option.value = deck.id;
-
-            option.textContent = deck.name;
-
-            group.appendChild(option);
-        }
-
-        sel.appendChild(group);
-    }
-
-    sel.value = currentDeck;
-
+    // Change deck
     sel.onchange = async () => {
-
         await switchDeck(sel.value);
-
     };
 }
 
+
 async function switchDeck(deckId) {
-    await loadDeck(deckId);
-    localStorage.setItem("selectedDeck", deckId);
-    await loadState();
 
-    expandedLibraryCard = null;
-    session = null;
+  await loadDeck(deckId);
+  await loadState();
 
-    const deckSelect = document.getElementById("deckSelect");
-    if (deckSelect) deckSelect.value = currentDeck;
+  currentCollection = currentDeckInfo.collection;
 
-    const topicChips = document.getElementById("topicChips");
-    if (topicChips) delete topicChips.dataset.init;
+  lastDeckByCollection[currentCollection] = currentDeck;
+  saveCollectionMemory();
 
-    const libTopicFilter = document.getElementById("libTopicFilter");
-    if (libTopicFilter) delete libTopicFilter.dataset.init;
+  localStorage.setItem("selectedDeck", currentDeck);
 
-    buildSidebar();
-    goTo(currentView);
+  expandedLibraryCard = null;
+  session = null;
+
+  buildSidebar();
+  goTo(currentView);
 }
 
 /* ================= OVERVIEW ================= */
@@ -742,27 +795,35 @@ async function loadAppVersion() {
 }
 
 /* ================= INIT ================= */
-async function init(){
-  document.getElementById('sidebarFoot').textContent = 'syncing…';
-  const version = await loadAppVersion();
-  document.getElementById('appVersion').textContent = version;
-  // currentDeck = "builtin";
-  // deckCards = BUILTIN_CARDS;
+async function init() {
 
-  await loadDeckCatalog();
-  const savedDeck = localStorage.getItem("selectedDeck");
-  const deckExists = deckCatalog.some(
-      deck => deck.id === savedDeck
-  );
-  const deckToLoad = deckExists
-      ? savedDeck
-      : deckCatalog[0].id;
-  await loadDeck(deckToLoad);
+    document.getElementById("sidebarFoot").textContent = "syncing…";
 
-  await loadState();
-  document.getElementById('sidebarFoot').innerHTML = `Version ${version}<br>${allCards().length} cards loaded<br>local session`;
-  buildSidebar();
-  buildDeckSelector();
-  goTo('overview');
+    const version = await loadAppVersion();
+    document.getElementById("appVersion").textContent = version;
+
+    await loadDeckCatalog();
+
+    loadCollectionMemory();
+
+    const savedDeck = localStorage.getItem("selectedDeck");
+
+    const deckToLoad = deckCatalog.some(deck => deck.id === savedDeck)
+        ? savedDeck
+        : deckCatalog[0].id;
+
+    // Establish the initial collection BEFORE building the selectors
+    currentCollection =
+        deckCatalog.find(deck => deck.id === deckToLoad).collection;
+
+    // Build the selectors
+    buildCollectionSelector();
+    buildDeckSelector();
+
+    // Load the selected deck
+    await switchDeck(deckToLoad);
+
+    document.getElementById("sidebarFoot").innerHTML =
+        `Version ${version}<br>${allCards().length} cards loaded<br>local session`;
 }
 init();

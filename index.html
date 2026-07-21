@@ -43,10 +43,16 @@
           <div class="page-eyebrow">Version <span id="appVersion">1.0.0</span></div>
           <div class="page-title">Overview</div>
           <div class="page-desc">System purity by topic. Purity rises as cards move through the review cycle and decays back to Box 0 on a missed recall.</div>
-          <div style="margin-top:18px;">
-            <label class="form-label">Deck</label><br>
-            <select class="select" id="deckSelect"></select>
-        </div>
+          <div style="margin-top:18px; display:flex; gap:12px; flex-wrap:wrap;">
+            <div>
+              <label class="form-label">Collection</label><br>
+              <select class="select" id="collectionSelect"></select>
+            </div>
+            <div>
+              <label class="form-label">Deck</label><br>
+              <select class="select" id="deckSelect"></select>
+            </div>
+          </div>
         </div>
         <button class="btn btn-primary" onclick="goTo('train')">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 3l14 9-14 9V3z"/></svg>
