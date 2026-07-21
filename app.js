@@ -4,6 +4,7 @@ const TOPIC_PALETTE = ['#5FD4E3', '#9B87F5', '#F2B84B', '#5FD98A', '#F27F5F', '#
 
 const NAV_ITEMS = [
   {id:'overview', label:'Overview', icon:'ring'},
+  {id:'collections', label:'Collections', icon:'book'},
   {id:'train', label:'Train', icon:'bolt'},
   {id:'library', label:'Library', icon:'book'},
   {id:'add', label:'Add card', icon:'plus'},
@@ -22,6 +23,7 @@ let currentDeck = null;   // id of the selected deck
 let currentDeckInfo = null;
 let currentCollection = null;
 let deckCards = [];       // cards from the currently loaded deck
+let deckIndex = {};
 
 let lastDeckByCollection = {};
 
@@ -140,6 +142,28 @@ async function loadDeck(deckId) {
 }
 
 /* ================= HELPERS ================= */
+async function loadDeckMetadata() {
+
+    deckIndex = {};
+
+    for (const deck of deckCatalog) {
+
+        const response = await fetch(deck.file, {
+            cache: "no-store"
+        });
+
+        if (!response.ok) {
+            throw new Error(`Cannot load ${deck.file}`);
+        }
+
+        const json = await response.json();
+
+        deckIndex[deck.id] = {
+            cardCount: json.cards.length
+        };
+    }
+}
+
 function selectDeckForCollection(collection) {
 
     const decks = deckCatalog
@@ -234,6 +258,37 @@ function topicStats(topic){
   return {total, avgPurity: Math.round(sum/total), due, mastered};
 }
 
+function deckStats(deckId) {
+
+    const progress = loadJSON(`progress:${deckId}`, {});
+
+    const total = deckIndex[deckId]?.cardCount ?? 0;
+
+    let due = 0;
+    let mastered = 0;
+    let sumBoxes = 0;
+
+    for (const p of Object.values(progress)) {
+
+        sumBoxes += p.box;
+
+        if (p.box === 5)
+            mastered++;
+
+        if (p.nextDue <= todayStr())
+            due++;
+    }
+
+    return {
+        total,
+        due,
+        mastered,
+        purity: total
+            ? Math.round(100 * sumBoxes / (5 * total))
+            : 0
+    };
+}
+
 function escapeHtml(str){
   return String(str).replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
 }
@@ -285,6 +340,7 @@ function goTo(view){
   document.getElementById('view-'+view).classList.add('active');
   buildSidebar();
   if(view==='overview') renderOverview();
+  if(view==='collections') renderCollections();
   if(view==='train') renderTrainSetup();
   if(view==='library') renderLibrary();
   if(view==='add') renderAddForm();
@@ -420,6 +476,76 @@ function confirmReset(){
     renderOverview();
     buildSidebar();
   }
+}
+
+/* ================= COLLECTIONS ================= */
+function renderCollections() {
+
+    const groups = {};
+
+    // Group decks by collection
+    for (const deck of deckCatalog) {
+
+        if (!groups[deck.collection]) {
+            groups[deck.collection] = [];
+        }
+
+        groups[deck.collection].push(deck);
+    }
+
+    // Build the HTML
+    let html = "";
+
+    for (const [collection, decks] of Object.entries(groups)) {
+
+        html += `
+            <div class="panel" style="margin-bottom:20px;">
+                <div class="panel-title">${collection}</div>
+        `;
+
+        for (const deck of decks) {
+
+            const stats = deckStats(deck.id);
+
+            html += `
+            <div class="list-row"
+                style="cursor:pointer; display:block;"
+                onclick="switchDeck('${deck.id}')">
+
+                <div style="
+                    display:flex;
+                    justify-content:space-between;
+                    align-items:center;
+                ">
+                    <strong>${deck.name}</strong>
+
+                    <span style="font-weight:600;">
+                        ${stats.purity}%
+                    </span>
+                </div>
+
+                <div class="bar-track" style="margin:10px 0 8px;">
+                    <div class="bar-fill"
+                        style="width:${stats.purity}%;"></div>
+                </div>
+
+                <div style="
+                    font-size:12px;
+                    color:var(--text-faint);
+                ">
+                    ${stats.total} cards ·
+                    ${stats.due} due ·
+                    ${stats.mastered} mastered
+                </div>
+
+            </div>
+            `;
+        }
+
+        html += `</div>`;
+    }
+
+    document.getElementById("collectionsView").innerHTML = html;
 }
 
 /* ================= TRAIN ================= */
@@ -803,6 +929,7 @@ async function init() {
     document.getElementById("appVersion").textContent = version;
 
     await loadDeckCatalog();
+    await loadDeckMetadata();
 
     loadCollectionMemory();
 
