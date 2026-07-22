@@ -1,112 +1,119 @@
 {
   "cards": [
     {
-      "topic": "Chapter 1 Summary",
+      "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
       "sub": "Overview",
       "diff": 1,
       "q": "What are the main nuclear processes discussed in this chapter?",
       "a": "• $\\alpha$ decay\n• $\\beta^-$ decay\n• $\\beta^+$ decay\n• Electron capture (EC)\n• $\\gamma$ emission\n• Internal conversion\n• Auger electron emission\n• Neutron production (spontaneous fission and nuclear reactions)"
     },
     {
-      "topic": "Chapter 1 Summary",
+      "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
       "sub": "Overview",
       "diff": 2,
       "q": "Classify the main radioactive emissions as charged particles, neutral particles, or photons.",
       "a": "Charged particles:\n• $\\alpha$\n• $\\beta^-$\n• $\\beta^+$\n• Internal conversion electrons\n• Auger electrons\n\nNeutral particles:\n• Neutrons\n• Neutrinos\n\nPhotons:\n• $\\gamma$ rays\n• Characteristic X-rays\n• 511 keV annihilation photons"
     },
     {
-      "topic": "Chapter 1 Summary",
+      "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
       "sub": "Overview",
       "diff": 2,
       "q": "Compare the principal radioactive decay modes.",
       "a": "$\\alpha$: emits a $^4$He nucleus ($A-4$, $Z-2$).\n\n$\\beta^-$: converts a neutron into a proton ($n\\rightarrow p$).\n\n$\\beta^+$: converts a proton into a neutron ($p\\rightarrow n$).\n\nElectron capture: captures an orbital electron ($p+e^-\\rightarrow n$).\n\n$\\gamma$: nuclear de-excitation by photon emission."
     },
     {
-      "topic": "Chapter 1 Summary",
+      "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
       "sub": "Overview",
       "diff": 2,
       "q": "Which emissions are monoenergetic, and which have continuous energy spectra?",
       "a": "Monoenergetic:\n• $\\alpha$\n• $\\gamma$\n• Internal conversion electrons\n• Auger electrons\n• Characteristic X-rays\n• Annihilation photons\n\nContinuous:\n• $\\beta^-$\n• $\\beta^+$\n• Neutron spectra from most laboratory sources"
     },
     {
-      "topic": "Chapter 1 Summary",
+      "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
       "sub": "Overview",
       "diff": 2,
       "q": "What are the characteristic experimental signatures of the different radioactive processes?",
       "a": "• Electron capture → characteristic X-rays or Auger electrons\n• Positron emission → two 511 keV annihilation photons\n• $\\gamma$ emission → discrete photon lines\n• Internal conversion → monoenergetic electrons\n• Auger emission → low-energy monoenergetic electrons"
     },
     {
-      "topic": "Chapter 1 Summary",
+      "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
       "sub": "Overview",
       "diff": 2,
       "q": "Order the main radiations by increasing penetrating power.",
       "a": "$\\alpha$ < Auger electrons < $\\beta$ < $\\gamma$ < neutrons"
     },
     {
-      "topic": "Chapter 1 Summary",
+      "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
       "sub": "Overview",
       "diff": 2,
       "q": "What are the main laboratory neutron sources, and what are their advantages?",
       "a": "• Spontaneous fission (e.g. $^{252}$Cf): simple, broad neutron spectrum.\n• $(\\alpha,n)$ sources (e.g. Am-Be): high neutron yield, broad spectrum.\n• $(\\gamma,n)$ sources: lower neutron yield but nearly monoenergetic neutrons."
     },
+        {
+      "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
+      "sub": "Overview",
+      "diff": 1,
+      "q": "What is the Q-value of a nuclear decay?",
+      "a": "The Q-value is the total energy released by a nuclear decay. It equals the difference in rest-mass energy between the initial and final states."
+    },
     {
-      "topic": "Ch.1 Summary",
+      "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
       "sub": "Radioactive Sources",
       "diff": 1,
       "q": "What is the activity of a radioactive source?",
       "a": "The activity is the average number of nuclear disintegrations per unit time. It depends on the amount of radioactive material present."
     },
     {
-      "topic": "Ch.1 Summary",
+      "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
       "sub": "Radioactive Sources",
       "diff": 1,
       "q": "What are the SI and traditional units of radioactive activity?",
       "a": "The SI unit is the Becquerel (Bq), where $$1\\,\\mathrm{Bq}=1\\ \\mathrm{disintegration/s}.$$ The traditional unit is the Curie (Ci), where $$1\\,\\mathrm{Ci}=3.7\\times10^{10}\\ \\mathrm{disintegrations/s}.$$"
     },
     {
-      "topic": "Ch.1 Summary",
+      "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
       "sub": "Radioactive Sources",
       "diff": 2,
       "q": "What is the difference between activity and dose?",
       "a": "Activity (Bq, Ci) measures the rate of radioactive disintegrations in the source. Dose (Gy, Sv) measures the effect of radiation absorbed by matter or by a person."
     },
     {
-      "topic": "Ch.1 Summary",
+      "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
       "sub": "Radioactive Decay",
       "diff": 1,
       "q": "What does the radioactive decay law state?",
       "a": "The number of radioactive nuclei (and therefore the activity) decreases exponentially with time: $$N(t)=N_0e^{-\\lambda t}.$$"
     },
     {
-      "topic": "Ch.1 Summary",
+      "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
       "sub": "Radioactive Decay",
       "diff": 2,
       "q": "What is the physical meaning of the decay constant $\\lambda$?",
       "a": "The decay constant is the probability per unit time that a nucleus will decay."
     },
     {
-      "topic": "Ch.1 Summary",
+      "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
       "sub": "Radioactive Decay",
       "diff": 2,
       "q": "What are the definitions of the mean lifetime and half-life?",
       "a": "The mean lifetime is $$\\tau=\\frac{1}{\\lambda}.$$ The half-life is the time required for the number of radioactive nuclei (or the activity) to decrease to one-half of its initial value."
     },
     {
-      "topic": "Ch.1 Summary",
+      "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
       "sub": "Radioactive Decay",
       "diff": 2,
       "q": "What is the relationship between the half-life and the decay constant?",
       "a": "$$T_{1/2}=\\frac{\\ln2}{\\lambda}=\\tau\\ln2.$$"
     },
     {
-      "topic": "Ch.1 Summary",
+      "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
       "sub": "Radioactive Decay",
       "diff": 2,
       "q": "Which probability distribution describes radioactive counting statistics?",
       "a": "The number of radioactive decays observed during a fixed counting interval follows a Poisson distribution."
     },
     {
-      "topic": "Ch.1 Summary",
+      "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
       "sub": "Radioactive Decay",
       "diff": 2,
       "q": "For radioactive counting, what are the standard deviation and relative uncertainty?",
@@ -114,48 +121,41 @@
     },
     {
       "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
-      "sub": "Beta Decay",
-      "diff": 1,
-      "q": "What is the Q-value of a nuclear decay?",
-      "a": "The Q-value is the total energy released by a nuclear decay. It equals the difference in rest-mass energy between the initial and final states."
-    },
-    {
-      "topic": "Ch.1 Summary",
       "sub": "Comparison",
       "diff": 2,
       "q": "Compare $\\alpha$ decay and $\\beta$ decay.",
       "a": "$\\alpha$ decay emits a $^4$He nucleus and changes both $A$ and $Z$ ($A-4$, $Z-2$). It is a two-body process and therefore produces monoenergetic particles. $\\beta$ decay converts a neutron into a proton (or vice versa) through the weak interaction, leaving $A$ unchanged and changing $Z$ by $\\pm1$. It is a three-body process, producing a continuous energy spectrum because part of the energy is carried away by the (anti)neutrino."
     },
     {
-      "topic": "Ch.1 Summary",
+      "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
       "sub": "Comparison",
       "diff": 2,
       "q": "Compare $\\beta^+$ decay and electron capture.",
       "a": "Both processes convert a proton into a neutron and produce the same daughter nucleus. In $\\beta^+$ decay a positron and a neutrino are emitted, whereas electron capture absorbs an orbital electron and emits only a neutrino. Electron capture can occur even when $\\beta^+$ decay is energetically forbidden because no positron has to be created."
     },
     {
-      "topic": "Ch.1 Summary",
+      "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
       "sub": "Comparison",
       "diff": 2,
       "q": "Compare $\\gamma$ emission and internal conversion.",
       "a": "Both are modes of nuclear de-excitation. In $\\gamma$ emission the nucleus emits a photon. In internal conversion the nucleus transfers its excitation energy directly to an atomic electron, which is ejected. Both processes produce discrete (monoenergetic) radiation determined by the nuclear transition energy."
     },
     {
-      "topic": "Ch.1 Summary",
+      "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
       "sub": "Comparison",
       "diff": 2,
       "q": "Compare internal conversion electrons and Auger electrons.",
       "a": "An internal conversion electron originates from a nuclear transition: the nucleus transfers its excitation energy directly to an atomic electron. An Auger electron originates from an atomic-shell transition: the energy released when an electron fills an inner-shell vacancy is transferred to another atomic electron. Internal conversion electrons typically have energies of hundreds of keV to MeV, whereas Auger electrons usually have energies of only a few keV."
     },
     {
-      "topic": "Ch.1 Summary",
+      "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
       "sub": "Comparison",
       "diff": 3,
       "q": "Compare spontaneous-fission neutron sources and $(\\alpha,n)$ neutron sources.",
       "a": "Spontaneous-fission sources (e.g. $^{252}$Cf) produce neutrons directly through nuclear fission and emit several neutrons per fission event. $(\\alpha,n)$ sources (e.g. Am-Be) produce neutrons when $\\alpha$ particles interact with light nuclei such as Be. Spontaneous-fission sources generally produce higher neutron yields, while $(\\alpha,n)$ sources are compact and widely used laboratory neutron sources."
     },
     {
-      "topic": "Ch.1 Summary",
+      "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
       "sub": "Comparison",
       "diff": 2,
       "q": "Compare activity, radiation output, and dose.",
