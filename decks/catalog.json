@@ -5,7 +5,7 @@
     "name":  "Chapter 1 - Basic Nuclear Processes in Radioactive Sources",
     "order": 1,
     "level": "Detailed",
-    "file":   "decks/book-experimental-techniques-ch1.json"
+    "file":   "decks/book-experimental-techniques/book-experimental-techniques-ch1.json"
   },
   {
     "id": "book-exptech-summary",
@@ -13,8 +13,21 @@
     "order": 99,
     "name": "Summary",
     "level": "Summary",
-    "file": "decks/book-experimental-techniques-summary.json"
+    "file": "decks/book-experimental-techniques/book-experimental-techniques-summary.json"
   },
+
+  {
+    "id": "book-nuclear-many-body-problem-ch1",
+    "collection": "The Nuclear Many-Body Problem",
+    "name":  "Chapter 1 - The Liquid Drop Model",
+    "order": 1,
+    "level": "Detailed",
+    "file": "decks/book-nuclear-many-body-problem/book-nuclear-many-body-problem-ch1.json"
+  },
+
+
+
+
 
   {
     "id":    "book-nucphysnutshell-ch1",
@@ -24,6 +37,8 @@
     "level": "Detailed",
     "file":   "decks/book-nuclear-physics-in-a-nutshell-ch1.json"
   }
+
+
 
 
 

@@ -1,0 +1,16 @@
+{
+    "cards": [
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Semi-Empirical Mass Formula",
+            "diff": 3,
+            "q": "What physical effect does each term of the semi-empirical mass formula represent?",
+            "a": "The five terms represent the volume, surface, Coulomb, symmetry, and pairing contributions to the nuclear binding energy.",
+            "figure": {
+                "src": "images/SEMF-overview.png",
+                "caption": "",
+                "size": "full"
+            }
+        }
+    ]
+}

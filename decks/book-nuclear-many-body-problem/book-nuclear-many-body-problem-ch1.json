@@ -1,0 +1,294 @@
+{
+    "cards": [
+
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Introduction",
+            "diff": 1,
+            "q": "Which properties of the nucleus originally motivated the liquid drop model?",
+            "a": "The liquid drop model was motivated by three main properties of nuclei: the saturation of the nuclear force, the very low compressibility of nuclear matter, and the existence of a well-defined nuclear surface."
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Introduction",
+            "diff": 2,
+            "q": "Why should the analogy between a nucleus and an ordinary liquid not be taken too literally?",
+            "a": "Although nuclei exhibit saturation, low compressibility, and a well-defined surface, they differ fundamentally from ordinary liquids because nuclei are quantum fluids. Their constituent nucleons obey Fermi statistics and are strongly affected by the Pauli exclusion principle."
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Quantum Nature of Nuclei",
+            "diff": 2,
+            "q": "How does the average distance between nucleons compare with the equilibrium separation expected from the nuclear force?",
+            "a": "The average distance between nucleons in a nucleus is about 2.4 fm, much larger than the approximately 0.7 fm separation corresponding to the minimum of the nucleon-nucleon interaction."
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Quantum Nature of Nuclei",
+            "diff": 2,
+            "q": "Why are nucleons much farther apart than the minimum of the nuclear interaction would suggest?",
+            "a": "Because nucleons are fermions, they obey the Pauli exclusion principle. This prevents them from occupying the same quantum states and keeps them farther apart than would be expected from the nuclear interaction alone."
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Quantum Nature of Nuclei",
+            "diff": 1,
+            "q": "Why is a nucleus considered a quantum fluid?",
+            "a": "A nucleus is a quantum fluid because its nucleons obey Fermi-Dirac statistics. Their motion and spatial distribution are governed not only by the nuclear interaction but also by the Pauli exclusion principle."
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Quantum Nature of Nuclei",
+            "diff": 2,
+            "q": "Why are scattering events between nucleons relatively rare inside a nucleus?",
+            "a": "The Pauli exclusion principle severely restricts the available final quantum states for scattering. As a result, scattering events are much less frequent than in ordinary liquids."
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Quantum Nature of Nuclei",
+            "diff": 2,
+            "q": "How does the mean free path of nucleons compare with the size of a nucleus?",
+            "a": "The mean free path of nucleons in a ground-state (or moderately excited) nucleus is of the order of the nuclear diameter, making the nucleus resemble a nearly non-interacting gas despite the presence of strong nuclear forces."
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Quantum Nature of Nuclei",
+            "diff": 2,
+            "q": "In what sense does a nucleus resemble a non-interacting gas?",
+            "a": "Because nucleons have a mean free path comparable to the nuclear size, they can move through much of the nucleus without scattering. In this respect, apart from quantum statistics, a nucleus behaves similarly to a non-interacting gas."
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Quantum Nature of Nuclei",
+            "diff": 3,
+            "q": "How does the momentum distribution of nucleons in a vibrating nucleus differ from the velocity distribution in an ordinary liquid drop?",
+            "a": "In a vibrating nucleus, collective deformations can make the nucleon momentum distribution anisotropic. In contrast, the velocity distribution in an ordinary liquid drop remains isotropic."
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Introduction",
+            "diff": 1,
+            "q": "Why is the liquid drop model still useful despite its limitations?",
+            "a": "Although it does not capture the quantum nature of nuclei, the liquid drop model successfully describes many overall nuclear properties and provides a simple introduction to collective nuclear phenomena."
+        },
+
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Semi-Empirical Mass Formula",
+            "diff": 1,
+            "q": "How does the total nuclear binding energy vary with the number of nucleons?",
+            "a": "For medium and heavy nuclei, the total binding energy is approximately proportional to the number of nucleons, $$B \\propto A,$$ so the binding energy per nucleon remains roughly constant."
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Semi-Empirical Mass Formula",
+            "diff": 1,
+            "q": "What is the approximate binding energy per nucleon for nuclei with more than about 12 nucleons?",
+            "a": "The binding energy per nucleon is approximately $$\\frac{B}{A}\\approx -8.5\\,\\text{MeV/nucleon}.$$"
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Semi-Empirical Mass Formula",
+            "diff": 2,
+            "q": "Why would the binding energy be expected to grow as $A(A-1)$ if every nucleon interacted equally with every other nucleon?",
+            "a": "A system of A particles contains approximately $$\\frac{A(A-1)}{2}$$ distinct pairs. If every pair contributed equally to the binding, the total binding energy would be proportional to the number of pairs, i.e. approximately $$B\\propto A(A-1).$$"
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Semi-Empirical Mass Formula",
+            "diff": 2,
+            "q": "Why does the nuclear binding energy not grow as $A(A-1)$?",
+            "a": "Because nuclear forces are saturated. Each nucleon interacts strongly with only a limited number of nearby nucleons, rather than with every nucleon in the nucleus. Saturation means that each nucleon interacts significantly with only a limited number of neighboring nucleons. Consequently, adding more nucleons does not increase the number of strong interactions experienced by each nucleon."
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Semi-Empirical Mass Formula",
+            "diff": 3,
+            "q": "What physical mechanisms are responsible for the saturation of the nuclear force?",
+            "a": "Nuclear saturation arises from the short range of the nuclear force together with the Pauli exclusion principle, the uncertainty principle, and the hard-core repulsion between nucleons. As nucleons approach each other, the attractive potential lowers the energy, but at very short distances the kinetic energy rises rapidly, producing a shallow energy minimum at the equilibrium separation.",
+            "figure": {
+                "src": "images/nuclear-saturation.png",
+                "caption": "Qualitative explanation of nuclear saturation as a subtle difference effect of $E_{\\mathrm{kin}}$ and $E_{\\mathrm{pot}}$. The total energy (E_tot) is the sum of the attractive potential energy (E_pot) and the repulsive kinetic energy (E_kin). Their competition produces a shallow minimum, limiting how closely nucleons can approach one another.",
+                "size": "small"
+            }
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Semi-Empirical Mass Formula",
+            "diff": 2,
+            "q": "Why does the total binding energy increase approximately linearly with the mass number $A$?",
+            "a": "Since each nucleon interacts with only a limited number of neighboring nucleons, the average binding contribution of each additional nucleon remains nearly constant. Therefore, the total binding energy grows approximately as $$B\\propto A.$$"
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Semi-Empirical Mass Formula",
+            "diff": 3,
+            "q": "Why is the average separation between nucleons about 2.4 fm?",
+            "a": "The equilibrium separation results from a balance between attractive nuclear forces and the rapidly increasing kinetic energy caused by the Pauli exclusion principle, the uncertainty principle, and the hard-core repulsion. Together these effects produce a shallow minimum in the total energy near 2.4 fm."
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Semi-Empirical Mass Formula",
+            "diff": 3,
+            "q": "How do the kinetic and potential energies of two nucleons vary as their separation changes?",
+            "a": "At large separations, the short-range nuclear force is negligible and the potential energy is close to zero. As the nucleons approach each other, the attractive potential lowers the total energy. At very short distances (roughly below 2 fm), the kinetic energy rises steeply because of the Pauli exclusion principle, the uncertainty principle, and the hard-core repulsion, causing the total energy to increase again."
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Semi-Empirical Mass Formula",
+            "diff": 2,
+            "q": "Which effects are neglected when arguing that the nuclear binding energy is proportional to $A$?",
+            "a": "The simple argument neglects surface effects and the Coulomb repulsion between protons. These contributions are introduced separately in the semi-empirical mass formula."
+        },
+
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Semi-Empirical Mass Formula",
+            "diff": 1,
+            "q": "How does nuclear saturation explain the approximately constant density of nuclei?",
+            "a": "Since each nucleon interacts with only a limited number of nearby nucleons, adding more nucleons increases the nuclear volume nearly proportionally to the number of nucleons. As a result, the nucleon density remains approximately constant across nuclei."
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Semi-Empirical Mass Formula",
+            "diff": 1,
+            "q": "What experimental properties of nuclei are qualitatively explained by nuclear saturation?",
+            "a": "Nuclear saturation explains the approximately constant nucleon density inside nuclei and their relatively sharp surface."
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Semi-Empirical Mass Formula",
+            "diff": 1,
+            "q": "What empirical relation describes the nuclear radius?",
+            "a": "The nuclear radius is approximately\n\n$$R=r_0A^{1/3},$$\n\nwhere $$r_0\\approx1.2\\,\\mathrm{fm}.$$"
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Semi-Empirical Mass Formula",
+            "diff": 2,
+            "q": "Why does the nuclear radius scale as $A^{1/3}$?",
+            "a": "Since nuclei have approximately constant density, their volume is proportional to the number of nucleons: $$V\\propto A.$$ Because the volume of a sphere is proportional to $$R^3$$, the nuclear radius scales as $$R\\propto A^{1/3}.$$"
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Binding Energy per Nucleon",
+            "diff": 2,
+            "q": "How does the binding energy per nucleon vary with the mass number?",
+            "a": "The binding energy per nucleon rises rapidly for light nuclei, reaches a maximum of just under 9 MeV around $A\\approx60$, after which $B/A$ decreases gradually because Coulomb repulsion becomes increasingly important.",
+            "figure": {
+                "src": "images/binding-energy-per-nucleon.png",
+                "size": "medium",
+                "caption": "Experimental binding energy per nucleon as a function of mass number for $\\beta$-stable odd-A(o) nuclei. The curve corresponds to the semi-empirical mass formula of Bethe and Weizsäcker."
+                }
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Binding Energy per Nucleon",
+            "diff": 2,
+            "q": "Why does the binding energy per nucleon decrease for very heavy nuclei?",
+            "a": "As the number of protons increases, the Coulomb repulsion between them becomes increasingly important. This reduces the average binding energy per nucleon."
+        },
+
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Semi-Empirical Mass Formula",
+            "diff": 1,
+            "q": "State the semi-empirical mass formula of Bethe and Weizsäcker and briefly explain the different terms",
+            "a": "$$B(N,Z) = a_V A + a_S A^{2/3} +  a_C \\frac{Z^2}{A^{1/3}} + a_l \\frac{(N-Z)^2}{A} - \\delta(A)$$. $a_V$ is the volume term, $A \\propto R^3$. $a_S$ is the surface term, it results from the fact that the nucleons close to the surface contribute less to the total binding energy. $a_C$-term takes into account the Coulomb repulsion of the protons. $a_l$ is the asymmetry term, it is related to Pauli exclusion principle. $\\delta(A)$ is the paring term, realted to spin coupling; for odd A it is 0, for even A and even Z it is positive and for for even A and odd Z it is negative."
+        },
+
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Semi-Empirical Mass Formula",
+            "diff": 1,
+            "q": "What is the purpose of the semi-empirical mass formula?",
+            "a": "The semi-empirical mass formula provides an approximate expression for the nuclear binding energy as a function of the number of protons and neutrons. It describes the smooth overall trend of binding energies across the chart of nuclides."
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Volume Term",
+            "diff": 1,
+            "q": "What is the physical origin of the volume term in the semi-empirical mass formula?",
+            "a": "The volume term arises from the saturation of the nuclear force. Since each nucleon interacts with only a limited number of neighbors, each additional nucleon contributes approximately the same binding energy."
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Volume Term",
+            "diff": 2,
+            "q": "Why is the coefficient of the volume term not equal to -8.5 MeV?",
+            "a": "The value -8.5 MeV is the average binding energy per nucleon after all contributions are included. The volume coefficient is larger in magnitude because the positive surface, Coulomb, and symmetry terms reduce the total binding energy."
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Surface Term",
+            "diff": 1,
+            "q": "Why does the semi-empirical mass formula contain a surface term?",
+            "a": "Nucleons near the nuclear surface have fewer neighboring nucleons than those in the interior. They therefore contribute less to the total binding energy, reducing the overall binding."
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Surface Term",
+            "diff": 2,
+            "q": "Why is the surface term proportional to $A^{2/3}$?",
+            "a": "The surface energy is proportional to the nuclear surface area. Since the nuclear radius scales as $$R\\propto A^{1/3},$$ the surface area scales as $$R^2\\propto A^{2/3}.$$"
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Surface Term",
+            "diff": 2,
+            "q": "What physical quantity can be derived from the surface-term coefficient?",
+            "a": "The surface-term coefficient can be used to define the nuclear surface tension, which is the surface energy per unit area."
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Coulomb Term",
+            "diff": 1,
+            "q": "What does the Coulomb term represent?",
+            "a": "The Coulomb term accounts for the electrostatic repulsion between protons inside the nucleus."
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Coulomb Term",
+            "diff": 2,
+            "q": "Why is the Coulomb term proportional to $Z^2/A^{1/3}$?",
+            "a": "The electrostatic energy is proportional to the number of proton pairs (approximately $Z^2$) and inversely proportional to the nuclear radius. Since $R\\propto A^{1/3}$, the Coulomb energy scales as $Z^2/A^{1/3}$."
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Symmetry Term",
+            "diff": 2,
+            "q": "Why is a symmetry term needed in the semi-empirical mass formula?",
+            "a": "Because a nucleus containing only neutrons or only protons is energetically unfavorable. The symmetry term accounts for the energy cost associated with an imbalance between the numbers of neutrons and protons."
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Symmetry Term",
+            "diff": 2,
+            "q": "Why does the symmetry term depend on $(N-Z)^2$ rather than $(N-Z)$?",
+            "a": "The energy depends only on the magnitude of the neutron-proton imbalance, not on whether there are excess neutrons or excess protons. The dependence must therefore be symmetric under exchanging neutrons and protons, leading to a quadratic dependence on $$N-Z.$$"
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Pairing Term",
+            "diff": 2,
+            "q": "What is the purpose of the pairing term in the semi-empirical mass formula?",
+            "a": "The pairing term accounts for the different binding energies of even-even, even-odd, and odd-odd nuclei due to the pairing interaction between nucleons."
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Pairing Term",
+            "diff": 1,
+            "q": "For which nuclei is the pairing term positive, zero, and negative?",
+            "a": "The pairing term is positive for even-even nuclei, zero for nuclei with one even and one odd nucleon number, and negative for odd-odd nuclei."
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Semi-Empirical Mass Formula",
+            "diff": 2,
+            "q": "What are the main limitations of the semi-empirical mass formula?",
+            "a": "The semi-empirical mass formula reproduces only the smooth overall variation of the nuclear binding energy. It does not describe local deviations, which are mainly caused by nuclear shell effects."
+        }
+        
+    ]
+}
+
