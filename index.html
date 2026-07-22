@@ -14,6 +14,17 @@
 
 </head>
 
+<div class="figure-modal" id="figureModal" onclick="closeFigureModal()">
+  <div class="figure-modal-backdrop"></div>
+
+  <div class="figure-modal-content" onclick="event.stopPropagation()">
+    <button class="figure-modal-close" type="button" onclick="closeFigureModal()">×</button>
+    <img id="figureModalImg" alt="">
+    <div class="figure-modal-caption" id="figureModalCaption"></div>
+  </div>
+</div>
+
+
 <body>
 <div id="app">
   <nav class="sidebar">

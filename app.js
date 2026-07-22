@@ -138,6 +138,77 @@ async function loadDeck(deckId) {
 }
 
 /* ================= HELPERS ================= */
+function renderFigureMarkup(figure) {
+    if (!figure) return "";
+
+    const figures = Array.isArray(figure) ? figure : [figure];
+
+    return `
+        <div class="figure-stack">
+            ${figures
+                .filter(f => f && f.src)
+                .map(f => {
+
+                    const size = f.size ?? "medium";
+
+                    const alt = f.alt ?? f.caption ?? "";
+
+                    const caption = f.caption
+                        ? `<figcaption>${escapeHtml(f.caption)}</figcaption>`
+                        : "";
+
+                    return `
+                        <figure class="card-figure">
+                            <img
+                                class="figure-thumb size-${size}"
+                                src="${escapeHtml(f.src)}"
+                                alt="${escapeHtml(alt)}"
+                                data-caption="${escapeHtml(f.caption ?? "")}"
+                                loading="lazy"
+                                decoding="async"
+                                onclick="openFigureModalFromEl(this)">
+                            ${caption}
+                        </figure>
+                    `;
+                })
+                .join("")}
+        </div>
+    `;
+}
+
+function openFigureModalFromEl(imgEl) {
+  openFigureModal(
+    imgEl.src,
+    imgEl.dataset.caption || "",
+    imgEl.alt || ""
+  );
+}
+
+function openFigureModal(src, caption, alt) {
+  const modal = document.getElementById("figureModal");
+  const img = document.getElementById("figureModalImg");
+  const cap = document.getElementById("figureModalCaption");
+
+  img.src = src;
+  img.alt = alt || caption || "";
+  cap.textContent = caption || "";
+
+  modal.classList.add("show");
+  document.body.style.overflow = "hidden";
+}
+
+function closeFigureModal() {
+  const modal = document.getElementById("figureModal");
+  const img = document.getElementById("figureModalImg");
+
+  img.src = "";
+  img.alt = "";
+  document.getElementById("figureModalCaption").textContent = "";
+
+  modal.classList.remove("show");
+  document.body.style.overflow = "";
+}
+
 function onLibraryTopicChange() {
 
     const topic =
@@ -456,6 +527,8 @@ async function switchDeck(deckId) {
   await loadDeck(deckId);
   await loadState();
 
+  initLibraryFilters();
+
   currentCollection = currentDeckInfo.collection;
 
   lastDeckByCollection[currentCollection] = currentDeck;
@@ -695,7 +768,7 @@ function renderCard(){
   document.getElementById('cardTopic').textContent = card.topic;
   document.getElementById('cardSub').textContent = card.sub;
   document.getElementById('cardQuestion').innerHTML = escapeHtml(card.q).replace(/\n/g,'<br>');
-  document.getElementById('cardAnswer').innerHTML = escapeHtml(card.a).replace(/\n/g,'<br>');
+  document.getElementById('cardAnswer').innerHTML = `<div>${escapeHtml(card.a).replace(/\n/g,'<br>')}</div>` + renderFigureMarkup(card.figure);
   document.getElementById('cardAnswer').classList.add('hidden');
   document.getElementById('cardDiffTag').innerHTML = `<span class="difficulty-tag diff-${card.diff}">${['','foundational','intermediate','advanced'][card.diff]}</span>`;
 
@@ -772,105 +845,165 @@ document.addEventListener('keydown', (e)=>{
   if(e.code==='Space'){ e.preventDefault(); if(!session.revealed) revealAnswer(); }
   if(e.key==='1' && session.revealed) gradeCard(false);
   if(e.key==='2' && session.revealed) gradeCard(true);
+  if(e.key === "Escape") closeFigureModal();
 });
 
 /* ================= LIBRARY ================= */
-function renderLibrary(){
+function initLibraryFilters() {
   const topicSel = document.getElementById("libTopicFilter");
+  const sectionSel = document.getElementById("libSectionFilter");
 
-if (!topicSel.dataset.init) {
+  if (!topicSel || !sectionSel) return;
 
-    const topics = topicsInOrder();
+  const topics = topicsInOrder();
 
-    topicSel.innerHTML =
-        `<option value="">All topics</option>` +
-        topics.map(topic =>
-            `<option value="${escapeHtml(topic)}">${escapeHtml(topic)}</option>`
-        ).join("");
+  topicSel.innerHTML =
+    `<option value="">All topics</option>` +
+    topics.map(topic =>
+      `<option value="${escapeHtml(topic)}">${escapeHtml(topic)}</option>`
+    ).join("");
 
-    topicSel.dataset.init = "1";
-
-    // Populate the section selector the first time
-    onLibraryTopicChange();
+  topicSel.value = "";
+  onLibraryTopicChange();
 }
 
-  const q = document.getElementById('libSearch').value.trim().toLowerCase();
-  const topicFilter =
-    document.getElementById("libTopicFilter").value;
+function onLibraryTopicChange() {
+  const topicSel = document.getElementById("libTopicFilter");
+  const sectionSel = document.getElementById("libSectionFilter");
 
-  const sectionFilter =
-      document.getElementById("libSectionFilter").value;
+  if (!topicSel || !sectionSel) return;
+
+  const topicFilter = topicSel.value;
+
+  const sections = [...new Set(
+    allCards()
+      .filter(card => !topicFilter || card.topic === topicFilter)
+      .map(card => card.sub)
+  )];
+
+  sectionSel.innerHTML =
+    `<option value="">All sections</option>` +
+    sections.map(section =>
+      `<option value="${escapeHtml(section)}">${escapeHtml(section)}</option>`
+    ).join("");
+
+  sectionSel.value = "";
+  renderLibrary();
+}
+
+function renderLibrary() {
+  const topicSel = document.getElementById("libTopicFilter");
+  const sectionSel = document.getElementById("libSectionFilter");
+  const searchEl = document.getElementById("libSearch");
+  const root = document.getElementById("libraryList");
+
+  if (!topicSel || !sectionSel || !searchEl || !root) return;
+
+  const topicFilter = topicSel.value;
+  const sectionFilter = sectionSel.value;
+  const q = searchEl.value.trim().toLowerCase();
 
   let cards = allCards();
-  if (topicFilter)
-    cards = cards.filter(
-        c => c.topic === topicFilter
+
+  if (topicFilter) {
+    cards = cards.filter(c => c.topic === topicFilter);
+  }
+
+  if (sectionFilter) {
+    cards = cards.filter(c => c.sub === sectionFilter);
+  }
+
+  if (q) {
+    cards = cards.filter(c =>
+      c.q.toLowerCase().includes(q) ||
+      c.a.toLowerCase().includes(q) ||
+      c.sub.toLowerCase().includes(q) ||
+      c.topic.toLowerCase().includes(q)
     );
+  }
 
-  if (sectionFilter)
-      cards = cards.filter(
-          c => c.sub === sectionFilter
-      );
-  if(q) cards = cards.filter(c=>
-    c.q.toLowerCase().includes(q) || c.a.toLowerCase().includes(q) ||
-    c.sub.toLowerCase().includes(q) || c.topic.toLowerCase().includes(q)
-  );
-
-  if(cards.length===0){
-    document.getElementById('libraryList').innerHTML = `
+  if (cards.length === 0) {
+    root.innerHTML = `
       <div class="empty-state">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg>
-        <h3>No cards match</h3><p>Try a different search or filter.</p>
-      </div>`;
+        <h3>No cards match</h3>
+        <p>Try a different search or filter.</p>
+      </div>
+    `;
     return;
   }
 
   const groups = {};
-  cards.forEach(c=>{ groups[c.topic] = groups[c.topic] || []; groups[c.topic].push(c); });
 
-  const html = topicsInOrder().filter(t=>groups[t]).map(t=>{
-    const color = topicColor(t);
-    const items = groups[t].map(c=>{
-      const isCustom = c.id.startsWith('c-');
-      const pct = purityOf(c.id);
+  for (const c of cards) {
+    const key = sectionFilter ? "__all__" : c.sub;
+    if (!groups[key]) groups[key] = [];
+    groups[key].push(c);
+  }
+
+  const groupOrder = sectionFilter
+    ? ["__all__"]
+    : sectionsInOrder().filter(section => groups[section]);
+
+  let html = "";
+
+  for (const groupKey of groupOrder) {
+    const groupCards = groups[groupKey];
+    if (!groupCards || groupCards.length === 0) continue;
+
+    if (!sectionFilter) {
+      html += `
+        <div class="lib-group">
+          <div class="lib-group-head">
+            <div class="lib-group-title">${escapeHtml(groupKey)}</div>
+            <div class="lib-group-count">${groupCards.length} cards</div>
+          </div>
+      `;
+    }
+
+    for (const c of groupCards) {
       const expanded = expandedLibraryCard === c.id;
       const answer = expanded
-          ? escapeHtml(c.a)
-          : escapeHtml(c.a).slice(0,180) +
-            (c.a.length > 180 ? "…" : "");
-      return `<div class="lib-card" onclick="toggleLibraryCard('${c.id}')">
-        <div class="lib-card-body">
-          <div class="lib-card-q">${escapeHtml(c.q)}</div>
-          <div class="lib-card-a">${answer}</div>
+        ? escapeHtml(c.a).replace(/\n/g, "<br>")
+        : "";
 
-          <div style="
-              margin-top:8px;
-              font-size:11px;
-              color:var(--text-faint);
-          ">
-              ${expanded ? "▲ Click to collapse" : "▼ Click to expand"}
+      html += `
+        <div class="lib-card" onclick="toggleLibraryCard('${c.id}')">
+          <div class="lib-card-body">
+            <div class="lib-card-q">${escapeHtml(c.q)}</div>
+
+            ${
+              expanded
+                ? `
+                  <div class="lib-card-a">
+                    ${answer}
+                  </div>
+                  ${renderFigureMarkup(c.figure)}
+                `
+                : ""
+            }
+          </div>
+
+          <div class="lib-card-meta">
+            <span class="purity-pill">${purityOf(c.id)}%</span>
+            ${
+              c.id.startsWith("c-")
+                ? `<button class="icon-btn" title="Delete card" onclick="deleteCard('${c.id}')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M9 7V4h6v3M6 7l1 14h10l1-14"/></svg></button>`
+                : ""
+            }
           </div>
         </div>
-        
-        <div class="lib-card-meta">
-          <span class="purity-pill">${pct}%</span>
-          ${isCustom ? `<button class="icon-btn" title="Delete card" onclick="deleteCard('${c.id}')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M9 7V4h6v3M6 7l1 14h10l1-14"/></svg></button>` : ''}
-        </div>
-      </div>`;
-    }).join('');
-    return `<div class="lib-group">
-      <div class="lib-group-head">
-        <div class="lib-group-dot" style="background:${color};"></div>
-        <div class="lib-group-title">${escapeHtml(t)}</div>
-        <div class="lib-group-count">${groups[t].length} cards</div>
-      </div>
-      ${items}
-    </div>`;
-  }).join('');
+      `;
+    }
 
-  document.getElementById('libraryList').innerHTML = html;
-  renderMath(document.getElementById('libraryList'));
+    if (!sectionFilter) {
+      html += `</div>`;
+    }
+  }
+
+  root.innerHTML = html;
+  renderMath(root);
 }
+
 
 async function deleteCard(id){
   if(!confirm('Delete this custom card? This cannot be undone.')) return;
@@ -887,7 +1020,14 @@ async function deleteCard(id){
    deeper decks can be shipped as small .json files and loaded here,
    instead of growing this HTML file forever. */
 function exportDeck(){
-  const payload = allCards().map(c=>({topic:c.topic, sub:c.sub, q:c.q, a:c.a, diff:c.diff}));
+  const payload = allCards().map(c => ({
+    topic: c.topic,
+    sub: c.sub,
+    q: c.q,
+    a: c.a,
+    diff: c.diff,
+    ...(c.figure ? { figure: c.figure } : {})
+  }));
   const blob = new Blob([JSON.stringify(payload, null, 2)], {type:'application/json'});
   const url = URL.createObjectURL(blob);
   const a = document.createElement('a');
@@ -924,6 +1064,7 @@ async function onImportFileChosen(event){
         q: String(item.q).trim(),
         a: String(item.a).trim(),
         diff,
+        ...(item.figure ? { figure: item.figure } : {})
       });
       added++;
     });

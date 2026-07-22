@@ -83,7 +83,13 @@
       "sub": "Beta Decay",
       "diff": 2,
       "q": "Why do $\\beta$ particles have a continuous energy spectrum, unlike $\\alpha$ particles?",
-      "a": "$\\beta$ decay is a three-body process. The available decay energy (the Q-value) is shared between the emitted electron or positron, the (anti)neutrino, and, to a much smaller extent, the recoiling daughter nucleus. Since the neutrino can carry away a variable amount of energy, the $\\beta$ particle is emitted with a continuous range of energies."
+      "a": "$\\beta$ decay is a three-body process. The available decay energy (the Q-value) is shared between the emitted electron or positron, the (anti)neutrino, and, to a much smaller extent, the recoiling daughter nucleus. Since the neutrino can carry away a variable amount of energy, the $\\beta$ particle is emitted with a continuous range of energies.",
+      "figure": {
+        "src": "images/beta-spectrum.png",
+        "caption": "Typical continuous beta-decay spectrum.",
+        "alt": "Typical continuous beta-decay spectrum",
+        "size": "small"
+      }
     },
     {
       "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",

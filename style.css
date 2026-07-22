@@ -202,6 +202,38 @@ button{font-family:inherit;}
 .diff-2{background:rgba(242,184,75,0.13);color:var(--amber);}
 .diff-3{background:rgba(242,104,107,0.12);color:var(--bad);}
 
+.figure-stack{
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+  margin-top:16px;
+}
+.card-figure{
+  margin:0;
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+.figure-thumb{
+  max-width:100%;
+  height:auto;
+  display:block;
+  border-radius:10px;
+  border:1px solid var(--border-soft);
+  background:var(--bg-raised);
+  cursor:zoom-in;
+}
+.card-figure figcaption{
+  font-family:var(--font-mono);
+  font-size:10.5px;
+  color:var(--text-faint);
+  line-height:1.4;
+}
+.figure-thumb.size-small  { max-width: 35%; }
+.figure-thumb.size-medium { max-width: 60%; }
+.figure-thumb.size-large  { max-width: 80%; }
+.figure-thumb.size-full   { max-width: 100%; }
+
 .card-actions{display:flex;gap:10px;justify-content:center;margin-top:22px;}
 .kbd-hint{text-align:center;font-family:var(--font-mono);font-size:10.5px;color:var(--text-faint);margin-top:14px;}
 .kbd-hint kbd{background:var(--bg-raised);border:1px solid var(--border);border-radius:4px;padding:1px 6px;font-family:var(--font-mono);}
@@ -257,6 +289,69 @@ button{font-family:inherit;}
 }
 .toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
 .toast-dot{width:7px;height:7px;border-radius:50%;background:var(--good);flex-shrink:0;}
+
+.figure-modal{
+  position:fixed;
+  inset:0;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:24px;
+  z-index:80;
+}
+
+.figure-modal.show{
+  display:flex;
+}
+
+.figure-modal-backdrop{
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.72);
+}
+
+.figure-modal-content{
+  position:relative;
+  z-index:1;
+  max-width:min(92vw,1100px);
+  max-height:90vh;
+  background:var(--bg-panel);
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:14px;
+  box-shadow:0 20px 60px rgba(0,0,0,0.55);
+  overflow:auto;
+}
+
+.figure-modal-content img{
+  max-width:100%;
+  max-height:calc(90vh - 90px);
+  display:block;
+  margin:0 auto;
+  border-radius:10px;
+}
+
+.figure-modal-caption{
+  margin-top:10px;
+  font-family:var(--font-mono);
+  font-size:11px;
+  color:var(--text-faint);
+  line-height:1.4;
+}
+
+.figure-modal-close{
+  position:absolute;
+  top:10px;
+  right:10px;
+  width:30px;
+  height:30px;
+  border-radius:8px;
+  border:1px solid var(--border-soft);
+  background:var(--bg-raised);
+  color:var(--text);
+  cursor:pointer;
+  line-height:1;
+}
 
 /* ---------- Summary ---------- */
 .summary-ring{width:150px;height:150px;margin:0 auto 20px auto;}
