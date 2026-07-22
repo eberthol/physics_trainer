@@ -24,6 +24,14 @@
     "level": "Detailed",
     "file": "decks/book-nuclear-many-body-problem/book-nuclear-many-body-problem-ch1.json"
   },
+  {
+    "id": "book-nuclear-many-body-problem-summary",
+    "collection": "The Nuclear Many-Body Problem",
+    "order": 99,
+    "name": "Summary",
+    "level": "Summary",
+    "file": "decks/book-nuclear-many-body-problem/book-nuclear-many-body-problem-summary.json"
+  },
 
 
 
