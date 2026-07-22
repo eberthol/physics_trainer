@@ -87,7 +87,6 @@
       "figure": {
         "src": "images/beta-spectrum.png",
         "caption": "Typical continuous beta-decay spectrum.",
-        "alt": "Typical continuous beta-decay spectrum",
         "size": "small"
       }
     },
@@ -287,7 +286,12 @@
       "sub": "Spontaneous Fission",
       "diff": 1,
       "q": "How does a spontaneous-fission neutron source produce neutrons?",
-      "a": "Heavy transuranium nuclei, such as $^{252}$Cf, can undergo spontaneous fission, producing two fission fragments together with several neutrons. The fission fragments also emit $\\beta$ and $\\gamma$ radiation, but these can be largely absorbed by suitable shielding while the neutrons escape."
+      "a": "Heavy transuranium nuclei, such as $^{252}\\mathrm{Cf}$, can undergo spontaneous fission, producing two fission fragments together with several neutrons. The fission fragments also emit $\\beta$ and $\\gamma$ radiation, but these can be largely absorbed by suitable shielding while the neutrons escape.",
+      "figure": {
+        "src": "images/californium-spectrum.png",
+        "caption": "Neutron energy spectrum from $^{252}\\mathrm{Cf}$. Follows a Maxwellian distribution.",
+        "size": "small"
+      }
     },
     {
       "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",

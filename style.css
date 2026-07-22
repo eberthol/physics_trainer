@@ -229,9 +229,9 @@ button{font-family:inherit;}
   color:var(--text-faint);
   line-height:1.4;
 }
-.figure-thumb.size-small  { max-width: 35%; }
-.figure-thumb.size-medium { max-width: 60%; }
-.figure-thumb.size-large  { max-width: 80%; }
+.figure-thumb.size-small  { max-width: 25%; }
+.figure-thumb.size-medium { max-width: 50%; }
+.figure-thumb.size-large  { max-width: 75%; }
 .figure-thumb.size-full   { max-width: 100%; }
 
 .card-actions{display:flex;gap:10px;justify-content:center;margin-top:22px;}
