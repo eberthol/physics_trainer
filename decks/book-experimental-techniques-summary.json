@@ -19,7 +19,7 @@
       "sub": "Overview",
       "diff": 2,
       "q": "Compare the principal radioactive decay modes.",
-      "a": "| Process | Physical change |\n|---|---|\n| $\\alpha$ | Emits a $^4$He nucleus |\n| $\\beta^-$ | $n\\rightarrow p$ |\n| $\\beta^+$ | $p\\rightarrow n$ |\n| Electron capture | $p+e^-\\rightarrow n$ |\n| $\\gamma$ | Nuclear de-excitation |"
+      "a": "$\\alpha$: emits a $^4$He nucleus ($A-4$, $Z-2$).\n\n$\\beta^-$: converts a neutron into a proton ($n\\rightarrow p$).\n\n$\\beta^+$: converts a proton into a neutron ($p\\rightarrow n$).\n\nElectron capture: captures an orbital electron ($p+e^-\\rightarrow n$).\n\n$\\gamma$: nuclear de-excitation by photon emission."
     },
     {
       "topic": "Chapter 1 Summary",

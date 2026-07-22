@@ -110,13 +110,6 @@
       "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
       "sub": "Beta Decay",
       "diff": 2,
-      "q": "What is meant by multiple $\\beta$-decay branches?",
-      "a": "Some nuclei can undergo $\\beta$ decay to several different excited states of the daughter nucleus. Each transition is called a decay branch and has its own decay probability (branching ratio) and its own endpoint energy."
-    },
-    {
-      "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
-      "sub": "Beta Decay",
-      "diff": 2,
       "q": "How does the presence of multiple $\\beta$-decay branches affect the observed $\\beta$ spectrum?",
       "a": "Each decay branch produces its own continuous $\\beta$ spectrum with an endpoint energy determined by the corresponding nuclear transition. The observed spectrum is the weighted sum of all these individual spectra, with the weights given by the branching ratios."
     },
@@ -210,14 +203,7 @@
       "sub": "Annihilation Radiation",
       "diff": 1,
       "q": "What is annihilation radiation?",
-      "a": "Annihilation radiation is produced when a positron encounters an electron and the two particles annihilate. Their rest mass is converted into electromagnetic radiation, producing two $\\gamma$ rays."
-    },
-    {
-      "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
-      "sub": "Annihilation Radiation",
-      "diff": 2,
-      "q": "Why does positron-electron annihilation produce two 511 keV photons emitted in opposite directions?",
-      "a": "When a positron annihilates with an electron, their combined rest-mass energy ($2m_ec^2 = 1.022$ MeV) is converted into two photons. Each photon therefore has an energy of 511 keV. If the electron and positron are approximately at rest, conservation of momentum requires the two photons to be emitted back-to-back."
+      "a": "Annihilation radiation is produced when a positron encounters an electron and the two particles annihilate. Their rest mass is converted into electromagnetic radiation, producing two $\\gamma$ rays. Each photon has an energy of 511 keV. If the electron and positron are approximately at rest, conservation of momentum requires the two photons to be emitted back-to-back."
     },
     {
       "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
@@ -302,14 +288,7 @@
       "sub": "Spontaneous Fission",
       "diff": 2,
       "q": "Which isotope is the most common spontaneous-fission neutron source, and what is the approximate temperature parameter of its neutron spectrum?",
-      "a": "$^{252}$Cf is the most widely used spontaneous-fission neutron source. Its neutron energy spectrum is approximately described by a Watt spectrum with an effective temperature parameter of about $T=1.3\\,\\mathrm{MeV}$."
-    },
-    {
-      "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
-      "sub": "Alpha-Neutron Sources",
-      "diff": 1,
-      "q": "How does an Am-Be neutron source produce neutrons?",
-      "a": "Alpha particles emitted by $^{241}$Am interact with beryllium nuclei through an $(\\alpha,n)$ reaction. An excited $^{13}$C nucleus is first formed, which subsequently decays by emitting a neutron."
+      "a": "$^{252}\\mathrm{Cf}$ is the most widely used spontaneous-fission neutron source. It has a half-life of 256 years. The energy spectrum of the neutrons is continuous up to about 10 MeV and exhibits a Maxwellian shape $$\\frac{\\mathrm{d}N}{\\mathrm{d}E} = \\sqrt{E} \\exp \\left( \\frac{-E}{T} \\right)$$ with $T = 1.3$MeV for $^{252}\\mathrm{Cf}$."
     },
     {
       "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
