@@ -85,7 +85,7 @@
       "q": "Why do $\\beta$ particles have a continuous energy spectrum, unlike $\\alpha$ particles?",
       "a": "$\\beta$ decay is a three-body process. The available decay energy (the Q-value) is shared between the emitted electron or positron, the (anti)neutrino, and, to a much smaller extent, the recoiling daughter nucleus. Since the neutrino can carry away a variable amount of energy, the $\\beta$ particle is emitted with a continuous range of energies.",
       "figure": {
-        "src": "images/beta-spectrum.png",
+        "src": "images/book-experimental-techniques/beta-spectrum.png",
         "caption": "Typical continuous beta-decay spectrum.",
         "size": "small"
       }
@@ -288,7 +288,7 @@
       "q": "How does a spontaneous-fission neutron source produce neutrons?",
       "a": "Heavy transuranium nuclei, such as $^{252}\\mathrm{Cf}$, can undergo spontaneous fission, producing two fission fragments together with several neutrons. The fission fragments also emit $\\beta$ and $\\gamma$ radiation, but these can be largely absorbed by suitable shielding while the neutrons escape.",
       "figure": {
-        "src": "images/californium-spectrum.png",
+        "src": "images/book-experimental-techniques/californium-spectrum.png",
         "caption": "Neutron energy spectrum from $^{252}\\mathrm{Cf}$. Follows a Maxwellian distribution.",
         "size": "small"
       }

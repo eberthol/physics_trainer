@@ -107,7 +107,7 @@
             "q": "What physical mechanisms are responsible for the saturation of the nuclear force?",
             "a": "Nuclear saturation arises from the short range of the nuclear force together with the Pauli exclusion principle, the uncertainty principle, and the hard-core repulsion between nucleons. As nucleons approach each other, the attractive potential lowers the energy, but at very short distances the kinetic energy rises rapidly, producing a shallow energy minimum at the equilibrium separation.",
             "figure": {
-                "src": "images/nuclear-saturation.png",
+                "src": "images/book-nuclear-many-body-problem/nuclear-saturation.png",
                 "caption": "Qualitative explanation of nuclear saturation as a subtle difference effect of $E_{\\mathrm{kin}}$ and $E_{\\mathrm{pot}}$. The total energy (E_tot) is the sum of the attractive potential energy (E_pot) and the repulsive kinetic energy (E_kin). Their competition produces a shallow minimum, limiting how closely nucleons can approach one another.",
                 "size": "small"
             }
@@ -176,7 +176,7 @@
             "q": "How does the binding energy per nucleon vary with the mass number?",
             "a": "The binding energy per nucleon rises rapidly for light nuclei, reaches a maximum of just under 9 MeV around $A\\approx60$, after which $B/A$ decreases gradually because Coulomb repulsion becomes increasingly important.",
             "figure": {
-                "src": "images/binding-energy-per-nucleon.png",
+                "src": "images/book-nuclear-many-body-problem/binding-energy-per-nucleon.png",
                 "size": "medium",
                 "caption": "Experimental binding energy per nucleon as a function of mass number for $\\beta$-stable odd-A(o) nuclei. The curve corresponds to the semi-empirical mass formula of Bethe and Weizsäcker."
                 }

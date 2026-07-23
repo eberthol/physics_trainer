@@ -15,7 +15,7 @@
       "q": "Explain the main nuclear processes occurring in radioactive sources.",
       "a": "• $\\alpha$ decay\n• $\\beta^-$ decay\n• $\\beta^+$ decay\n• Electron capture (EC)\n• $\\gamma$ emission\n• Internal conversion\n• Auger electron emission\n• Neutron production (spontaneous fission and nuclear reactions)",
       "figure": {
-        "src": "images/radioactive-decays-summary.png",
+        "src": "images/book-experimental-techniques/radioactive-decays-summary.png",
         "size": "full",
         "caption": "Overview of the principal radioactive processes. The diagram groups the processes by the interaction responsible (strong, weak, or electromagnetic), shows how they change the nuclear quantum numbers $(A,Z)$, and illustrates the cascade from internal conversion to characteristic X-rays or Auger electrons."
       }
@@ -27,7 +27,7 @@
       "q": "Compare the principal radioactive processes. For each process, identify:\n\n• the particles emitted,\n• the change in $(A,Z)$,\n• the typical energy range,\n• the main experimental signature.",
       "a": "",
       "figure": {
-        "src": "images/radioactive-decays-signature-summary.png",
+        "src": "images/book-experimental-techniques/radioactive-decays-signature-summary.png",
         "size": "full",
         "caption": "Overview of the principal radioactive processes."
       }
