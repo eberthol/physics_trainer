@@ -1,0 +1,81 @@
+{
+    "cards":[
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter",
+            "sub": "Introduction",
+            "diff": 2,
+            "q": "Why are electromagnetic interactions the dominant processes for charged particles and photons passing through matter?",
+            "a": "Because the Coulomb interaction is both strong and long-ranged. As a result, inelastic collisions with atomic electrons are by far the most probable interactions for charged particles and photons."
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter",
+            "sub": "Introduction",
+            "diff": 2,
+            "q": "Why do neutrons interact with matter differently from charged particles?",
+            "a": "Neutrons carry no electric charge and therefore do not undergo Coulomb interactions. Their dominant interactions with matter are due to the strong nuclear force, although electromagnetic interactions (through their magnetic moment) and weak interactions are also possible."
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter",
+            "sub": "Cross Section",
+            "diff": 1,
+            "q": "What is the physical meaning of a cross section?",
+            "a": "The cross section is a measure of the probability that a particular interaction or reaction will occur."
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter",
+            "sub": "Cross Section",
+            "diff": 2,
+            "q": "What assumptions are made when defining the differential cross section?",
+            "a": "The incident beam is assumed to be much broader than the target, uniformly distributed in space and time, and characterized by a constant particle flux."
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter",
+            "sub": "Cross Section",
+            "diff": 2,
+            "q": "How is the differential cross section defined?",
+            "a": "The differential cross section is defined as\n\n$$\\frac{d\\sigma}{d\\Omega}=\\frac{1}{F}\\frac{dN_s}{d\\Omega},$$\n\nwhere $F$ is the incident particle flux and $dN_s/d\\Omega$ is the average number of particles scattered into the solid angle $d\\Omega$ per unit time."
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter",
+            "sub": "Cross Section",
+            "diff": 2,
+            "q": "What does the differential cross section represent physically?",
+            "a": "It represents the fraction of the incident flux that is scattered into a given solid angle per unit time."
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter",
+            "sub": "Cross Section",
+            "diff": 2,
+            "q": "Why does the cross section have the dimensions of an area?",
+            "a": "Since the incident flux has units of particles per unit area per unit time, the definition of the cross section gives it the dimensions of an area. This motivates the heuristic picture of an effective target area, although it should not be interpreted as the physical size of the target."
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter",
+            "sub": "Cross Section",
+            "diff": 2,
+            "q": "Why should the cross section not be interpreted as the physical size of the target?",
+            "a": "Although the cross section has units of area, it is an effective measure of interaction probability rather than the geometric size of the scattering center."
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter",
+            "sub": "Cross Section",
+            "diff": 2,
+            "q": "On which quantities can the differential cross section depend?",
+            "a": "In general, the differential cross section depends on both the incident particle energy and the scattering angle."
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter",
+            "sub": "Cross Section",
+            "diff": 2,
+            "q": "How is the total cross section obtained from the differential cross section?",
+            "a": "The total cross section is obtained by integrating the differential cross section over all solid angles:\n\n$$\\sigma(E)=\\int\\frac{d\\sigma}{d\\Omega}\\,d\\Omega.$$"
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter",
+            "sub": "Cross Section",
+            "diff": 2,
+            "q": "For a thin target, what is the probability that a single incident particle undergoes an interaction while traversing a a slab of thickness $\\delta x$?",
+            "a": "For a thin target,\n\n$$P_{\\rm int}=N\\sigma\\delta x,$$\n\nwhere $N$ is the number density of scattering centers and $\\sigma$ is the total cross section."
+        }
+    ]
+}

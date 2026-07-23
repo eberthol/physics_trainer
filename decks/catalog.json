@@ -8,6 +8,14 @@
     "file":   "decks/book-experimental-techniques/book-experimental-techniques-ch1.json"
   },
   {
+    "id":    "book-exptech-ch2",
+    "collection": "Experimental Techniques in Nuclear and Particle Physics",
+    "name":  "Chapter 2 - Passage of Radiation Through Matter",
+    "order": 2,
+    "level": "Detailed",
+    "file":   "decks/book-experimental-techniques/book-experimental-techniques-ch2.json"
+  },
+  {
     "id": "book-exptech-summary",
     "collection": "Experimental Techniques in Nuclear and Particle Physics",
     "order": 99,
