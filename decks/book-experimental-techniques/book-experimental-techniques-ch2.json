@@ -246,7 +246,106 @@
             "diff": 3,
             "q": "Summarize the mechanisms by which heavy charged particles lose energy in matter.",
             "a": "Heavy charged particles lose energy primarily through inelastic collisions with atomic electrons, producing excitation and ionization. Hard collisions may generate energetic knock-on (δ) electrons. Elastic scattering from nuclei mainly changes the particle's direction and usually contributes little to the energy loss because nuclei are much heavier than the incident particle. The large number of atomic collisions allows the energy loss to be described by the average stopping power $$dE/dx.$$"
-        }
+        },
+
+        {
+      "topic": "Ch.2 Summary",
+      "sub": "Bethe-Bloch Formula",
+      "diff": 3,
+      "q": "Summarize the physical meaning of the Bethe-Bloch formula and its corrections.",
+      "a": "The Bethe-Bloch formula gives the average energy loss per unit length of a heavy charged particle in matter. It depends on the particle velocity, charge, and absorber properties through the mean excitation potential and the maximum transferable energy. The density correction accounts for polarization shielding at high energies, and the shell correction accounts for the breakdown of the stationary-electron approximation at low energies."
+    },
+    {
+      "topic": "Ch.2: Passage of Radiation Through Matter",
+      "sub": "Bethe-Bloch Formula",
+      "diff": 1,
+      "q": "What does the Bethe-Bloch formula describe?",
+      "a": "The Bethe-Bloch formula describes the average energy loss per unit path length of a heavy charged particle traveling through matter, usually written as the stopping power $-dE/dx$."
+    },
+    {
+      "topic": "Ch.2: Passage of Radiation Through Matter",
+      "sub": "Bethe-Bloch Formula",
+      "diff": 2,
+      "q": "What are the main ingredients that enter the Bethe-Bloch formula?",
+      "a": "The stopping power depends on the charge of the incident particle, its velocity, and the properties of the absorber, including its atomic number, atomic weight, density, and mean excitation potential."
+    },
+    {
+      "topic": "Ch.2: Passage of Radiation Through Matter",
+      "sub": "Bethe-Bloch Formula",
+      "diff": 2,
+      "q": "What is the mean excitation potential $I$?",
+      "a": "The mean excitation potential $I$ is an effective average atomic excitation energy of the absorber. It is essentially a logarithmic average over atomic orbital frequencies, weighted by the oscillator strengths of the atomic levels."
+    },
+    {
+      "topic": "Ch.2: Passage of Radiation Through Matter",
+      "sub": "Bethe-Bloch Formula",
+      "diff": 2,
+      "q": "Why is the mean excitation potential difficult to calculate theoretically?",
+      "a": "Because the oscillator strengths of most atomic levels are not known with sufficient precision for most materials. In practice, $I$ is therefore obtained from measurements of $dE/dx$ and semi-empirical fits."
+    },
+    {
+      "topic": "Ch.2: Passage of Radiation Through Matter",
+      "sub": "Bethe-Bloch Formula",
+      "diff": 1,
+      "q": "What is the maximum energy transfer $W_{\\max}$ in a single collision?",
+      "a": "$W_{\\max}$ is the maximum energy that can be transferred in one collision, corresponding to a head-on (knock-on) collision with an atomic electron."
+    },
+    {
+      "topic": "Ch.2: Passage of Radiation Through Matter",
+      "sub": "Bethe-Bloch Formula",
+      "diff": 2,
+      "q": "What determines the size of $W_{\\max}$?",
+      "a": "The maximum transferable energy is fixed by collision kinematics and depends on the incident particle mass and velocity as well as the electron mass."
+    },
+    {
+      "topic": "Ch.2: Passage of Radiation Through Matter",
+      "sub": "Bethe-Bloch Formula",
+      "diff": 2,
+      "q": "What is the physical origin of the density effect correction $\\delta$?",
+      "a": "The density effect correction arises because the electric field of the passing particle polarizes the medium, shielding distant electrons from the full field. Those distant electrons therefore contribute less to the energy loss than predicted by the uncorrected Bethe-Bloch formula."
+    },
+    {
+      "topic": "Ch.2: Passage of Radiation Through Matter",
+      "sub": "Bethe-Bloch Formula",
+      "diff": 2,
+      "q": "When is the density effect correction most important?",
+      "a": "The density effect becomes increasingly important at high particle energies and in denser materials, because distant collisions contribute more strongly and the polarization shielding is larger."
+    },
+    {
+      "topic": "Ch.2: Passage of Radiation Through Matter",
+      "sub": "Bethe-Bloch Formula",
+      "diff": 2,
+      "q": "What is the physical origin of the shell correction $C$?",
+      "a": "The shell correction accounts for the fact that at low velocities the incident particle no longer moves much faster than the bound electrons. The assumption that the electrons are stationary then breaks down, and the Bethe-Bloch formula must be corrected."
+    },
+    {
+      "topic": "Ch.2: Passage of Radiation Through Matter",
+      "sub": "Bethe-Bloch Formula",
+      "diff": 2,
+      "q": "When is the shell correction important?",
+      "a": "The shell correction is important at low particle energies, where the projectile velocity is comparable to or smaller than the orbital velocity of bound electrons."
+    },
+    {
+      "topic": "Ch.2: Passage of Radiation Through Matter",
+      "sub": "Bethe-Bloch Formula",
+      "diff": 1,
+      "q": "For which particles is the Bethe-Bloch formula with shell and density corrections usually sufficient?",
+      "a": "For ordinary heavy charged particles and elementary particles, the Bethe-Bloch formula with the shell and density corrections is usually sufficient."
+    },
+    {
+      "topic": "Ch.2: Passage of Radiation Through Matter",
+      "sub": "Bethe-Bloch Formula",
+      "diff": 2,
+      "q": "What other corrections can be added to the Bethe-Bloch formula, and are they usually important?",
+      "a": "Additional corrections can include radiation effects at ultrarelativistic velocities, higher-order QED effects, finite projectile-mass effects, internal structure effects, spin effects, and electron capture at very low velocities. With the exception of electron capture for heavy ions, these are usually negligible at the percent level."
+    },
+    {
+      "topic": "Ch.2: Passage of Radiation Through Matter",
+      "sub": "Bethe-Bloch Formula",
+      "diff": 3,
+      "q": "How does the Bethe-Bloch curve change when shell and density corrections are included?",
+      "a": "The shell correction modifies the low-energy part of the curve, while the density effect reduces the high-energy rise. Together they produce a more accurate stopping-power curve than the uncorrected Bethe-Bloch formula."
+    }
 
 
 

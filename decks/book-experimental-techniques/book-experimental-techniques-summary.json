@@ -184,7 +184,6 @@
         "caption": "A particle beam traveling through matter has an exponential survival probability, $P(x)=e^{-x/\\lambda}$. The mean free path $\\lambda=1/(N\\sigma)$ is the average distance before the first interaction; larger $N$ or $\\sigma$ gives a shorter mean free path."
       }
     },
-
     {
       "topic": "Ch.2: Passage of Radiation Through Matter",
       "sub": "Energy Loss of Heavy Charged Particles in Matter",
@@ -196,8 +195,25 @@
         "size": "full",
         "caption": ""
       }
+    },
+
+    {
+      "topic": "Ch.2: Passage of Radiation Through Matter",
+      "sub": "Bethe-Bloch Formula",
+      "diff": 3,
+      "q": "Bethe-Bloch Formula",
+      "a": "",
+      "figure": {
+        "src": "images/book-experimental-techniques/bethe-bloch.png",
+        "size": "full",
+        "caption": ""
+      }
     }
 
+
+    
+
+    
   
 
 
