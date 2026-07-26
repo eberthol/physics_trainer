@@ -76,6 +76,180 @@
             "diff": 2,
             "q": "For a thin target, what is the probability that a single incident particle undergoes an interaction while traversing a a slab of thickness $\\delta x$?",
             "a": "For a thin target,\n\n$$P_{\\rm int}=N\\sigma\\delta x,$$\n\nwhere $N$ is the number density of scattering centers and $\\sigma$ is the total cross section."
+        },
+
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter",
+            "sub": "Mean Free Path",
+            "diff": 1,
+            "q": "What is the survival probability?",
+            "a": "The survival probability is the probability that a particle travels a distance $x$ through a material without undergoing an interaction."
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter",
+            "sub": "Mean Free Path",
+            "diff": 2,
+            "q": "How does the survival probability vary with distance?",
+            "a": "The survival probability decreases exponentially with distance:\n\n$$P(x)=e^{-wx}=e^{-N\\sigma x},$$\n\nwhere $N$ is the number density of interaction centers, $\\sigma$ is the total cross section and $w dx$ is the probability of having an interaction between $x$ and $x + dx$."
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter",
+            "sub": "Mean Free Path",
+            "diff": 2,
+            "q": "What is the probability that a particle interacts within a distance $x$?",
+            "a": "The interaction probability is\n\n$$P_{\\rm int}(x)=1-e^{-wx}=1-e^{-N\\sigma x}.$$"
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter",
+            "sub": "Mean Free Path",
+            "diff": 2,
+            "q": "What is the probability density for the first interaction occurring between $x$ and $x+dx$?",
+            "a": "The probability density is\n\n$$F(x)dx=e^{-wx}\\,w\\,dx=e^{-N\\sigma x}N\\sigma\\,dx.$$"
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter",
+            "sub": "Mean Free Path",
+            "diff": 1,
+            "q": "What is the mean free path?",
+            "a": "The mean free path, $\\lambda$, is the average distance traveled by a particle before its first interaction. $$\\lambda = \\frac{1}{w}$$"
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter",
+            "sub": "Mean Free Path",
+            "diff": 2,
+            "q": "How is the mean free path related to the number density and the cross section?",
+            "a": "The mean free path is\n\n$$\\lambda=\\frac{1}{N\\sigma}.$$\n\nIt decreases when either the number density of scattering centers or the interaction cross section increases."
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter",
+            "sub": "Mean Free Path",
+            "diff": 2,
+            "q": "Why does a larger cross section lead to a shorter mean free path?",
+            "a": "A larger cross section means that the particle has a higher probability of interacting with each scattering center. Consequently, it travels a shorter average distance before suffering a collision."
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter",
+            "sub": "Mean Free Path",
+            "diff": 2,
+            "q": "Why does a higher number density of scattering centers reduce the mean free path?",
+            "a": "Increasing the number density places more scattering centers along the particle's path, increasing the interaction probability and reducing the average distance between collisions."
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter",
+            "sub": "Mean Free Path",
+            "diff": 2,
+            "q": "For a very thin target ($x\\ll\\lambda$), how can the interaction probability be approximated?",
+            "a": "For a thin target,\n\n$$P_{\\rm int}(x)\\approx N\\sigma x=\\frac{x}{\\lambda},$$\n\nobtained by keeping only the first-order term in the exponential expansion."
+        },
+        {
+            "topic": "Ch.2 Summary",
+            "sub": "Mean Free Path",
+            "diff": 3,
+            "q": "Summarize the relationships between survival probability, interaction probability, and mean free path.",
+            "a": "Survival probability:\n$$P(x)=e^{-x/\\lambda}.$$\n\nInteraction probability:\n$$P_{\\rm int}(x)=1-e^{-x/\\lambda}.$$\n\nMean free path:\n$$\\lambda=\\frac{1}{N\\sigma}.$$\n\nA larger cross section or a higher density of scattering centers leads to a shorter mean free path and therefore a higher interaction probability."
+        },
+
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter",
+            "sub": "Heavy Charged Particles",
+            "diff": 1,
+            "q": "What are the two principal effects observed when charged particles pass through matter?",
+            "a": "Charged particles lose energy and are deflected from their original direction."
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter",
+            "sub": "Heavy Charged Particles",
+            "diff": 1,
+            "q": "Which two processes are primarily responsible for the passage of charged particles through matter?",
+            "a": "1. Inelastic collisions with atomic electrons.\n\n2. Elastic scattering from atomic nuclei."
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter",
+            "sub": "Heavy Charged Particles",
+            "diff": 2,
+            "q": "Which processes other than atomic collisions can occur when charged particles pass through matter?",
+            "a": "Other possible processes include Cherenkov radiation, nuclear reactions, and bremsstrahlung. For heavy charged particles, these occur much less frequently than atomic collisions."
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter",
+            "sub": "Heavy Charged Particles",
+            "diff": 1,
+            "q": "Why are charged particles divided into electrons/positrons and heavy charged particles?",
+            "a": "Because electrons and positrons lose energy through mechanisms that differ significantly from those of heavier particles. Heavy particles are dominated by atomic collisions, whereas additional effects become important for electrons."
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter",
+            "sub": "Heavy Charged Particles",
+            "diff": 1,
+            "q": "Which particles are considered heavy charged particles?",
+            "a": "Heavy charged particles include muons, pions, protons, alpha particles, and light nuclei. Heavy ions are usually treated separately because additional effects become important."
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter",
+            "sub": "Heavy Charged Particles",
+            "diff": 2,
+            "q": "Which process is primarily responsible for the energy loss of heavy charged particles in matter?",
+            "a": "The energy loss of heavy charged particles is dominated by inelastic collisions with atomic electrons, which ionize or excite the atoms of the material."
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter",
+            "sub": "Heavy Charged Particles",
+            "diff": 2,
+            "q": "Why can heavy charged particles lose a substantial amount of energy even though each collision transfers only a small amount of energy?",
+            "a": "Each collision transfers only a small fraction of the particle's kinetic energy, but the enormous number of collisions occurring per unit path length produces a significant cumulative energy loss."
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter",
+            "sub": "Heavy Charged Particles",
+            "diff": 2,
+            "q": "What is the difference between soft and hard atomic collisions?",
+            "a": "Soft collisions produce only atomic excitation, whereas hard collisions transfer enough energy to ionize the atom."
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter",
+            "sub": "Heavy Charged Particles",
+            "diff": 2,
+            "q": "What are knock-on (δ) electrons?",
+            "a": "Knock-on (δ) electrons are energetic recoil electrons produced during hard ionizing collisions. They can themselves produce significant secondary ionization."
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter",
+            "sub": "Heavy Charged Particles",
+            "diff": 2,
+            "q": "Why does elastic scattering from nuclei contribute little to the energy loss of heavy charged particles?",
+            "a": "Because atomic nuclei are generally much more massive than the incident particle, only a small fraction of the particle's kinetic energy is transferred in an elastic collision."
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter",
+            "sub": "Heavy Charged Particles",
+            "diff": 2,
+            "q": "In what situation can elastic scattering from nuclei contribute significantly to the energy loss?",
+            "a": "When the target nucleus has a mass comparable to that of the incident particle, such as an alpha particle scattering from hydrogen."
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter",
+            "sub": "Heavy Charged Particles",
+            "diff": 2,
+            "q": "Why is it meaningful to describe the energy loss of heavy charged particles using an average stopping power?",
+            "a": "Although individual collisions are statistical, the large number of collisions occurring over a macroscopic path length makes the fluctuations small. The average energy loss per unit length therefore provides a useful description."
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter",
+            "sub": "Stopping Power",
+            "diff": 1,
+            "q": "What is the stopping power?",
+            "a": "The stopping power is the average energy loss of a charged particle per unit path length in a material, usually written as $$\\frac{dE}{dx}.$$"
+        },
+        {
+            "topic": "Ch.2 Summary",
+            "sub": "Heavy Charged Particles",
+            "diff": 3,
+            "q": "Summarize the mechanisms by which heavy charged particles lose energy in matter.",
+            "a": "Heavy charged particles lose energy primarily through inelastic collisions with atomic electrons, producing excitation and ionization. Hard collisions may generate energetic knock-on (δ) electrons. Elastic scattering from nuclei mainly changes the particle's direction and usually contributes little to the energy loss because nuclei are much heavier than the incident particle. The large number of atomic collisions allows the energy loss to be described by the average stopping power $$dE/dx.$$"
         }
+
+
+
+
     ]
 }

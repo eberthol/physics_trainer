@@ -39,20 +39,12 @@
     "name": "Summary",
     "level": "Summary",
     "file": "decks/book-nuclear-many-body-problem/book-nuclear-many-body-problem-summary.json"
-  },
-
-
-
-
-
-  {
-    "id":    "book-nucphysnutshell-ch1",
-    "collection": "Nuclear Physics in a Nutshell",
-    "name":  "Chapter 1 - Hadrons",
-    "order": 1,
-    "level": "Detailed",
-    "file":   "decks/book-nuclear-physics-in-a-nutshell-ch1.json"
   }
+
+
+
+
+
 
 
 

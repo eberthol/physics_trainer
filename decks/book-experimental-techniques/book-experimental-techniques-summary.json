@@ -157,6 +157,50 @@
       "diff": 2,
       "q": "Compare activity, radiation output, and dose.",
       "a": "Activity measures the number of nuclear disintegrations per unit time (Bq, Ci). Radiation output refers to the emitted particles or photons and depends on the decay scheme. Dose (Gy, Sv) measures the energy deposited or biological effect of the radiation on matter or a person."
+    },
+
+    {
+      "topic": "Ch.2: Passage of Radiation Through Matter",
+      "sub": "Cross Section",
+      "diff": 3,
+      "q": "Cross section",
+      "a": "",
+      "figure": {
+        "src": "images/book-experimental-techniques/cross-section.png",
+        "size": "full",
+        "caption": ""
+      }
+    },
+
+    {
+      "topic": "Ch.2: Passage of Radiation Through Matter",
+      "sub": "Mean Free Path",
+      "diff": 3,
+      "q": "Explain how the interaction probability depends on the distance traveled in matter, and define the mean free path.",
+      "a": "",
+      "figure": {
+        "src": "images/book-experimental-techniques/mean-free-path.png",
+        "size": "full",
+        "caption": "A particle beam traveling through matter has an exponential survival probability, $P(x)=e^{-x/\\lambda}$. The mean free path $\\lambda=1/(N\\sigma)$ is the average distance before the first interaction; larger $N$ or $\\sigma$ gives a shorter mean free path."
+      }
+    },
+
+    {
+      "topic": "Ch.2: Passage of Radiation Through Matter",
+      "sub": "Energy Loss of Heavy Charged Particles in Matter",
+      "diff": 3,
+      "q": "Describe the different mechanisms though which a heavy charged particle looses enery when traversing matter.",
+      "a": "",
+      "figure": {
+        "src": "images/book-experimental-techniques/energy-loss-heavy.png",
+        "size": "full",
+        "caption": ""
+      }
     }
+
+  
+
+
+
   ]
 }
