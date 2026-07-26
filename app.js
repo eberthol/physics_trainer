@@ -637,7 +637,7 @@ function renderCollections() {
 
                 <div class="bar-track" style="margin:10px 0 8px;">
                     <div class="bar-fill"
-                        style="width:${stats.purity}%;"></div>
+                        style="width:${Math.max(0, Math.min(100, stats.purity))}%;background:var(--cherenkov);"></div>
                 </div>
 
                 <div style="
