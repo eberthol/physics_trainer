@@ -23,6 +23,18 @@
                 "caption": "",
                 "size": "full"
             }
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Surface Oscillations",
+            "diff": 3,
+            "q": "Surface Oscillations",
+            "a": "",
+            "figure": {
+                "src": "images/book-nuclear-many-body-problem/summary-surface-oscillations.png",
+                "caption": "",
+                "size": "full"
+            }
         }
     ]
 }

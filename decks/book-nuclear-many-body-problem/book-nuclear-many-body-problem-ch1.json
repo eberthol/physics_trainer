@@ -288,53 +288,48 @@
             "q": "What are the main limitations of the semi-empirical mass formula?",
             "a": "The semi-empirical mass formula reproduces only the smooth overall variation of the nuclear binding energy. It does not describe local deviations, which are mainly caused by nuclear shell effects."
         },
-
-
-
         {
             "topic": "Ch.1: The Liquid Drop Model",
-            "sub": "Physical Meaning of Deformation Parameters",
+            "sub": "Deformation Parameters",
             "diff": 1,
             "q": "What is the central idea behind describing a nucleus with deformation parameters instead of a fixed radius?",
             "a": "Instead of treating the nucleus as a rigid sphere, the surface is allowed to oscillate. The deformation parameters describe the collective shape of the nucleus while keeping the volume approximately constant."
         },
         {
             "topic": "Ch.1: The Liquid Drop Model",
-            "sub": "Physical Meaning of Deformation Parameters",
+            "sub": "Deformation Parameters",
             "diff": 2,
             "q": "Why is the nuclear surface expanded into multipoles?",
             "a": "Each multipole represents an independent mode of collective motion. Any sufficiently smooth nuclear shape can be viewed as a superposition of simple deformation modes."
         },
         {
             "topic": "Ch.1: The Liquid Drop Model",
-            "sub": "Physical Meaning of Deformation Parameters",
+            "sub": "Deformation Parameters",
             "diff": 2,
             "q": "In the surface expansion $$R(\\theta,\\phi)=R_0\\left(1+a_{00}+\\sum_{\\lambda\\mu}\\alpha^*_{\\lambda\\mu}Y_{\\lambda\\mu}(\\theta,\\phi)\\right),$$ why are the $\\lambda=0$ and $\\lambda=1$ terms usually discarded?",
             "a": "They do not describe intrinsic shape. The $\\lambda=0$ term changes only the volume, while the $\\lambda=1$ term translates the entire nucleus. After fixing the volume and the center of mass, the first physical deformation is $\\lambda=2$."
         },
-
         {
             "topic": "Ch.1: The Liquid Drop Model",
-            "sub": "Physical Meaning of Deformation Parameters",
+            "sub": "Deformation Parameters",
             "diff": 2,
             "q": "Why is the quadrupole deformation the most important collective mode?",
             "a": "It is the lowest-order intrinsic deformation of the nucleus. Because low-order modes require the least distortion of the surface, quadrupole deformations dominate many collective phenomena."
         },
         {
             "topic": "Ch.1: The Liquid Drop Model",
-            "sub": "Physical Meaning of Deformation Parameters",
+            "sub": "Deformation Parameters",
             "diff": 2,
             "q": "In the surface expansion $$R(\\theta,\\phi)=R_0\\left(1+a_{00}+\\sum_{\\lambda\\mu}\\alpha^*_{\\lambda\\mu}Y_{\\lambda\\mu}(\\theta,\\phi)\\right),$$ why does a $\\lambda=2$ deformation only approximate an ellipsoid?",
             "a": "The quadrupole term is only the leading contribution. An exact ellipsoid contains higher multipoles as well, although they become small for weak deformations."
         },
         {
             "topic": "Ch.1: The Liquid Drop Model",
-            "sub": "Physical Meaning of Deformation Parameters",
+            "sub": "Deformation Parameters",
             "diff": 2,
             "q": "Why must the deformation parameters transform under rotations and parity?",
             "a": "The physical nucleus cannot depend on the choice of coordinate system. Rotating or reflecting the axes changes only the mathematical description, not the actual shape."
         },
-
         {
             "topic": "Ch.1: The Liquid Drop Model",
             "sub": "Hill-Wheeler coordinates",
@@ -353,7 +348,7 @@
             "topic": "Ch.1: The Liquid Drop Model",
             "sub": "Hill-Wheeler coordinates",
             "diff": 2,
-            "q": "The Hill-Wheeler coordinates are defined by\n$$\\alpha_{20}=\\beta\\cos\\gamma,\\qquad \\alpha_{22}=\\frac{1}{\\sqrt2}\\beta\\sin\\gamma.$$ what does increasing $\\beta$ do if $\\gamma$ is kept fixed?",
+            "q": "The Hill-Wheeler coordinates are defined by\n$$\\alpha_{20}=\\beta\\cos\\gamma,\\qquad \\alpha_{22}=\\frac{1}{\\sqrt2}\\beta\\sin\\gamma.$$ What does increasing $\\beta$ do if $\\gamma$ is kept fixed?",
             "a": "The nucleus keeps the same type of shape but becomes more strongly deformed."
         },
         {
@@ -363,7 +358,6 @@
             "q": "The Hill-Wheeler coordinates are defined by\n$$\\alpha_{20}=\\beta\\cos\\gamma,\\qquad \\alpha_{22}=\\frac{1}{\\sqrt2}\\beta\\sin\\gamma.$$ What does changing $\\gamma$ do if $\\beta$ is kept fixed?",
             "a": "The overall amount of deformation stays approximately the same, but the shape changes continuously between prolate, triaxial, and oblate."
         },
-
         {
             "topic": "Ch.1: The Liquid Drop Model",
             "sub": "Quadrupole Shapes",
@@ -384,6 +378,284 @@
             "diff": 2,
             "q": "The Hill-Wheeler coordinates are defined by\n$$\\alpha_{20}=\\beta\\cos\\gamma,\\qquad \\alpha_{22}=\\frac{1}{\\sqrt2}\\beta\\sin\\gamma.$$ What is the most important limitation of the $(\\beta,\\gamma)$ description introduced here?",
             "a": "It describes exactly ellipsoidal shapes only for small deformations. For larger $\\beta$, higher multipoles become important."
+        },
+
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Surface Oscillations",
+            "diff": 1,
+            "q": "What are the dynamical variables describing surface oscillations of a nucleus?",
+            "a": "The deformation parameters $\\alpha_{\\lambda\\mu}(t)$ become functions of time. Instead of describing a static shape, they describe the time evolution of the nuclear surface."
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Surface Oscillations",
+            "diff": 2,
+            "q": "Why are small-amplitude surface oscillations modeled as harmonic oscillators?",
+            "a": "Low-lying excitations correspond to small oscillations around the spherical equilibrium shape ($\\alpha_{\\lambda\\mu}=0$). Near any stable equilibrium, the potential is approximately quadratic, so the motion is that of a harmonic oscillator."
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Surface Oscillations",
+            "diff": 2,
+            "q": "In the harmonic collective Hamiltonian\n$$H_{\\rm coll}=\\frac12\\sum_{\\lambda\\mu}\\left\\{B_\\lambda|\\dot\\alpha_{\\lambda\\mu}|^2+C_\\lambda|\\alpha_{\\lambda\\mu}|^2\\right\\},$$\nwhat are the physical meanings of the parameters $B_\\lambda$ and $C_\\lambda$?",
+            "a": "$B_\\lambda$ is the collective inertia (mass parameter) associated with the surface motion, while $C_\\lambda$ is the stiffness (restoring force) that tends to bring the nucleus back to its equilibrium shape."
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Surface Oscillations",
+            "diff": 2,
+            "q": "In the harmonic collective Hamiltonian\n$$H_{\\rm coll}=\\frac12\\sum_{\\lambda\\mu}\\left\\{B_\\lambda|\\dot\\alpha_{\\lambda\\mu}|^2+C_\\lambda|\\alpha_{\\lambda\\mu}|^2\\right\\},$$\nwhat determines the frequency of a surface vibration?",
+            "a": "The oscillation frequency is determined by the competition between stiffness and inertia:\n$$\\Omega_\\lambda=\\sqrt{\\frac{C_\\lambda}{B_\\lambda}}.$$\nA stiffer nucleus oscillates faster, while a larger inertia slows the motion."
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Quantization of Surface Oscillations",
+            "diff": 2,
+            "q": "What changes when the collective surface oscillations are quantized?",
+            "a": "The classical oscillations become quantized harmonic oscillators. Their excitations are described by bosonic creation and annihilation operators."
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Quantization of Surface Oscillations",
+            "diff": 2,
+            "q": "Why are the quanta of surface oscillations treated as bosons?",
+            "a": "They are collective excitations of many nucleons rather than individual particles. The quantized normal modes therefore obey Bose commutation relations."
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Quantization of Surface Oscillations",
+            "diff": 2,
+            "q": "What are the angular momentum and parity of a one-phonon excitation with multipolarity $\\lambda$?",
+            "a": "A one-phonon state has angular momentum $$J=\\lambda,$$ magnetic quantum number $$M=\\mu,$$ and parity $$(-1)^\\lambda.$$"
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Multi-phonon States",
+            "diff": 3,
+            "q": "Why do two quadrupole phonons couple only to the states $0^+$, $2^+$, and $4^+$?",
+            "a": "The two phonons are identical bosons, so the total wavefunction must be symmetric under particle exchange. This symmetry removes the $1^+$ and $3^+$ combinations, leaving only $0^+$, $2^+$, and $4^+$."
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Multi-phonon States",
+            "diff": 2,
+            "q": "What experimental signature is expected for a nucleus behaving like a quadrupole harmonic vibrator?",
+            "a": "A low-lying $2^+$ state is followed, at approximately twice the excitation energy, by a nearly degenerate two-phonon triplet consisting of $0^+$, $2^+$, and $4^+$ states.",
+            "figure": {
+                "src": "images/book-nuclear-many-body-problem/fig1.5-quadrupole-octupole-spectra.png",
+                "caption": "",
+                "size": "medium"
+            }
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Hydrodynamical Picture",
+            "diff": 2,
+            "q": "Which two assumptions are made about the nuclear fluid in order to calculate the collective inertia $B_\\lambda$?",
+            "a": "The nuclear fluid is assumed to flow irrotationally and to be incompressible."
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Hydrodynamical Picture",
+            "diff": 2,
+            "q": "What does it mean for the nuclear fluid to be irrotational?",
+            "a": "The velocity field has zero curl:\n$$\\nabla\\times\\mathbf{v}=0.$$\nTherefore, the velocity can be written as the gradient of a scalar potential."
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Hydrodynamical Picture",
+            "diff": 2,
+            "q": "What does incompressibility imply for the nuclear fluid?",
+            "a": "The density remains constant during the motion. Consequently, the velocity field is divergence-free:\n$$\\nabla\\cdot\\mathbf{v}=0.$$"
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Hydrodynamical Picture",
+            "diff": 3,
+            "q": "Why is the collective inertia $B_\\lambda$ independent of $\\mu$ for oscillations about a spherical nucleus?",
+            "a": "A spherical nucleus has complete rotational symmetry, so all components with the same multipolarity $\\lambda$ are equivalent. For a deformed nucleus this symmetry is broken, and the inertia can depend on $\\mu$."
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Collective Surface Vibrations",
+            "diff": 2,
+            "q": "The deformation energy is defined as\n$$V(\\alpha)=E_S(\\alpha)-E_S(0)+E_C(\\alpha)-E_C(0).$$\nWhat is the physical meaning of this definition?",
+            "a": "The deformation energy is the extra energy required to deform a spherical nucleus. It is measured relative to the spherical equilibrium shape and receives contributions from changes in both the surface energy and the Coulomb energy."
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Collective Surface Vibrations",
+            "diff": 2,
+            "q": "The restoring-force parameter is\n$$C_\\lambda=(\\lambda-1)(\\lambda+2)R_0^2\\sigma-\\frac{3(\\lambda-1)}{2\\pi(2\\lambda+1)}\\frac{(Ze)^2}{R_0}.$$ What is the physical origin of the two terms?",
+            "a": "The first term comes from the nuclear surface tension and tends to restore the spherical shape. The second comes from Coulomb repulsion between protons, which favors deformation and therefore reduces the restoring force."
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Collective Surface Vibrations",
+            "diff": 2,
+            "q": "Why does the Coulomb interaction reduce the stiffness coefficient $C_\\lambda$?",
+            "a": "A spherical charge distribution has relatively large electrostatic energy. Deforming the nucleus can increase the average proton separation, lowering the Coulomb energy. Therefore the Coulomb force opposes the restoring effect of the surface tension."
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Collective Surface Vibrations",
+            "diff": 2,
+            "q": "Why are electromagnetic transition probabilities considered a more sensitive test of a nuclear model than the excitation energies?",
+            "a": "Excitation energies depend mainly on the Hamiltonian, whereas electromagnetic moments and transition probabilities depend directly on the nuclear wavefunctions. They therefore probe the quality of the predicted collective states much more stringently."
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Collective Surface Vibrations",
+            "diff": 2,
+            "q": "The electric multipole operator is written as\n$$\\hat Q_{\\lambda\\mu}=e\\int\\rho_p(\\mathbf r)r^\\lambda Y_{\\lambda\\mu}(\\hat r)\\,d^3r.$$ What does this operator measure physically?",
+            "a": "It measures the electric multipole distribution of the proton charge inside the nucleus. Matrix elements of this operator determine electric transition probabilities such as B(E2)."
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Collective Surface Vibrations",
+            "diff": 2,
+            "q": "The magnetic dipole operator is proportional to\n$$\\hat M_1\\propto\\hat\\mu.$$ Why are M1 transitions forbidden in this simple liquid-drop model?",
+            "a": "The model contains no intrinsic nucleon spins and treats only collective surface motion. Consequently, the M1 operator conserves angular momentum and cannot connect the collective vibrational states considered here."
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Collective Surface Vibrations",
+            "diff": 2,
+            "q": "The transition probability is defined through\n$$B(E\\lambda;i\\rightarrow f)=\\frac{|\\langle f|\\hat Q_\\lambda|i\\rangle|^2}{2I_i+1}.$$ What does the quantity $B(E\\lambda)$ measure physically?",
+            "a": "It measures the probability (or strength) of an electric multipole transition between two nuclear states. A large B(Eλ) indicates strong collectivity. Because the transition is collective rather than involving a single nucleon. Many nucleons contribute coherently to the quadrupole vibration, greatly enhancing the transition strength."
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Quadrupole Vibrations",
+            "diff": 2,
+            "q": "Figure 1.6 shows the distribution of the E2 transition strength to the ground state. What is its main physical message?",
+            "a": "The low-lying first $2^+$ state is collective and has a large B(E2) value, but it exhausts only about 10–20% of the total E2 strength. Most of the quadrupole transition strength is concentrated at much higher excitation energies in the giant quadrupole resonance.",
+            "figure": {
+                "src": "images/book-nuclear-many-body-problem/fig1.6-2plus-spectra.png",
+                "caption": "Distribution of the E2 transition strength. The first $2^+$ state carries only a fraction of the total quadrupole strength, while the giant quadrupole resonance contains most of it.",
+                "size": "medium"
+            }
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Quadrupole Vibrations",
+            "diff": 3,
+            "q": "Why is the first $2^+$ state still considered a collective quadrupole vibration even though it exhausts only about 10–20% of the E2 sum rule (Fig. 1.6)?",
+            "a": "Because its B(E2) value is much larger than expected for a single-particle excitation, showing that many nucleons participate coherently. However, it is not a pure quadrupole vibration, since most of the E2 strength resides in higher-energy giant resonances.",
+            "figure": {
+                "src": "images/book-nuclear-many-body-problem/fig1.6-2plus-spectra.png",
+                "caption": "Distribution of E2 strength. The low-lying $2^+$ state is only the beginning of the collective response; most of the strength is concentrated in the giant quadrupole resonance.",
+                "size": "medium"
+            }
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Quadrupole Vibrations",
+            "diff": 2,
+            "q": "The reduced transition probability $B(E2;2_1^+\\rightarrow0^+)$ is predicted to be unusually large. Why?",
+            "a": "Because the first $2^+$ state is interpreted as a collective quadrupole surface vibration. Many protons move coherently, producing a much larger electric quadrupole transition strength than a single-particle excitation."
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Quadrupole Vibrations",
+            "diff": 3,
+            "q": "The liquid-drop model predicts a smooth variation of the first $2^+$ excitation energy with mass number. Why do the observed shell effects show that low-lying $2^+$ states cannot be pure surface vibrations?",
+            "a": "Experimentally, the excitation energies change strongly near closed shells, reflecting the underlying shell structure. This demonstrates that the low-lying $2^+$ states contain an important microscopic shell-model component in addition to the collective quadrupole vibration."
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Quadrupole Vibrations",
+            "diff": 3,
+            "q": "Figure 1.7 shows the energy of the first $2^+$ state as a function of the mass number $A$. What are the two main physical messages of this figure?",
+            "a": "First, the excitation energy decreases roughly with increasing mass number, showing that collective quadrupole vibrations become softer in heavier nuclei. Second, large peaks occur near closed neutron or proton shells, demonstrating that shell structure strongly influences the low-lying $2^+$ states and that they cannot be described as pure liquid-drop surface vibrations.",
+            "figure": {
+                "src": "images/book-nuclear-many-body-problem/fig1.7-2plus-even-even.png",
+                "caption": "Energy of the first $2^+$ state in even-even nuclei. The smooth decrease with mass number is interrupted by pronounced peaks at magic numbers, revealing the importance of shell effects.",
+                "size": "medium"
+            }
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Quadrupole Vibrations",
+            "diff": 3,
+            "q": "Why is the first $2^+$ excitation energy much larger near closed shells (Fig. 1.7)?",
+            "a": "Closed-shell nuclei are particularly rigid. Exciting a collective quadrupole vibration requires breaking the stabilizing shell structure, so the restoring force is stronger and the first $2^+$ state lies at higher excitation energy.",
+            "figure": {
+                "src": "images/book-nuclear-many-body-problem/fig1.7-2plus-even-even.png",
+                "caption": "Energy of the first $2^+$ state in even-even nuclei. The smooth decrease with mass number is interrupted by pronounced peaks at magic numbers, revealing the importance of shell effects.",
+                "size": "medium"
+            }
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Giant Resonances",
+            "diff": 2,
+            "q": "If the first $2^+$ state carries only a small fraction of the quadrupole strength, where is the rest found?",
+            "a": "Most of the remaining transition strength is concentrated in high-energy collective excitations known as giant resonances."
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Giant Resonances",
+            "diff": 1,
+            "q": "What is the physical picture of a giant resonance?",
+            "a": "A giant resonance is a highly collective nuclear vibration in which many nucleons participate coherently. It represents a concentration of transition strength at relatively high excitation energy."
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Limitations of the Collective Model",
+            "diff": 2,
+            "q": "The liquid-drop model predicts the giant quadrupole resonance energy to scale as\n$$\\Omega_2\\propto A^{-1/2},$$\nwhereas experimentally\n$$\\Omega^{\\rm GQR}_{2^+}\\approx62\\,A^{-1/3}\\;{\\rm MeV}.$$ Why does the simple model fail?",
+            "a": "The model assumes that the restoring force comes only from the surface and Coulomb energies. It neglects the deformation dependence of the intrinsic kinetic energy of the nucleons, which becomes an important contribution to the restoring force."
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Limitations of the Collective Model",
+            "diff": 3,
+            "q": "Why does the intrinsic kinetic energy of the nucleons depend on the nuclear deformation?",
+            "a": "Because of the Pauli exclusion principle and the uncertainty principle. In an ellipsoidal nucleus, the momentum distribution becomes anisotropic: nucleons moving along the shorter axis have, on average, larger momenta than those moving along the longer axis. This increases the intrinsic kinetic energy."
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Limitations of the Collective Model",
+            "diff": 2,
+            "q": "Why is the deformation dependence of the intrinsic kinetic energy considered a volume effect rather than a surface effect?",
+            "a": "The deformation changes the momentum distribution of essentially all nucleons in the nucleus, not only those near the surface. Consequently, the effect scales with the nuclear volume and can dominate the surface contribution."
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Boson Model",
+            "diff": 2,
+            "q": "If the liquid-drop model has significant shortcomings, why has the boson model remained successful?",
+            "a": "Because many low-lying nuclear excitations are genuinely collective. Even if the liquid-drop expressions for the inertia and stiffness are imperfect, the idea of describing collective excitations as bosons provides a good approximation to many observed spectra."
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Boson Model",
+            "diff": 2,
+            "q": "How should the parameters $B_\\lambda$ and $C_\\lambda$ be viewed in practice?",
+            "a": "Rather than treating them as quantities predicted accurately by the liquid-drop model, they are usually regarded as adjustable phenomenological parameters or are calculated using more microscopic many-body theories."
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Anharmonic Effects",
+            "diff": 2,
+            "q": "The collective Hamiltonian is approximated by the harmonic form\n$$H_{\\rm coll}\\propto \\dot\\alpha^2+\\alpha^2.$$ Under what conditions is this approximation expected to be valid?",
+            "a": "Only for small-amplitude surface vibrations around the equilibrium shape. Larger-amplitude collective motion requires going beyond the harmonic approximation."
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Anharmonic Effects",
+            "diff": 2,
+            "q": "Why must anharmonic terms such as $$\\alpha^3,\\;\\alpha^4,\\;\\dot\\alpha^2\\alpha,\\ldots$$ be included for large-amplitude collective motion?",
+            "a": "For large deformations the restoring force is no longer proportional to the displacement. The harmonic approximation breaks down, and higher-order terms are needed to describe the nonlinear dynamics of the nucleus."
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Anharmonic Effects",
+            "diff": 3,
+            "q": "What is the physical significance of introducing anharmonic terms into the collective Hamiltonian?",
+            "a": "They account for deviations from the ideal harmonic oscillator, allowing the model to describe more realistic collective motion, including changes in excitation energies, state mixing, and the dynamics of large-amplitude vibrations."
         }
       
       
