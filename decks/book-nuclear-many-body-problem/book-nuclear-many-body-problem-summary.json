@@ -11,6 +11,18 @@
                 "caption": "",
                 "size": "full"
             }
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Deformation Parameters",
+            "diff": 3,
+            "q": "Deformation paramters",
+            "a": "",
+            "figure": {
+                "src": "images/book-nuclear-many-body-problem/summary-deformation-parameters.png",
+                "caption": "",
+                "size": "full"
+            }
         }
     ]
 }

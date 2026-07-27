@@ -57,22 +57,8 @@
       "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
       "sub": "Radioactive Decay Law",
       "diff": 1,
-      "q": "What is the activity of a radioactive source?",
-      "a": "The activity is the average number of nuclear disintegrations per unit time. It depends on the amount of radioactive material present."
-    },
-    {
-      "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
-      "sub": "Radioactive Decay Law",
-      "diff": 1,
-      "q": "What are the SI and traditional units of radioactive activity?",
-      "a": "The SI unit is the Becquerel (Bq), where $$1\\,\\mathrm{Bq}=1\\ \\mathrm{disintegration/s}.$$ The traditional unit is the Curie (Ci), where $$1\\,\\mathrm{Ci}=3.7\\times10^{10}\\ \\mathrm{disintegrations/s}.$$"
-    },
-    {
-      "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
-      "sub": "Radioactive Decay Law",
-      "diff": 2,
-      "q": "What is the difference between activity and dose?",
-      "a": "Activity (Bq, Ci) measures the rate of radioactive disintegrations in the source. Dose (Gy, Sv) measures the effect of radiation absorbed by matter or by a person."
+      "q": "What is the activity of a radioactive source? What are the SI and traditional units of radioactive activity?",
+      "a": "The activity is the average number of nuclear disintegrations per unit time. It depends on the amount of radioactive material present. The SI unit is the Becquerel (Bq), where $$1\\,\\mathrm{Bq}=1\\ \\mathrm{disintegration/s}.$$ The traditional unit is the Curie (Ci), where $$1\\,\\mathrm{Ci}=3.7\\times10^{10}\\ \\mathrm{disintegrations/s}.$$"
     },
     {
       "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
@@ -92,37 +78,17 @@
       "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
       "sub": "Radioactive Decay Law",
       "diff": 2,
-      "q": "What are the definitions of the mean lifetime and half-life?",
-      "a": "The mean lifetime is $$\\tau=\\frac{1}{\\lambda}.$$ The half-life is the time required for the number of radioactive nuclei (or the activity) to decrease to one-half of its initial value."
+      "q": "What are the definitions of the mean lifetime and half-life? What is the relationship between the half-life and the decay constant?",
+      "a": "The mean lifetime is $$\\tau=\\frac{1}{\\lambda}.$$ The half-life is the time required for the number of radioactive nuclei (or the activity) to decrease to one-half of its initial value. $$T_{1/2}=\\frac{\\ln2}{\\lambda}=\\tau\\ln2.$$"
     },
     {
       "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
       "sub": "Radioactive Decay Law",
       "diff": 2,
-      "q": "What is the relationship between the half-life and the decay constant?",
-      "a": "$$T_{1/2}=\\frac{\\ln2}{\\lambda}=\\tau\\ln2.$$"
+      "q": "Which probability distribution describes radioactive counting statistics? What are the standard deviation and relative uncertainty?",
+      "a": "The number of radioactive decays observed during a fixed counting interval follows a Poisson distribution. $$P(n, \\Delta t)=\\frac{m^n}{n!}e^{-m},$$ where $m$ is the expected (mean) number of counts. $\\sigma=\\sqrt{N}$ and the relative statistical uncertainty is $\\frac{\\sigma}{N}=\\frac{1}{\\sqrt{N}}$."
     },
-    {
-      "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
-      "sub": "Radioactive Decay Law",
-      "diff": 2,
-      "q": "Which probability distribution describes radioactive counting statistics?",
-      "a": "The number of radioactive decays observed during a fixed counting interval follows a Poisson distribution."
-    },
-    {
-      "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
-      "sub": "Radioactive Decay Law",
-      "diff": 2,
-      "q": "For radioactive counting, what are the standard deviation and relative uncertainty?",
-      "a": "For Poisson statistics, $$\\sigma=\\sqrt{N}$$ and the relative statistical uncertainty is $$\\frac{\\sigma}{N}=\\frac{1}{\\sqrt{N}}.$$"
-    },
-    {
-      "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
-      "sub": "Comparison",
-      "diff": 2,
-      "q": "Compare $\\alpha$ decay and $\\beta$ decay.",
-      "a": "$\\alpha$ decay emits a $^4$He nucleus and changes both $A$ and $Z$ ($A-4$, $Z-2$). It is a two-body process and therefore produces monoenergetic particles. $\\beta$ decay converts a neutron into a proton (or vice versa) through the weak interaction, leaving $A$ unchanged and changing $Z$ by $\\pm1$. It is a three-body process, producing a continuous energy spectrum because part of the energy is carried away by the (anti)neutrino."
-    },
+  
     {
       "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
       "sub": "Comparison",
@@ -151,13 +117,6 @@
       "q": "Compare spontaneous-fission neutron sources and $(\\alpha,n)$ neutron sources.",
       "a": "Spontaneous-fission sources (e.g. $^{252}$Cf) produce neutrons directly through nuclear fission and emit several neutrons per fission event. $(\\alpha,n)$ sources (e.g. Am-Be) produce neutrons when $\\alpha$ particles interact with light nuclei such as Be. Spontaneous-fission sources generally produce higher neutron yields, while $(\\alpha,n)$ sources are compact and widely used laboratory neutron sources."
     },
-    {
-      "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
-      "sub": "Comparison",
-      "diff": 2,
-      "q": "Compare activity, radiation output, and dose.",
-      "a": "Activity measures the number of nuclear disintegrations per unit time (Bq, Ci). Radiation output refers to the emitted particles or photons and depends on the decay scheme. Dose (Gy, Sv) measures the energy deposited or biological effect of the radiation on matter or a person."
-    },
 
     {
       "topic": "Ch.2: Passage of Radiation Through Matter",
@@ -171,7 +130,6 @@
         "caption": ""
       }
     },
-
     {
       "topic": "Ch.2: Passage of Radiation Through Matter",
       "sub": "Mean Free Path",

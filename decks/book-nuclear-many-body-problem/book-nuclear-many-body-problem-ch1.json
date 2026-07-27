@@ -206,77 +206,77 @@
         },
         {
             "topic": "Ch.1: The Liquid Drop Model",
-            "sub": "Volume Term",
+            "sub": "SEMF terms",
             "diff": 1,
             "q": "What is the physical origin of the volume term in the semi-empirical mass formula?",
             "a": "The volume term arises from the saturation of the nuclear force. Since each nucleon interacts with only a limited number of neighbors, each additional nucleon contributes approximately the same binding energy."
         },
         {
             "topic": "Ch.1: The Liquid Drop Model",
-            "sub": "Volume Term",
+            "sub": "SEMF terms",
             "diff": 2,
             "q": "Why is the coefficient of the volume term not equal to -8.5 MeV?",
             "a": "The value -8.5 MeV is the average binding energy per nucleon after all contributions are included. The volume coefficient is larger in magnitude because the positive surface, Coulomb, and symmetry terms reduce the total binding energy."
         },
         {
             "topic": "Ch.1: The Liquid Drop Model",
-            "sub": "Surface Term",
+            "sub": "SEMF terms",
             "diff": 1,
             "q": "Why does the semi-empirical mass formula contain a surface term?",
             "a": "Nucleons near the nuclear surface have fewer neighboring nucleons than those in the interior. They therefore contribute less to the total binding energy, reducing the overall binding."
         },
         {
             "topic": "Ch.1: The Liquid Drop Model",
-            "sub": "Surface Term",
+            "sub": "SEMF terms",
             "diff": 2,
             "q": "Why is the surface term proportional to $A^{2/3}$?",
             "a": "The surface energy is proportional to the nuclear surface area. Since the nuclear radius scales as $$R\\propto A^{1/3},$$ the surface area scales as $$R^2\\propto A^{2/3}.$$"
         },
         {
             "topic": "Ch.1: The Liquid Drop Model",
-            "sub": "Surface Term",
+            "sub": "SEMF terms",
             "diff": 2,
             "q": "What physical quantity can be derived from the surface-term coefficient?",
             "a": "The surface-term coefficient can be used to define the nuclear surface tension, which is the surface energy per unit area."
         },
         {
             "topic": "Ch.1: The Liquid Drop Model",
-            "sub": "Coulomb Term",
+            "sub": "SEMF terms",
             "diff": 1,
             "q": "What does the Coulomb term represent?",
             "a": "The Coulomb term accounts for the electrostatic repulsion between protons inside the nucleus."
         },
         {
             "topic": "Ch.1: The Liquid Drop Model",
-            "sub": "Coulomb Term",
+            "sub": "SEMF terms",
             "diff": 2,
             "q": "Why is the Coulomb term proportional to $Z^2/A^{1/3}$?",
             "a": "The electrostatic energy is proportional to the number of proton pairs (approximately $Z^2$) and inversely proportional to the nuclear radius. Since $R\\propto A^{1/3}$, the Coulomb energy scales as $Z^2/A^{1/3}$."
         },
         {
             "topic": "Ch.1: The Liquid Drop Model",
-            "sub": "Symmetry Term",
+            "sub": "SEMF terms",
             "diff": 2,
             "q": "Why is a symmetry term needed in the semi-empirical mass formula?",
             "a": "Because a nucleus containing only neutrons or only protons is energetically unfavorable. The symmetry term accounts for the energy cost associated with an imbalance between the numbers of neutrons and protons."
         },
         {
             "topic": "Ch.1: The Liquid Drop Model",
-            "sub": "Symmetry Term",
+            "sub": "SEMF terms",
             "diff": 2,
             "q": "Why does the symmetry term depend on $(N-Z)^2$ rather than $(N-Z)$?",
             "a": "The energy depends only on the magnitude of the neutron-proton imbalance, not on whether there are excess neutrons or excess protons. The dependence must therefore be symmetric under exchanging neutrons and protons, leading to a quadratic dependence on $$N-Z.$$"
         },
         {
             "topic": "Ch.1: The Liquid Drop Model",
-            "sub": "Pairing Term",
+            "sub": "SEMF terms",
             "diff": 2,
             "q": "What is the purpose of the pairing term in the semi-empirical mass formula?",
             "a": "The pairing term accounts for the different binding energies of even-even, even-odd, and odd-odd nuclei due to the pairing interaction between nucleons."
         },
         {
             "topic": "Ch.1: The Liquid Drop Model",
-            "sub": "Pairing Term",
+            "sub": "SEMF terms",
             "diff": 1,
             "q": "For which nuclei is the pairing term positive, zero, and negative?",
             "a": "The pairing term is positive for even-even nuclei, zero for nuclei with one even and one odd nucleon number, and negative for odd-odd nuclei."
@@ -287,7 +287,110 @@
             "diff": 2,
             "q": "What are the main limitations of the semi-empirical mass formula?",
             "a": "The semi-empirical mass formula reproduces only the smooth overall variation of the nuclear binding energy. It does not describe local deviations, which are mainly caused by nuclear shell effects."
+        },
+
+
+
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Physical Meaning of Deformation Parameters",
+            "diff": 1,
+            "q": "What is the central idea behind describing a nucleus with deformation parameters instead of a fixed radius?",
+            "a": "Instead of treating the nucleus as a rigid sphere, the surface is allowed to oscillate. The deformation parameters describe the collective shape of the nucleus while keeping the volume approximately constant."
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Physical Meaning of Deformation Parameters",
+            "diff": 2,
+            "q": "Why is the nuclear surface expanded into multipoles?",
+            "a": "Each multipole represents an independent mode of collective motion. Any sufficiently smooth nuclear shape can be viewed as a superposition of simple deformation modes."
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Physical Meaning of Deformation Parameters",
+            "diff": 2,
+            "q": "In the surface expansion $$R(\\theta,\\phi)=R_0\\left(1+a_{00}+\\sum_{\\lambda\\mu}\\alpha^*_{\\lambda\\mu}Y_{\\lambda\\mu}(\\theta,\\phi)\\right),$$ why are the $\\lambda=0$ and $\\lambda=1$ terms usually discarded?",
+            "a": "They do not describe intrinsic shape. The $\\lambda=0$ term changes only the volume, while the $\\lambda=1$ term translates the entire nucleus. After fixing the volume and the center of mass, the first physical deformation is $\\lambda=2$."
+        },
+
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Physical Meaning of Deformation Parameters",
+            "diff": 2,
+            "q": "Why is the quadrupole deformation the most important collective mode?",
+            "a": "It is the lowest-order intrinsic deformation of the nucleus. Because low-order modes require the least distortion of the surface, quadrupole deformations dominate many collective phenomena."
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Physical Meaning of Deformation Parameters",
+            "diff": 2,
+            "q": "In the surface expansion $$R(\\theta,\\phi)=R_0\\left(1+a_{00}+\\sum_{\\lambda\\mu}\\alpha^*_{\\lambda\\mu}Y_{\\lambda\\mu}(\\theta,\\phi)\\right),$$ why does a $\\lambda=2$ deformation only approximate an ellipsoid?",
+            "a": "The quadrupole term is only the leading contribution. An exact ellipsoid contains higher multipoles as well, although they become small for weak deformations."
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Physical Meaning of Deformation Parameters",
+            "diff": 2,
+            "q": "Why must the deformation parameters transform under rotations and parity?",
+            "a": "The physical nucleus cannot depend on the choice of coordinate system. Rotating or reflecting the axes changes only the mathematical description, not the actual shape."
+        },
+
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Hill-Wheeler coordinates",
+            "diff": 2,
+            "q": "Why do five quadrupole parameters reduce to only two intrinsic shape variables?",
+            "a": "Three of the five parameters merely specify how the nucleus is oriented in space (the Euler angles). Once the orientation is removed by going to the body-fixed frame, only two independent variables remain to describe the intrinsic shape."
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Hill-Wheeler coordinates",
+            "diff": 1,
+            "q": "The Hill-Wheeler coordinates are defined by\n$$\\alpha_{20}=\\beta\\cos\\gamma,\\qquad \\alpha_{22}=\\frac{1}{\\sqrt2}\\beta\\sin\\gamma.$$ \nWhat are the physical meanings of $\\beta$ and $\\gamma$?",
+            "a": "$\\beta$ measures the magnitude of the quadrupole deformation (how far the nucleus departs from a sphere), while $\\gamma$ determines the type of quadrupole shape (prolate, oblate, or triaxial)."
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Hill-Wheeler coordinates",
+            "diff": 2,
+            "q": "The Hill-Wheeler coordinates are defined by\n$$\\alpha_{20}=\\beta\\cos\\gamma,\\qquad \\alpha_{22}=\\frac{1}{\\sqrt2}\\beta\\sin\\gamma.$$ what does increasing $\\beta$ do if $\\gamma$ is kept fixed?",
+            "a": "The nucleus keeps the same type of shape but becomes more strongly deformed."
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Hill-Wheeler coordinates",
+            "diff": 2,
+            "q": "The Hill-Wheeler coordinates are defined by\n$$\\alpha_{20}=\\beta\\cos\\gamma,\\qquad \\alpha_{22}=\\frac{1}{\\sqrt2}\\beta\\sin\\gamma.$$ What does changing $\\gamma$ do if $\\beta$ is kept fixed?",
+            "a": "The overall amount of deformation stays approximately the same, but the shape changes continuously between prolate, triaxial, and oblate."
+        },
+
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Quadrupole Shapes",
+            "diff": 3,
+            "q": "The Hill-Wheeler coordinates are defined by\n$$\\alpha_{20}=\\beta\\cos\\gamma,\\qquad \\alpha_{22}=\\frac{1}{\\sqrt2}\\beta\\sin\\gamma.$$ Why is only the interval $0^\\circ\\le\\gamma\\le60^\\circ$ needed?",
+            "a": "Outside this interval the shapes are not new. They can all be obtained simply by relabeling the three principal axes of the nucleus."
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Quadrupole Shapes",
+            "diff": 2,
+            "q": "Why is it useful to introduce a body-fixed coordinate system?",
+            "a": "It separates the intrinsic nuclear shape from the overall orientation in space. This allows the collective deformation and the rotational motion to be treated independently."
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Quadrupole Shapes",
+            "diff": 2,
+            "q": "The Hill-Wheeler coordinates are defined by\n$$\\alpha_{20}=\\beta\\cos\\gamma,\\qquad \\alpha_{22}=\\frac{1}{\\sqrt2}\\beta\\sin\\gamma.$$ What is the most important limitation of the $(\\beta,\\gamma)$ description introduced here?",
+            "a": "It describes exactly ellipsoidal shapes only for small deformations. For larger $\\beta$, higher multipoles become important."
         }
+      
+      
+
+        
+
+
         
     ]
 }
