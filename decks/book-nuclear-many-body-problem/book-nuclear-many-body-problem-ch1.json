@@ -66,14 +66,6 @@
         },
         {
             "topic": "Ch.1: The Liquid Drop Model",
-            "sub": "Introduction",
-            "diff": 1,
-            "q": "Why is the liquid drop model still useful despite its limitations?",
-            "a": "Although it does not capture the quantum nature of nuclei, the liquid drop model successfully describes many overall nuclear properties and provides a simple introduction to collective nuclear phenomena."
-        },
-
-        {
-            "topic": "Ch.1: The Liquid Drop Model",
             "sub": "Semi-Empirical Mass Formula",
             "diff": 1,
             "q": "How does the total nuclear binding energy vary with the number of nucleons?",
@@ -103,18 +95,6 @@
         {
             "topic": "Ch.1: The Liquid Drop Model",
             "sub": "Semi-Empirical Mass Formula",
-            "diff": 3,
-            "q": "What physical mechanisms are responsible for the saturation of the nuclear force?",
-            "a": "Nuclear saturation arises from the short range of the nuclear force together with the Pauli exclusion principle, the uncertainty principle, and the hard-core repulsion between nucleons. As nucleons approach each other, the attractive potential lowers the energy, but at very short distances the kinetic energy rises rapidly, producing a shallow energy minimum at the equilibrium separation.",
-            "figure": {
-                "src": "images/book-nuclear-many-body-problem/nuclear-saturation.png",
-                "caption": "Qualitative explanation of nuclear saturation as a subtle difference effect of $E_{\\mathrm{kin}}$ and $E_{\\mathrm{pot}}$. The total energy (E_tot) is the sum of the attractive potential energy (E_pot) and the repulsive kinetic energy (E_kin). Their competition produces a shallow minimum, limiting how closely nucleons can approach one another.",
-                "size": "small"
-            }
-        },
-        {
-            "topic": "Ch.1: The Liquid Drop Model",
-            "sub": "Semi-Empirical Mass Formula",
             "diff": 2,
             "q": "Why does the total binding energy increase approximately linearly with the mass number $A$?",
             "a": "Since each nucleon interacts with only a limited number of neighboring nucleons, the average binding contribution of each additional nucleon remains nearly constant. Therefore, the total binding energy grows approximately as $$B\\propto A.$$"
@@ -131,7 +111,12 @@
             "sub": "Semi-Empirical Mass Formula",
             "diff": 3,
             "q": "How do the kinetic and potential energies of two nucleons vary as their separation changes?",
-            "a": "At large separations, the short-range nuclear force is negligible and the potential energy is close to zero. As the nucleons approach each other, the attractive potential lowers the total energy. At very short distances (roughly below 2 fm), the kinetic energy rises steeply because of the Pauli exclusion principle, the uncertainty principle, and the hard-core repulsion, causing the total energy to increase again."
+            "a": "At large separations, the short-range nuclear force is negligible and the potential energy is close to zero. As the nucleons approach each other, the attractive potential lowers the total energy. At very short distances (roughly below 2 fm), the kinetic energy rises steeply because of the Pauli exclusion principle, the uncertainty principle, and the hard-core repulsion, causing the total energy to increase again.",
+            "figure": {
+                "src": "images/book-nuclear-many-body-problem/nuclear-saturation.png",
+                "caption": "Qualitative explanation of nuclear saturation as a subtle difference effect of $E_{\\mathrm{kin}}$ and $E_{\\mathrm{pot}}$. The total energy (E_tot) is the sum of the attractive potential energy (E_pot) and the repulsive kinetic energy (E_kin). Their competition produces a shallow minimum, limiting how closely nucleons can approach one another.",
+                "size": "small"
+            }
         },
         {
             "topic": "Ch.1: The Liquid Drop Model",
@@ -194,7 +179,7 @@
             "sub": "Semi-Empirical Mass Formula",
             "diff": 1,
             "q": "State the semi-empirical mass formula of Bethe and Weizsäcker and briefly explain the different terms",
-            "a": "$$B(N,Z) = a_V A + a_S A^{2/3} +  a_C \\frac{Z^2}{A^{1/3}} + a_l \\frac{(N-Z)^2}{A} - \\delta(A)$$. $a_V$ is the volume term, $A \\propto R^3$. $a_S$ is the surface term, it results from the fact that the nucleons close to the surface contribute less to the total binding energy. $a_C$-term takes into account the Coulomb repulsion of the protons. $a_l$ is the asymmetry term, it is related to Pauli exclusion principle. $\\delta(A)$ is the paring term, realted to spin coupling; for odd A it is 0, for even A and even Z it is positive and for for even A and odd Z it is negative."
+            "a": "$$B(N,Z) = a_V A + a_S A^{2/3} +  a_C \\frac{Z^2}{A^{1/3}} + a_l \\frac{(N-Z)^2}{A} - \\delta(A).$$ $a_V$ is the volume term, $A \\propto R^3$. \n$a_S$ is the surface term, it results from the fact that the nucleons close to the surface contribute less to the total binding energy. \n$a_C$-term takes into account the Coulomb repulsion of the protons. $a_l$ is the asymmetry term, it is related to Pauli exclusion principle. \n$\\delta(A)$ is the paring term, realted to spin coupling; for odd A it is 0, for even A and even Z it is positive and for for even A and odd Z it is negative."
         },
 
         {
@@ -496,13 +481,6 @@
             "diff": 2,
             "q": "Why does the Coulomb interaction reduce the stiffness coefficient $C_\\lambda$?",
             "a": "A spherical charge distribution has relatively large electrostatic energy. Deforming the nucleus can increase the average proton separation, lowering the Coulomb energy. Therefore the Coulomb force opposes the restoring effect of the surface tension."
-        },
-        {
-            "topic": "Ch.1: The Liquid Drop Model",
-            "sub": "Collective Surface Vibrations",
-            "diff": 2,
-            "q": "Why are electromagnetic transition probabilities considered a more sensitive test of a nuclear model than the excitation energies?",
-            "a": "Excitation energies depend mainly on the Hamiltonian, whereas electromagnetic moments and transition probabilities depend directly on the nuclear wavefunctions. They therefore probe the quality of the predicted collective states much more stringently."
         },
         {
             "topic": "Ch.1: The Liquid Drop Model",
