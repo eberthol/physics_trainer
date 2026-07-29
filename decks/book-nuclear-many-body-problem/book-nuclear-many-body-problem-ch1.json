@@ -744,6 +744,112 @@
             "diff": 3,
             "q": "Why is the Bohr Hamiltonian regarded as a unified description of collective motion?",
             "a": "It treats both collective rotations and collective vibrations within a single Hamiltonian, allowing them to coexist and interact through the deformation-dependent moments of inertia."
+        },
+
+
+
+
+
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Axially Symmetric Rotor",
+            "diff": 2,
+            "q": "The axially symmetric limit assumes the collective potential has a minimum at\n$$\\beta=\\beta_0,\\qquad \\gamma=0.$$ What is the physical meaning of this approximation?",
+            "a": "The nucleus has a stable axially symmetric equilibrium shape. Low-energy excitations are then described as small vibrations about this deformation together with rotations of the entire nucleus."
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Axially Symmetric Rotor",
+            "diff": 2,
+            "q": "The rotational kinetic energy becomes\n$$T_{\\rm rot}=\\frac{\\hat I^2-\\hat I_3^2}{2\\mathcal J_0}.$$ Why does only the angular momentum perpendicular to the symmetry axis contribute?",
+            "a": "Rotation about the symmetry axis does not change the appearance of an axially symmetric nucleus. Only rotations perpendicular to the symmetry axis correspond to genuine collective rotational motion."
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Axially Symmetric Rotor",
+            "diff": 2,
+            "q": "Why is $K$ a good quantum number for an axially symmetric nucleus?",
+            "a": "Because the Hamiltonian commutes with the projection of the angular momentum onto the symmetry axis. Therefore the projection $K$ is conserved during the collective motion."
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "β and γ Vibrations",
+            "diff": 2,
+            "q": "When the coupling terms are neglected, what is the physical difference between β- and γ-vibrations?",
+            "a": "A β-vibration changes the magnitude of the deformation while preserving axial symmetry. A γ-vibration changes the triaxiality of the nucleus and therefore breaks the axial symmetry."
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "β and γ Vibrations",
+            "diff": 2,
+            "q": "Each vibrational state $(n_\\beta,n_\\gamma)$ forms a rotational band. What does this mean physically?",
+            "a": "For every intrinsic vibrational excitation, the nucleus can rotate with different angular momenta. The resulting sequence of rotational states forms a rotational band built on the same intrinsic vibration."
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "β and γ Vibrations",
+            "diff": 2,
+            "q": "The sketches below compare β- and γ-vibrations of a deformed nucleus. What is the essential physical difference between these two collective modes?",
+            "a": "During a β-vibration the nucleus periodically becomes more or less elongated while remaining axially symmetric. During a γ-vibration the nucleus oscillates between different triaxial shapes, changing the degree of axial asymmetry.",
+            "figure": {
+                "src": "images/book-nuclear-many-body-problem/fig1-11-beta-gamma-vibrations.png",
+                "caption": "Comparison of β-vibrations (change in deformation magnitude) and γ-vibrations (change in triaxiality).",
+                "size": "medium"
+            }
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "K Bands",
+            "diff": 2,
+            "q": "What distinguishes $K=0$ bands from $K\\neq0$ bands?",
+            "a": "In $K=0$ bands the rotational and vibrational motions approximately decouple. For $K\\neq0$ bands the γ-vibration couples to the rotation about the symmetry axis, producing rotational bands with non-zero intrinsic angular momentum."
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "K Bands",
+            "diff": 3,
+            "q": "Why must $K$ be even in this model?",
+            "a": "The discrete symmetries of the axially symmetric rotor require the wavefunction to be invariant under the symmetry operations of the nucleus. These symmetry requirements allow only even values of $K$."
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Collective Spectra",
+            "diff": 3,
+            "q": "The level schemes below compare spherical and deformed nuclei. What is the main physical difference between these two types of collective spectra?",
+            "a": "A spherical nucleus exhibits a nearly harmonic vibrational spectrum. A well-deformed nucleus instead develops rotational bands built on intrinsic states, including the ground-state band, the β-band, and the γ-band. Transitional nuclei interpolate continuously between these two limits.",
+            "figure": {
+                "src": "images/book-nuclear-many-body-problem/fig1-12-spherical-vs-deformed-spectrum.png",
+                "caption": "Comparison of the collective spectra of spherical vibrators and deformed rotors.",
+                "size": "large"
+            }
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Intrinsic Quadrupole Moment",
+            "diff": 2,
+            "q": "The intrinsic quadrupole moment of the ground-state band is\n$$Q_0=\\sqrt{\\frac{16\\pi}{5}}\\frac{3}{4\\pi}ZeR_0^2\\beta.$$ What is the physical meaning of $Q_0$?",
+            "a": "$Q_0$ measures the intrinsic quadrupole deformation of the nucleus in the body-fixed frame. Larger values of $Q_0$ correspond to stronger permanent deformation."
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Intrinsic Quadrupole Moment",
+            "diff": 3,
+            "q": "Why is the intrinsic quadrupole moment $Q_0$ not itself an observable?",
+            "a": "The intrinsic frame rotates together with the nucleus and cannot be accessed directly in the laboratory. Experiments measure only laboratory-frame quantities, from which $Q_0$ must be inferred through rotational-model relations."
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Intrinsic Quadrupole Moment",
+            "diff": 2,
+            "q": "How can the intrinsic quadrupole moment $Q_0$ be determined experimentally?",
+            "a": "Although $Q_0$ cannot be measured directly, it can be extracted from laboratory observables such as intraband B(E2) transition probabilities or Coulomb-excitation measurements."
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Rotational Bands",
+            "diff": 2,
+            "q": "What does the observation that $Q_0$ remains approximately constant within a rotational band imply physically?",
+            "a": "It indicates that all members of the rotational band correspond to essentially the same intrinsic nuclear shape. The different states differ mainly by their rotational motion rather than by changes in deformation."
         }
 
         
