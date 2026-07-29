@@ -154,7 +154,6 @@
         "caption": ""
       }
     },
-
     {
       "topic": "Ch.2: Passage of Radiation Through Matter",
       "sub": "Bethe-Bloch Formula",
@@ -163,6 +162,18 @@
       "a": "",
       "figure": {
         "src": "images/book-experimental-techniques/summary-bethe-bloch.png",
+        "size": "full",
+        "caption": ""
+      }
+    },
+    {
+      "topic": "Ch.2: Passage of Radiation Through Matter",
+      "sub": "Energy Loss, CHanneling and Range",
+      "diff": 3,
+      "q": "Energy Loss, CHanneling and Range",
+      "a": "",
+      "figure": {
+        "src": "images/book-experimental-techniques/summary-energy-loss.png",
         "size": "full",
         "caption": ""
       }
