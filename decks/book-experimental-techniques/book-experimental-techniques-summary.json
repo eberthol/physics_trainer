@@ -15,7 +15,7 @@
       "q": "Explain the main nuclear processes occurring in radioactive sources.",
       "a": "• $\\alpha$ decay\n• $\\beta^-$ decay\n• $\\beta^+$ decay\n• Electron capture (EC)\n• $\\gamma$ emission\n• Internal conversion\n• Auger electron emission\n• Neutron production (spontaneous fission and nuclear reactions)",
       "figure": {
-        "src": "images/book-experimental-techniques/radioactive-decays-summary.png",
+        "src": "images/book-experimental-techniques/summary-radioactive-decays.png",
         "size": "full",
         "caption": "Overview of the principal radioactive processes. The diagram groups the processes by the interaction responsible (strong, weak, or electromagnetic), shows how they change the nuclear quantum numbers $(A,Z)$, and illustrates the cascade from internal conversion to characteristic X-rays or Auger electrons."
       }
@@ -27,7 +27,7 @@
       "q": "Compare the principal radioactive processes. For each process, identify:\n\n• the particles emitted,\n• the change in $(A,Z)$,\n• the typical energy range,\n• the main experimental signature.",
       "a": "",
       "figure": {
-        "src": "images/book-experimental-techniques/radioactive-decays-signature-summary.png",
+        "src": "images/book-experimental-techniques/summary-radioactive-decays-signature.png",
         "size": "full",
         "caption": "Overview of the principal radioactive processes."
       }
@@ -125,7 +125,7 @@
       "q": "Cross section",
       "a": "",
       "figure": {
-        "src": "images/book-experimental-techniques/cross-section.png",
+        "src": "images/book-experimental-techniques/summary-cross-section.png",
         "size": "full",
         "caption": ""
       }
@@ -137,7 +137,7 @@
       "q": "Explain how the interaction probability depends on the distance traveled in matter, and define the mean free path.",
       "a": "",
       "figure": {
-        "src": "images/book-experimental-techniques/mean-free-path.png",
+        "src": "images/book-experimental-techniques/summary-mean-free-path.png",
         "size": "full",
         "caption": "A particle beam traveling through matter has an exponential survival probability, $P(x)=e^{-x/\\lambda}$. The mean free path $\\lambda=1/(N\\sigma)$ is the average distance before the first interaction; larger $N$ or $\\sigma$ gives a shorter mean free path."
       }
@@ -149,7 +149,7 @@
       "q": "Describe the different mechanisms though which a heavy charged particle looses enery when traversing matter.",
       "a": "",
       "figure": {
-        "src": "images/book-experimental-techniques/energy-loss-heavy.png",
+        "src": "images/book-experimental-techniques/summary-heavy-charged-particles.png",
         "size": "full",
         "caption": ""
       }
@@ -162,7 +162,7 @@
       "q": "Bethe-Bloch Formula",
       "a": "",
       "figure": {
-        "src": "images/book-experimental-techniques/bethe-bloch.png",
+        "src": "images/book-experimental-techniques/summary-bethe-bloch.png",
         "size": "full",
         "caption": ""
       }
