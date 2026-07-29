@@ -16,17 +16,17 @@
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
-            "sub": "Cross Section",
+            "sub": "Scattering Terminology",
             "diff": 1,
-            "q": "What is the physical meaning of a cross section?",
-            "a": "The cross section is a measure of the probability that a particular interaction or reaction will occur."
+            "q": "In the definition of a scattering cross section, must the incident particle remain the same type of particle after the reaction?",
+            "a": "No. Here, scattering means any reaction in which an outgoing particle is emitted into the solid angle $\\Omega$. The incident particle need not retain its identity."
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
             "sub": "Cross Section",
-            "diff": 2,
-            "q": "What assumptions are made when defining the differential cross section?",
-            "a": "The incident beam is assumed to be much broader than the target, uniformly distributed in space and time, and characterized by a constant particle flux."
+            "diff": 1,
+            "q": "The differential cross section is defined by\n$$\\frac{d\\sigma}{d\\Omega}(E,\\Omega)=\\frac{1}{F}\\frac{dN_s}{d\\Omega}.$$\nWhat do the quantities in this equation represent, and what is the physical meaning of $d\\sigma/d\\Omega$?",
+            "a": "$F$ is the flux of incident particles, measured as the number of particles per unit area per unit time, and $dN_s/d\\Omega$ is the average number of particles scattered per unit time into unit solid angle around $\\Omega$. Thus, $d\\sigma/d\\Omega$ is the average fraction of incident particles scattered into $d\\Omega$ per unit time per unit incident flux. It measures the probability of a reaction producing an outgoing particle in a specified angular direction."
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
@@ -34,6 +34,13 @@
             "diff": 2,
             "q": "How is the differential cross section defined?",
             "a": "The differential cross section is defined as\n\n$$\\frac{d\\sigma}{d\\Omega}=\\frac{1}{F}\\frac{dN_s}{d\\Omega},$$\n\nwhere $F$ is the incident particle flux and $dN_s/d\\Omega$ is the average number of particles scattered into the solid angle $d\\Omega$ per unit time."
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter",
+            "sub": "Cross Section",
+            "diff": 2,
+            "q": "What assumptions are made when defining the differential cross section?",
+            "a": "The incident beam is assumed to be much broader than the target, uniformly distributed in space and time, and characterized by a constant particle flux."
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
@@ -72,47 +79,78 @@
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
-            "sub": "Cross Section",
+            "sub": "Thin Target",
             "diff": 2,
-            "q": "For a thin target, what is the probability that a single incident particle undergoes an interaction while traversing a a slab of thickness $\\delta x$?",
-            "a": "For a thin target,\n\n$$P_{\\rm int}=N\\sigma\\delta x,$$\n\nwhere $N$ is the number density of scattering centers and $\\sigma$ is the total cross section."
+            "q": "For a thin slab containing uniformly distributed interaction centers,\n$$N_s(\\Omega)=FAN\\,\\delta x\\,\\frac{d\\sigma}{d\\Omega}.$$\nExplain the physical origin of each factor.",
+            "a": "$FA$ is the number of incident particles per unit time that strike the target area $A$. The product $N\\delta x$ is the number of interaction centers per unit area along the beam direction, where $N$ is their number density and $\\delta x$ is the slab thickness. The differential cross section $d\\sigma/d\\Omega$ determines the probability for one incident particle to be scattered toward the specified solid angle."
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter",
+            "sub": "Thin Target",
+            "diff": 2,
+            "q": "The total number of particles scattered per unit time from a thin slab is\n$$N_{\\mathrm{tot}}=FAN\\,\\delta x\\,\\sigma.$$\nUnder what approximation is this expression valid?",
+            "a": "The slab must be sufficiently thin that the probability of one interaction center lying behind another, as viewed by the beam, is small. In this limit, attenuation and multiple interactions can be neglected, and the contributions from the interaction centers add independently."
         },
 
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
-            "sub": "Mean Free Path",
+            "sub": "Interaction Probability",
+            "diff": 1,
+            "q": "For a particle crossing a thin thickness $\\delta x$, the interaction probability is\n$$\\operatorname{Prob.\\ of\\ interaction\\ in\\ }\\delta x=N\\sigma\\,\\delta x.$$\nWhat does this equation imply about the roles of $N$, $\\sigma$, and $\\delta x$?",
+            "a": "The interaction probability increases linearly with the density of available interaction centers $N$, the cross section $\\sigma$ of each center, and the distance $\\delta x$ traveled through the material. The relation applies in the thin-target limit, where this probability is small."
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter",
+            "sub": "Interaction Probability",
+            "diff": 1,
+            "q": "The probability that a particle suffers an interaction somewhere within a distance $x$ is\n$$P_{\\mathrm{int}}(x)=1-\\exp(-wx),$$ where $w = N\\sigma$. \nWhy is this the complement of the survival probability?",
+            "a": "After traveling the distance $x$, the particle must either have survived without interaction or have interacted at least once. These mutually exclusive possibilities exhaust all outcomes, so the interaction probability is one minus the survival probability."
+        },
+
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter",
+            "sub": "Survival Probability",
             "diff": 1,
             "q": "What is the survival probability?",
             "a": "The survival probability is the probability that a particle travels a distance $x$ through a material without undergoing an interaction."
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
-            "sub": "Mean Free Path",
-            "diff": 2,
-            "q": "How does the survival probability vary with distance?",
-            "a": "The survival probability decreases exponentially with distance:\n\n$$P(x)=e^{-wx}=e^{-N\\sigma x},$$\n\nwhere $N$ is the number density of interaction centers, $\\sigma$ is the total cross section and $w dx$ is the probability of having an interaction between $x$ and $x + dx$."
+            "sub": "Survival Probability",
+            "diff": 1,
+            "q": "The survival probability is\n$$P(x)=e^{-wx}.$$\nWhy does the condition $P(0)=1$ fix the multiplicative constant in the general solution?",
+            "a": "At zero distance, the particle has not yet had an opportunity to interact, so its probability of survival must be unity. Applying this condition to $P(x)=C\\exp(-wx)$ gives $C=1$."
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
-            "sub": "Mean Free Path",
-            "diff": 2,
-            "q": "What is the probability that a particle interacts within a distance $x$?",
-            "a": "The interaction probability is\n\n$$P_{\\rm int}(x)=1-e^{-wx}=1-e^{-N\\sigma x}.$$"
+            "sub": "Survival Probability",
+            "diff": 1,
+            "q": "The survival probability can be written as\n$$P(x)=\\exp\\left(-\\frac{x}{\\lambda}\\right)=\\exp(-N\\sigma x).$$\nWhat is the significance of the ratio $x/\\lambda$?",
+            "a": "The ratio $x/\\lambda$ is the distance traveled expressed in units of the mean free path. The survival probability decreases exponentially as this dimensionless thickness increases."
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
-            "sub": "Mean Free Path",
+            "sub": "First-Interaction Distribution",
             "diff": 2,
-            "q": "What is the probability density for the first interaction occurring between $x$ and $x+dx$?",
-            "a": "The probability density is\n\n$$F(x)dx=e^{-wx}\\,w\\,dx=e^{-N\\sigma x}N\\sigma\\,dx.$$"
+            "q": "The probability that a particle survives to $x$ and then suffers a collision between $x$ and $x+dx$ is\n$$F(x)dx=w e^{-wx}\\,dx.$$\nExplain the two factors in this expression.",
+            "a": "The factor $\\exp(-wx)$ is the probability that the particle reaches $x$ without interacting. The factor $w\\,dx$ is the probability that it then interacts within the following infinitesimal interval $dx$. Their product gives the probability that the first collision occurs in that interval."
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
             "sub": "Mean Free Path",
             "diff": 1,
-            "q": "What is the mean free path?",
-            "a": "The mean free path, $\\lambda$, is the average distance traveled by a particle before its first interaction. $$\\lambda = \\frac{1}{w}$$"
+            "q": "The mean free path is defined by\n$$\\lambda=\\frac{\\int xP(x)\\,dx}{\\int P(x)\\,dx}=\\frac{1}{w}.$$\nWhat is the physical meaning of $\\lambda$?",
+            "a": "$\\lambda$ is the mean distance traveled by a particle before suffering a collision. Since $\\lambda=1/w$, a large interaction probability per unit distance corresponds to a short mean free path, while a small interaction probability per unit distance corresponds to a long mean free path."
         },
+
+
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter",
+            "sub": "Mean Free Path",
+            "diff": 2,
+            "q": "How does the survival probability vary with distance?",
+            "a": "The survival probability decreases exponentially with distance:\n\n$$P(x)=e^{-wx}=e^{-N\\sigma x},$$\n\nwhere $N$ is the number density of interaction centers, $\\sigma$ is the total cross section and $w dx$ is the probability of having an interaction between $x$ and $x + dx$."
+        }, 
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
             "sub": "Mean Free Path",
@@ -136,10 +174,17 @@
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
-            "sub": "Mean Free Path",
+            "sub": "Thin Target",
             "diff": 2,
             "q": "For a very thin target ($x\\ll\\lambda$), how can the interaction probability be approximated?",
             "a": "For a thin target,\n\n$$P_{\\rm int}(x)\\approx N\\sigma x=\\frac{x}{\\lambda},$$\n\nobtained by keeping only the first-order term in the exponential expansion."
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter",
+            "sub": "Thin Target",
+            "diff": 2,
+            "q": "For a small thickness $\\delta x$,\n$$P_{\\mathrm{int}}=1-\\left(1-\\frac{\\delta x}{\\lambda}+\\cdots\\right)\\simeq\\frac{\\delta x}{\\lambda}.$$\nWhat approximation has been made, and what is its physical meaning?",
+            "a": "The exponential has been expanded in powers of $\\delta x/\\lambda$, and only the first-order term has been retained. This requires $\\delta x\\ll\\lambda$, so the interaction probability across the layer is small and increases approximately linearly with thickness."
         },
         {
             "topic": "Ch.2 Summary",
@@ -148,6 +193,9 @@
             "q": "Summarize the relationships between survival probability, interaction probability, and mean free path.",
             "a": "Survival probability:\n$$P(x)=e^{-x/\\lambda}.$$\n\nInteraction probability:\n$$P_{\\rm int}(x)=1-e^{-x/\\lambda}.$$\n\nMean free path:\n$$\\lambda=\\frac{1}{N\\sigma}.$$\n\nA larger cross section or a higher density of scattering centers leads to a shorter mean free path and therefore a higher interaction probability."
         },
+
+
+
 
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
