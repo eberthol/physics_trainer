@@ -6,7 +6,8 @@ const NAV_ITEMS = [
   {id:'overview', label:'Overview', icon:'ring'},
   {id:'collections', label:'Collections', icon:'book'},
   {id:'train', label:'Train', icon:'bolt'},
-  {id:'library', label:'Library', icon:'book'}
+  {id:'library', label:'Library', icon:'book'},
+  {id:'maps', label:'Concept Maps', icon:'book'}
 ];
 
 const ICONS = {
@@ -17,7 +18,8 @@ const ICONS = {
 };
 
 /* ================= STATE ================= */
-let deckCatalog = [];     // list from decks/index.json
+let deckCatalog = [];     // list from decks/catalog.json
+let mapCatalog = [];      // list from maps/catalog.json
 let currentDeck = null;   // id of the selected deck
 let currentDeckInfo = null;
 let currentCollection = null;
@@ -109,6 +111,19 @@ async function loadDeckCatalog() {
     }
 
     deckCatalog = await response.json();
+}
+
+async function loadMapCatalog() {
+
+    const response = await fetch("maps/catalog.json", {
+        cache: "no-store"
+    });
+
+    if (!response.ok) {
+        throw new Error("Cannot load map catalog");
+    }
+
+    mapCatalog = await response.json();
 }
 
 async function loadDeck(deckId) {
@@ -453,6 +468,7 @@ function goTo(view){
   if(view==='collections') renderCollections();
   if(view==='train') renderTrainSetup();
   if(view==='library') renderLibrary();
+  if(view==='maps') renderMaps();
 }
 
 function decksInCurrentCollection() {
@@ -657,6 +673,51 @@ function renderCollections() {
     }
 
     document.getElementById("collectionsView").innerHTML = html;
+}
+
+/* ================= MAPS ================= */
+function renderMaps() {
+
+    const groups = {};
+
+    for (const map of mapCatalog) {
+
+        if (!groups[map.collection])
+            groups[map.collection] = [];
+
+        groups[map.collection].push(map);
+    }
+
+    let html = "";
+
+    for (const [collection, maps] of Object.entries(groups)) {
+
+        html += `
+            <div class="panel" style="margin-bottom:20px;">
+
+                <div class="panel-title">
+                    ${collection}
+                </div>
+        `;
+
+        for (const map of maps) {
+
+            html += `
+                <div class="list-row"
+                     onclick="openConceptMap('${map.id}')"
+                     style="cursor:pointer;">
+
+                    🧠
+                    <strong>${map.title}</strong>
+
+                </div>
+            `;
+        }
+
+        html += "</div>";
+    }
+
+    document.getElementById("mapsView").innerHTML = html;
 }
 
 /* ================= TRAIN ================= */
@@ -1160,6 +1221,7 @@ async function init() {
 
     await loadDeckCatalog();
     await loadDeckMetadata();
+    await loadMapCatalog();
 
     loadCollectionMemory();
 

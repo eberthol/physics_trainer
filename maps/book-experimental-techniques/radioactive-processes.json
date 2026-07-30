@@ -1,0 +1,16 @@
+{
+  "title": "Radioactive Sources",
+
+  "layers": [
+    {
+      "title": "CARD: Basic Nuclear Processes in Radioactive Sources",
+      "image": "images/book-experimental-techniques/summary-radioactive-decays.png"
+    }
+  ],
+
+  "caption": "GENERAL: Basic Nuclear Processes in Radioactive Sources",
+
+  "hotspots": [],
+  "relatedCards": [],
+  "tags": []
+}
