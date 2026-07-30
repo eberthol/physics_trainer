@@ -1,0 +1,16 @@
+{
+  "title": "Radioactive Sources",
+
+  "layers": [
+    {
+      "title": "CARD: Radioactive Decay Signatures",
+      "image": "images/book-experimental-techniques/summary-radioactive-decays-signature.png"
+    }
+  ],
+
+  "caption": "GENERAL: Radioactive Decay Signatures",
+
+  "hotspots": [],
+  "relatedCards": [],
+  "tags": []
+}

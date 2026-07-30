@@ -23,6 +23,7 @@ let mapCatalog = [];      // list from maps/catalog.json
 let currentDeck = null;   // id of the selected deck
 let currentDeckInfo = null;
 let currentCollection = null;
+let currentMap = null;
 let deckCards = [];       // cards from the currently loaded deck
 let deckIndex = {};
 
@@ -469,6 +470,7 @@ function goTo(view){
   if(view==='train') renderTrainSetup();
   if(view==='library') renderLibrary();
   if(view==='maps') renderMaps();
+  if(view==='map') renderConceptMap();
 }
 
 function decksInCurrentCollection() {
@@ -694,7 +696,6 @@ function renderMaps() {
 
         html += `
             <div class="panel" style="margin-bottom:20px;">
-
                 <div class="panel-title">
                     ${collection}
                 </div>
@@ -706,7 +707,6 @@ function renderMaps() {
                 <div class="list-row"
                      onclick="openConceptMap('${map.id}')"
                      style="cursor:pointer;">
-
                     🧠
                     <strong>${map.title}</strong>
 
@@ -718,6 +718,60 @@ function renderMaps() {
     }
 
     document.getElementById("mapsView").innerHTML = html;
+}
+
+async function openConceptMap(id) {
+
+    const meta = mapCatalog.find(m => m.id === id);
+    if (!meta) return;
+
+    const response = await fetch(meta.file, {
+        cache: "no-store"
+    });
+
+    const data = await response.json();
+
+    currentMap = {
+        ...meta,
+        ...data
+    };
+
+    renderConceptMap();
+
+    goTo("map");
+}
+
+function renderConceptMap() {
+
+    if (!currentMap) return;
+
+    document.getElementById("mapCollection").textContent =
+        currentMap.collection;
+
+    document.getElementById("mapTitle").textContent =
+        currentMap.title;
+
+    document.getElementById("mapChapter").textContent =
+        currentMap.chapter;
+
+    document.getElementById("mapCaption").textContent =
+        currentMap.caption ?? "";
+
+    const img = document.getElementById("mapImage");
+
+    img.src = currentMap.layers[0].image;
+    img.alt = currentMap.title;
+
+    img.onclick = () =>
+        openFigureModal(
+            currentMap.layers[0].image,
+            currentMap.caption,
+            currentMap.title
+        );
+}
+
+function getCurrentMapIndex() {
+    return mapCatalog.findIndex(m => m.id === currentMap.id);
 }
 
 /* ================= TRAIN ================= */

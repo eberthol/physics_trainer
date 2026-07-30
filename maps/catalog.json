@@ -1,10 +1,18 @@
 [
   {
-    "id": "bethe-bloch",
+    "id": "radiocative-decays",
     "collection": "Experimental Techniques in Nuclear and Particle Physics",
     "chapter": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
     "title": "Radioactive Processes",
     "order": 1,
     "file": "maps/book-experimental-techniques/radioactive-processes.json"
+  },
+  {
+    "id": "bethe-bloch",
+    "collection": "Experimental Techniques in Nuclear and Particle Physics",
+    "chapter": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
+    "title": "Signature of Radioactive Processes",
+    "order": 2,
+    "file": "maps/book-experimental-techniques/radioactive-decays-signature.json"
   }
 ]
