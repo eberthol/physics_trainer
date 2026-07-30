@@ -678,46 +678,116 @@ function renderCollections() {
 }
 
 /* ================= MAPS ================= */
+// function renderMapBrowser() {
+
+//     const groups = {};
+
+//     for (const map of mapCatalog) {
+
+//         if (!groups[map.collection])
+//             groups[map.collection] = [];
+
+//         groups[map.collection].push(map);
+//     }
+
+//     let html = "";
+
+//     for (const [collection, maps] of Object.entries(groups)) {
+
+//         html += `
+//             <div class="panel" style="margin-bottom:20px;">
+//                 <div class="panel-title">
+//                     ${collection}
+//                 </div>
+//         `;
+
+//         for (const map of maps) {
+
+//             html += `
+//                 <div class="list-row"
+//                      onclick="openConceptMap('${map.id}')"
+//                      style="cursor:pointer;">
+//                     🧠
+//                     <strong>${map.title}</strong>
+
+//                 </div>
+//             `;
+//         }
+
+//         html += "</div>";
+//     }
+
+//     document.getElementById("mapsView").innerHTML = html;
+// }
+
 function renderMapBrowser() {
+  const groups = {};
 
-    const groups = {};
-
-    for (const map of mapCatalog) {
-
-        if (!groups[map.collection])
-            groups[map.collection] = [];
-
-        groups[map.collection].push(map);
+  for (const map of mapCatalog) {
+    if (!groups[map.collection]) {
+      groups[map.collection] = [];
     }
 
-    let html = "";
+    groups[map.collection].push(map);
+  }
 
-    for (const [collection, maps] of Object.entries(groups)) {
+  let html = "";
 
-        html += `
-            <div class="panel" style="margin-bottom:20px;">
-                <div class="panel-title">
-                    ${collection}
+  for (const [collection, maps] of Object.entries(groups)) {
+    const sortedMaps = maps.slice().sort((a, b) =>
+      (a.order ?? 999) - (b.order ?? 999)
+    );
+
+    html += `
+      <section class="panel map-collection">
+        <div class="map-collection-title">
+          ${escapeHtml(collection)}
+        </div>
+
+        <div class="map-collection-count">
+          ${sortedMaps.length}
+          concept map${sortedMaps.length === 1 ? "" : "s"}
+        </div>
+
+        <div class="map-list">
+          ${sortedMaps.map(map => `
+            <div
+              class="map-row"
+              onclick="openConceptMap('${map.id}')"
+              role="button"
+              tabindex="0"
+            >
+              <div class="map-icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <circle cx="6" cy="12" r="2"></circle>
+                  <circle cx="18" cy="6" r="2"></circle>
+                  <circle cx="18" cy="18" r="2"></circle>
+                  <path d="M8 11l8-4M8 13l8 4"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.6"/>
+                </svg>
+              </div>
+
+              <div class="map-info">
+                <div class="map-title">
+                  ${escapeHtml(map.title)}
                 </div>
-        `;
 
-        for (const map of maps) {
-
-            html += `
-                <div class="list-row"
-                     onclick="openConceptMap('${map.id}')"
-                     style="cursor:pointer;">
-                    🧠
-                    <strong>${map.title}</strong>
-
+                <div class="map-meta">
+                  ${escapeHtml(map.chapter ?? "Visual summary")}
                 </div>
-            `;
-        }
+              </div>
 
-        html += "</div>";
-    }
+              <div class="map-chevron">›</div>
+            </div>
+          `).join("")}
+        </div>
+      </section>
+    `;
+  }
 
-    document.getElementById("mapsView").innerHTML = html;
+  document.getElementById("mapsView").innerHTML = html;
 }
 
 async function openConceptMap(id) {

@@ -391,6 +391,70 @@ button{font-family:inherit;}
     font-style:italic;
 }
 
+.map-row{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  padding:13px 14px;
+  border-radius:10px;
+  cursor:pointer;
+  transition:
+    background .15s ease,
+    border-color .15s ease,
+    transform .1s ease;
+  border:1px solid transparent;
+}
+
+.map-row:hover{
+  background:var(--bg-raised);
+  border-color:var(--border);
+  transform:translateY(-1px);
+}
+
+.map-row + .map-row{
+  margin-top:4px;
+}
+
+.map-icon{
+  width:34px;
+  height:34px;
+  flex-shrink:0;
+  display:grid;
+  place-items:center;
+  border-radius:9px;
+  background:rgba(95,212,227,0.09);
+  color:var(--cherenkov);
+  border:1px solid rgba(95,212,227,0.16);
+}
+
+.map-icon svg{
+  width:18px;
+  height:18px;
+}
+
+.map-info{
+  flex:1;
+  min-width:0;
+}
+
+.map-title{
+  font-size:14px;
+  font-weight:600;
+  line-height:1.3;
+}
+
+.map-meta{
+  margin-top:3px;
+  font-family:var(--font-mono);
+  font-size:10.5px;
+  color:var(--text-faint);
+}
+
+.map-chevron{
+  color:var(--text-faint);
+  font-size:18px;
+}
+
 /* ---------- Summary ---------- */
 .summary-ring{width:150px;height:150px;margin:0 auto 20px auto;}
 .summary-stats{display:flex;justify-content:center;gap:30px;margin-top:6px;}
