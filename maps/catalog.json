@@ -19,7 +19,7 @@
   {
     "id": "cross-section",
     "collection": "Experimental Techniques in Nuclear and Particle Physics",
-    "chapter": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
+    "chapter": "Ch.2: Passage of Radiation Through Matter",
     "title": "Cross Section",
     "order": 3,
     "file": "maps/book-experimental-techniques/cross-section.json"
@@ -27,7 +27,7 @@
   {
     "id": "mean-free-path",
     "collection": "Experimental Techniques in Nuclear and Particle Physics",
-    "chapter": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
+    "chapter": "Ch.2: Passage of Radiation Through Matter",
     "title": "Mean Free Path",
     "order": 4,
     "file": "maps/book-experimental-techniques/mean-free-path.json"
@@ -35,7 +35,7 @@
   {
     "id": "heavy-charged-particles",
     "collection": "Experimental Techniques in Nuclear and Particle Physics",
-    "chapter": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
+    "chapter": "Ch.2: Passage of Radiation Through Matter",
     "title": "Energy Loss of Heavy Charged Paticles",
     "order": 5,
     "file": "maps/book-experimental-techniques/heavy-charged-particles.json"
@@ -43,7 +43,7 @@
   {
     "id": "bethe-bloch",
     "collection": "Experimental Techniques in Nuclear and Particle Physics",
-    "chapter": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
+    "chapter": "Ch.2: Passage of Radiation Through Matter",
     "title": "The Bethe-Bloch Formula",
     "order": 6,
     "file": "maps/book-experimental-techniques/bethe-bloch.json"
@@ -51,7 +51,7 @@
   {
     "id": "energy-loss",
     "collection": "Experimental Techniques in Nuclear and Particle Physics",
-    "chapter": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
+    "chapter": "Ch.2: Passage of Radiation Through Matter",
     "title": "Energy Loss, Channeling and Range",
     "order": 7,
     "file": "maps/book-experimental-techniques/energy-loss.json"
