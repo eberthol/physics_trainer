@@ -47,6 +47,18 @@
                 "caption": "",
                 "size": "full"
             }
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "The Axially Symmetric Case",
+            "diff": 3,
+            "q": "The Axially Symmetric Case",
+            "a": "",
+            "figure": {
+                "src": "images/book-nuclear-many-body-problem/summary-axial-symmetry.png",
+                "caption": "",
+                "size": "full"
+            }
         }
     ]
 }
