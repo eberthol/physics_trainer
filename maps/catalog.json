@@ -55,6 +55,59 @@
     "title": "Energy Loss, Channeling and Range",
     "order": 7,
     "file": "maps/book-experimental-techniques/energy-loss.json"
+  },
+
+
+
+
+
+
+
+
+
+
+
+
+
+  {
+    "id": "SEMF",
+    "collection": "The Nuclear Many Body Problem",
+    "chapter": "Ch.1: The Liquid Drop Model",
+    "title": "Semi-Empirical Mass Formula",
+    "order": 1,
+    "file": "maps/book-nuclear-many-body-problem/SEMF.json"
+  },
+  {
+    "id": "deformation-parameters",
+    "collection": "The Nuclear Many Body Problem",
+    "chapter": "Ch.1: The Liquid Drop Model",
+    "title": "Deformation Paramters",
+    "order": 2,
+    "file": "maps/book-nuclear-many-body-problem/deformation-parameters.json"
+  },
+  {
+    "id": "surface-oscillations",
+    "collection": "The Nuclear Many Body Problem",
+    "chapter": "Ch.1: The Liquid Drop Model",
+    "title": "Surface Oscillations",
+    "order": 3,
+    "file": "maps/book-nuclear-many-body-problem/surface-oscillations.json"
+  },
+  {
+    "id": "deformed-shapes",
+    "collection": "The Nuclear Many Body Problem",
+    "chapter": "Ch.1: The Liquid Drop Model",
+    "title": "Deformed Shapes",
+    "order": 4,
+    "file": "maps/book-nuclear-many-body-problem/deformed-shapes.json"
+  },
+  {
+    "id": "axial-symmetry",
+    "collection": "The Nuclear Many Body Problem",
+    "chapter": "Ch.1: The Liquid Drop Model",
+    "title": "Axial Symmetry",
+    "order": 5,
+    "file": "maps/book-nuclear-many-body-problem/axial-symmetry.json"
   }
 
   
