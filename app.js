@@ -768,6 +768,37 @@ function renderConceptMap() {
             currentMap.caption,
             currentMap.title
         );
+    
+    const idx = getCurrentMapIndex();
+
+    const prev = document.getElementById("mapPrev");
+    const next = document.getElementById("mapNext");
+
+    if (idx > 0) {
+
+        prev.disabled = false;
+        prev.textContent = "← " + mapCatalog[idx - 1].title;
+        prev.onclick = () => openConceptMap(mapCatalog[idx - 1].id);
+
+    } else {
+
+        prev.disabled = true;
+        prev.textContent = "← Previous";
+        prev.onclick = null;
+    }
+
+    if (idx < mapCatalog.length - 1) {
+
+        next.disabled = false;
+        next.textContent = mapCatalog[idx + 1].title + " →";
+        next.onclick = () => openConceptMap(mapCatalog[idx + 1].id);
+
+    } else {
+
+        next.disabled = true;
+        next.textContent = "Next →";
+        next.onclick = null;
+    }
 }
 
 function getCurrentMapIndex() {
