@@ -360,6 +360,7 @@ button{font-family:inherit;}
     align-items: flex-start;
     padding: 1rem;
     overflow: auto;
+    min-height: 300px;
 }
 
 .concept-map-image {

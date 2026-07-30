@@ -469,7 +469,7 @@ function goTo(view){
   if(view==='collections') renderCollections();
   if(view==='train') renderTrainSetup();
   if(view==='library') renderLibrary();
-  if(view==='maps') renderMaps();
+  if(view==='maps') renderMapBrowser();
   if(view==='map') renderConceptMap();
 }
 
@@ -678,7 +678,7 @@ function renderCollections() {
 }
 
 /* ================= MAPS ================= */
-function renderMaps() {
+function renderMapBrowser() {
 
     const groups = {};
 
@@ -736,8 +736,6 @@ async function openConceptMap(id) {
         ...data
     };
 
-    renderConceptMap();
-
     goTo("map");
 }
 
@@ -745,26 +743,28 @@ function renderConceptMap() {
 
     if (!currentMap) return;
 
-    document.getElementById("mapCollection").textContent =
-        currentMap.collection;
-
-    document.getElementById("mapTitle").textContent =
-        currentMap.title;
-
-    document.getElementById("mapChapter").textContent =
-        currentMap.chapter;
-
-    document.getElementById("mapCaption").textContent =
-        currentMap.caption ?? "";
+    document.getElementById("mapCollection").textContent = currentMap.collection;
+    document.getElementById("mapTitle").textContent = currentMap.title;
+    document.getElementById("mapChapter").textContent = currentMap.chapter;
+    document.getElementById("mapCaption").textContent = currentMap.caption ?? "";
 
     const img = document.getElementById("mapImage");
 
-    img.src = currentMap.layers[0].image;
+    const layer = currentMap.layers?.[0];
+
+    if (!layer) {
+        img.removeAttribute("src");
+        img.alt = "";
+        img.onclick = null;
+        return;
+    }
+
+    img.src = layer.image;
     img.alt = currentMap.title;
 
     img.onclick = () =>
         openFigureModal(
-            currentMap.layers[0].image,
+            layer.image,
             currentMap.caption,
             currentMap.title
         );
@@ -1194,21 +1194,21 @@ async function onImportFileChosen(event){
 }
 
 /* ================= ADD CARD ================= */
-function renderAddForm(){
-  const sel = document.getElementById('fTopicSelect');
-  const topics = topicsInOrder();
-  sel.innerHTML = topics.map(t=>`<option value="${escapeHtml(t)}">${escapeHtml(t)}</option>`).join('') + `<option value="__new__">+ New topic…</option>`;
-  onTopicSelectChange();
-  updateSubList();
+// function renderAddForm(){
+//   const sel = document.getElementById('fTopicSelect');
+//   const topics = topicsInOrder();
+//   sel.innerHTML = topics.map(t=>`<option value="${escapeHtml(t)}">${escapeHtml(t)}</option>`).join('') + `<option value="__new__">+ New topic…</option>`;
+//   onTopicSelectChange();
+//   updateSubList();
 
-  document.querySelectorAll('.diff-opt').forEach(el=>{
-    el.onclick = ()=>{
-      document.querySelectorAll('.diff-opt').forEach(o=>o.classList.remove('sel'));
-      el.classList.add('sel');
-      diffSelected = parseInt(el.dataset.v, 10);
-    };
-  });
-}
+//   document.querySelectorAll('.diff-opt').forEach(el=>{
+//     el.onclick = ()=>{
+//       document.querySelectorAll('.diff-opt').forEach(o=>o.classList.remove('sel'));
+//       el.classList.add('sel');
+//       diffSelected = parseInt(el.dataset.v, 10);
+//     };
+//   });
+// }
 
 function onTopicSelectChange(){
   const sel = document.getElementById('fTopicSelect');
@@ -1250,7 +1250,7 @@ async function submitCard(){
 
   showToast(`Added to ${topic}`, 'good');
   buildSidebar();
-  renderAddForm();
+  // renderAddForm();
 }
 /* ================= APP VERSION ================= */
 async function loadAppVersion() {
