@@ -38,21 +38,21 @@
     },
     {
       "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
-      "sub": "Alpha Particles",
+      "sub": "Alpha Decay",
       "diff": 1,
       "q": "Why do $\\alpha$ particles have such a short range in matter?",
       "a": "$\\alpha$ particles carry a charge of +2e and therefore interact very strongly with the electrons of the material they traverse. They lose energy rapidly through ionization and excitation, giving them a very high stopping power and consequently a very short range."
     },
     {
       "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
-      "sub": "Alpha Particles",
+      "sub": "Alpha Decay",
       "diff": 1,
       "q": "What is the typical range of a 5 MeV $\\alpha$ particle in air?",
       "a": "Only a few centimeters. Because of their large energy loss in matter, even energetic $\\alpha$ particles travel only a short distance in air and can be stopped by a thin sheet of material."
     },
     {
       "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
-      "sub": "Alpha Sources",
+      "sub": "Alpha Decay",
       "diff": 2,
       "q": "Why must $\\alpha$ sources be made as thin as possible, and how are they typically constructed?",
       "a": "Since $\\alpha$ particles lose energy very rapidly in matter, any material covering the radioactive isotope reduces their energy or absorbs them completely. Therefore, $\\alpha$ sources are usually prepared by depositing the radioactive isotope on the surface of a backing material and covering it with an extremely thin protective metal foil."
@@ -120,14 +120,14 @@
     },
     {
       "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
-      "sub": "Beta Sources",
+      "sub": "Beta Decay",
       "diff": 1,
       "q": "Why must $\\beta$ sources be made as thin as possible?",
       "a": "$\\beta$ particles lose energy readily in matter through ionization and excitation. A thick source causes energy loss and absorption before the particles escape, distorting the measured $\\beta$ spectrum."
     },
     {
       "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
-      "sub": "Beta Sources",
+      "sub": "Beta Decay",
       "diff": 2,
       "q": "Why is source thickness particularly important for positron ($\\beta^+$) sources?",
       "a": "Positrons can annihilate with electrons inside the source or its surrounding material before escaping. A thick $\\beta^+$ source therefore reduces the number of detected positrons, distorts the measured spectrum, and produces an intense background of 511 keV annihilation photons."
@@ -283,7 +283,7 @@
     },
     {
       "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
-      "sub": "Spontaneous Fission",
+      "sub": "Neutron Sources",
       "diff": 1,
       "q": "How does a spontaneous-fission neutron source produce neutrons?",
       "a": "Heavy transuranium nuclei, such as $^{252}\\mathrm{Cf}$, can undergo spontaneous fission, producing two fission fragments together with several neutrons. The fission fragments also emit $\\beta$ and $\\gamma$ radiation, but these can be largely absorbed by suitable shielding while the neutrons escape.",
@@ -295,42 +295,42 @@
     },
     {
       "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
-      "sub": "Spontaneous Fission",
+      "sub": "Neutron Sources",
       "diff": 2,
       "q": "Which isotope is the most common spontaneous-fission neutron source, and what is the approximate temperature parameter of its neutron spectrum?",
       "a": "$^{252}\\mathrm{Cf}$ is the most widely used spontaneous-fission neutron source. It has a half-life of 256 years. The energy spectrum of the neutrons is continuous up to about 10 MeV and exhibits a Maxwellian shape $$\\frac{\\mathrm{d}N}{\\mathrm{d}E} = \\sqrt{E} \\exp \\left( \\frac{-E}{T} \\right)$$ with $T = 1.3$MeV for $^{252}\\mathrm{Cf}$."
     },
     {
       "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
-      "sub": "Alpha-Neutron Sources",
+      "sub": "Neutron Sources",
       "diff": 2,
       "q": "Write the main reaction responsible for neutron production in an Am-Be source.",
       "a": "$$\\alpha + {}^9\\mathrm{Be} \\rightarrow {}^{13}\\mathrm{C}^* \\rightarrow {}^{12}\\mathrm{C}^{(*)} + n$$\n\nThe excited $^{13}$C nucleus may decay through several channels, but the dominant one produces $^{12}$C (ground or excited state) together with a neutron."
     },
     {
       "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
-      "sub": "Alpha-Neutron Sources",
+      "sub": "Neutron Sources",
       "diff": 2,
       "q": "Why is the neutron spectrum from an $(\\alpha,n)$ source broad rather than monoenergetic?",
       "a": "Although a single nuclear transition would produce monoenergetic neutrons, the emitted alpha particles lose energy before interacting in the target, producing a range of reaction energies. Additional Doppler broadening further widens the neutron spectrum."
     },
     {
       "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
-      "sub": "Gamma-Neutron Sources",
+      "sub": "Neutron Sources",
       "diff": 1,
       "q": "Which target materials are commonly used in $(\\gamma,n)$ neutron sources?",
       "a": "Only beryllium and deuterium are commonly used. Their reactions are\n\n$$^9\\mathrm{Be}(\\gamma,n)^8\\mathrm{Be}$$\n\nand\n\n$$^2\\mathrm{H}(\\gamma,n)^1\\mathrm{H}.$$"
     },
     {
       "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
-      "sub": "Gamma-Neutron Sources",
+      "sub": "Neutron Sources",
       "diff": 2,
       "q": "Compare $(\\gamma,n)$ and $(\\alpha,n)$ neutron sources.",
       "a": "$(\\gamma,n)$ sources produce neutrons with a much narrower (nearly monoenergetic) energy distribution because the incident gamma rays do not lose energy before the reaction. However, their neutron yield is typically one to two orders of magnitude lower than that of $(\\alpha,n)$ sources, and they are accompanied by a significant gamma-ray background."
     },
     {
     "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
-    "sub": "Alpha-Neutron Sources",
+    "sub": "Neutron Sources",
     "diff": 2,
     "q": "Why is beryllium the most common target material in $(\\alpha,n)$ neutron sources?",
     "a": "Beryllium has one of the largest $(\\alpha,n)$ reaction yields among practical target materials, making it the preferred choice for compact laboratory neutron sources such as Am-Be and Pu-Be."

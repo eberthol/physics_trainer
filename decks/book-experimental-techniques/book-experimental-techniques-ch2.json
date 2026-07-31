@@ -2,21 +2,21 @@
     "cards":[
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
-            "sub": "Introduction",
+            "sub": "Cross Section",
             "diff": 2,
             "q": "Why are electromagnetic interactions the dominant processes for charged particles and photons passing through matter?",
             "a": "Because the Coulomb interaction is both strong and long-ranged. As a result, inelastic collisions with atomic electrons are by far the most probable interactions for charged particles and photons."
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
-            "sub": "Introduction",
+            "sub": "Cross Section",
             "diff": 2,
             "q": "Why do neutrons interact with matter differently from charged particles?",
             "a": "Neutrons carry no electric charge and therefore do not undergo Coulomb interactions. Their dominant interactions with matter are due to the strong nuclear force, although electromagnetic interactions (through their magnetic moment) and weak interactions are also possible."
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
-            "sub": "Scattering Terminology",
+            "sub": "Cross Section",
             "diff": 1,
             "q": "In the definition of a scattering cross section, must the incident particle remain the same type of particle after the reaction?",
             "a": "No. Here, scattering means any reaction in which an outgoing particle is emitted into the solid angle $\\Omega$. The incident particle need not retain its identity."
@@ -79,14 +79,14 @@
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
-            "sub": "Thin Target",
+            "sub": "Cross Section",
             "diff": 2,
             "q": "For a thin slab containing uniformly distributed interaction centers,\n$$N_s(\\Omega)=FAN\\,\\delta x\\,\\frac{d\\sigma}{d\\Omega}.$$\nExplain the physical origin of each factor.",
             "a": "$FA$ is the number of incident particles per unit time that strike the target area $A$. The product $N\\delta x$ is the number of interaction centers per unit area along the beam direction, where $N$ is their number density and $\\delta x$ is the slab thickness. The differential cross section $d\\sigma/d\\Omega$ determines the probability for one incident particle to be scattered toward the specified solid angle."
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
-            "sub": "Thin Target",
+            "sub": "Cross Section",
             "diff": 2,
             "q": "The total number of particles scattered per unit time from a thin slab is\n$$N_{\\mathrm{tot}}=FAN\\,\\delta x\\,\\sigma.$$\nUnder what approximation is this expression valid?",
             "a": "The slab must be sufficiently thin that the probability of one interaction center lying behind another, as viewed by the beam, is small. In this limit, attenuation and multiple interactions can be neglected, and the contributions from the interaction centers add independently."
@@ -107,182 +107,182 @@
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
-            "sub": "Survival Probability",
+            "sub": "Interaction Probability",
             "diff": 1,
             "q": "What is the survival probability?",
             "a": "The survival probability is the probability that a particle travels a distance $x$ through a material without undergoing an interaction."
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
-            "sub": "Survival Probability",
+            "sub": "Interaction Probability",
             "diff": 1,
             "q": "The survival probability is\n$$P(x)=e^{-wx}.$$\nWhy does the condition $P(0)=1$ fix the multiplicative constant in the general solution?",
             "a": "At zero distance, the particle has not yet had an opportunity to interact, so its probability of survival must be unity. Applying this condition to $P(x)=C\\exp(-wx)$ gives $C=1$."
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
-            "sub": "Survival Probability",
+            "sub": "Interaction Probability",
             "diff": 1,
             "q": "The survival probability can be written as\n$$P(x)=\\exp\\left(-\\frac{x}{\\lambda}\\right)=\\exp(-N\\sigma x).$$\nWhat is the significance of the ratio $x/\\lambda$?",
             "a": "The ratio $x/\\lambda$ is the distance traveled expressed in units of the mean free path. The survival probability decreases exponentially as this dimensionless thickness increases."
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
-            "sub": "First-Interaction Distribution",
+            "sub": "Interaction Probability",
             "diff": 2,
             "q": "The probability that a particle survives to $x$ and then suffers a collision between $x$ and $x+dx$ is\n$$F(x)dx=w e^{-wx}\\,dx.$$\nExplain the two factors in this expression.",
             "a": "The factor $\\exp(-wx)$ is the probability that the particle reaches $x$ without interacting. The factor $w\\,dx$ is the probability that it then interacts within the following infinitesimal interval $dx$. Their product gives the probability that the first collision occurs in that interval."
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
-            "sub": "Mean Free Path",
+            "sub": "Interaction Probability",
             "diff": 1,
             "q": "The mean free path is defined by\n$$\\lambda=\\frac{\\int xP(x)\\,dx}{\\int P(x)\\,dx}=\\frac{1}{w}.$$\nWhat is the physical meaning of $\\lambda$?",
             "a": "$\\lambda$ is the mean distance traveled by a particle before suffering a collision. Since $\\lambda=1/w$, a large interaction probability per unit distance corresponds to a short mean free path, while a small interaction probability per unit distance corresponds to a long mean free path."
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
-            "sub": "Mean Free Path",
+            "sub": "Interaction Probability",
             "diff": 2,
             "q": "How does the survival probability vary with distance?",
             "a": "The survival probability decreases exponentially with distance:\n\n$$P(x)=e^{-wx}=e^{-N\\sigma x},$$\n\nwhere $N$ is the number density of interaction centers, $\\sigma$ is the total cross section and $w dx$ is the probability of having an interaction between $x$ and $x + dx$."
         }, 
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
-            "sub": "Mean Free Path",
+            "sub": "Interaction Probability",
             "diff": 2,
             "q": "How is the mean free path related to the number density and the cross section?",
             "a": "The mean free path is\n\n$$\\lambda=\\frac{1}{N\\sigma}.$$\n\nIt decreases when either the number density of scattering centers or the interaction cross section increases."
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
-            "sub": "Mean Free Path",
+            "sub": "Interaction Probability",
             "diff": 2,
             "q": "Why does a larger cross section lead to a shorter mean free path?",
             "a": "A larger cross section means that the particle has a higher probability of interacting with each scattering center. Consequently, it travels a shorter average distance before suffering a collision."
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
-            "sub": "Mean Free Path",
+            "sub": "Interaction Probability",
             "diff": 2,
             "q": "Why does a higher number density of scattering centers reduce the mean free path?",
             "a": "Increasing the number density places more scattering centers along the particle's path, increasing the interaction probability and reducing the average distance between collisions."
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
-            "sub": "Thin Target",
+            "sub": "Interaction Probability",
             "diff": 2,
             "q": "For a very thin target ($x\\ll\\lambda$), how can the interaction probability be approximated?",
             "a": "For a thin target,\n\n$$P_{\\rm int}(x)\\approx N\\sigma x=\\frac{x}{\\lambda},$$\n\nobtained by keeping only the first-order term in the exponential expansion."
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
-            "sub": "Thin Target",
+            "sub": "Interaction Probability",
             "diff": 2,
             "q": "For a small thickness $\\delta x$,\n$$P_{\\mathrm{int}}=1-\\left(1-\\frac{\\delta x}{\\lambda}+\\cdots\\right)\\simeq\\frac{\\delta x}{\\lambda}.$$\nWhat approximation has been made, and what is its physical meaning?",
             "a": "The exponential has been expanded in powers of $\\delta x/\\lambda$, and only the first-order term has been retained. This requires $\\delta x\\ll\\lambda$, so the interaction probability across the layer is small and increases approximately linearly with thickness."
         },
         {
-            "topic": "Ch.2 Summary",
-            "sub": "Mean Free Path",
+            "topic": "Ch.2: Passage of Radiation Through Matter",
+            "sub": "Interaction Probability",
             "diff": 3,
             "q": "Summarize the relationships between survival probability, interaction probability, and mean free path.",
             "a": "Survival probability:\n$$P(x)=e^{-x/\\lambda}.$$\n\nInteraction probability:\n$$P_{\\rm int}(x)=1-e^{-x/\\lambda}.$$\n\nMean free path:\n$$\\lambda=\\frac{1}{N\\sigma}.$$\n\nA larger cross section or a higher density of scattering centers leads to a shorter mean free path and therefore a higher interaction probability."
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
-            "sub": "Heavy Charged Particles",
+            "sub": "Energy Loss of Heavy Charged Particles",
             "diff": 1,
             "q": "What are the two principal effects observed when a heavy charged particle passes through matter, and which atomic processes mainly produce them?",
             "a": "The particle loses energy and is deflected from its incident direction. The energy loss is produced mainly by inelastic collisions with atomic electrons, while the deflection is produced mainly by elastic scattering from nuclei. Both processes occur many times per unit path length, so their cumulative effects determine the particle's motion through the material."
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
-            "sub": "Heavy Charged Particles",
+            "sub": "Energy Loss of Heavy Charged Particles",
             "diff": 1,
             "q": "Which two processes are primarily responsible for the passage of charged particles through matter?",
             "a": "1. Inelastic collisions with atomic electrons.\n\n2. Elastic scattering from atomic nuclei."
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
-            "sub": "Heavy Charged Particles",
+            "sub": "Energy Loss of Heavy Charged Particles",
             "diff": 2,
             "q": "Which processes other than atomic collisions can occur when charged particles pass through matter?",
             "a": "Other possible processes include Cherenkov radiation, nuclear reactions, and bremsstrahlung. For heavy charged particles, these occur much less frequently than atomic collisions."
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
-            "sub": "Heavy Charged Particles",
+            "sub": "Energy Loss of Heavy Charged Particles",
             "diff": 1,
             "q": "Which particles are considered heavy charged particles?",
             "a": "Heavy charged particles include muons, pions, protons, alpha particles, and light nuclei. Heavy ions are usually treated separately because additional effects become important."
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
-            "sub": "Heavy Charged Particles",
+            "sub": "Energy Loss of Heavy Charged Particles",
             "diff": 1,
             "q": "Why are charged particles divided into electrons/positrons and heavy charged particles?",
             "a": "The much larger mass of a heavy particle allows it to be treated as moving approximately along an undeviated trajectory during an individual collision with an atomic electron. This approximation is not valid for incident electrons or positrons, whose mass is equal to that of the target electrons."
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
-            "sub": "Heavy Charged Particles",
+            "sub": "Energy Loss of Heavy Charged Particles",
             "diff": 2,
             "q": "Which process is primarily responsible for the energy loss of heavy charged particles in matter?",
             "a": "The energy loss of heavy charged particles is dominated by inelastic collisions with atomic electrons, which ionize or excite the atoms of the material."
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
-            "sub": "Heavy Charged Particles",
+            "sub": "Energy Loss of Heavy Charged Particles",
             "diff": 2,
             "q": "Why can heavy charged particles lose a substantial amount of energy even though each collision transfers only a small amount of energy?",
             "a": "Each collision transfers only a small fraction of the particle's kinetic energy, but the enormous number of collisions occurring per unit path length produces a significant cumulative energy loss."
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
-            "sub": "Heavy Charged Particles",
+            "sub": "Energy Loss of Heavy Charged Particles",
             "diff": 2,
             "q": "What is the difference between soft and hard atomic collisions?",
             "a": "In a soft collision, the transferred energy causes only excitation of the atom. In a hard collision, the transferred energy is sufficient to ionize the atom. In some hard collisions, the emitted electron has enough energy to produce substantial secondary ionization."
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
-            "sub": "Heavy Charged Particles",
+            "sub": "Energy Loss of Heavy Charged Particles",
             "diff": 2,
             "q": "What are $\\delta$-rays or knock-on electrons?",
             "a": "Knock-on ($\\delta$) electrons are energetic recoil electrons produced during hard ionizing collisions. They can themselves produce significant secondary ionization."
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
-            "sub": "Heavy Charged Particles",
+            "sub": "Energy Loss of Heavy Charged Particles",
             "diff": 2,
             "q": "Why does elastic scattering from nuclei contribute little to the energy loss of heavy charged particles?",
             "a": "The nuclei of most materials are much heavier than the incident particle, so only a small amount of kinetic energy is transferred in an elastic collision. Nuclear scattering therefore contributes mainly to changes in direction, while atomic-electron collisions dominate the energy loss."
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
-            "sub": "Heavy Charged Particles",
+            "sub": "Energy Loss of Heavy Charged Particles",
             "diff": 2,
             "q": "In what situation can elastic scattering from nuclei contribute significantly to the energy loss?",
             "a": "When the target nucleus has a mass comparable to that of the incident particle, such as an alpha particle scattering from hydrogen."
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
-            "sub": "Stopping Power",
+            "sub": "Energy Loss of Heavy Charged Particles",
             "diff": 2,
             "q": "Why is it meaningful to describe the energy loss of heavy charged particles using an average stopping power?",
             "a": "Although individual collisions are statistical, the large number of collisions occurring over a macroscopic path length makes the fluctuations small. The average energy loss per unit length therefore provides a useful description."
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
-            "sub": "Stopping Power",
+            "sub": "Energy Loss of Heavy Charged Particles",
             "diff": 1,
             "q": "What is the stopping power?",
             "a": "The stopping power is the average energy loss of a charged particle per unit path length in a material, usually written as $$\\frac{dE}{dx}.$$"
         },
         {
             "topic": "Ch.2 Summary",
-            "sub": "Heavy Charged Particles",
+            "sub": "Energy Loss of Heavy Charged Particles",
             "diff": 3,
             "q": "Summarize the mechanisms by which heavy charged particles lose energy in matter.",
             "a": "Heavy charged particles lose energy primarily through inelastic collisions with atomic electrons, producing excitation and ionization. Hard collisions may generate energetic knock-on (δ) electrons. Elastic scattering from nuclei mainly changes the particle's direction and usually contributes little to the energy loss because nuclei are much heavier than the incident particle. The large number of atomic collisions allows the energy loss to be described by the average stopping power $$dE/dx.$$"
@@ -312,42 +312,42 @@
 
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
-            "sub": "Maximum Energy Transfer",
+            "sub": "Bethe-Bloch Formula",
             "diff": 2,
             "q": "The maximum energy transferred in a single collision is\n$$W_{\\max}=\\frac{2m_ec^2\\eta^2}{1+2s\\sqrt{1+\\eta^2}+s^2},$$\nwhere $s=m_e/M$ and $\\eta=\\beta\\gamma$. What type of collision produces $W_{\\max}$?",
             "a": "$W_{\\max}$ is produced by a head-on or knock-on collision between the incident particle and an atomic electron."
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
-            "sub": "Maximum Energy Transfer",
+            "sub": "Bethe-Bloch Formula",
             "diff": 2,
             "q": "For an incident particle with $M\\gg m_e$,\n$$W_{\\max}\\simeq 2m_ec^2\\eta^2=2m_ec^2\\beta^2\\gamma^2.$$\nWhat does this approximation imply about the most energetic knock-on electrons?",
             "a": "The maximum energy available to a recoil electron increases rapidly with the relativistic factor $\\beta^2\\gamma^2$. Faster incident particles can therefore produce increasingly energetic $\\delta$-rays, even though most collisions transfer much less than $W_{\\max}$."
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
-            "sub": "Mean Excitation Potential",
+            "sub": "Bethe-Bloch Formula",
             "diff": 2,
             "q": "The mean excitation potential $I$ enters the Bethe-Bloch formula through\n$$\\ln\\left(\\frac{2m_e\\gamma^2v^2W_{\\max}}{I^2}\\right).$$\nWhat does $I$ represent physically?",
             "a": "$I$ represents an effective average excitation energy of the atoms in the absorber. It is related to the average orbital frequency of the bound electrons by approximately $I\\sim h\\bar\\nu$ and is theoretically a logarithmic average over the atomic excitation frequencies weighted by their oscillator strengths."
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
-            "sub": "Mean Excitation Potential",
+            "sub": "Bethe-Bloch Formula",
             "diff": 2,
             "q": "Why is the mean excitation potential $I$ usually determined from measurements of $dE/dx$ or from semi-empirical formulas rather than calculated directly?",
             "a": "A direct calculation requires the oscillator strengths of the atomic energy levels, which are unknown for most materials. Experimental stopping-power data are therefore commonly used to deduce $I$."
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
-            "sub": "Mean Excitation Potential",
+            "sub": "Bethe-Bloch Formula",
             "diff": 2,
             "q": "Why is the mean excitation potential difficult to calculate theoretically?",
             "a": "Because the oscillator strengths of most atomic levels are not known with sufficient precision for most materials. In practice, $I$ is therefore obtained from measurements of $dE/dx$ and semi-empirical fits."
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
-            "sub": "Mean Excitation Potential",
+            "sub": "Bethe-Bloch Formula",
             "diff": 3,
             "q": "A semi-empirical description of the mean excitation potential is\n$$\\frac{I}{Z}=12+\\frac{7}{Z}\\ \\mathrm{eV},\\qquad Z<13,$$\n$$\\frac{I}{Z}=9.76+58.8Z^{-1.19}\\ \\mathrm{eV},\\qquad Z\\geq13.$$\nWhat are the limitations of these smooth formulae?",
             "a": "The actual variation of $I$ with $Z$ is more complicated and contains local irregularities or wiggles associated with the closing of atomic shells. The formulas therefore give fitted trends rather than an exact description for every element."
@@ -372,28 +372,28 @@
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
-            "sub": "Density Effect Correction",
+            "sub": "Bethe-Bloch Corrections",
             "diff": 2,
             "q": "Why is the high-energy correction called the density effect?",
             "a": "The polarization induced in the absorber is greater in condensed materials than in lighter substances such as gases. The shielding of distant electrons, and therefore the reduction in stopping power, depends on the density of the material."
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
-            "sub": "Density Effect Correction",
+            "sub": "Bethe-Bloch Corrections",
             "diff": 3,
             "q": "The density effect is parametrized using\n$X=\\log_{10}(\\beta\\gamma),$\nwith $\\delta=0$ below a material-dependent value $X_0$ and an increasing correction above it. What does this piecewise behavior represent physically?",
             "a": "At low values of $\\beta\\gamma$, polarization shielding is negligible and no density correction is required. Above a material-dependent threshold, the suppression of distant collisions develops and increases with the particle's relativistic velocity."
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
-            "sub": "Density Effect Correction",
+            "sub": "Bethe-Bloch Corrections",
             "diff": 3,
             "q": "The plasma frequency of the absorber is\n$$\\nu_p=\\sqrt{\\frac{N_ee^2}{\\pi m_e}},$$\nwhere\n$$N_e=N_a\\rho\\frac{Z}{A}.$$\nWhy does $\\nu_p$ naturally enter the density effect correction?",
             "a": "The plasma frequency characterizes the collective electromagnetic response of the absorber's electron population. Since the density effect arises from polarization of the medium, its magnitude depends on the electron density and therefore on $\\nu_p$."
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
-            "sub": "Shell Correction",
+            "sub": "Bethe-Bloch Corrections",
             "diff": 2,
             "q": "The shell correction enters the Bethe-Bloch formula as\n$$-2\\frac{C}{Z}.$$\n At wich incident-particle velocities is this correction needed?",
             "a": "At low velocity, the incident particle moves at a speed comparable to or smaller than the orbital velocities of the bound electrons. The assumption that the electrons are initially stationary is then no longer valid, and the uncorrected Bethe-Bloch formula breaks down."
@@ -412,7 +412,7 @@
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
-            "sub": "Other Corrections",
+            "sub": "Bethe-Bloch Corrections",
             "diff": 2,
             "q": "Why are the shell and density corrections normally sufficient when applying the Bethe-Bloch formula to elementary particles?",
             "a": "Additional corrections for ultrarelativistic radiation effects, finite projectile mass, higher-order QED and scattering terms, internal structure and spin are usually negligible at about the $1\\%$ level. Electron capture can be important for heavy ions at very low velocities, but it is not normally relevant for elementary particles."
@@ -442,63 +442,63 @@
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
-            "sub": "Minimum Ionization",
+            "sub": "Energy Dependence of Stopping Power",
             "diff": 1,
             "q": "What is meant by a minimum-ionizing particle?",
             "a": "It is a charged particle whose stopping power $-dE/dx$ is near its minimum value. In the treatment given here, this minimum is reached at approximately $v\\simeq0.96c$."
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
-            "sub": "Minimum Ionization",
+            "sub": "Energy Dependence of Stopping Power",
             "diff": 2,
             "q": "Why is the minimum value of $-dE/dx$ almost the same for different particles carrying the same charge?",
             "a": "In a given material, the stopping power depends primarily on the particle's charge and velocity rather than directly on its mass. Different particles of the same charge therefore have nearly the same stopping power when they reach the same minimum-ionizing velocity."
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
-            "sub": "Relativistic Rise",
+            "sub": "Energy Dependence of Stopping Power",
             "diff": 2,
             "q": "Beyond the minimum-ionizing point, why does the uncorrected Bethe-Bloch stopping power rise again even though $1/\\beta^2$ has become almost constant?",
             "a": "The logarithmic term in the Bethe-Bloch formula continues to increase with energy. This produces the relativistic rise in the stopping power."
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
-            "sub": "Relativistic Rise",
+            "sub": "Energy Dependence of Stopping Power",
             "diff": 2,
             "q": "What limits the relativistic rise of $-dE/dx$ at high energy?",
             "a": "The density effect correction suppresses the contribution of distant collisions by accounting for polarization of the medium. It therefore largely cancels the continuing relativistic rise predicted by the uncorrected Bethe-Bloch formula."
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
-            "sub": "Particle Identification",
+            "sub": "Energy Dependence of Stopping Power",
             "diff": 2,
             "q": "Why can measurements of $dE/dx$ be used to identify charged particles at energies below the minimum-ionizing region?",
             "a": "At a given kinetic energy, particles with different masses generally have different velocities and therefore lie on distinct $dE/dx$ curves. Comparing the measured stopping power with these curves can help determine the particle type."
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
-            "sub": "Very Low Energy",
+            "sub": "Energy Dependence of Stopping Power",
             "diff": 2,
             "q": "Why does the Bethe-Bloch formula break down when the incident-particle velocity becomes comparable to the orbital velocities of the atomic electrons?",
             "a": "The assumptions used in deriving the formula are no longer valid because the motion and binding of the atomic electrons cannot be neglected. Additional low-energy effects must then be considered."
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
-            "sub": "Effective Charge",
+            "sub": "Energy Dependence of Stopping Power",
             "diff": 2,
             "q": "At very low velocity, why can the stopping power of a heavy charged particle decrease sharply after reaching a maximum?",
             "a": "The particle tends to capture electrons for part of the time. This reduces its effective charge, and since the stopping power depends approximately on the square of the charge, the energy loss decreases."
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
-            "sub": "Bragg Curve",
+            "sub": "Energy Dependence of Stopping Power",
             "diff": 1,
             "q": "What is a Bragg curve?",
             "a": "It is the variation of the ionization or stopping power $dE/dx$ of a heavy charged particle as a function of its penetration depth in matter. It shows that most of the particle's energy is deposited near the end of its trajectory."
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
-            "sub": "Bragg Curve",
+            "sub": "Energy Dependence of Stopping Power",
             "diff": 2,
             "q": "How does a typical Bragg curve look like? Why does the energy deposition increase near the end of the trajectory and then fall abruptly?",
             "a": "As the heavy particle slows down, the approximate $1/\\beta^2$ dependence causes its stopping power to increase, so more energy is deposited per unit length near the end of the path. At the very end, electron capture lowers the effective charge and the stopping power drops; after the particle stops, it deposits no further energy.",
@@ -510,7 +510,7 @@
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
-            "sub": "Bragg Curve",
+            "sub": "Energy Dependence of Stopping Power",
             "diff": 2,
             "q": "Why is the Bragg-curve behavior useful for delivering radiation to deeply embedded malignant growths?",
             "a": "A heavy charged particle deposits relatively little energy in the overlying material and a much larger amount near the end of its range. Its energy can therefore be chosen so that the region of maximum deposition lies within the target while reducing damage to the material in front of it."
