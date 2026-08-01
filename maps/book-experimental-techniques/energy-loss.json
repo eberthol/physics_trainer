@@ -1,14 +1,14 @@
 {
-  "title": "Radioactive Sources",
+  "title": "Energy Loss",
 
   "layers": [
     {
-      "title": "Radioactive Decay Signatures",
+      "title": "Energy Loss",
       "image": "images/book-experimental-techniques/maps/summary-energy-loss.png"
     }
   ],
 
-  "caption": "Radioactive Decay Signatures",
+  "caption": "Energy Loss",
 
   "hotspots": [],
   "relatedCards": [],

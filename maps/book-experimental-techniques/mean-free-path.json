@@ -1,14 +1,14 @@
 {
-  "title": "Radioactive Sources",
+  "title": "Mean Free Path",
 
   "layers": [
     {
-      "title": "Radioactive Decay Signatures",
+      "title": "Mean Free Path",
       "image": "images/book-experimental-techniques/maps/summary-mean-free-path.png"
     }
   ],
 
-  "caption": "Radioactive Decay Signatures",
+  "caption": "Mean Free Path",
 
   "hotspots": [],
   "relatedCards": [],

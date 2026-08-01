@@ -1,14 +1,14 @@
 {
-  "title": "Radioactive Sources",
+  "title": "Cross Section",
 
   "layers": [
     {
-      "title": "Radioactive Decay Signatures",
+      "title": "Cross Section",
       "image": "images/book-experimental-techniques/maps/summary-cross-section.png"
     }
   ],
 
-  "caption": "Radioactive Decay Signatures",
+  "caption": "Cross Section",
 
   "hotspots": [],
   "relatedCards": [],

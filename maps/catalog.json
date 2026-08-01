@@ -56,6 +56,14 @@
     "order": 7,
     "file": "maps/book-experimental-techniques/energy-loss.json"
   },
+  {
+    "id": "charenkov",
+    "collection": "Experimental Techniques in Nuclear and Particle Physics",
+    "chapter": "Ch.2: Passage of Radiation Through Matter",
+    "title": "Cherenkov Radiation",
+    "order": 8,
+    "file": "maps/book-experimental-techniques/cherenkov.json"
+  },
 
 
 

@@ -773,7 +773,72 @@
             "diff": 2,
             "q": "Why does a range calculated only from atomic-collision stopping power become incomplete at very high energies?",
             "a": "At sufficiently high energies, the particle's range may become comparable to or larger than the mean free path for nuclear interactions or bremsstrahlung emission. These additional processes then contribute significantly to the energy loss and must also be included."
+        },
+
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter",
+            "sub": "Cherenkov Radiation",
+            "diff": 1,
+            "q": "Cherenkov radiation is emitted when\n$$v_{\\rm particle}>\\frac{c}{n},$$\nor equivalently\n$$\\beta n>1.$$\nWhat is the physical meaning of this threshold condition?",
+            "a": "The charged particle must move faster than the phase velocity of light in the material, $c/n$. It does not move faster than light in vacuum; rather, it outruns the electromagnetic disturbance that propagates through the medium."
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter",
+            "sub": "Cherenkov Radiation",
+            "diff": 2,
+            "q": "The diagram below shows the coherent wavefront produced by a charged particle traveling through a dielectric medium. Using\n$$\\cos\\theta_C=\\frac{1}{\\beta n(\\omega)},$$\nexplain why the radiation is emitted on a cone and how its opening angle depends on the particle velocity.",
+            "a": "The electromagnetic disturbances emitted along the particle's path add coherently along a conical wavefront, analogous to a shock wave. As $\\beta$ increases above threshold, $1/(\\beta n)$ decreases and the Cherenkov angle $\\theta_C$ increases. The angle may also depend on frequency because the refractive index $n(\\omega)$ is dispersive.",
+            "figure": {
+                "src": "images/book-experimental-techniques/fig2.9_Cherenkov.png",
+                "caption": "Formation of the Cherenkov radiation cone by a particle moving faster than light in the medium.",
+                "size": "medium"
+            }
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter",
+            "sub": "Cherenkov Radiation",
+            "diff": 3,
+            "q": "For a radiator of finite thickness $L$, the angular distribution contains the factor\n$$\\left|\\frac{\\sin\\xi(\\theta)}{\\xi(\\theta)}\\right|^2,$$\nwith\n$$\\xi(\\theta)=\\frac{\\omega L}{2\\beta c}\\left(1-\\beta n\\cos\\theta\\right).$$\nWhat does this factor imply about the angular distribution of Cherenkov radiation?",
+            "a": "It has the form of a Fraunhofer-diffraction pattern. For a large radiator, it produces a sharp peak around the Cherenkov angle defined by $1-\\beta n\\cos\\theta=0$. For a shorter radiator, the peak broadens, so the radiation is spread over a wider range of angles."
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter",
+            "sub": "Cherenkov Radiation",
+            "diff": 2,
+            "q": "The energy radiated per unit path length is\n$$-\\frac{dE}{dx}=z^2\\frac{\\alpha\\hbar}{c}\\int \\omega\\,d\\omega\\left(1-\\frac{1}{\\beta^2n^2(\\omega)}\\right),$$\nwhere the integral includes only frequencies satisfying $\\beta n(\\omega)>1$. What does this expression show about the dependence of Cherenkov radiation on particle charge and velocity?",
+            "a": "The radiated energy increases as $z^2$ and generally increases with $\\beta$ once the particle is above threshold. However, even at relativistic energies, the Cherenkov energy loss is normally small compared with the energy lost through atomic collisions."
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter",
+            "sub": "Cherenkov Radiation",
+            "diff": 2,
+            "q": "The number of Cherenkov photons emitted per unit path length and wavelength interval is\n$$\\frac{d^2N}{dx\\,d\\lambda}=\\frac{2\\pi z^2\\alpha}{\\lambda^2}\\left(1-\\frac{1}{\\beta^2n^2(\\lambda)}\\right).$$\nWhat are the main physical consequences of the factors in this equation?",
+            "a": "The photon yield scales as $z^2$, vanishes below the threshold $\\beta n\\leq1$, and increases as the particle velocity rises above threshold. The factor $1/\\lambda^2$ means that more photons are emitted at shorter wavelengths."
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter",
+            "sub": "Cherenkov Radiation",
+            "diff": 2,
+            "q": "Why can Cherenkov radiation be used for particle identification?",
+            "a": "Emission occurs only when the particle exceeds the velocity threshold $\\beta>1/n$, and the emission angle satisfies $\\cos\\theta_C=1/(\\beta n)$. A detector can therefore determine whether a particle is above a chosen velocity threshold or measure its velocity from the Cherenkov angle. Combined with momentum information, this can distinguish particles of different masses."
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter",
+            "sub": "Cherenkov Radiation",
+            "diff": 1,
+            "q": "Why are photomultipliers commonly used to detect Cherenkov radiation?",
+            "a": "The number of Cherenkov photons produced over the useful optical wavelength range is not very large. Photomultipliers efficiently convert these weak light signals into measurable electrical current pulses."
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter",
+            "sub": "Cherenkov Radiation",
+            "diff": 2,
+            "q": "For a detector sensitive between approximately $350$ and $550\\,\\mathrm{nm}$, the photon yield is\n$$\\frac{dN}{dx}=475z^2\\sin^2\\theta_C\\ \\text{photons/cm}.$$\nWhat does this result imply for the design of a Cherenkov detector?",
+            "a": "The available number of photons per unit path length is modest and depends strongly on the particle charge and Cherenkov angle. Efficient light collection and sensitive photodetectors are therefore important, and a longer radiator can increase the total detected signal."
         }
+
+
+
 
 
 
