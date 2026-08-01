@@ -191,14 +191,14 @@
     },
     {
       "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
-      "sub": "Isomeric States",
+      "sub": "Gamma Emission",
       "diff": 2,
       "q": "What is a nuclear isomer?",
       "a": "A nuclear isomer is a long-lived excited state of a nucleus. Its de-excitation is hindered, usually because the transition to a lower-energy state requires a large change in nuclear spin (a highly forbidden transition). As a result, its lifetime may range from seconds to years."
     },
     {
       "topic": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
-      "sub": "Isomeric States",
+      "sub": "Gamma Emission",
       "diff": 1,
       "q": "How are nuclear isomers denoted?",
       "a": "A metastable nuclear state is indicated by the letter 'm' following the mass number, for example $^{60m}$Co or $^{69m}$Zn."

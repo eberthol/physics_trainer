@@ -358,49 +358,49 @@
 
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
-            "sub": "Density Effect Correction",
+            "sub": "Bethe-Bloch Formula",
             "diff": 2,
             "q": "The density effect correction enters the stopping power as the negative term $-\\delta$. What physical process causes this correction?",
             "a": "The electric field of the incident particle polarizes the atoms along its path. This polarization shields distant electrons from the full field of the particle, so distant collisions transfer less energy than predicted by the uncorrected Bethe-Bloch formula."
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
-            "sub": "Density Effect Correction",
+            "sub": "Bethe-Bloch Formula",
             "diff": 2, 
             "q": "When is the density effect correction most important? and why",
             "a": "As the velocity increases, the maximum effective impact parameter becomes larger, so distant collisions would otherwise contribute increasingly to the stopping power. Polarization of the medium suppresses these distant interactions, making the density correction more important at high energy."
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
-            "sub": "Bethe-Bloch Corrections",
+            "sub": "Bethe-Bloch Formula",
             "diff": 2,
             "q": "Why is the high-energy correction called the density effect?",
             "a": "The polarization induced in the absorber is greater in condensed materials than in lighter substances such as gases. The shielding of distant electrons, and therefore the reduction in stopping power, depends on the density of the material."
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
-            "sub": "Bethe-Bloch Corrections",
+            "sub": "Bethe-Bloch Formula",
             "diff": 3,
             "q": "The density effect is parametrized using\n$X=\\log_{10}(\\beta\\gamma),$\nwith $\\delta=0$ below a material-dependent value $X_0$ and an increasing correction above it. What does this piecewise behavior represent physically?",
             "a": "At low values of $\\beta\\gamma$, polarization shielding is negligible and no density correction is required. Above a material-dependent threshold, the suppression of distant collisions develops and increases with the particle's relativistic velocity."
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
-            "sub": "Bethe-Bloch Corrections",
+            "sub": "Bethe-Bloch Formula",
             "diff": 3,
             "q": "The plasma frequency of the absorber is\n$$\\nu_p=\\sqrt{\\frac{N_ee^2}{\\pi m_e}},$$\nwhere\n$$N_e=N_a\\rho\\frac{Z}{A}.$$\nWhy does $\\nu_p$ naturally enter the density effect correction?",
             "a": "The plasma frequency characterizes the collective electromagnetic response of the absorber's electron population. Since the density effect arises from polarization of the medium, its magnitude depends on the electron density and therefore on $\\nu_p$."
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
-            "sub": "Bethe-Bloch Corrections",
+            "sub": "Bethe-Bloch Formula",
             "diff": 2,
             "q": "The shell correction enters the Bethe-Bloch formula as\n$$-2\\frac{C}{Z}.$$\n At wich incident-particle velocities is this correction needed?",
             "a": "At low velocity, the incident particle moves at a speed comparable to or smaller than the orbital velocities of the bound electrons. The assumption that the electrons are initially stationary is then no longer valid, and the uncorrected Bethe-Bloch formula breaks down."
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
-            "sub": "Bethe-Bloch Corrections",
+            "sub": "Bethe-Bloch Formula",
             "diff": 2,
             "q": "A plot of stopping power versus energy shows that the corrected and uncorrected Bethe-Bloch curves differ mainly at low and high energies but are close near the minimum. What causes the differences in these two regimes?",
             "a": "At low energy, the shell correction accounts for the motion and binding structure of the atomic electrons. At high energy, the density effect reduces the contribution from distant collisions through polarization shielding. Near the stopping-power minimum, both corrections are comparatively small.",
@@ -412,25 +412,21 @@
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
-            "sub": "Bethe-Bloch Corrections",
+            "sub": "Bethe-Bloch Formula",
             "diff": 2,
             "q": "Why are the shell and density corrections normally sufficient when applying the Bethe-Bloch formula to elementary particles?",
             "a": "Additional corrections for ultrarelativistic radiation effects, finite projectile mass, higher-order QED and scattering terms, internal structure and spin are usually negligible at about the $1\\%$ level. Electron capture can be important for heavy ions at very low velocities, but it is not normally relevant for elementary particles."
         },
-
-
-
-
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
-            "sub": "Energy Dependence of Stopping Power",
+            "sub": "Bethe-Bloch Formula",
             "diff": 2,
             "q": "At non-relativistic energies, the Bethe-Bloch formula is dominated by\n$$-\\frac{dE}{dx}\\propto\\frac{1}{\\beta^2}.$$\nHow does the stopping power change as the particle velocity increases?",
             "a": "The stopping power decreases as the velocity increases because the factor $1/\\beta^2$ becomes smaller. This behavior continues until the particle reaches the minimum-ionizing region."
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
-            "sub": "Energy Dependence of Stopping Power",
+            "sub": "Bethe-Bloch Formula",
             "diff": 2,
             "q": "The stopping-power curves for several charged particles are shown below. Why are the curves separated at low energy but approach approximately the same minimum for particles of equal charge?",
             "a": "At the same kinetic energy, particles with different masses have different velocities, so the velocity-dependent stopping power differs between particle types. Near the minimum, particles of equal charge reach approximately the same characteristic velocity and therefore have nearly the same minimum stopping power.",
@@ -442,63 +438,63 @@
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
-            "sub": "Energy Dependence of Stopping Power",
+            "sub": "Bethe-Bloch Formula",
             "diff": 1,
             "q": "What is meant by a minimum-ionizing particle?",
             "a": "It is a charged particle whose stopping power $-dE/dx$ is near its minimum value. In the treatment given here, this minimum is reached at approximately $v\\simeq0.96c$."
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
-            "sub": "Energy Dependence of Stopping Power",
+            "sub": "Bethe-Bloch Formula",
             "diff": 2,
             "q": "Why is the minimum value of $-dE/dx$ almost the same for different particles carrying the same charge?",
             "a": "In a given material, the stopping power depends primarily on the particle's charge and velocity rather than directly on its mass. Different particles of the same charge therefore have nearly the same stopping power when they reach the same minimum-ionizing velocity."
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
-            "sub": "Energy Dependence of Stopping Power",
+            "sub": "Bethe-Bloch Formula",
             "diff": 2,
             "q": "Beyond the minimum-ionizing point, why does the uncorrected Bethe-Bloch stopping power rise again even though $1/\\beta^2$ has become almost constant?",
             "a": "The logarithmic term in the Bethe-Bloch formula continues to increase with energy. This produces the relativistic rise in the stopping power."
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
-            "sub": "Energy Dependence of Stopping Power",
+            "sub": "Bethe-Bloch Formula",
             "diff": 2,
             "q": "What limits the relativistic rise of $-dE/dx$ at high energy?",
             "a": "The density effect correction suppresses the contribution of distant collisions by accounting for polarization of the medium. It therefore largely cancels the continuing relativistic rise predicted by the uncorrected Bethe-Bloch formula."
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
-            "sub": "Energy Dependence of Stopping Power",
+            "sub": "Bethe-Bloch Formula",
             "diff": 2,
             "q": "Why can measurements of $dE/dx$ be used to identify charged particles at energies below the minimum-ionizing region?",
             "a": "At a given kinetic energy, particles with different masses generally have different velocities and therefore lie on distinct $dE/dx$ curves. Comparing the measured stopping power with these curves can help determine the particle type."
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
-            "sub": "Energy Dependence of Stopping Power",
+            "sub": "Bethe-Bloch Formula",
             "diff": 2,
             "q": "Why does the Bethe-Bloch formula break down when the incident-particle velocity becomes comparable to the orbital velocities of the atomic electrons?",
             "a": "The assumptions used in deriving the formula are no longer valid because the motion and binding of the atomic electrons cannot be neglected. Additional low-energy effects must then be considered."
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
-            "sub": "Energy Dependence of Stopping Power",
+            "sub": "Bethe-Bloch Formula",
             "diff": 2,
             "q": "At very low velocity, why can the stopping power of a heavy charged particle decrease sharply after reaching a maximum?",
             "a": "The particle tends to capture electrons for part of the time. This reduces its effective charge, and since the stopping power depends approximately on the square of the charge, the energy loss decreases."
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
-            "sub": "Energy Dependence of Stopping Power",
+            "sub": "Bethe-Bloch Formula",
             "diff": 1,
             "q": "What is a Bragg curve?",
             "a": "It is the variation of the ionization or stopping power $dE/dx$ of a heavy charged particle as a function of its penetration depth in matter. It shows that most of the particle's energy is deposited near the end of its trajectory."
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
-            "sub": "Energy Dependence of Stopping Power",
+            "sub": "Bethe-Bloch Formula",
             "diff": 2,
             "q": "How does a typical Bragg curve look like? Why does the energy deposition increase near the end of the trajectory and then fall abruptly?",
             "a": "As the heavy particle slows down, the approximate $1/\\beta^2$ dependence causes its stopping power to increase, so more energy is deposited per unit length near the end of the path. At the very end, electron capture lowers the effective charge and the stopping power drops; after the particle stops, it deposits no further energy.",
@@ -510,119 +506,119 @@
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
-            "sub": "Energy Dependence of Stopping Power",
+            "sub": "Bethe-Bloch Formula",
             "diff": 2,
             "q": "Why is the Bragg-curve behavior useful for delivering radiation to deeply embedded malignant growths?",
             "a": "A heavy charged particle deposits relatively little energy in the overlying material and a much larger amount near the end of its range. Its energy can therefore be chosen so that the region of maximum deposition lies within the target while reducing damage to the material in front of it."
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
-            "sub": "Scaling Laws",
+            "sub": "Bethe-Bloch Formula",
             "diff": 1,
             "q": "For particles in the same material, the stopping power can be written as\n$$-\\frac{dE}{dx}=z^2f(\\beta).$$\nWhat does this form imply?",
             "a": "In a fixed material, the stopping power depends on the incident particle through its charge $z$ and velocity $\\beta$. At the same velocity, the energy loss scales as $z^2$."
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
-            "sub": "Scaling Laws",
+            "sub": "Bethe-Bloch Formula",
             "diff": 2,
             "q": "Since\n$$T=(\\gamma-1)Mc^2,$$\nthe stopping power may be written as\n$$-\\frac{dE}{dx}=z^2f'\\!\\left(\\frac{T}{M}\\right).$$\nWhy does the kinetic energy appear through the ratio $T/M$?",
             "a": "The particle velocity is determined by its kinetic energy per unit mass. Particles with the same value of $T/M$ therefore have the same $\\beta$ and, apart from the factor $z^2$, the same stopping power in a given material."
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
-            "sub": "Scaling Laws",
+            "sub": "Bethe-Bloch Formula",
             "diff": 3,
             "q": "The stopping powers of two particles in the same material are related by\n$$-\\frac{dE_2}{dx}(T_2)=-\\frac{z_2^2}{z_1^2}\\frac{dE_1}{dx}\\left(T_2\\frac{M_1}{M_2}\\right).$$\nHow should this scaling law be interpreted?",
             "a": "To obtain the stopping power of particle 2 at energy $T_2$, evaluate the stopping power of particle 1 at the energy $T_2M_1/M_2$, so that both particles have the same value of $T/M$ and hence the same velocity. Then multiply by the squared charge ratio $(z_2/z_1)^2$."
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
-            "sub": "Mass Stopping Power",
+            "sub": "Bethe-Bloch Formula",
             "diff": 1,
             "q": "The mass stopping power is defined by\n$$-\\frac{dE}{d\\epsilon}=-\\frac{1}{\\rho}\\frac{dE}{dx},$$\nwhere\n$$d\\epsilon=\\rho\\,dx.$$\nWhat is the difference between linear and mass stopping power?",
             "a": "The linear stopping power gives the energy loss per unit geometrical length. The mass stopping power gives the energy loss per unit mass thickness and removes the direct dependence on the physical density of the absorber."
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
-            "sub": "Mass Stopping Power",
+            "sub": "Bethe-Bloch Formula",
             "diff": 2,
             "q": "The material dependence of the mass stopping power can be expressed as\n$$-\\frac{dE}{d\\epsilon}=z^2\\frac{Z}{A}f(\\beta,I).$$\nWhy does this quantity vary relatively little over a wide range of materials?",
             "a": "For materials with moderately similar atomic numbers, the ratio $Z/A$ changes only slightly. The dependence on the mean excitation potential $I$ is also weak because it appears inside a logarithm. Removing the density factor therefore makes the stopping power almost independent of material."
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
-            "sub": "Mass Stopping Power",
+            "sub": "Bethe-Bloch Formula",
             "diff": 2,
             "q": "Why will a particle lose approximately the same amount of energy in $1\\,\\mathrm{g/cm^2}$ of copper, aluminium, or iron?",
             "a": "Equal mass thicknesses contain roughly comparable numbers of electrons per unit area because $Z/A$ varies little among these materials. Their mass stopping powers are therefore similar even though their ordinary densities and corresponding physical thicknesses differ."
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
-            "sub": "Mixtures and Compounds",
+            "sub": "Bethe-Bloch Formula",
             "diff": 2,
             "q": "Bragg's Rule for a compound or mixture is\n$$\\frac{1}{\\rho}\\frac{dE}{dx}=\\frac{w_1}{\\rho_1}\\left(\\frac{dE}{dx}\\right)_1+\\frac{w_2}{\\rho_2}\\left(\\frac{dE}{dx}\\right)_2+\\cdots.$$\nWhat is the physical meaning of this approximation?",
             "a": "The mass stopping power of the compound is approximated by adding the mass stopping powers of its constituent elements, each weighted by its fraction by weight in the compound."
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
-            "sub": "Mixtures and Compounds",
+            "sub": "Bethe-Bloch Formula",
             "diff": 2,
             "q": "For a molecule containing $a_i$ atoms of element $i$, the weight fraction is\n$$w_i=\\frac{a_iA_i}{A_m},\\qquad A_m=\\sum_i a_iA_i.$$\nWhy is the factor $a_iA_i$ used?",
             "a": "The quantity $a_iA_i$ is the total contribution of element $i$ to the molecular weight. Dividing it by the full molecular weight $A_m$ gives the fraction of the compound's mass associated with that element."
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
-            "sub": "Mixtures and Compounds",
+            "sub": "Bethe-Bloch Formula",
             "diff": 2,
             "q": "For a compound, the effective atomic number and atomic weight are defined as\n$$Z_{\\mathrm{eff}}=\\sum_i a_iZ_i,$$\n$$A_{\\mathrm{eff}}=\\sum_i a_iA_i.$$\nWhat do these quantities represent?",
             "a": "$Z_{\\mathrm{eff}}$ is the total number of electrons associated with the atoms in one molecule, while $A_{\\mathrm{eff}}$ is the molecular weight obtained by summing the atomic-weight contributions of its constituent atoms."
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
-            "sub": "Mixtures and Compounds",
+            "sub": "Bethe-Bloch Formula",
             "diff": 3,
             "q": "The effective mean excitation potential of a compound is defined through\n$$\\ln I_{\\mathrm{eff}}=\\sum_i\\frac{a_iZ_i\\ln I_i}{Z_{\\mathrm{eff}}}.$$\nWhy is $I_{\\mathrm{eff}}$ a logarithmic rather than an ordinary arithmetic average?",
             "a": "The mean excitation potential enters the Bethe-Bloch formula inside a logarithm. Combining the stopping-power contributions of the constituent elements therefore requires averaging $\\ln I_i$, weighted by their electron contributions $a_iZ_i$."
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
-            "sub": "Mixtures and Compounds",
+            "sub": "Bethe-Bloch Formula",
             "diff": 3,
             "q": "For a compound, the effective density and shell corrections may be written as\n$$\\delta_{\\mathrm{eff}}=\\sum_i\\frac{a_iZ_i\\delta_i}{Z_{\\mathrm{eff}}},$$\n$$C_{\\mathrm{eff}}=\\sum_i a_iC_i.$$\nWhat is the purpose of defining these effective quantities?",
             "a": "They allow the corrected Bethe-Bloch formula to be applied directly to a compound by replacing the separate elemental contributions with a single set of effective parameters."
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
-            "sub": "Limitations of the Bethe-Bloch Formula",
+            "sub": "Bethe-Bloch Formula",
             "diff": 2,
             "q": "Over what velocity range does the corrected Bethe-Bloch formula generally describe the stopping power of elementary particles and nuclei up to the $\\alpha$-particle?",
             "a": "With the shell and density corrections included, the Bethe-Bloch formula generally gives results accurate to within a few percent from relativistic velocities down to approximately $\\beta\\simeq0.1$."
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
-            "sub": "Limitations of the Bethe-Bloch Formula",
+            "sub": "Bethe-Bloch Formula",
             "diff": 2,
             "q": "Why does the Bethe-Bloch description become unreliable for\n$$\\beta\\lesssim0.05?$$",
             "a": "At such low velocities, many assumptions used in the Bethe-Bloch calculation are no longer valid. The motion and binding of atomic electrons become important, and for heavier nuclei electron-capture effects strongly modify the projectile's effective charge and stopping power."
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
-            "sub": "Limitations of the Bethe-Bloch Formula",
+            "sub": "Bethe-Bloch Formula",
             "diff": 2,
             "q": "What theoretical descriptions are used below the usual range of validity of the Bethe-Bloch formula?",
             "a": "In the region $0.01<\\beta<0.05$, no fully satisfactory theory is available even for protons, and empirical formulas are often used. Below approximately $\\beta\\simeq0.01$, the theory of Lindhard provides a successful explanation of the energy loss."
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
-            "sub": "Channeling",
+            "sub": "Bethe-Bloch Formula",
             "diff": 2,
             "q": "What is channeling in a crystalline material?",
             "a": "Channeling occurs when a charged particle enters a crystal at a sufficiently small angle relative to a symmetry axis or crystal plane. A sequence of correlated small-angle scatterings then guides the particle along an open channel of the crystal lattice."
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
-            "sub": "Channeling",
+            "sub": "Bethe-Bloch Formula",
             "diff": 2,
             "q": "The diagram below shows a particle following a slowly oscillating path between rows of atoms in a crystal. Why is its stopping power greatly reduced compared with that predicted for an amorphous material?",
             "a": "The correlated scatterings keep the particle inside an open crystal channel, where it encounters fewer atomic electrons than it would in an amorphous material. Because electronic collisions are the principal source of energy loss, the stopping power is greatly reduced.",
@@ -634,42 +630,42 @@
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
-            "sub": "Channeling",
+            "sub": "Bethe-Bloch Formula",
             "diff": 2,
             "q": "Why must the orientation of a crystalline absorber relative to the incident particle beam be controlled?",
             "a": "If the beam lies within the critical angle of a crystal symmetry direction, channeling may occur and greatly reduce the energy loss. The crystal orientation must therefore be chosen either to avoid this effect or to produce it deliberately."
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
-            "sub": "Channeling",
+            "sub": "Bethe-Bloch Formula",
             "diff": 3,
             "q": "The critical angle for channeling is estimated by\n$$\\phi_c\\simeq\\frac{\\sqrt{zZa_0Ad}}{1670\\,\\beta\\sqrt{\\gamma}},$$\nwhere $a_0$ is the Bohr radius and $d$ is the interatomic spacing. What does the condition $\\phi<\\phi_c$ mean physically?",
             "a": "It means that the particle is sufficiently well aligned with a symmetry axis or plane of the crystal for correlated small-angle scatterings to confine it within an open lattice channel. For $\\phi>\\phi_c$, channeling does not occur and the material may be treated approximately as amorphous."
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
-            "sub": "Channeling",
+            "sub": "Bethe-Bloch Formula",
             "diff": 2,
             "q": "According to\n$$\\phi_c\\propto\\frac{1}{\\beta\\sqrt{\\gamma}},$$\nhow does the angular condition for channeling change as the particle energy increases?",
             "a": "The critical angle decreases as the energy increases. Higher-energy particles must therefore be aligned more precisely with the crystal axis or plane for channeling to occur."
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
-            "sub": "Range",
+            "sub": "Bethe-Bloch Formula",
             "diff": 1,
             "q": "What is the range of a charged particle in matter?",
             "a": "The range is the distance the particle penetrates before losing all of its kinetic energy. It depends on the particle type, its initial energy and the absorbing material."
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
-            "sub": "Range",
+            "sub": "Bethe-Bloch Formula",
             "diff": 2,
             "q": "How can the range of a beam of charged particles be determined experimentally?",
             "a": "The particles are passed through absorbers of different thicknesses, and the ratio of transmitted to incident particles is measured. Plotting this transmission as a function of absorber thickness gives a range number-distance curve."
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
-            "sub": "Range",
+            "sub": "Bethe-Bloch Formula",
             "diff": 2,
             "q": "The transmission curve below does not fall abruptly at a single absorber thickness but decreases over a finite interval. What causes this range straggling?",
             "a": "Energy loss is statistical rather than perfectly continuous. Identical particles with the same initial energy do not undergo exactly the same sequence or number of collisions, so they stop at different depths and produce a distribution of ranges.",
@@ -681,7 +677,7 @@
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
-            "sub": "Range",
+            "sub": "Bethe-Bloch Formula",
             "diff": 2,
             "q": "What is the mean range in a range number-distance curve?",
             "a": "The mean range is the mean value of the statistical range distribution. It corresponds to the midpoint of the descending transmission curve, where approximately half of the particles have been absorbed.",
@@ -693,7 +689,7 @@
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
-            "sub": "Range",
+            "sub": "Bethe-Bloch Formula",
             "diff": 2,
             "q": "How is the extrapolated or practical range obtained from a range number-distance curve?",
             "a": "A tangent is drawn to the curve at its midpoint and extrapolated to the zero-transmission level. The corresponding absorber thickness is called the extrapolated or practical range and estimates the thickness required to absorb essentially all particles.",
@@ -705,21 +701,21 @@
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
-            "sub": "Range",
+            "sub": "Bethe-Bloch Formula",
             "diff": 2,
             "q": "If the energy loss is treated as continuous, the mean path length of a particle with initial kinetic energy $T_0$ is\n$$S(T_0)=\\int_0^{T_0}\\left(\\frac{dE}{dx}\\right)^{-1}dE.$$\nWhat is the physical meaning of this integral? Why is the path length generally larger than the straight-line range?",
             "a": "At each energy, $(dE/dx)^{-1}dE$ is the distance required for the particle to lose the small energy interval $dE$. Integrating from the initial energy down to zero gives the total path length traveled while the particle loses all of its energy. \nThe integral gives the total distance traveled along the particle's actual trajectory. Multiple Coulomb scattering makes this trajectory zigzag, so the total path length is larger than the straight-line penetration depth. However, the effect of multiple scattering is generally small for heavy charged particles, so that the total path length is, in fact, a relatively good approximation to the straight-line range."
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
-            "sub": "Range",
+            "sub": "Bethe-Bloch Formula",
             "diff": 2,
             "q": "A practical expression for the range is\n$$R(T_0)=R_0(T_{\\min})+\\int_{T_{\\min}}^{T_0}\\left(\\frac{dE}{dx}\\right)^{-1}dE.$$\nWhy are $T_{\\min}$ and the empirical term $R_0(T_{\\min})$ introduced?",
             "a": "$T_{\\min}$ is the lowest energy at which the stopping-power formula remains valid. The empirical term $R_0(T_{\\min})$ accounts for the remaining part of the range in the low-energy region where the Bethe-Bloch description cannot be used reliably."
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
-            "sub": "Range",
+            "sub": "Bethe-Bloch Formula",
             "diff": 2,
             "q": "The plot below shows calculated ranges of several heavy charged particles in aluminium. Why do the curves appear nearly linear on the log-log scale?",
             "a": "A nearly straight line on a log-log plot indicates an approximate power-law relation of the form $R\\propto E^b$. Over the energy range shown, the range therefore increases approximately as a fixed power of the kinetic energy.",
@@ -731,49 +727,49 @@
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
-            "sub": "Range",
+            "sub": "Bethe-Bloch Formula",
             "diff": 2,
             "q": "At moderately low energies,\n$$-\\frac{dE}{dx}\\propto\\beta^{-2}\\propto T^{-1}.$$\nWhy does this imply approximately\n$$R\\propto T^2?$$",
             "a": "Since the range is obtained by integrating $(dE/dx)^{-1}dE$, the relation $dE/dx\\propto T^{-1}$ gives $(dE/dx)^{-1}\\propto T$. Integrating this quantity over energy produces $R\\propto T^2$."
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
-            "sub": "Range",
+            "sub": "Bethe-Bloch Formula",
             "diff": 2,
             "q": "A more accurate empirical fit over the relevant energy range gives\n$$R\\propto T^{1.75}.$$\nHow should this be compared with the simple estimate $R\\propto T^2$?",
             "a": "The exponent $1.75$ reflects a more accurate treatment of the energy dependence of the stopping power. Its closeness to $2$ shows that the simple argument based on the approximate $1/\\beta^2$ dependence captures the main trend."
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
-            "sub": "Range",
+            "sub": "Bethe-Bloch Formula",
             "diff": 2,
             "q": "Why are range-energy relations useful experimentally?",
             "a": "A measured range can be used to determine the particle's energy accurately. Range-energy relations are also useful for choosing detector dimensions and determining the thickness of radiation shielding."
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
-            "sub": "Range",
+            "sub": "Bethe-Bloch Formula",
             "diff": 3,
             "q": "For two particles in the same material, the ranges are related by\n$$R_2(T_2)=\\frac{M_2}{M_1}\\frac{z_1^2}{z_2^2}R_1\\left(T_2\\frac{M_1}{M_2}\\right).$$\nHow should this scaling law be interpreted?",
             "a": "First evaluate the range of particle 1 at the energy $T_2M_1/M_2$, so that both particles have the same kinetic energy per unit mass and therefore the same velocity. Then multiply by the mass ratio $M_2/M_1$ and by the inverse squared charge ratio $z_1^2/z_2^2$."
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
-            "sub": "Range",
+            "sub": "Bethe-Bloch Formula",
             "diff": 3,
             "q": "For the same particle in two different materials, the Bragg-Kleeman rule gives\n$$\\frac{R_1}{R_2}=\\frac{\\rho_2}{\\rho_1}\\sqrt{\\frac{A_1}{A_2}}.$$\nWhat does this relation describe?",
             "a": "It gives a rough scaling of the particle's range between two materials. The range is shorter in the denser material and also depends approximately on the square root of the absorber's atomic weight."
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
-            "sub": "Range",
+            "sub": "Bethe-Bloch Formula",
             "diff": 3,
             "q": "For a compound, the range may be approximated by\n$$R_{\\rm comp}=\\frac{A_{\\rm comp}}{\\displaystyle\\sum_i\\frac{a_iA_i}{R_i}}.$$\nWhat do the terms represent, and what is the purpose of this formula?",
             "a": "$A_{\\rm comp}$ is the molecular weight of the compound, $a_i$ is the number of atoms of constituent element $i$, $A_i$ is its atomic weight and $R_i$ is the range in that element. The formula combines the elemental ranges to estimate the range in the compound."
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
-            "sub": "Range",
+            "sub": "Bethe-Bloch Formula",
             "diff": 2,
             "q": "Why does a range calculated only from atomic-collision stopping power become incomplete at very high energies?",
             "a": "At sufficiently high energies, the particle's range may become comparable to or larger than the mean free path for nuclear interactions or bremsstrahlung emission. These additional processes then contribute significantly to the energy loss and must also be included."
