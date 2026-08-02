@@ -345,41 +345,157 @@
             "a": "Other effects, including ultrarelativistic radiation corrections, finite-projectile-mass effects, higher-order QED terms, internal structure and spin corrections, are usually negligible at approximately the $1\\%$ level. Electron capture can be important for heavy ions at very low velocities, but it is not normally relevant for elementary particles."
         },
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-
-
-
-
-
-
-       
-        
-        
-        
-        
-           
-        
-        
-        
-        
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter",
+            "sub": "Energy Dependence of Stopping Power",
+            "diff": 2,
+            "q": "At non-relativistic energies, the Bethe-Bloch formula is dominated by\n$$-\\frac{dE}{dx}\\propto\\frac{1}{\\beta^2}.$$\nWhy does the stopping power first decrease with increasing energy, reach a minimum near $v\\simeq0.96c$, and then rise again?",
+            "a": "At low energy, increasing the velocity reduces the dominant $1/\\beta^2$ factor, so the stopping power decreases. Near $v\\simeq0.96c$, this decrease balances the slowly increasing logarithmic term and a minimum is reached. At higher energy, $1/\\beta^2$ is nearly constant while the logarithmic term continues to grow, producing the relativistic rise, which is limited by the density correction."
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter",
+            "sub": "Energy Dependence of Stopping Power",
+            "diff": 2,
+            "q": "The plot below shows the stopping power of several charged particles as a function of kinetic energy. Why are the curves distinct below minimum ionization but have nearly the same minimum value for particles of the same charge?",
+            "a": "At a fixed kinetic energy, particles with different masses have different velocities and therefore different stopping powers. The minimum occurs at approximately the same velocity for all particles, and in a given material the stopping power at fixed velocity depends mainly on the particle charge rather than its mass. Particles with the same charge therefore have nearly the same minimum stopping power.",
+            "figure": {
+                "src": "images/book-experimental-techniques/fig2.4_stopping-power-particles.png",
+                "caption": "Stopping power as a function of kinetic energy for several heavy charged particles.",
+                "size": "medium"
+            }
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter",
+            "sub": "Energy Dependence of Stopping Power",
+            "diff": 2,
+            "q": "Why can measurements of $dE/dx$ be used for particle identification below the minimum-ionizing region, and why does this method become less effective near the minimum?",
+            "a": "Below the minimum, particles of different masses generally have different velocities at the same momentum or kinetic energy and therefore lie on distinct $dE/dx$ curves. Near minimum ionization, the curves approach nearly the same stopping-power value for particles of equal charge, so their separation becomes much smaller."
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter",
+            "sub": "Energy Dependence of Stopping Power",
+            "diff": 2,
+            "q": "The Bragg curve below shows $dE/dx$ as a function of penetration depth. Why is most of the energy deposited near the end of the particle's path, and why does $dE/dx$ finally drop?",
+            "a": "As the particle slows down, the approximate $1/\\beta^2$ dependence causes its stopping power to increase, producing the Bragg peak near the end of the trajectory. At very low velocity, the particle begins to capture electrons, which lowers its effective charge and therefore reduces its stopping power.",
+            "figure": {
+                "src": "images/book-experimental-techniques/fig2.5_Bragg-curve.png",
+                "caption": "Typical Bragg curve showing increased ionization near the end of a heavy charged particle's path.",
+                "size": "medium"
+            }
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter",
+            "sub": "Scaling and Mass Stopping Power",
+            "diff": 2,
+            "q": "For particles in the same material,\n$$-\\frac{dE}{dx}=z^2f(\\beta)=z^2f'\\!\\left(\\frac{T}{M}\\right).$$\nWhat does this form imply about how stopping power scales between different particles?",
+            "a": "At the same velocity, the stopping power scales as the square of the particle charge, $z^2$. Since the velocity is determined by the kinetic energy per unit mass, particles with the same value of $T/M$ have the same velocity dependence. Thus, stopping-power curves can be related by rescaling the energy according to the mass and multiplying by the squared charge ratio."
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter",
+            "sub": "Scaling and Mass Stopping Power",
+            "diff": 3,
+            "q": "The stopping powers of two particles in the same material satisfy\n$$-\\frac{dE_2}{dx}(T_2)=-\\frac{z_2^2}{z_1^2}\\frac{dE_1}{dx}\\left(T_2\\frac{M_1}{M_2}\\right).$$\nHow should this relation be used?",
+            "a": "Evaluate the stopping power of particle 1 at the energy $T_2M_1/M_2$, which gives it the same value of $T/M$ and therefore the same velocity as particle 2 at $T_2$. Then multiply by the squared charge ratio $(z_2/z_1)^2$."
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter",
+            "sub": "Scaling and Mass Stopping Power",
+            "diff": 2,
+            "q": "The mass stopping power is\n$$-\\frac{dE}{d\\epsilon}=-\\frac{1}{\\rho}\\frac{dE}{dx}=z^2\\frac{Z}{A}f(\\beta,I),$$\nwith $d\\epsilon=\\rho\\,dx$. Why is it nearly independent of material over a broad range of absorbers?",
+            "a": "Dividing by the density removes the direct dependence on the physical density of the material. The remaining factor $Z/A$ varies only slightly for many elements, and the dependence on the mean excitation potential $I$ is weak because it appears logarithmically. Equal mass thicknesses of different materials therefore produce roughly similar energy losses."
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter",
+            "sub": "Mixtures and Compounds",
+            "diff": 2,
+            "q": "Bragg's Rule approximates the mass stopping power of a mixture or compound as\n$$\\frac{1}{\\rho}\\frac{dE}{dx}=\\sum_i\\frac{w_i}{\\rho_i}\\left(\\frac{dE}{dx}\\right)_i,$$\nwhere\n$$w_i=\\frac{a_iA_i}{A_m}.$$\nWhat is the physical meaning of this approximation?",
+            "a": "The stopping power of the compound is obtained by adding the elemental mass stopping powers, each weighted by the fraction of the compound's mass contributed by that element. It treats the atomic constituents as contributing approximately independently to the total electronic energy loss."
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter",
+            "sub": "Mixtures and Compounds",
+            "diff": 3,
+            "q": "For a compound, effective quantities may be defined by\n$$Z_{\\rm eff}=\\sum_i a_iZ_i,$$\n$$A_{\\rm eff}=\\sum_i a_iA_i,$$\n$$\\ln I_{\\rm eff}=\\sum_i\\frac{a_iZ_i\\ln I_i}{Z_{\\rm eff}}.$$\nWhy is $I_{\\rm eff}$ averaged logarithmically and weighted by $a_iZ_i$?",
+            "a": "The mean excitation potential appears inside a logarithm in the Bethe-Bloch formula, so the elemental contributions must be combined by averaging $\\ln I_i$. The weight $a_iZ_i$ is proportional to the number of electrons contributed by each element to the molecule."
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter",
+            "sub": "Bethe-Bloch Limitations and Channeling",
+            "diff": 2,
+            "q": "Over what velocity range is the corrected Bethe-Bloch formula normally reliable, and why does it fail at very low velocity?",
+            "a": "For elementary particles and nuclei up to the $\\alpha$-particle, it is generally accurate to within a few percent from relativistic velocities down to approximately $\\beta\\simeq0.1$. Below about $\\beta\\simeq0.05$, the assumptions concerning stationary target electrons and a fixed projectile charge break down, while electron capture becomes especially important for heavier nuclei."
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter",
+            "sub": "Bethe-Bloch Limitations and Channeling",
+            "diff": 2,
+            "q": "The diagram below shows a particle guided through an open channel of a crystal lattice. Why does channeling reduce its stopping power, and under what angular condition does it occur?",
+            "a": "Correlated small-angle scatterings keep the particle away from the dense rows or planes of atoms, so it encounters fewer atomic electrons than in an amorphous material and loses less energy. Channeling occurs when the incident angle relative to a crystal symmetry axis or plane is smaller than the critical angle $\\phi_c$.",
+            "figure": {
+                "src": "images/book-experimental-techniques/fig2.6_channeling.png",
+                "caption": "Schematic channeling of a charged particle through an open crystal channel.",
+                "size": "small"
+            }
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter",
+            "sub": "Range",
+            "diff": 2,
+            "q": "The transmission curve below falls over a finite interval of absorber thickness rather than at one sharply defined range. What causes this range straggling, and how are the mean and practical ranges defined?",
+            "a": "Energy loss is statistical, so identical particles do not undergo exactly the same number or sequence of collisions and therefore stop at different depths. The mean range corresponds to the midpoint of the falling transmission curve, where about half the particles are absorbed. The practical or extrapolated range is found by drawing a tangent at the midpoint and extrapolating it to zero transmission.",
+            "figure": {
+                "src": "images/book-experimental-techniques/fig2.7_range-number-distance.png",
+                "caption": "Range number-distance curve showing range straggling, mean range and extrapolated range.",
+                "size": "medium"
+            }
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter",
+            "sub": "Range",
+            "diff": 2,
+            "q": "The approximate path length of a particle with initial kinetic energy $T_0$ is\n$$S(T_0)=\\int_0^{T_0}\\left(\\frac{dE}{dx}\\right)^{-1}dE.$$\nWhat does this integral represent, and why can it differ from the straight-line range?",
+            "a": "For each energy interval $dE$, the factor $(dE/dx)^{-1}dE$ is the distance traveled while losing that energy. The integral therefore gives the total path length along the particle's trajectory. Multiple Coulomb scattering makes the path zigzag, so the total path length can be greater than the straight-line penetration depth."
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter",
+            "sub": "Range",
+            "diff": 2,
+            "q": "The range is evaluated more practically as\n$$R(T_0)=R_0(T_{\\min})+\\int_{T_{\\min}}^{T_0}\\left(\\frac{dE}{dx}\\right)^{-1}dE.$$\nWhy are the lower limit $T_{\\min}$ and the empirical term $R_0(T_{\\min})$ needed?",
+            "a": "$T_{\\min}$ is the lowest energy at which the stopping-power formula remains reliable. The empirical term $R_0(T_{\\min})$ accounts for the remaining low-energy part of the trajectory, where the Bethe-Bloch description breaks down."
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter",
+            "sub": "Range",
+            "diff": 2,
+            "q": "The range-energy curves below are almost straight on logarithmic axes. What does this imply, and why does the simple stopping-power dependence suggest approximately\n$$R\\propto T^2?$$",
+            "a": "A straight line on logarithmic axes indicates a power-law relation $R\\propto T^b$. At moderately low energies, $-dE/dx\\propto\\beta^{-2}\\propto T^{-1}$, so $(dE/dx)^{-1}\\propto T$. Integrating over energy then gives the rough result $R\\propto T^2$, while a more accurate fit gives approximately $R\\propto T^{1.75}$.",
+            "figure": {
+                "src": "images/book-experimental-techniques/fig2.8_range-energy-aluminium.png",
+                "caption": "Calculated range-energy curves for several heavy charged particles in aluminium.",
+                "size": "medium"
+            }
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter",
+            "sub": "Range",
+            "diff": 3,
+            "q": "For different particles in the same material,\n$$R_2(T_2)=\\frac{M_2}{M_1}\\frac{z_1^2}{z_2^2}R_1\\left(T_2\\frac{M_1}{M_2}\\right).$$\nWhat physical dependences are represented by the mass and charge factors?",
+            "a": "The energy argument is rescaled so that the two particles have the same kinetic energy per unit mass and therefore the same velocity. The range increases with particle mass because a more massive particle carries more energy at the same velocity, while it decreases as $z^2$ because a more highly charged particle loses energy more rapidly."
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter",
+            "sub": "Experimental Use of Stopping Power",
+            "diff": 2,
+            "q": "A minimum-ionizing muon crosses a plastic scintillator of thickness $x=2\\,\\mathrm{cm}$, density $\\rho\\simeq1.03\\,\\mathrm{g/cm^3}$ and mass stopping power\n$$\\frac{1}{\\rho}\\frac{dE}{dx}\\simeq1.9\\,\\mathrm{MeV\\,cm^2/g}.$$\nWhy is the deposited energy approximately\n$$\\Delta E\\simeq1.9\\times1.03\\times2\\simeq3.9\\,\\mathrm{MeV},$$\nand why can cosmic-ray muons provide a calibration signal?",
+            "a": "The linear stopping power is obtained by multiplying the mass stopping power by the material density, and the deposited energy is then this nearly constant stopping power times the traversed thickness. High-energy cosmic-ray muons are close to minimum ionizing, so many of them deposit approximately the same characteristic energy and produce a recognizable pulse-height peak."
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter",
+            "sub": "Experimental Use of Stopping Power",
+            "diff": 2,
+            "q": "To reduce a proton beam from energy $E_i$ to $E_f$, the required absorber thickness is found from\n$$\\Delta x=-\\int_{E_i}^{E_f}\\left(\\frac{dE}{dx}\\right)^{-1}dE.$$\nWhy must the inverse stopping power be integrated over energy rather than simply multiplying one value of $dE/dx$ by the desired energy loss?",
+            "a": "The stopping power changes as the proton slows down, so the distance required to lose each successive energy interval is different. Integrating the inverse stopping power accounts for this variation. Using one representative value may give a reasonable approximation only when $dE/dx$ varies slowly over the interval."
+        },
 
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
@@ -441,7 +557,158 @@
             "diff": 2,
             "q": "For a detector sensitive between approximately $350$ and $550\\,\\mathrm{nm}$, the photon yield is\n$$\\frac{dN}{dx}=475z^2\\sin^2\\theta_C\\ \\text{photons/cm}.$$\nWhat does this result imply for the design of a Cherenkov detector?",
             "a": "The available number of photons per unit path length is modest and depends strongly on the particle charge and Cherenkov angle. Efficient light collection and sensitive photodetectors are therefore important, and a longer radiator can increase the total detected signal."
+        },
+
+
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter",
+            "sub": "Electron and Positron Energy Loss",
+            "diff": 1,
+            "q": "For electrons and positrons, the total stopping power is\n$$\\left(\\frac{dE}{dx}\\right)_{\\rm tot}=\\left(\\frac{dE}{dx}\\right)_{\\rm rad}+\\left(\\frac{dE}{dx}\\right)_{\\rm coll}.$$\nWhat are the two contributions, and how does their relative importance change with energy?",
+            "a": "The collision term comes from ionization and excitation of atoms, while the radiation term comes mainly from bremsstrahlung emitted as the electron or positron is deflected in the nuclear electric field. At energies of a few MeV or less, collision loss dominates. At a few tens of MeV, radiation loss becomes comparable, and above the critical energy bremsstrahlung dominates."
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter",
+            "sub": "Electron and Positron Energy Loss",
+            "diff": 2,
+            "q": "Why must the Bethe-Bloch treatment of collision loss be modified for incident electrons and positrons?",
+            "a": "Their small mass means that they can be strongly deflected and can transfer a substantial fraction of their energy in one collision, so the heavy-particle approximation of an essentially undeviated projectile is invalid. For electrons, the collision is also between identical particles, so indistinguishability must be included. One consequence is that the maximum allowed energy transfer becomes $W_{\\max}=T_e/2$."
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter",
+            "sub": "Bremsstrahlung",
+            "diff": 2,
+            "q": "Why is bremsstrahlung important for electrons and positrons but much less important for heavier charged particles?",
+            "a": "The bremsstrahlung emission probability varies approximately as the inverse square of the particle mass, $\\sigma\\propto1/m^2$. Because electrons and positrons have very small mass, they radiate efficiently when accelerated in a nuclear electric field. For example, radiation loss by muons is about $40000$ times smaller than for electrons."
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter",
+            "sub": "Bremsstrahlung",
+            "diff": 2,
+            "q": "The screening parameter is\n$$\\xi=\\frac{100m_ec^2h\\nu}{E_0EZ^{1/3}},$$\nwhere $E_0$ and $E$ are the initial and final total electron energies. What physical effect does $\\xi$ describe?",
+            "a": "It parametrizes the screening of the nuclear electric field by the surrounding atomic electrons. Small $\\xi$ corresponds to complete screening, while large $\\xi$ corresponds to little or no screening. Since bremsstrahlung depends on the field experienced by the electron, screening modifies the radiation cross section."
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter",
+            "sub": "Bremsstrahlung",
+            "diff": 2,
+            "q": "The radiation loss may be written as\n$$-\\left(\\frac{dE}{dx}\\right)_{\\rm rad}=NE_0\\Phi_{\\rm rad}.$$\nWhat does this form imply about the energy dependence of bremsstrahlung loss?",
+            "a": "For a given material, $\\Phi_{\\rm rad}$ is approximately independent of the electron energy over the relevant range. The radiation loss is therefore approximately proportional to the electron energy $E_0$, which explains its rapid increase relative to collision loss."
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter",
+            "sub": "Bremsstrahlung",
+            "diff": 2,
+            "q": "The plot below compares collision loss, bremsstrahlung loss and total loss for electrons in copper. Why does the total stopping power change from collision-dominated to radiation-dominated behavior?",
+            "a": "Collision loss varies only slowly, approximately logarithmically, with energy, while bremsstrahlung loss increases nearly linearly with electron energy and approximately as $Z^2$. Their intersection defines the critical-energy region. Below it, collision loss dominates; above it, radiation loss dominates.",
+            "figure": {
+                "src": "images/book-experimental-techniques/fig2.10_electron-radiation-collision-loss.png",
+                "caption": "Radiation loss, collision loss and total stopping power for electrons in copper.",
+                "size": "medium"
+            }
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter",
+            "sub": "Bremsstrahlung",
+            "diff": 2,
+            "q": "Why does bremsstrahlung produce larger fluctuations in energy loss than collision ionization?",
+            "a": "Collision loss is quas-continuous because it results from many relatively small transfers. In contrast, a large fraction of the electron energy can be emitted in only one or two bremsstrahlung photons. Monoenergetic electrons or positrons therefore develop large event-to-event fluctuations in their energy loss."
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter",
+            "sub": "Critical Energy and Radiation Length",
+            "diff": 1,
+            "q": "The critical energy $E_c$ is defined by\n$$\\left(\\frac{dE}{dx}\\right)_{\\rm rad}=\\left(\\frac{dE}{dx}\\right)_{\\rm coll}\\qquad\\text{at }E=E_c.$$\nWhat is its physical significance?",
+            "a": "At $E_c$, radiation and collision losses are equal. Below $E_c$, collision-ionization loss dominates; above $E_c$, bremsstrahlung dominates. Since radiation loss depends strongly on the absorber, $E_c$ is material dependent."
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter",
+            "sub": "Critical Energy and Radiation Length",
+            "diff": 2,
+            "q": "An approximate expression for the critical energy is\n$$E_c\\simeq\\frac{800\\,\\mathrm{MeV}}{Z+1.2}.$$\nWhat material dependence does this reveal?",
+            "a": "The critical energy decreases as the atomic number $Z$ increases. In high-$Z$ materials, the stronger nuclear electric field enhances bremsstrahlung, so radiation loss overtakes collision loss at a lower electron energy."
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter",
+            "sub": "Critical Energy and Radiation Length",
+            "diff": 2,
+            "q": "At high energy, radiation loss gives\n$$E=E_0\\exp\\left(-\\frac{x}{L_{\\rm rad}}\\right).$$\nWhat is the physical meaning of the radiation length $L_{\\rm rad}$?",
+            "a": "$L_{\\rm rad}$ is the distance over which an electron's energy is reduced by a factor $1/e$ due to radiation loss alone. It is the characteristic material scale for bremsstrahlung energy loss."
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter",
+            "sub": "Critical Energy and Radiation Length",
+            "diff": 2,
+            "q": "A useful approximation is\n$$L_{\\rm rad}=\\frac{716.4\\,\\mathrm{g/cm^2}\\,A}{Z(Z+1)\\ln(287/\\sqrt Z)}.$$\nWhy is radiation length often expressed in $\\mathrm{g/cm^2}$ rather than centimeters?",
+            "a": "Expressing $L_{\\rm rad}$ as a mass thickness removes the direct dependence on the physical density of the absorber. This makes radiation-loss comparisons and calculations for different materials more convenient."
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter",
+            "sub": "Critical Energy and Radiation Length",
+            "diff": 2,
+            "q": "For a compound or mixture,\n$$\\frac{1}{L_{\\rm rad}}=w_1\\left(\\frac{1}{L_{\\rm rad}}\\right)_1+w_2\\left(\\frac{1}{L_{\\rm rad}}\\right)_2+\\cdots.$$\nHow should this relation be interpreted?",
+            "a": "The inverse radiation length of the mixture is approximated by the sum of the inverse radiation lengths of its constituent elements, weighted by their fractions by weight. Constituents with shorter radiation lengths therefore contribute more strongly."
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter",
+            "sub": "Electron Range and Absorption",
+            "diff": 2,
+            "q": "Why is the straight-line range of electrons often very different from the path length obtained by integrating the stopping power?",
+            "a": "Electrons undergo strong multiple scattering because of their small mass, so their trajectories are highly tortuous. Their total path length can therefore be much greater than the straight-line penetration depth. In addition, large single-collision transfers and bremsstrahlung cause stronger fluctuations and greater range straggling than for heavy charged particles."
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter",
+            "sub": "Electron Range and Absorption",
+            "diff": 2,
+            "q": "The electron transmission curves below broaden strongly as the initial energy increases. What does this show about electron ranges?",
+            "a": "Electrons of the same initial energy do not all stop at the same depth. Multiple scattering, large collisional transfers and bremsstrahlung produce a broad statistical distribution of ranges. The spread becomes substantial at higher energy.",
+            "figure": {
+                "src": "images/book-experimental-techniques/fig2.11_electron-range-number-distance.png",
+                "caption": "Range number-distance curves for electrons in aluminium, illustrating strong range straggling.",
+                "size": "medium"
+            }
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter",
+            "sub": "Electron Range and Absorption",
+            "diff": 2,
+            "q": "The range-energy curves below are calculated in the continuous slowing-down approximation. What limitation should be kept in mind when using them for electrons?",
+            "a": "The continuous slowing-down approximation treats the energy loss as smooth, but real electron trajectories include strong multiple scattering and large stochastic losses. The calculated range is therefore an average approximation and may differ substantially from the measured straight-line penetration depth.",
+            "figure": {
+                "src": "images/book-experimental-techniques/fig2.12_electron-range-energy.png",
+                "caption": "Calculated electron range-energy curves for several materials.",
+                "size": "medium"
+            }
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter",
+            "sub": "Electron Range and Absorption",
+            "diff": 2,
+            "q": "For $\\beta$-decay electrons, the transmitted intensity is often approximated by\n$$I=I_0\\exp(-\\mu x).$$\nWhy can an exponential law describe their absorption even though individual electrons have finite ranges?",
+            "a": "A $\\beta$ source emits electrons with a continuous spectrum of initial energies. As the absorber thickness increases, progressively fewer electrons have sufficient range to pass through, and the combined transmission curve can approximate an exponential. This behavior is not universal and is most appropriate for simple allowed $\\beta$ decays."
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter",
+            "sub": "Electron Range and Absorption",
+            "diff": 2,
+            "q": "The semi-logarithmic plot below shows approximately straight absorption curves for $\\beta$ electrons in different materials. What does the slope represent?",
+            "a": "A straight line on a semi-logarithmic plot corresponds to $I=I_0e^{-\\mu x}$. The slope determines the $\\beta$-absorption coefficient $\\mu$, which is related to the endpoint energy of the $\\beta$ spectrum and depends on the absorber.",
+            "figure": {
+                "src": "images/book-experimental-techniques/fig2.13_beta-absorption-curves.png",
+                "caption": "Approximate exponential absorption of beta-decay electrons in several materials.",
+                "size": "medium"
+            }
         }
+
+
+
+
+
+
+
+
+
+
 
 
 
