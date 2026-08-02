@@ -411,8 +411,11 @@ button{font-family:inherit;}
   transform:translateY(-1px);
 }
 
-.map-row + .map-row{
-  margin-top:4px;
+.map-list{
+    display:flex;
+    flex-direction:column;
+    gap:4px;
+    padding-left:18px;
 }
 
 .map-icon{
@@ -453,6 +456,39 @@ button{font-family:inherit;}
 .map-chevron{
   color:var(--text-faint);
   font-size:18px;
+}
+.map-collection-title{
+    font-family:var(--font-display);
+    font-size:26px;
+    font-weight:650;
+    margin-bottom:4px;
+    letter-spacing:-0.02em;
+}
+.map-collection-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    margin-bottom:18px;
+}
+.map-collection-count{
+    font-family:var(--font-mono);
+    font-size:11px;
+    color:var(--text-faint);
+}
+.map-chapter{
+    margin-top:22px;
+    margin-bottom:8px;
+
+    font-family:var(--font-display);
+    font-size:17px;
+    font-weight:600;
+
+    color:var(--text);
+
+    opacity:.9;
+}
+.map-list{
+    padding-left:18px;
 }
 
 /* ---------- Summary ---------- */
