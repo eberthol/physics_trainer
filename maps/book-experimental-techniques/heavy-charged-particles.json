@@ -1,16 +1,18 @@
 {
-  "title": "Energy Loss of Heavy Pariticles in Matter",
+  "title": "",
 
   "layers": [
     {
-      "title": "Energy Loss of Heavy Pariticles in Matter",
+      "title": "",
       "image": "images/book-experimental-techniques/maps/summary-heavy-charged-particles.png"
     }
   ],
 
-  "caption": "Energy Loss of Heavy Pariticles in Matter",
+  "caption": "",
 
-  "hotspots": [],
-  "relatedCards": [],
-  "tags": []
+  "study": {
+    "subtopics": [
+      "Energy Loss of Heavy Charged Particles"
+    ]
+  }
 }

@@ -10,7 +10,14 @@
 
   "caption": "Energy Loss",
 
-  "hotspots": [],
-  "relatedCards": [],
-  "tags": []
+  "study": {
+    "subtopics": [
+      "Energy Dependence of Stopping Power",
+      "Scaling and Mass Stopping Power",
+      "Mixtures and Compounds",
+      "Bethe-Bloch Limitations and Channeling",
+      "Range",
+      "Experimental Use of Stopping Power"
+    ]
+  }
 }

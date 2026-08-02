@@ -10,7 +10,12 @@
 
   "caption": "Radioactive Decay Signatures",
 
-  "hotspots": [],
-  "relatedCards": [],
-  "tags": []
+  "study": {
+    "subtopics": [
+      "Neutron Sources",
+      "Source Activity Units",
+      "Radioactive Decay Law",
+      "Fluctuations in Radioactive Decay"
+    ]
+  }
 }

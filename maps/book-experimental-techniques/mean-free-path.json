@@ -10,7 +10,10 @@
 
   "caption": "Mean Free Path",
 
-  "hotspots": [],
-  "relatedCards": [],
-  "tags": []
+  "study": {
+    "subtopics": [
+      "Interaction Probability"
+
+    ]
+  }
 }

@@ -10,7 +10,9 @@
 
   "caption": "Cross Section",
 
-  "hotspots": [],
-  "relatedCards": [],
-  "tags": []
+  "study": {
+    "subtopics": [
+      "Cross Section"
+    ]
+  }
 }

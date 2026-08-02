@@ -10,7 +10,11 @@
 
   "caption": "Radioactive Decay Signatures",
 
-  "hotspots": [],
-  "relatedCards": [],
-  "tags": []
+  "study": {
+    "subtopics": [
+      "Bethe-Bloch Formula",
+      "Bethe-Bloch Parameters",
+      "Bethe-Bloch Corrections"
+    ]
+  }
 }

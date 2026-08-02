@@ -10,7 +10,15 @@
 
   "caption": "Basic Nuclear Processes in Radioactive Sources",
 
-  "hotspots": [],
-  "relatedCards": [],
-  "tags": []
+  "study": {
+    "subtopics": [
+      "Alpha Decay",
+      "Beta Decay",
+      "Electron Capture",
+      "Gamma Emission",
+      "Annihilation Radiation",
+      "Internal Conversion",
+      "Auger Electrons"
+    ]
+  }
 }
