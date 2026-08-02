@@ -15,14 +15,7 @@
     "level": "Detailed",
     "file":   "decks/book-experimental-techniques/book-experimental-techniques-ch2.json"
   },
-  {
-    "id": "book-exptech-summary",
-    "collection": "Experimental Techniques in Nuclear and Particle Physics",
-    "order": 99,
-    "name": "Summary",
-    "level": "Summary",
-    "file": "decks/book-experimental-techniques/book-experimental-techniques-summary.json"
-  },
+  
 
   {
     "id": "book-nuclear-many-body-problem-ch1",
