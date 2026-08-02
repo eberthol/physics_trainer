@@ -1,0 +1,17 @@
+{
+  "title": "Nuclear Fission",
+
+  "layers": [
+    {
+      "title": "Nuclear Fission",
+      "image": "images/book-nuclear-many-body-problem/maps/nuclear-fission.png"
+    }
+  ],
+  "caption": "Nuclear Fission",
+
+  "study": {
+    "subtopics": [
+      "Nuclear Fission"
+    ]
+  }
+}

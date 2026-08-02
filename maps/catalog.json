@@ -116,6 +116,30 @@
     "title": "Axial Symmetry",
     "order": 5,
     "file": "maps/book-nuclear-many-body-problem/axial-symmetry.json"
+  },
+  {
+    "id": "asymmetric-rotor",
+    "collection": "The Nuclear Many Body Problem",
+    "chapter": "Ch.1: The Liquid Drop Model",
+    "title": "The Asymmetric Rotor",
+    "order": 6,
+    "file": "maps/book-nuclear-many-body-problem/asymmetric-rotor.json"
+  },
+  {
+    "id": "nuclear-fission",
+    "collection": "The Nuclear Many Body Problem",
+    "chapter": "Ch.1: The Liquid Drop Model",
+    "title": "Nuclear Fission",
+    "order": 7,
+    "file": "maps/book-nuclear-many-body-problem/nuclear-fission.json"
+  },
+  {
+    "id": "rotating-liquid-drops.",
+    "collection": "The Nuclear Many Body Problem",
+    "chapter": "Ch.1: The Liquid Drop Model",
+    "title": "Stability of Rotating Liquid Drops",
+    "order": 8,
+    "file": "maps/book-nuclear-many-body-problem/rotating-liquid-drops.json"
   }
 
   

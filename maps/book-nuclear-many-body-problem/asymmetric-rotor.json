@@ -1,0 +1,17 @@
+{
+  "title": "The Asymmetric Rotor",
+
+  "layers": [
+    {
+      "title": "The Asymmetric Rotor",
+      "image": "images/book-nuclear-many-body-problem/maps/asymmetric-rotor.png"
+    }
+  ],
+  "caption": "The Asymmetric Rotor",
+
+  "study": {
+    "subtopics": [
+      "Asymmetric Rotor"
+    ]
+  }
+}

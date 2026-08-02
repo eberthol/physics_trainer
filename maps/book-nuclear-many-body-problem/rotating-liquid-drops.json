@@ -1,0 +1,18 @@
+{
+  "title": "Rotating Liquid Drops",
+
+  "layers": [
+    {
+      "title": "Rotating Liquid Drops",
+      "image": "images/book-nuclear-many-body-problem/maps/rotating-liquid-drops.png"
+    }
+  ],
+  "caption": "Rotating Liquid Drops",
+
+  "study": {
+    "subtopics": [
+      "Rotating Liquid Drops",
+      "Liquid-Drop Model Limitations"
+    ]
+  }
+}
