@@ -850,6 +850,197 @@
             "diff": 2,
             "q": "What does the observation that $Q_0$ remains approximately constant within a rotational band imply physically?",
             "a": "It indicates that all members of the rotational band correspond to essentially the same intrinsic nuclear shape. The different states differ mainly by their rotational motion rather than by changes in deformation."
+        },
+
+
+
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Asymmetric Rotor",
+            "diff": 2,
+            "q": "Why was the asymmetric rotor model introduced?",
+            "a": "The asymmetric (triaxial) rotor was introduced to explain deviations from the simple rotational $I(I+1)$ spectrum of axially symmetric nuclei and, in particular, the existence of low-lying second $2^+$ states."
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Asymmetric Rotor",
+            "diff": 2,
+            "q": "The asymmetric rotor model neglects the vibrational degrees of freedom and diagonalizes only the rotational Hamiltonian. What is the physical assumption behind this approximation?",
+            "a": "The intrinsic shape of the nucleus is assumed to be fixed. The observed spectrum is therefore attributed entirely to rotations of a permanently triaxial nucleus."
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Asymmetric Rotor",
+            "diff": 2,
+            "q": "Why does a triaxial rotor naturally produce a low-lying second $2^+$ state?",
+            "a": "Because the loss of axial symmetry mixes different $K$ components and produces additional rotational states. One consequence is that a second $2^+$ state appears at relatively low excitation energy."
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Asymmetric Rotor",
+            "diff": 3,
+            "q": "What are the two main objections raised against interpreting transitional nuclei as permanently triaxial rotors?",
+            "a": "First, a pure triaxial rotor cannot describe $\\beta$ vibrations because vibrational degrees of freedom are neglected. Second, microscopic calculations generally do not predict deep minima at finite $\\gamma$ for these nuclei, but rather shallow valleys in the $\\gamma$ direction."
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Asymmetric Rotor",
+            "diff": 2,
+            "q": "Why has the asymmetric rotor model nevertheless remained useful despite these objections?",
+            "a": "It successfully describes many odd-even transitional nuclei when coupled to a single particle, and microscopic calculations indicate that nuclei can become triaxial at sufficiently high angular momentum."
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Asymmetric Rotor",
+            "diff": 2,
+            "q": "What is meant by maximal triaxiality in this section?",
+            "a": "Maximal triaxiality corresponds to $\\gamma=30^\\circ$, where two of the principal moments of inertia become equal and the rotational spectrum acquires additional symmetry."
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Asymmetric Rotor",
+            "diff": 2,
+            "q": "What is the wobbling quantum number $n$?",
+            "a": "The wobbling quantum number labels sequences of rotational states with the same projection parameter $\\alpha$. States belonging to the same wobbling band are connected by strong E2 transitions."
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Asymmetric Rotor",
+            "diff": 3,
+            "q": "Why should the spectrum predicted by the asymmetric rotor be interpreted with caution?",
+            "a": "Its detailed structure depends strongly on the assumed $\\gamma$ dependence of the moments of inertia. The spectrum shown in this section uses hydrodynamical moments of inertia; adopting rigid-body moments would produce a significantly different spectrum."
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Asymmetric Rotor",
+            "diff": 3,
+            "q": "The plot below shows the rotational spectrum of a triaxial rotor as a function of the triaxiality parameter $\\gamma$. What are the main physical conclusions?",
+            "a": "The familiar $I(I+1)$ spectrum is recovered at $\\gamma=0^\\circ$ and $60^\\circ$, corresponding to axially symmetric shapes. For intermediate $\\gamma$ values, additional low-lying $2^+$, $3^+$ and $4^+$ states appear, reflecting the loss of axial symmetry and the mixing of different rotational configurations.",
+            "figure": {
+                "src": "images/book-nuclear-many-body-problem/fig1-13-asymmetric-rotor-spectrum.png",
+                "caption": "Evolution of the rotational spectrum with the triaxiality parameter $\\gamma$. Axial symmetry is recovered at $\\gamma=0^\\circ$ and $60^\\circ$, while intermediate values produce the characteristic spectrum of a triaxial rotor.",
+                "size": "large"
+            }
+        },
+
+
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Nuclear Fission",
+            "diff": 1,
+            "q": "What is the basic physical mechanism that determines whether a nucleus remains spherical or undergoes fission?",
+            "a": "Nuclear fission results from the competition between two opposing effects. Surface energy favors a compact spherical shape by minimizing the surface area, whereas Coulomb repulsion between protons favors deformation because it increases the average separation between charges."
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Nuclear Fission",
+            "diff": 2,
+            "q": "Why is the harmonic approximation no longer appropriate for describing nuclear fission?",
+            "a": "Fission involves very large deformations of the nucleus, far from the equilibrium shape. The harmonic approximation is valid only for small oscillations around a minimum of the potential."
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Nuclear Fission",
+            "diff": 2,
+            "q": "To describe fission, the nuclear shape is written as\n$$R=R_0\\left(1+\\sum_l\\alpha_lP_l(\\cos\\theta)\\right).$$ Why are many deformation parameters required?",
+            "a": "Unlike small vibrations, fission involves highly distorted shapes that eventually separate into two fragments. A realistic description therefore requires enough deformation parameters to represent a wide variety of nuclear shapes."
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Nuclear Fission",
+            "diff": 2,
+            "q": "Why is it preferable to describe fission with only a few physically meaningful deformation coordinates rather than many multipole coefficients?",
+            "a": "A small set of coordinates makes the fission process easier to visualize and calculate while still capturing the essential physics. The most useful coordinates describe elongation, neck formation, and mass asymmetry."
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Nuclear Fission",
+            "diff": 2,
+            "q": "The fission shape is described by the coordinates $c$, $h$ and $\\alpha$. What is the physical meaning of each parameter?",
+            "a": "$c$ is the elongation coordinate, describing the separation of the forming fragments. $h$ is the neck coordinate, describing the thickness of the neck connecting the fragments. $\\alpha$ is the mass-asymmetry (fragmentation) coordinate, describing the difference in mass between the two fragments."
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Nuclear Fission",
+            "diff": 2,
+            "q": "The sketches below illustrate nuclear shapes generated by varying the elongation coordinate $c$, the neck parameter $h$, and the asymmetry parameter $\\alpha$. What is the physical role of each coordinate?",
+            "a": "Increasing $c$ elongates the nucleus and separates the fragments. Changing $h$ modifies the thickness of the neck connecting them. A non-zero $\\alpha$ produces fragments with unequal masses, corresponding to asymmetric fission.",
+            "figure": {
+                "src": "images/book-nuclear-many-body-problem/fig1-14-fission-coordinates.png",
+                "caption": "Examples of nuclear shapes obtained by varying the elongation, neck and asymmetry coordinates.",
+                "size": "large"
+            }
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Nuclear Fission",
+            "diff": 2,
+            "q": "The fissility parameter is defined by\n$$x=\\frac{E_C(0)}{2E_S(0)}=\\frac{Z^2/A}{(Z^2/A)_{\\rm crit}}.$$ What is its physical meaning?",
+            "a": "The fissility parameter measures the balance between Coulomb repulsion and surface tension. Small values correspond to nuclei stabilized by surface energy, whereas larger values indicate that Coulomb repulsion dominates and promotes fission."
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Nuclear Fission",
+            "diff": 2,
+            "q": "Why does the liquid-drop model predict that the quadrupole deformation is the easiest way for a nucleus to become unstable?",
+            "a": "The quadrupole mode is the lowest-order deformation and therefore requires the smallest increase in energy. Instability first appears when the quadrupole stiffness coefficient becomes negative."
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Nuclear Fission",
+            "diff": 2,
+            "q": "The liquid-drop model predicts instability when\n$$x=1\\qquad\\left(\\frac{Z^2}{A}=\\left(\\frac{Z^2}{A}\\right)_{\\rm crit}\\right).$$ What happens physically at this point?",
+            "a": "At $x=1$ the restoring effect of the surface tension exactly balances the destabilizing Coulomb repulsion. Beyond this point the spherical shape is no longer stable and the classical liquid drop undergoes fission."
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Nuclear Fission",
+            "diff": 3,
+            "q": "If the liquid-drop model predicts that $^{238}$U has $x\\approx0.8<1$, why does spontaneous fission nevertheless occur?",
+            "a": "Classically the nucleus remains trapped behind a finite fission barrier. Spontaneous fission occurs through quantum-mechanical tunneling across this barrier."
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Nuclear Fission",
+            "diff": 3,
+            "q": "The surface below shows the liquid-drop potential energy as a function of the deformation coordinates. What is its main physical message?",
+            "a": "The nucleus occupies a minimum corresponding to the equilibrium shape. Fission proceeds by climbing to a saddle point and then descending into a fission valley leading to separated fragments. Different valleys correspond to different fragmentation paths.",
+            "figure": {
+                "src": "images/book-nuclear-many-body-problem/fig1-15-potential-energy-surface.png",
+                "caption": "Potential-energy surface of the liquid-drop model. The nucleus must pass through a saddle point before descending toward fission.",
+                "size": "large"
+            }
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Nuclear Fission",
+            "diff": 2,
+            "q": "The sketches below show saddle-point shapes for different values of the fissility parameter $x$. What trend do they illustrate?",
+            "a": "As the fissility parameter increases, the saddle-point configuration becomes progressively less elongated. The nucleus therefore approaches instability more easily as Coulomb repulsion becomes stronger relative to the surface energy.",
+            "figure": {
+                "src": "images/book-nuclear-many-body-problem/fig1-16-saddle-point-shapes.png",
+                "caption": "Evolution of the saddle-point shape with increasing fissility parameter.",
+                "size": "large"
+            }
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Nuclear Fission",
+            "diff": 2,
+            "q": "The potential-energy curve below shows the fission path as a function of the collective coordinate. What is the physical interpretation of the fission barrier?",
+            "a": "The fission barrier is the energy that must be overcome before the nucleus can separate into fragments. Classically the nucleus cannot fission if its energy lies below the barrier, whereas quantum mechanically it can tunnel through it, giving rise to spontaneous fission.",
+            "figure": {
+                "src": "images/book-nuclear-many-body-problem/fig1-17-fission-barrier.png",
+                "caption": "One-dimensional potential along the fission path showing the barrier that separates the equilibrium shape from the fission channel.",
+                "size": "medium"
+            }
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Nuclear Fission",
+            "diff": 2,
+            "q": "Why is the liquid-drop model unable to describe spontaneous fission quantitatively?",
+            "a": "The liquid-drop model predicts symmetric fission and neglects important quantum effects such as shell corrections. Since the fission barrier is obtained from the difference between two very large energies, even relatively small microscopic corrections can strongly influence the fission probability and fragment masses."
         }
 
         
