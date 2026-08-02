@@ -1041,6 +1041,87 @@
             "diff": 2,
             "q": "Why is the liquid-drop model unable to describe spontaneous fission quantitatively?",
             "a": "The liquid-drop model predicts symmetric fission and neglects important quantum effects such as shell corrections. Since the fission barrier is obtained from the difference between two very large energies, even relatively small microscopic corrections can strongly influence the fission probability and fragment masses."
+        },
+
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Rotating Liquid Drops",
+            "diff": 2,
+            "q": "Why is it meaningful to study the purely classical rotation of a liquid drop at very high angular momentum?",
+            "a": "Heavy-ion reactions can transfer angular momenta of up to about $80$–$100\\hbar$ to a nucleus. At such high spins, one expects the overall behavior to approach that of a classical rotating liquid drop, allowing the study of stable equilibrium shapes under rotation."
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Rotating Liquid Drops",
+            "diff": 2,
+            "q": "Why is rigid-body rotation assumed in this section instead of irrotational flow?",
+            "a": "At high angular momentum, the nuclear moment of inertia is expected to approach the rigid-body value. The purpose of this section is therefore to investigate the classical equilibrium shapes of a rapidly rotating liquid drop."
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Rotating Liquid Drops",
+            "diff": 2,
+            "q": "The total energy is written as\n$$E(\\alpha)=E_S(\\alpha)+E_C(\\alpha)+E_R(\\alpha).$$ What is the physical role of the rotational energy $E_R$?",
+            "a": "The rotational energy favors shapes with larger moments of inertia. As the angular momentum increases, it competes with the surface and Coulomb energies, driving the nucleus toward increasingly deformed equilibrium shapes."
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Rotating Liquid Drops",
+            "diff": 2,
+            "q": "The parameter\n$$y=\\frac{E_R(0)}{E_S(0)}$$\nmeasures the ratio of rotational and surface energies. What is its physical meaning?",
+            "a": "The parameter $y$ measures how important rotational energy is compared with the restoring surface energy. Small $y$ corresponds to slowly rotating nuclei, whereas large $y$ favors large deformations and eventually instability."
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Rotating Liquid Drops",
+            "diff": 3,
+            "q": "How does increasing angular momentum change the equilibrium shape of a rotating liquid drop?",
+            "a": "As the angular momentum increases, the equilibrium shape evolves from nearly spherical to oblate (Maclaurin-like), then passes through a Jacobi bifurcation into triaxial shapes, and eventually becomes unstable against fission."
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Rotating Liquid Drops",
+            "diff": 3,
+            "q": "What is the physical meaning of the Jacobi bifurcation point?",
+            "a": "The Jacobi point marks the angular momentum at which an axially symmetric rotating drop becomes unstable and a triaxial equilibrium shape becomes energetically favored."
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Rotating Liquid Drops",
+            "diff": 2,
+            "q": "Why does increasing angular momentum make fission more likely?",
+            "a": "Rotation lowers the fission barrier by favoring elongated shapes with larger moments of inertia. If the barrier disappears, the nucleus becomes unstable against fission."
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Rotating Liquid Drops",
+            "diff": 3,
+            "q": "The plot below shows the equilibrium deformation $(\\beta,\\gamma)$ of a rotating liquid drop as the angular momentum increases. What is the main physical message?",
+            "a": "Increasing angular momentum drives the nucleus toward larger deformations. At low spin the equilibrium shape remains nearly axially symmetric, while above the Jacobi bifurcation it evolves continuously toward triaxial configurations.",
+            "figure": {
+                "src": "images/book-nuclear-many-body-problem/fig1-18-equilibrium-shapes.png",
+                "caption": "Evolution of the equilibrium deformation in the $(\\beta,\\gamma)$ plane as the angular momentum increases.",
+                "size": "large"
+            }
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Rotating Liquid Drops",
+            "diff": 3,
+            "q": "The graph below shows the maximum angular momentum that nuclei can sustain before becoming unstable. What are the main physical conclusions?",
+            "a": "Every nucleus has a limiting angular momentum above which the fission barrier disappears. Light nuclei cannot sustain large angular momenta because of their small size, while very heavy nuclei are destabilized by strong Coulomb repulsion. The largest sustainable angular momenta occur for nuclei with intermediate masses.",
+            "figure": {
+                "src": "images/book-nuclear-many-body-problem/fig1-19-limiting-angular-momentum.png",
+                "caption": "Maximum angular momentum that β-stable nuclei can sustain before becoming unstable against fission.",
+                "size": "large"
+            }
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Liquid-Drop Model Limitations",
+            "diff": 3,
+            "q": "Why is the classical rotating liquid-drop model still useful even though shell effects are neglected?",
+            "a": "At very high angular momentum the gross behavior of the nucleus is governed mainly by collective rotation and deformation. The liquid-drop model successfully predicts the qualitative evolution of equilibrium shapes and the existence of rotational instabilities, even though microscopic shell effects remain important quantitatively."
         }
 
         
