@@ -28,6 +28,7 @@ let deckCards = [];       // cards from the currently loaded deck
 let deckIndex = {};
 
 let lastDeckByCollection = {};
+let pendingStudySelection = null;
 
 let state = {
   customCards: [],       // user-added cards
@@ -678,7 +679,19 @@ function renderCollections() {
 }
 
 /* ================= MAPS ================= */
+function studyCurrentConcept() {
 
+    if (!currentMap.study)
+        return;
+
+    pendingStudySelection = {
+        collection: currentMap.collection,
+        deck: currentMap.deck,
+        subtopics: currentMap.study.subtopics
+    };
+
+    goTo("train");
+}
 
 function renderMapBrowser() {
 
@@ -894,11 +907,9 @@ function renderTrainSetup() {
     const chipWrap = document.getElementById("topicChips");
 
     chipWrap.innerHTML = sections.map(section => {
-
         const nCards = allCards().filter(
             c => c.sub === section
         ).length;
-
         return `
             <div class="chip on"
                  data-section="${escapeHtml(section)}"
@@ -909,8 +920,24 @@ function renderTrainSetup() {
 
             </div>
         `;
-
     }).join("");
+
+    if (pendingStudySelection) {
+      document
+          .querySelectorAll("#topicChips .chip")
+          .forEach(chip => {
+
+              chip.classList.toggle(
+                  "on",
+                  pendingStudySelection.subtopics.includes(
+                      chip.dataset.section
+                  )
+              );
+          });
+      pendingStudySelection = null;
+  }
+
+
 }
 
 function toggleChip(el){ el.classList.toggle('on'); }

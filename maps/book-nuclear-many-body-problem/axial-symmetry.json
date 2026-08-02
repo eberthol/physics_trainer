@@ -7,10 +7,11 @@
       "image": "images/book-nuclear-many-body-problem/maps/axial-symmetry.png"
     }
   ],
-
   "caption": "Axial Symmetry",
 
-  "hotspots": [],
-  "relatedCards": [],
-  "tags": []
+  "study": {
+    "subtopics": [
+      "Axially Symmetric Case"
+    ]
+  }
 }

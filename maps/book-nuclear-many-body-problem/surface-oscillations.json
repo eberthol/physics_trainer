@@ -7,10 +7,11 @@
       "image": "images/book-nuclear-many-body-problem/maps/surface-oscillations.png"
     }
   ],
-
   "caption": "Surface Oscillations",
 
-  "hotspots": [],
-  "relatedCards": [],
-  "tags": []
+  "study": {
+    "subtopics": [
+      "Surface Oscillations"
+    ]
+  }
 }

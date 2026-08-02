@@ -7,10 +7,11 @@
       "image": "images/book-nuclear-many-body-problem/maps/deformation-parameters.png"
     }
   ],
-
   "caption": "Deformation Parameters",
 
-  "hotspots": [],
-  "relatedCards": [],
-  "tags": []
+  "study": {
+    "subtopics": [
+      "Deformation Parameters"
+    ]
+  }
 }

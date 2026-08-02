@@ -7,10 +7,12 @@
       "image": "images/book-nuclear-many-body-problem/maps/SEMF.png"
     }
   ],
-
   "caption": "Semi-Empirical Mass Formula",
-
-  "hotspots": [],
-  "relatedCards": [],
-  "tags": []
+  
+  "study": {
+    "subtopics": [
+      "Semi-Empirical Mass Formula",
+      "SEMF terms"
+    ]
+  }
 }
