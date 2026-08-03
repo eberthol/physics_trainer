@@ -1,18 +1,18 @@
 {
-  "title": "Cherenlov Radiation",
+  "title": "Energy Loss of Electrons and Positrons",
 
   "layers": [
     {
-      "title": "Cherenlov Radiation",
-      "image": "images/book-experimental-techniques/maps/summary-cherenkov.png"
+      "title": "Energy Loss of Electrons and Positrons",
+      "image": "images/book-experimental-techniques/maps/energy-loss-electrons-positrons.png"
     }
   ],
 
-  "caption": "Radioactive Decay Signatures",
+  "caption": "Energy Loss of Electrons and Positrons",
 
   "study": {
     "subtopics": [
-      "Cherenkov Radiation"
+      ""
     ]
   }
 }

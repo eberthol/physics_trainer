@@ -64,13 +64,22 @@
     "file": "maps/book-experimental-techniques/energy-loss.json"
   },
   {
-    "id": "charenkov",
+    "id": "cherenkov",
     "collection": "Experimental Techniques in Nuclear and Particle Physics",
     "chapter": "Ch.2: Passage of Radiation Through Matter",
     "deck": "book-exptech-ch2",
     "title": "Cherenkov Radiation",
     "order": 8,
     "file": "maps/book-experimental-techniques/cherenkov.json"
+  },
+  {
+    "id": "electrons-positrons",
+    "collection": "Experimental Techniques in Nuclear and Particle Physics",
+    "chapter": "Ch.2: Passage of Radiation Through Matter",
+    "deck": "book-exptech-ch2",
+    "title": "Energy Loss of Electrons and Positrons",
+    "order": 8,
+    "file": "maps/book-experimental-techniques/electrons-positrons.json"
   },
 
 
@@ -149,13 +158,22 @@
     "file": "maps/book-nuclear-many-body-problem/nuclear-fission.json"
   },
   {
-    "id": "rotating-liquid-drops.",
+    "id": "rotating-liquid-drops",
     "collection": "The Nuclear Many Body Problem",
     "chapter": "Ch.1: The Liquid Drop Model",
     "deck": "book-nuclear-many-body-problem-ch1",
     "title": "Stability of Rotating Liquid Drops",
     "order": 8,
     "file": "maps/book-nuclear-many-body-problem/rotating-liquid-drops.json"
+  },
+  {
+    "id": "ch1-liquid-drop-summary",
+    "collection": "The Nuclear Many Body Problem",
+    "chapter": "Ch.1: The Liquid Drop Model",
+    "deck": "book-nuclear-many-body-problem-ch1",
+    "title": "The Liquid Drop Model Summary",
+    "order": 9,
+    "file": "maps/book-nuclear-many-body-problem/ch1-liquid-drop-summarys.json"
   }
 
   
