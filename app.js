@@ -733,86 +733,197 @@ function renderOverview() {
     }
 
     // ------------------------------------------------------------
-    // All decks
+    // Decks grouped by book / collection
     // ------------------------------------------------------------
 
+    const books = {};
+
+    for (const item of deckResults) {
+
+        const bookTitle =
+            item.deck.collection ?? "Other";
+
+        if (!books[bookTitle]) {
+            books[bookTitle] = [];
+        }
+
+        books[bookTitle].push(item);
+    }
+
     document.getElementById("dashboardDecks").innerHTML =
-        deckResults.map(({ deck, stats }) => {
+        Object.entries(books)
+            .map(([bookTitle, items]) => {
 
-            const isCurrent =
-                deck.id === currentDeck;
+                const bookStats = items.reduce(
+                    (totals, { stats }) => {
 
-            return `
-                <div class="dashboard-deck-row">
+                        totals.cards += stats.total;
+                        totals.due += stats.due;
+                        totals.mastered += stats.mastered;
+                        totals.weightedPurity +=
+                            stats.purity * stats.total;
 
-                    <div class="dashboard-deck-main">
+                        return totals;
+                    },
+                    {
+                        cards: 0,
+                        due: 0,
+                        mastered: 0,
+                        weightedPurity: 0
+                    }
+                );
 
-                        <div class="dashboard-deck-heading">
+                const bookPurity =
+                    bookStats.cards > 0
+                        ? Math.round(
+                            bookStats.weightedPurity /
+                            bookStats.cards
+                        )
+                        : 0;
+
+                const deckRows = items
+                    .slice()
+                    .sort(
+                        (a, b) =>
+                            (a.deck.order ?? 999) -
+                            (b.deck.order ?? 999)
+                    )
+                    .map(({ deck, stats }) => {
+
+                        const isCurrent =
+                            deck.id === currentDeck;
+
+                        return `
+                            <div class="dashboard-deck-row">
+
+                                <div class="dashboard-deck-main">
+
+                                    <div class="dashboard-deck-heading">
+
+                                        <div>
+                                            <div class="dashboard-deck-name">
+                                                ${escapeHtml(deck.name)}
+                                            </div>
+
+                                            ${
+                                                isCurrent
+                                                    ? `
+                                                        <div class="dashboard-current-label">
+                                                            Current deck
+                                                        </div>
+                                                    `
+                                                    : ""
+                                            }
+                                        </div>
+
+                                        <div class="dashboard-deck-purity">
+                                            ${stats.purity}%
+                                        </div>
+
+                                    </div>
+
+                                    <div class="bar-track dashboard-deck-track">
+                                        <div
+                                            class="bar-fill"
+                                            style="
+                                                width:${stats.purity}%;
+                                                background:var(--cherenkov);
+                                            ">
+                                        </div>
+                                    </div>
+
+                                    <div class="dashboard-deck-meta">
+                                        <span>${stats.total} cards</span>
+                                        <span>${stats.due} due</span>
+                                        <span>${stats.mastered} mastered</span>
+
+                                        ${
+                                            stats.efficiency === null
+                                                ? ""
+                                                : `<span>${stats.efficiency}% efficiency</span>`
+                                        }
+                                    </div>
+
+                                </div>
+
+                                <div class="dashboard-deck-actions">
+
+                                    <button
+                                        class="btn btn-primary"
+                                        onclick="openDeckView('${deck.id}', 'train')">
+
+                                        Train
+
+                                    </button>
+
+                                    <button
+                                        class="btn btn-ghost"
+                                        onclick="openDeckView('${deck.id}', 'library')">
+
+                                        Library
+
+                                    </button>
+
+                                    <button
+                                        class="btn btn-ghost"
+                                        onclick="openDeckMaps('${deck.id}')">
+
+                                        Maps
+
+                                    </button>
+
+                                </div>
+
+                            </div>
+                        `;
+                    })
+                    .join("");
+
+                return `
+                    <section class="dashboard-book">
+
+                        <div class="dashboard-book-head">
 
                             <div>
-                                <div class="dashboard-deck-name">
-                                    ${escapeHtml(deck.name)}
+                                <div class="dashboard-book-label">
+                                    Book
                                 </div>
 
-                                <div class="dashboard-deck-collection">
-                                    ${escapeHtml(deck.collection)}
+                                <div class="dashboard-book-title">
+                                    ${escapeHtml(bookTitle)}
                                 </div>
                             </div>
 
-                            <div class="dashboard-deck-purity">
-                                ${stats.purity}%
+                            <div class="dashboard-book-summary">
+                                <span>${items.length} deck${items.length === 1 ? "" : "s"}</span>
+                                <span>${bookStats.cards} cards</span>
+                                <span>${bookStats.due} due</span>
+                                <strong>${bookPurity}%</strong>
                             </div>
 
                         </div>
 
-                        <div class="bar-track dashboard-deck-track">
-                            <div
-                                class="bar-fill"
-                                style="
-                                    width:${stats.purity}%;
-                                    background:var(--cherenkov);
-                                ">
+                        <div class="dashboard-book-progress">
+                            <div class="bar-track">
+                                <div
+                                    class="bar-fill"
+                                    style="
+                                        width:${bookPurity}%;
+                                        background:var(--scint);
+                                    ">
+                                </div>
                             </div>
                         </div>
 
-                        <div class="dashboard-deck-meta">
-                            <span>${stats.total} cards</span>
-                            <span>${stats.due} due</span>
-                            <span>${stats.mastered} mastered</span>
-
-                            ${
-                                stats.efficiency === null
-                                    ? ""
-                                    : `<span>${stats.efficiency}% efficiency</span>`
-                            }
+                        <div class="dashboard-book-decks">
+                            ${deckRows}
                         </div>
 
-                    </div>
-
-                    <div class="dashboard-deck-actions">
-                        <button
-                            class="btn btn-primary"
-                            onclick="openDeckView('${deck.id}', 'train')">
-                            Train
-                        </button>
-
-                        <button
-                            class="btn btn-ghost"
-                            onclick="openDeckView('${deck.id}', 'library')">
-                            Library
-                        </button>
-
-                        <button
-                            class="btn btn-ghost"
-                            onclick="openDeckMaps('${deck.id}')">
-                            Maps
-                        </button>
-                    </div>
-
-                </div>
-            `;
-
-        }).join("");
+                    </section>
+                `;
+            })
+            .join("");
+                      
 }
 
 async function openDeckView(deckId, view) {
