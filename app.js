@@ -4,7 +4,6 @@ const TOPIC_PALETTE = ['#5FD4E3', '#9B87F5', '#F2B84B', '#5FD98A', '#F27F5F', '#
 
 const NAV_ITEMS = [
   {id:'overview', label:'Overview', icon:'ring'},
-  {id:'collections', label:'Collections', icon:'book'},
   {id:'train', label:'Train', icon:'bolt'},
   {id:'library', label:'Library', icon:'book'},
   {id:'maps', label:'Concept Maps', icon:'book'}
@@ -546,7 +545,6 @@ function goTo(view){
   document.getElementById('view-'+view).classList.add('active');
   buildSidebar();
   if(view==='overview') renderOverview();
-  if(view==='collections') renderCollections();
   if(view==='train') renderTrainSetup();
   if(view==='library') renderLibrary();
   if(view==='maps') renderMapBrowser();
@@ -957,76 +955,6 @@ function confirmReset(){
 function openDeckMaps(deckId) {
     mapDeckFilter = deckId;
     goTo("maps");
-}
-
-/* ================= COLLECTIONS ================= */
-function renderCollections() {
-
-    const groups = {};
-
-    // Group decks by collection
-    for (const deck of deckCatalog) {
-
-        if (!groups[deck.collection]) {
-            groups[deck.collection] = [];
-        }
-
-        groups[deck.collection].push(deck);
-    }
-
-    // Build the HTML
-    let html = "";
-
-    for (const [collection, decks] of Object.entries(groups)) {
-
-        html += `
-            <div class="panel" style="margin-bottom:20px;">
-                <div class="panel-title">${collection}</div>
-        `;
-
-        for (const deck of decks) {
-
-            const stats = deckStats(deck.id);
-
-            html += `
-            <div class="list-row"
-                style="cursor:pointer; display:block;"
-                onclick="switchDeck('${deck.id}')">
-
-                <div style="
-                    display:flex;
-                    justify-content:space-between;
-                    align-items:center;
-                ">
-                    <strong>${deck.name}</strong>
-
-                    <span style="font-weight:600;">
-                        ${stats.purity}%
-                    </span>
-                </div>
-
-                <div class="bar-track" style="margin:10px 0 8px;">
-                    <div class="bar-fill"
-                        style="width:${Math.max(0, Math.min(100, stats.purity))}%;background:var(--cherenkov);"></div>
-                </div>
-
-                <div style="
-                    font-size:12px;
-                    color:var(--text-faint);
-                ">
-                    ${stats.total} cards ·
-                    ${stats.due} due ·
-                    ${stats.mastered} mastered
-                </div>
-
-            </div>
-            `;
-        }
-
-        html += `</div>`;
-    }
-
-    document.getElementById("collectionsView").innerHTML = html;
 }
 
 /* ================= MAPS ================= */
