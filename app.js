@@ -540,26 +540,31 @@ function buildDeckSelector() {
     };
 }
 
+async function switchDeck(deckId, options = {}) {
+    const { navigate = true } = options;
 
-async function switchDeck(deckId) {
+    await loadDeck(deckId);
+    await loadState();
 
-  await loadDeck(deckId);
-  await loadState();
+    initLibraryFilters();
 
-  initLibraryFilters();
+    currentCollection = currentDeckInfo.collection;
 
-  currentCollection = currentDeckInfo.collection;
+    lastDeckByCollection[currentCollection] = currentDeck;
+    saveCollectionMemory();
 
-  lastDeckByCollection[currentCollection] = currentDeck;
-  saveCollectionMemory();
+    localStorage.setItem("selectedDeck", currentDeck);
 
-  localStorage.setItem("selectedDeck", currentDeck);
+    expandedLibraryCard = null;
+    session = null;
 
-  expandedLibraryCard = null;
-  session = null;
+    buildCollectionSelector();
+    buildDeckSelector();
+    buildSidebar();
 
-  buildSidebar();
-  goTo(currentView);
+    if (navigate) {
+        goTo(currentView);
+    }
 }
 
 /* ================= OVERVIEW ================= */
@@ -679,16 +684,22 @@ function renderCollections() {
 }
 
 /* ================= MAPS ================= */
-function studyCurrentConcept() {
+async function studyCurrentConcept() {
+    const study = currentMap?.study;
+    const targetDeck = currentMap?.deck;
 
-    if (!currentMap.study)
+    if (!targetDeck || !study?.subtopics?.length) {
+        showToast("No linked study material for this concept", "amber");
         return;
+    }
 
     pendingStudySelection = {
-        collection: currentMap.collection,
-        deck: currentMap.deck,
-        subtopics: currentMap.study.subtopics
+        subtopics: study.subtopics
     };
+
+    if (currentDeck !== targetDeck) {
+        await switchDeck(targetDeck, { navigate: false });
+    }
 
     goTo("train");
 }
