@@ -627,6 +627,26 @@ button{font-family:inherit;}
   }
 }
 
+.dashboard-deck-actions{
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+  gap:8px;
+  flex-wrap:wrap;
+}
+
+@media (max-width:760px){
+
+  .dashboard-deck-actions{
+    justify-content:stretch;
+  }
+
+  .dashboard-deck-actions .btn{
+    flex:1;
+    justify-content:center;
+  }
+}
+
 /* ---------- Summary ---------- */
 .summary-ring{width:150px;height:150px;margin:0 auto 20px auto;}
 .summary-stats{display:flex;justify-content:center;gap:30px;margin-top:6px;}

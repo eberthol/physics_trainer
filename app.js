@@ -29,6 +29,7 @@ let deckIndex = {};
 
 let lastDeckByCollection = {};
 let pendingStudySelection = null;
+let mapDeckFilter = null;
 
 let state = {
   customCards: [],       // user-added cards
@@ -497,16 +498,42 @@ function showToast(msg, kind){
 }
 
 /* ================= NAV / VIEWS ================= */
-function buildSidebar(){
-  const nav = document.getElementById('navList');
-  nav.innerHTML = NAV_ITEMS.map(item=>{
-    const due = item.id==='train' ? dueCountAll() : 0;
-    const badge = (item.id==='train' && due>0) ? `<span class="nav-badge">${due}</span>` : '';
-    return `<div class="nav-item ${item.id===currentView?'active':''}" onclick="goTo('${item.id}')">
-      <svg viewBox="0 0 24 24">${ICONS[item.icon]}</svg>
-      <span>${item.label}</span>${badge}
-    </div>`;
-  }).join('');
+function buildSidebar() {
+
+  const nav = document.getElementById("navList");
+
+  nav.innerHTML = NAV_ITEMS.map(item => {
+
+    const due =
+      item.id === "train"
+        ? dueCountAll()
+        : 0;
+
+    const badge =
+      item.id === "train" && due > 0
+        ? `<span class="nav-badge">${due}</span>`
+        : "";
+
+    const action =
+      item.id === "maps"
+        ? "openAllConceptMaps()"
+        : `goTo('${item.id}')`;
+
+    return `
+      <div
+        class="nav-item ${item.id === currentView ? "active" : ""}"
+        onclick="${action}"
+      >
+        <svg viewBox="0 0 24 24">
+          ${ICONS[item.icon]}
+        </svg>
+
+        <span>${item.label}</span>
+
+        ${badge}
+      </div>
+    `;
+  }).join("");
 }
 
 function dueCountAll(){
@@ -531,8 +558,12 @@ function decksInCurrentCollection() {
         .filter(deck => deck.collection === currentCollection)
         .sort((a, b) => (a.order ?? 999) - (b.order ?? 999));
 }
+
 async function switchDeck(deckId, options = {}) {
-    const { navigate = true } = options;
+
+    const {
+        navigate = true
+    } = options;
 
     await loadDeck(deckId);
     await loadState();
@@ -687,7 +718,7 @@ function renderOverview() {
 
                 <button
                     class="btn btn-primary"
-                    onclick="openDeckForTraining('${activeDeck.id}')">
+                    onclick="openDeckView('${activeDeck.id}', 'train')">
 
                     Continue training
 
@@ -758,13 +789,25 @@ function renderOverview() {
 
                     </div>
 
-                    <button
-                        class="btn ${isCurrent ? "btn-primary" : "btn-ghost"}"
-                        onclick="openDeckForTraining('${deck.id}')">
+                    <div class="dashboard-deck-actions">
+                        <button
+                            class="btn btn-primary"
+                            onclick="openDeckView('${deck.id}', 'train')">
+                            Train
+                        </button>
 
-                        ${isCurrent ? "Continue" : "Train"}
+                        <button
+                            class="btn btn-ghost"
+                            onclick="openDeckView('${deck.id}', 'library')">
+                            Library
+                        </button>
 
-                    </button>
+                        <button
+                            class="btn btn-ghost"
+                            onclick="openDeckMaps('${deck.id}')">
+                            Maps
+                        </button>
+                    </div>
 
                 </div>
             `;
@@ -772,14 +815,22 @@ function renderOverview() {
         }).join("");
 }
 
-async function openDeckForTraining(deckId) {
+async function openDeckView(deckId, view) {
 
-    if (currentDeck !== deckId) {
-        await switchDeck(deckId);
+    if (!deckCatalog.some(deck => deck.id === deckId)) {
+        console.error(`Unknown deck "${deckId}"`);
+        return;
     }
 
-    goTo("train");
+    if (currentDeck !== deckId) {
+        await switchDeck(deckId, {
+            navigate: false
+        });
+    }
+
+    goTo(view);
 }
+
 
 function confirmReset(){
   if(confirm('This clears all review progress (box levels, due dates, efficiency stats). Custom cards you added are kept. Continue?')){
@@ -790,6 +841,11 @@ function confirmReset(){
     renderOverview();
     buildSidebar();
   }
+}
+
+function openDeckMaps(deckId) {
+    mapDeckFilter = deckId;
+    goTo("maps");
 }
 
 /* ================= COLLECTIONS ================= */
@@ -887,8 +943,11 @@ function renderMapBrowser() {
 
     // Group by collection
     const collections = {};
+    const visibleMaps = mapDeckFilter
+        ? mapCatalog.filter(map => map.deck === mapDeckFilter)
+        : mapCatalog;
 
-    for (const map of mapCatalog) {
+    for (const map of visibleMaps) {
 
         if (!collections[map.collection]) {
             collections[map.collection] = {};
@@ -1076,6 +1135,11 @@ function renderConceptMap() {
 
 function getCurrentMapIndex() {
     return mapCatalog.findIndex(m => m.id === currentMap.id);
+}
+
+function openAllConceptMaps() {
+    mapDeckFilter = null;
+    goTo("maps");
 }
 
 /* ================= TRAIN ================= */
