@@ -1042,7 +1042,6 @@
             "q": "Why is the liquid-drop model unable to describe spontaneous fission quantitatively?",
             "a": "The liquid-drop model predicts symmetric fission and neglects important quantum effects such as shell corrections. Since the fission barrier is obtained from the difference between two very large energies, even relatively small microscopic corrections can strongly influence the fission probability and fragment masses."
         },
-
         {
             "topic": "Ch.1: The Liquid Drop Model",
             "sub": "Rotating Liquid Drops",
@@ -1123,13 +1122,6 @@
             "q": "Why is the classical rotating liquid-drop model still useful even though shell effects are neglected?",
             "a": "At very high angular momentum the gross behavior of the nucleus is governed mainly by collective rotation and deformation. The liquid-drop model successfully predicts the qualitative evolution of equilibrium shapes and the existence of rotational instabilities, even though microscopic shell effects remain important quantitatively."
         }
-
-        
-      
-      
-
-        
-
 
         
     ]
