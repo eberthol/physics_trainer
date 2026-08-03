@@ -491,6 +491,142 @@ button{font-family:inherit;}
     padding-left:18px;
 }
 
+/* ---------- Dashboard ---------- */
+
+.dashboard-continue{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+
+  margin-bottom:20px;
+  padding:26px;
+
+  border:1px solid rgba(95,212,227,0.22);
+  border-radius:var(--radius);
+
+  background:
+    radial-gradient(
+      circle at 90% 10%,
+      rgba(95,212,227,0.12),
+      transparent 42%
+    ),
+    var(--bg-panel);
+}
+
+.dashboard-continue-copy{
+  min-width:0;
+}
+
+.dashboard-continue-title{
+  font-family:var(--font-display);
+  font-size:22px;
+  font-weight:600;
+  line-height:1.25;
+}
+
+.dashboard-continue-collection{
+  margin-top:5px;
+  color:var(--text-dim);
+  font-size:13px;
+}
+
+.dashboard-continue-meta{
+  margin-top:14px;
+  font-family:var(--font-mono);
+  font-size:11px;
+  color:var(--text-faint);
+}
+
+.dashboard-deck-row{
+  display:flex;
+  align-items:center;
+  gap:22px;
+
+  padding:18px 0;
+  border-bottom:1px solid var(--border-soft);
+}
+
+.dashboard-deck-row:first-child{
+  padding-top:2px;
+}
+
+.dashboard-deck-row:last-child{
+  padding-bottom:0;
+  border-bottom:0;
+}
+
+.dashboard-deck-main{
+  flex:1;
+  min-width:0;
+}
+
+.dashboard-deck-heading{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:18px;
+}
+
+.dashboard-deck-name{
+  font-family:var(--font-display);
+  font-size:15px;
+  font-weight:600;
+}
+
+.dashboard-deck-collection{
+  margin-top:3px;
+  font-size:11.5px;
+  color:var(--text-faint);
+}
+
+.dashboard-deck-purity{
+  flex-shrink:0;
+
+  font-family:var(--font-mono);
+  font-size:13px;
+  font-weight:600;
+
+  color:var(--cherenkov);
+}
+
+.dashboard-deck-track{
+  margin-top:11px;
+}
+
+.dashboard-deck-meta{
+  display:flex;
+  flex-wrap:wrap;
+  gap:6px 16px;
+
+  margin-top:9px;
+
+  font-family:var(--font-mono);
+  font-size:10.5px;
+  color:var(--text-faint);
+}
+
+@media (max-width:760px){
+
+  .dashboard-continue{
+    align-items:stretch;
+    flex-direction:column;
+  }
+
+  .dashboard-continue .btn{
+    justify-content:center;
+  }
+
+  .dashboard-deck-row{
+    align-items:stretch;
+    flex-direction:column;
+  }
+
+  .dashboard-deck-row .btn{
+    justify-content:center;
+  }
+}
+
 /* ---------- Summary ---------- */
 .summary-ring{width:150px;height:150px;margin:0 auto 20px auto;}
 .summary-stats{display:flex;justify-content:center;gap:30px;margin-top:6px;}

@@ -269,8 +269,13 @@ async function loadDeckMetadata() {
 
         const json = await response.json();
 
+        const builtInCards = json.cards.map(card => ({
+            ...card,
+            id: makeCardId(deck.id, card)
+        }));
+
         deckIndex[deck.id] = {
-            cardCount: json.cards.length
+            cards: builtInCards
         };
     }
 }
@@ -387,32 +392,79 @@ function topicStats(topic){
 
 function deckStats(deckId) {
 
-    const progress = loadJSON(`progress:${deckId}`, {});
+    const builtInCards =
+        deckIndex[deckId]?.cards ?? [];
 
-    const total = deckIndex[deckId]?.cardCount ?? 0;
+    const customCards =
+        loadJSON(`user-cards:${deckId}`, []);
+
+    const cards = [
+        ...builtInCards,
+        ...customCards
+    ];
+
+    const progress =
+        loadJSON(`progress:${deckId}`, {});
+
+    const meta =
+        loadJSON(`meta:${deckId}`, {
+            totalReviews: 0,
+            correctReviews: 0,
+            runsCompleted: 0
+        });
 
     let due = 0;
     let mastered = 0;
     let sumBoxes = 0;
 
-    for (const p of Object.values(progress)) {
+    for (const card of cards) {
 
-        sumBoxes += p.box;
+        const cardProgress = progress[card.id];
 
-        if (p.box === 5)
-            mastered++;
-
-        if (p.nextDue <= todayStr())
+        // Unreviewed cards are due immediately.
+        if (
+            !cardProgress ||
+            cardProgress.nextDue <= todayStr()
+        ) {
             due++;
+        }
+
+        const box = cardProgress?.box ?? 0;
+
+        sumBoxes += box;
+
+        if (box === 5) {
+            mastered++;
+        }
     }
+
+    const total = cards.length;
+
+    const efficiency =
+        meta.totalReviews > 0
+            ? Math.round(
+                100 *
+                meta.correctReviews /
+                meta.totalReviews
+            )
+            : null;
 
     return {
         total,
         due,
         mastered,
-        purity: total
-            ? Math.round(100 * sumBoxes / (5 * total))
-            : 0
+
+        purity:
+            total > 0
+                ? Math.round(
+                    100 * sumBoxes / (5 * total)
+                )
+                : 0,
+
+        totalReviews: meta.totalReviews,
+        correctReviews: meta.correctReviews,
+        runsCompleted: meta.runsCompleted,
+        efficiency
     };
 }
 
@@ -479,67 +531,6 @@ function decksInCurrentCollection() {
         .filter(deck => deck.collection === currentCollection)
         .sort((a, b) => (a.order ?? 999) - (b.order ?? 999));
 }
-
-function buildCollectionSelector() {
-
-    const sel = document.getElementById("collectionSelect");
-
-    const collections = [...new Set(
-        deckCatalog.map(deck => deck.collection)
-    )];
-
-    sel.innerHTML = collections.map(collection =>
-        `<option value="${collection}">${collection}</option>`
-    ).join("");
-
-    if (!currentCollection) {
-        currentCollection = collections[0];
-    }
-
-    sel.value = currentCollection;
-
-    sel.onchange = async () => {
-
-        currentCollection = sel.value;
-
-        buildDeckSelector();
-
-        const deckId = selectDeckForCollection(currentCollection);
-
-        if (deckId) {
-            await switchDeck(deckId);
-        }
-    };
-}
-
-function buildDeckSelector() {
-
-    const sel = document.getElementById("deckSelect");
-
-    const decks = decksInCurrentCollection();
-
-    // Populate the selector
-    sel.innerHTML = decks.map(deck =>
-        `<option value="${deck.id}">${deck.name}</option>`
-    ).join("");
-
-    // Select the current deck if it belongs to this collection.
-    // Otherwise select the first deck.
-    const selected =
-        decks.some(deck => deck.id === currentDeck)
-            ? currentDeck
-            : decks[0]?.id;
-
-    if (selected) {
-        sel.value = selected;
-    }
-
-    // Change deck
-    sel.onchange = async () => {
-        await switchDeck(sel.value);
-    };
-}
-
 async function switchDeck(deckId, options = {}) {
     const { navigate = true } = options;
 
@@ -558,8 +549,6 @@ async function switchDeck(deckId, options = {}) {
     expandedLibraryCard = null;
     session = null;
 
-    buildCollectionSelector();
-    buildDeckSelector();
     buildSidebar();
 
     if (navigate) {
@@ -568,38 +557,228 @@ async function switchDeck(deckId, options = {}) {
 }
 
 /* ================= OVERVIEW ================= */
-function renderOverview(){
+function renderOverview() {
 
-  const total = allCards().length;
-  const due = dueCountAll();
-  const mastered = allCards().filter(c=>(state.progress[c.id]||{}).box===5).length;
-  const eff = state.meta.totalReviews>0 ? Math.round(100*state.meta.correctReviews/state.meta.totalReviews) : null;
-  const deckSelect = document.getElementById("deckSelect");
-  if (deckSelect) deckSelect.value = currentDeck;
+    const deckResults = deckCatalog.map(deck => ({
+        deck,
+        stats: deckStats(deck.id)
+    }));
 
-  document.getElementById('statRow').innerHTML = `
-    <div class="stat-card"><div class="stat-value">${total}</div><div class="stat-label">Total cards</div></div>
-    <div class="stat-card"><div class="stat-value amber">${due}</div><div class="stat-label">Due today</div></div>
-    <div class="stat-card"><div class="stat-value alt">${mastered}</div><div class="stat-label">Mastered (Box 5)</div></div>
-    <div class="stat-card"><div class="stat-value">${eff===null?'—':eff+'%'}</div><div class="stat-label">Efficiency (all-time)</div></div>
-  `;
+    const globalStats = deckResults.reduce(
+        (totals, item) => {
 
-  const topics = topicsInOrder();
-  document.getElementById('topicHistogram').innerHTML = topics.map(t=>{
-    const s = topicStats(t);
-    const color = topicColor(t);
-    return `<div class="topic-row">
-      <div class="topic-label">
-        <div class="topic-name">${escapeHtml(t)}</div>
-        <div class="topic-count">${s.total} cards · ${s.mastered} mastered</div>
-      </div>
-      <div class="bar-track"><div class="bar-fill" style="width:${s.avgPurity}%;background:${color};color:${color};"></div></div>
-      <div class="topic-pct">${s.avgPurity}%</div>
-    </div>`;
-  }).join('') + `
-    <div style="margin-top:20px;text-align:right;">
-      <button class="btn btn-ghost" onclick="confirmReset()">Reset all progress</button>
-    </div>`;
+            totals.cards += item.stats.total;
+            totals.due += item.stats.due;
+            totals.mastered += item.stats.mastered;
+            totals.reviews += item.stats.totalReviews;
+            totals.correct += item.stats.correctReviews;
+
+            return totals;
+        },
+        {
+            cards: 0,
+            due: 0,
+            mastered: 0,
+            reviews: 0,
+            correct: 0
+        }
+    );
+
+    const globalEfficiency =
+        globalStats.reviews > 0
+            ? Math.round(
+                100 *
+                globalStats.correct /
+                globalStats.reviews
+            )
+            : null;
+
+    // ------------------------------------------------------------
+    // Global statistics
+    // ------------------------------------------------------------
+
+    document.getElementById("dashboardStats").innerHTML = `
+        <div class="stat-card">
+            <div class="stat-value">
+                ${globalStats.cards}
+            </div>
+
+            <div class="stat-label">
+                Total cards
+            </div>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-value amber">
+                ${globalStats.due}
+            </div>
+
+            <div class="stat-label">
+                Due now
+            </div>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-value alt">
+                ${globalStats.mastered}
+            </div>
+
+            <div class="stat-label">
+                Mastered
+            </div>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-value">
+                ${
+                    globalEfficiency === null
+                        ? "—"
+                        : `${globalEfficiency}%`
+                }
+            </div>
+
+            <div class="stat-label">
+                Recall efficiency
+            </div>
+        </div>
+    `;
+
+    // ------------------------------------------------------------
+    // Continue studying
+    // ------------------------------------------------------------
+
+    const activeDeck =
+        deckCatalog.find(deck => deck.id === currentDeck);
+
+    const activeStats =
+        activeDeck
+            ? deckStats(activeDeck.id)
+            : null;
+
+    const continueRoot =
+        document.getElementById("dashboardContinue");
+
+    if (activeDeck && activeStats) {
+
+        continueRoot.innerHTML = `
+            <section class="dashboard-continue">
+
+                <div class="dashboard-continue-copy">
+
+                    <div class="page-eyebrow">
+                        Continue studying
+                    </div>
+
+                    <div class="dashboard-continue-title">
+                        ${escapeHtml(activeDeck.name)}
+                    </div>
+
+                    <div class="dashboard-continue-collection">
+                        ${escapeHtml(activeDeck.collection)}
+                    </div>
+
+                    <div class="dashboard-continue-meta">
+                        ${activeStats.total} cards
+                        · ${activeStats.due} due
+                        · ${activeStats.purity}% progress
+                    </div>
+
+                </div>
+
+                <button
+                    class="btn btn-primary"
+                    onclick="openDeckForTraining('${activeDeck.id}')">
+
+                    Continue training
+
+                </button>
+
+            </section>
+        `;
+
+    } else {
+
+        continueRoot.innerHTML = "";
+    }
+
+    // ------------------------------------------------------------
+    // All decks
+    // ------------------------------------------------------------
+
+    document.getElementById("dashboardDecks").innerHTML =
+        deckResults.map(({ deck, stats }) => {
+
+            const isCurrent =
+                deck.id === currentDeck;
+
+            return `
+                <div class="dashboard-deck-row">
+
+                    <div class="dashboard-deck-main">
+
+                        <div class="dashboard-deck-heading">
+
+                            <div>
+                                <div class="dashboard-deck-name">
+                                    ${escapeHtml(deck.name)}
+                                </div>
+
+                                <div class="dashboard-deck-collection">
+                                    ${escapeHtml(deck.collection)}
+                                </div>
+                            </div>
+
+                            <div class="dashboard-deck-purity">
+                                ${stats.purity}%
+                            </div>
+
+                        </div>
+
+                        <div class="bar-track dashboard-deck-track">
+                            <div
+                                class="bar-fill"
+                                style="
+                                    width:${stats.purity}%;
+                                    background:var(--cherenkov);
+                                ">
+                            </div>
+                        </div>
+
+                        <div class="dashboard-deck-meta">
+                            <span>${stats.total} cards</span>
+                            <span>${stats.due} due</span>
+                            <span>${stats.mastered} mastered</span>
+
+                            ${
+                                stats.efficiency === null
+                                    ? ""
+                                    : `<span>${stats.efficiency}% efficiency</span>`
+                            }
+                        </div>
+
+                    </div>
+
+                    <button
+                        class="btn ${isCurrent ? "btn-primary" : "btn-ghost"}"
+                        onclick="openDeckForTraining('${deck.id}')">
+
+                        ${isCurrent ? "Continue" : "Train"}
+
+                    </button>
+
+                </div>
+            `;
+
+        }).join("");
+}
+
+async function openDeckForTraining(deckId) {
+
+    if (currentDeck !== deckId) {
+        await switchDeck(deckId);
+    }
+
+    goTo("train");
 }
 
 function confirmReset(){
@@ -1428,9 +1607,6 @@ async function init() {
     currentCollection =
         deckCatalog.find(deck => deck.id === deckToLoad).collection;
 
-    // Build the selectors
-    buildCollectionSelector();
-    buildDeckSelector();
 
     // Load the selected deck
     await switchDeck(deckToLoad);
@@ -1439,3 +1615,4 @@ async function init() {
         `Version ${version}<br>${allCards().length} cards loaded<br>local session`;
 }
 init();
+
