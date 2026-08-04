@@ -24,16 +24,9 @@
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
             "sub": "Cross Section",
-            "diff": 1,
-            "q": "The differential cross section is defined by\n$$\\frac{d\\sigma}{d\\Omega}(E,\\Omega)=\\frac{1}{F}\\frac{dN_s}{d\\Omega}.$$\nWhat do the quantities in this equation represent, and what is the physical meaning of $d\\sigma/d\\Omega$?",
-            "a": "$F$ is the flux of incident particles, measured as the number of particles per unit area per unit time, and $dN_s/d\\Omega$ is the average number of particles scattered per unit time into unit solid angle around $\\Omega$. Thus, $d\\sigma/d\\Omega$ is the average fraction of incident particles scattered into $d\\Omega$ per unit time per unit incident flux. It measures the probability of a reaction producing an outgoing particle in a specified angular direction."
-        },
-        {
-            "topic": "Ch.2: Passage of Radiation Through Matter",
-            "sub": "Cross Section",
             "diff": 2,
             "q": "How is the differential cross section defined?",
-            "a": "The differential cross section is defined as\n\n$$\\frac{d\\sigma}{d\\Omega}=\\frac{1}{F}\\frac{dN_s}{d\\Omega},$$\n\nwhere $F$ is the incident particle flux and $dN_s/d\\Omega$ is the average number of particles scattered into the solid angle $d\\Omega$ per unit time."
+            "a": "The differential cross section is defined as\n\n$$\\frac{d\\sigma}{d\\Omega}=\\frac{1}{F}\\frac{dN_s}{d\\Omega},$$\n\nwhere \n- $F$ is the incident particle flux \n- $dN_s/d\\Omega$ is the average number of particles scattered into the solid angle $d\\Omega$ per unit time. \nThus, $d\\sigma/d\\Omega$ is the average fraction of incident particles scattered into $d\\Omega$ per unit time per unit incident flux. It measures the probability of a reaction producing an outgoing particle in a specified angular direction."
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
@@ -46,22 +39,8 @@
             "topic": "Ch.2: Passage of Radiation Through Matter",
             "sub": "Cross Section",
             "diff": 2,
-            "q": "What does the differential cross section represent physically?",
-            "a": "It represents the fraction of the incident flux that is scattered into a given solid angle per unit time."
-        },
-        {
-            "topic": "Ch.2: Passage of Radiation Through Matter",
-            "sub": "Cross Section",
-            "diff": 2,
             "q": "Why does the cross section have the dimensions of an area?",
             "a": "Since the incident flux has units of particles per unit area per unit time, the definition of the cross section gives it the dimensions of an area. This motivates the heuristic picture of an effective target area, although it should not be interpreted as the physical size of the target."
-        },
-        {
-            "topic": "Ch.2: Passage of Radiation Through Matter",
-            "sub": "Cross Section",
-            "diff": 2,
-            "q": "Why should the cross section not be interpreted as the physical size of the target?",
-            "a": "Although the cross section has units of area, it is an effective measure of interaction probability rather than the geometric size of the scattering center."
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
@@ -82,7 +61,7 @@
             "sub": "Cross Section",
             "diff": 2,
             "q": "For a thin slab containing uniformly distributed interaction centers,\n$$N_s(\\Omega)=FAN\\,\\delta x\\,\\frac{d\\sigma}{d\\Omega}.$$\nExplain the physical origin of each factor.",
-            "a": "$FA$ is the number of incident particles per unit time that strike the target area $A$. The product $N\\delta x$ is the number of interaction centers per unit area along the beam direction, where $N$ is their number density and $\\delta x$ is the slab thickness. The differential cross section $d\\sigma/d\\Omega$ determines the probability for one incident particle to be scattered toward the specified solid angle."
+            "a": "$FA$ is the number of incident particles per unit time that strike the target area $A$. \n$N\\delta x$ is the number of interaction centers per unit area along the beam direction, where $N$ is their number density and $\\delta x$ is the slab thickness. \n$d\\sigma/d\\Omega$ determines the probability for one incident particle to be scattered toward the specified solid angle."
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
@@ -102,15 +81,15 @@
             "topic": "Ch.2: Passage of Radiation Through Matter",
             "sub": "Interaction Probability",
             "diff": 1,
-            "q": "The probability that a particle suffers an interaction somewhere within a distance $x$ is\n$$P_{\\mathrm{int}}(x)=1-\\exp(-wx),$$ where $w = N\\sigma$. \nWhy is this the complement of the survival probability?",
-            "a": "After traveling the distance $x$, the particle must either have survived without interaction or have interacted at least once. These mutually exclusive possibilities exhaust all outcomes, so the interaction probability is one minus the survival probability."
+            "q": "What is the survival probability?",
+            "a": "$$P(x)=e^{-wx}.$$ where $w = N\\sigma$. \nThe survival probability is the probability that a particle travels a distance $x$ through a material without undergoing an interaction."
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
             "sub": "Interaction Probability",
             "diff": 1,
-            "q": "What is the survival probability?",
-            "a": "The survival probability is the probability that a particle travels a distance $x$ through a material without undergoing an interaction."
+            "q": "The probability that a particle suffers an interaction somewhere within a distance $x$ is\n$$P_{\\mathrm{int}}(x)=1-e^{-wx},$$ where $w = N\\sigma$. \nWhy is this the complement of the survival probability?",
+            "a": "After traveling the distance $x$, the particle must either have survived without interaction or have interacted at least once. These mutually exclusive possibilities exhaust all outcomes, so the interaction probability is one minus the survival probability."
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
@@ -123,7 +102,21 @@
             "topic": "Ch.2: Passage of Radiation Through Matter",
             "sub": "Interaction Probability",
             "diff": 1,
-            "q": "The survival probability can be written as\n$$P(x)=\\exp\\left(-\\frac{x}{\\lambda}\\right)=\\exp(-N\\sigma x).$$\nWhat is the significance of the ratio $x/\\lambda$?",
+            "q": "The mean free path is defined by\n$$\\lambda=\\frac{\\int xP(x)\\,dx}{\\int P(x)\\,dx}=\\frac{1}{w}.$$\nWhat is the physical meaning of $\\lambda$?",
+            "a": "$\\lambda$ is the mean distance traveled by a particle before suffering a collision. Since $\\lambda=1/w$, a large interaction probability per unit distance corresponds to a short mean free path, while a small interaction probability per unit distance corresponds to a long mean free path."
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter",
+            "sub": "Interaction Probability",
+            "diff": 2,
+            "q": "How is the mean free path related to the number density and the cross section?",
+            "a": "The mean free path is\n\n$$\\lambda=\\frac{1}{N\\sigma}.$$\n\nIt decreases when either the number density of scattering centers or the interaction cross section increases."
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter",
+            "sub": "Interaction Probability",
+            "diff": 1,
+            "q": "The survival probability can be written as\n$$P(x)=\\exp\\left(-\\frac{x}{\\lambda}\\right)=\\exp(-w x).$$\nWhat is the significance of the ratio $x/\\lambda$?",
             "a": "The ratio $x/\\lambda$ is the distance traveled expressed in units of the mean free path. The survival probability decreases exponentially as this dimensionless thickness increases."
         },
         {
@@ -132,27 +125,6 @@
             "diff": 2,
             "q": "The probability that a particle survives to $x$ and then suffers a collision between $x$ and $x+dx$ is\n$$F(x)dx=w e^{-wx}\\,dx.$$\nExplain the two factors in this expression.",
             "a": "The factor $\\exp(-wx)$ is the probability that the particle reaches $x$ without interacting. The factor $w\\,dx$ is the probability that it then interacts within the following infinitesimal interval $dx$. Their product gives the probability that the first collision occurs in that interval."
-        },
-        {
-            "topic": "Ch.2: Passage of Radiation Through Matter",
-            "sub": "Interaction Probability",
-            "diff": 1,
-            "q": "The mean free path is defined by\n$$\\lambda=\\frac{\\int xP(x)\\,dx}{\\int P(x)\\,dx}=\\frac{1}{w}.$$\nWhat is the physical meaning of $\\lambda$?",
-            "a": "$\\lambda$ is the mean distance traveled by a particle before suffering a collision. Since $\\lambda=1/w$, a large interaction probability per unit distance corresponds to a short mean free path, while a small interaction probability per unit distance corresponds to a long mean free path."
-        },
-        {
-            "topic": "Ch.2: Passage of Radiation Through Matter",
-            "sub": "Interaction Probability",
-            "diff": 2,
-            "q": "How does the survival probability vary with distance?",
-            "a": "The survival probability decreases exponentially with distance:\n\n$$P(x)=e^{-wx}=e^{-N\\sigma x},$$\n\nwhere $N$ is the number density of interaction centers, $\\sigma$ is the total cross section and $w dx$ is the probability of having an interaction between $x$ and $x + dx$."
-        }, 
-        {
-            "topic": "Ch.2: Passage of Radiation Through Matter",
-            "sub": "Interaction Probability",
-            "diff": 2,
-            "q": "How is the mean free path related to the number density and the cross section?",
-            "a": "The mean free path is\n\n$$\\lambda=\\frac{1}{N\\sigma}.$$\n\nIt decreases when either the number density of scattering centers or the interaction cross section increases."
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
@@ -178,30 +150,25 @@
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
             "sub": "Interaction Probability",
-            "diff": 2,
-            "q": "For a small thickness $\\delta x$,\n$$P_{\\mathrm{int}}=1-\\left(1-\\frac{\\delta x}{\\lambda}+\\cdots\\right)\\simeq\\frac{\\delta x}{\\lambda}.$$\nWhat approximation has been made, and what is its physical meaning?",
-            "a": "The exponential has been expanded in powers of $\\delta x/\\lambda$, and only the first-order term has been retained. This requires $\\delta x\\ll\\lambda$, so the interaction probability across the layer is small and increases approximately linearly with thickness."
-        },
-        {
-            "topic": "Ch.2: Passage of Radiation Through Matter",
-            "sub": "Interaction Probability",
             "diff": 3,
             "q": "Summarize the relationships between survival probability, interaction probability, and mean free path.",
             "a": "Survival probability:\n$$P(x)=e^{-x/\\lambda}.$$\n\nInteraction probability:\n$$P_{\\rm int}(x)=1-e^{-x/\\lambda}.$$\n\nMean free path:\n$$\\lambda=\\frac{1}{N\\sigma}.$$\n\nA larger cross section or a higher density of scattering centers leads to a shorter mean free path and therefore a higher interaction probability."
+        },
+
+
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter",
+            "sub": "Energy Loss of Heavy Charged Particles",
+            "diff": 1,
+            "q": "Which particles are considered heavy charged particles?",
+            "a": "Heavy charged particles include muons, pions, protons, alpha particles, and light nuclei. Heavy ions are usually treated separately because additional effects become important."
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
             "sub": "Energy Loss of Heavy Charged Particles",
             "diff": 1,
             "q": "What are the two principal effects observed when a heavy charged particle passes through matter, and which atomic processes mainly produce them?",
-            "a": "The particle loses energy and is deflected from its incident direction. The energy loss is produced mainly by inelastic collisions with atomic electrons, while the deflection is produced mainly by elastic scattering from nuclei. Both processes occur many times per unit path length, so their cumulative effects determine the particle's motion through the material."
-        },
-        {
-            "topic": "Ch.2: Passage of Radiation Through Matter",
-            "sub": "Energy Loss of Heavy Charged Particles",
-            "diff": 1,
-            "q": "Which two processes are primarily responsible for the passage of charged particles through matter?",
-            "a": "1. Inelastic collisions with atomic electrons.\n\n2. Elastic scattering from atomic nuclei."
+            "a": "1. Inelastic collisions with atomic electrons - energy loss.\n\n2. Elastic scattering from atomic nuclei - deflection."
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
@@ -214,22 +181,8 @@
             "topic": "Ch.2: Passage of Radiation Through Matter",
             "sub": "Energy Loss of Heavy Charged Particles",
             "diff": 1,
-            "q": "Which particles are considered heavy charged particles?",
-            "a": "Heavy charged particles include muons, pions, protons, alpha particles, and light nuclei. Heavy ions are usually treated separately because additional effects become important."
-        },
-        {
-            "topic": "Ch.2: Passage of Radiation Through Matter",
-            "sub": "Energy Loss of Heavy Charged Particles",
-            "diff": 1,
             "q": "Why are charged particles divided into electrons/positrons and heavy charged particles?",
             "a": "The much larger mass of a heavy particle allows it to be treated as moving approximately along an undeviated trajectory during an individual collision with an atomic electron. This approximation is not valid for incident electrons or positrons, whose mass is equal to that of the target electrons."
-        },
-        {
-            "topic": "Ch.2: Passage of Radiation Through Matter",
-            "sub": "Energy Loss of Heavy Charged Particles",
-            "diff": 2,
-            "q": "Which process is primarily responsible for the energy loss of heavy charged particles in matter?",
-            "a": "The energy loss of heavy charged particles is dominated by inelastic collisions with atomic electrons, which ionize or excite the atoms of the material."
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
@@ -269,16 +222,9 @@
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
             "sub": "Energy Loss of Heavy Charged Particles",
-            "diff": 2,
-            "q": "Why is it meaningful to describe the energy loss of heavy charged particles using an average stopping power?",
-            "a": "Although individual collisions are statistical, the large number of collisions occurring over a macroscopic path length makes the fluctuations small. The average energy loss per unit length therefore provides a useful description."
-        },
-        {
-            "topic": "Ch.2: Passage of Radiation Through Matter",
-            "sub": "Energy Loss of Heavy Charged Particles",
             "diff": 1,
-            "q": "What is the stopping power?",
-            "a": "The stopping power is the average energy loss of a charged particle per unit path length in a material, usually written as $$\\frac{dE}{dx}.$$"
+            "q": "What is the stopping power? Why is it meaningful to describe the energy loss of heavy charged particles using an average stopping power?",
+            "a": "The stopping power is the average energy loss of a charged particle per unit path length in a material, usually written as $$\\frac{dE}{dx}.$$ Although individual collisions are statistical, the large number of collisions occurring over a macroscopic path length makes the fluctuations small. The average energy loss per unit length therefore provides a useful description."
         },
         {
             "topic": "Ch.2 Summary",
@@ -295,7 +241,7 @@
             "sub": "Bethe-Bloch Formula",
             "diff": 2,
             "q": "The mean energy loss of a heavy charged particle is described by\n$$-\\frac{dE}{dx}=2\\pi N_a r_e^2m_ec^2\\rho\\frac{Z}{A}\\frac{z^2}{\\beta^2}\\left[\\ln\\left(\\frac{2m_e\\gamma^2v^2W_{\\max}}{I^2}\\right)-2\\beta^2-\\delta-2\\frac{C}{Z}\\right].$$\nWhat physical process does this formula describe, and what are the main particle and material dependences?",
-            "a": "The Bethe-Bloch formula gives the mean energy loss per unit path length caused mainly by inelastic collisions of a heavy charged particle with atomic electrons. The factor $\\rho Z/A$ reflects the electron density of the absorber, $z^2$ gives the dependence on the incident-particle charge, and $1/\\beta^2$ produces the large stopping power of slower particles. The logarithmic term contains the collision kinematics and atomic excitation scale, while $\\delta$ and $C$ correct the high- and low-energy behavior."
+            "a": "The Bethe-Bloch formula gives the mean energy loss per unit path length caused mainly by inelastic collisions of a heavy charged particle with atomic electrons. \n$\\rho Z/A$ reflects the electron density of the absorber, \n$z^2$ gives the dependence on the incident-particle charge, \n$1/\\beta^2$ produces the large stopping power of slower particles. \nThe logarithmic term contains the collision kinematics and atomic excitation scale, \n$\\delta$ and $C$ correct the high- and low-energy behavior."
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
@@ -383,6 +329,20 @@
                 "size": "medium"
             }
         },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter",
+            "sub": "Energy Dependence of Stopping Power",
+            "diff": 3,
+            "q": "The Bragg curve exhibits a pronounced peak for protons and $\\alpha$-particles but not for typical cosmic-ray muons. Why?",
+            "a": "A Bragg peak develops only if the particle slows down substantially while traversing the material. Protons and $\\alpha$-particles typically lose a large fraction of their kinetic energy before stopping, so their momentum decreases significantly. Since $p=\\beta\\gamma mc$, a decrease in momentum leads to a decrease in $\\beta$, moving the particle into the low-velocity region where the Bethe-Bloch stopping power increases approximately as $1/\\beta^2$. This produces the sharp rise in $dE/dx$ near the end of the track. Cosmic-ray muons, in contrast, are usually highly relativistic and have very large values of $\\beta\\gamma$. In ordinary detector thicknesses they lose only a tiny fraction of their total energy, so their momentum and therefore their velocity change very little. They remain close to the minimum-ionizing region of the Bethe-Bloch curve, giving an almost constant $dE/dx$ and no pronounced Bragg peak."
+        },
+
+
+
+
+
+
+
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
             "sub": "Scaling and Mass Stopping Power",
