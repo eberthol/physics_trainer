@@ -1,0 +1,18 @@
+{
+  "title": "Energy Straggling",
+
+  "layers": [
+    {
+      "title": "Energy Straggling",
+      "image": "images/book-experimental-techniques/maps/energy-straggling.png"
+    }
+  ],
+
+  "caption": "Energy Straggling",
+
+  "study": {
+    "subtopics": [
+      "Cherenkov Radiation"
+    ]
+  }
+}

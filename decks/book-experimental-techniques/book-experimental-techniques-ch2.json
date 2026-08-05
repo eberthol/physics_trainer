@@ -781,6 +781,269 @@
                 "caption": "Measured electron backscattering coefficients as functions of energy for several absorber materials.",
                 "size": "medium"
             }
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter",
+            "sub": "Energy Straggling",
+            "diff": 2,
+            "q": "Why is the energy lost by a charged particle after passing through matter not, in general, equal to the mean energy loss predicted by $dE/dx$?",
+            "a": "Because the number of collisions and the energy transferred in each collision fluctuate statistically. An initially monoenergetic beam therefore emerges with a distribution of energy losses rather than a single value. For thin absorbers this distribution is often skewed with a long high-energy tail, while for thick absorbers it tends toward a Gaussian form. The effect is called energy straggling.",
+            "figure": {
+                "src": "images/book-experimental-techniques/fig2.18_energy-loss-distribution.png",
+                "caption": "Typical distribution of energy loss in a thin absorber, showing a long high-energy tail.",
+                "size": "medium"
+            }
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter",
+            "sub": "Thick Absorbers",
+            "diff": 2,
+            "q": "Why does the energy-loss distribution become Gaussian for a sufficiently thick absorber, and what is the corresponding form of the distribution?",
+            "a": "When the number of collisions is large, the total energy loss is the sum of many independent contributions. By the Central Limit Theorem, the distribution then approaches a Gaussian. In this limit the energy-loss distribution is written as $f(x,\\Delta)\\propto\\exp[-(\\Delta-\\bar{\\Delta})^2/(2\\sigma^2)]$, where $\\bar{\\Delta}$ is the mean energy loss and $\\sigma$ is the standard deviation. For nonrelativistic heavy particles, Bohr found $\\sigma_0^2=4\\pi N_a r_e^2(m_ec^2)^2\\rho Z/A=0.1569\\,\\rho Z/A\\,[\\mathrm{MeV}^2]$, with the relativistic extension $\\sigma^2=\\frac{1-\\beta^2/2}{1-\\beta^2}\\sigma_0^2$."
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter",
+            "sub": "Thin Absorbers",
+            "diff": 3,
+            "q": "For thin absorbers, the parameter\n$$\\kappa=\\frac{\\bar{\\Delta}}{W_{\\max}}$$\ndetermines the shape of the energy-loss distribution. What does $\\kappa$ measure, what is the Landau limit, and why is the distribution asymmetric?",
+            "a": "$\\kappa$ measures the ratio of the mean energy loss to the maximum energy transferable in a single collision. For $\\kappa\\lesssim0.01$, Landau theory applies. In this regime the absorber is thin enough that occasional large single-collision transfers dominate the high-energy side of the distribution, producing a long tail toward large $\\Delta$. As a result, the mean energy loss no longer coincides with the most probable energy loss. In Landau theory the most probable energy loss is given by $\\Delta_{\\rm mp}=\\xi[\\ln(\\xi/I)+0.198-\\delta]$.",
+            "figure": {
+                "src": "images/book-experimental-techniques/fig2.19_vavilov-distributions.png",
+                "caption": "Vavilov distributions for various values of $\\kappa$, with the Landau distribution shown for $\\kappa=0$.",
+                "size": "medium"
+            }
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter",
+            "sub": "Vavilov Theory",
+            "diff": 2,
+            "q": "How does Vavilov theory relate the Landau and Gaussian limits, and why is it useful?",
+            "a": "Vavilov theory describes the intermediate region between the thin-absorber Landau limit and the thick-absorber Gaussian limit. As $\\kappa$ increases, the distribution becomes more Gaussian-like; as $\\kappa$ decreases, it approaches the Landau form with a long high-energy tail. This makes Vavilov theory useful for absorbers where neither the Gaussian nor the Landau approximation is fully adequate. The theory also agrees well with measured energy-loss distributions.",
+            "figure": {
+                "src": "images/book-experimental-techniques/fig2.20_vavilov-symon-experiment.png",
+                "caption": "Comparison of Vavilov's and Symon's theories with experimental energy-loss data.",
+                "size": "medium"
+            }
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter",
+            "sub": "Photon Interactions",
+            "diff": 1,
+            "q": "Why do x-rays and \\(\\gamma\\)-rays interact with matter very differently from charged particles, and what are the main processes?",
+            "a": "Because photons carry no electric charge, they do not undergo the many inelastic collisions with atomic electrons that dominate charged-particle energy loss. Their principal interactions in matter are the photoelectric effect, Compton scattering (including Thomson and Rayleigh scattering), and pair production. The beam is attenuated in intensity but, for the photons that pass through without interacting, the photon energy itself is not degraded."
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter",
+            "sub": "Photon Attenuation",
+            "diff": 1,
+            "q": "Photon attenuation in matter is written as\n$$I(x)=I_0\\exp(-\\mu x).$$\nWhat does \\(\\mu\\) represent physically?",
+            "a": "\\(\\mu\\) is the absorption coefficient. It measures the probability per unit thickness that a photon will be removed from the beam by interaction. The exponential law reflects the fact that the surviving photons after thickness \\(x\\) are those that have not yet interacted."
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter",
+            "sub": "Photoelectric Effect",
+            "diff": 2,
+            "q": "What is the photoelectric effect, and why does the emitted electron energy satisfy\n$$E=h\\nu-\\mathrm{B.E.}$$\n?",
+            "a": "In the photoelectric effect, a photon is completely absorbed by an atomic electron, which is then ejected from the atom. The outgoing electron carries the photon energy minus the electron binding energy, so the kinetic energy is \\(E=h\\nu-\\mathrm{B.E.}\\). The process is therefore a true absorption process, not a scattering process."
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter",
+            "sub": "Photoelectric Effect",
+            "diff": 2,
+            "q": "Why does the photoelectric cross section show sharp changes near the K, L, and M edges, and why is it strongly dependent on atomic number \\(Z\\)?",
+            "a": "The sharp changes occur when the photon energy becomes just sufficient to remove electrons from a given atomic shell, so the corresponding shell absorption channel opens or closes. These thresholds produce the K-edge, L-edge and M-edge structure. The cross section is strongly dependent on \\(Z\\), with high-\\(Z\\) materials being especially favorable for photoelectric absorption."
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter",
+            "sub": "Compton Scattering",
+            "diff": 2,
+            "q": "What is Compton scattering, and how do the kinematics relate the scattered photon energy to the scattering angle?",
+            "a": "Compton scattering is the inelastic scattering of a photon from an essentially free electron. Energy and momentum conservation give a scattered photon energy that decreases with increasing scattering angle; the recoil electron takes the missing energy. The maximum electron energy occurs at the Compton edge, corresponding to the largest kinematically allowed energy transfer."
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter",
+            "sub": "Compton Scattering",
+            "diff": 2,
+            "q": "The Klein-Nishina formula gives the Compton differential cross section. Why does the total Compton cross section decrease with increasing photon energy?",
+            "a": "As photon energy increases, the interaction becomes more forward peaked and the effective probability for large-energy transfer decreases. The total cross section therefore falls with energy. At sufficiently low energies it approaches the Thomson limit."
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter",
+            "sub": "Thomson and Rayleigh Scattering",
+            "diff": 2,
+            "q": "What are Thomson and Rayleigh scattering, and when are they relevant?",
+            "a": "Thomson scattering is the scattering of photons by free electrons in the classical low-energy limit. Rayleigh scattering is coherent scattering of photons by bound atomic electrons. Both are related to Compton scattering, but at the relatively high x-ray and \\(\\gamma\\)-ray energies of interest here they are usually small and can often be neglected."
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter",
+            "sub": "Pair Production",
+            "diff": 2,
+            "q": "What is pair production, why must it occur in the presence of a third body, and what is its threshold?",
+            "a": "Pair production is the conversion of a photon into an electron-positron pair in the field of a nucleus. A third body is required to conserve momentum. The photon must have at least twice the electron rest energy, so the threshold is $2m_ec^2 = 1.022\\,\\mathrm{MeV}$.",
+            "figure": {
+                "src": "images/book-experimental-techniques/fig2.25_pair-production-cross-section-in-lead.png",
+                "caption": "Pair production cross section in lead as a function of photon energy.",
+                "size": "medium"
+            }
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter",
+            "sub": "Pair Production",
+            "diff": 2,
+            "q": "How is pair production related to bremsstrahlung, and what does this imply about its material dependence?",
+            "a": "The calculation is closely related to bremsstrahlung by a substitution rule: one process can be turned into the other by exchanging the role of the emitted photon and the electron-positron pair. The cross section is therefore strongly influenced by screening and by the atomic number $Z$ of the material, and the pair-production mean free path is of the same order as the radiation length."
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter",
+            "sub": "Pair Production",
+            "diff": 2,
+            "q": "What is the approximate relation between the pair-production mean free path $\\lambda_{\\rm pair}$ and the radiation length $L_{\\rm rad}$?",
+            "a": "For a material, the pair-production mean free path is approximately $\\lambda_{\\rm pair} \\approx \\frac{9}{7}L_{\\rm rad}$. This shows that pair production and bremsstrahlung are closely linked electromagnetic processes in matter."
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter",
+            "sub": "Electromagnetic Showers",
+            "diff": 2,
+            "q": "Why does a high-energy photon or electron produce an electromagnetic shower in matter?",
+            "a": "A high-energy photon can convert to an $e^+e^-$ pair, and the resulting electrons and positrons emit bremsstrahlung photons. Those photons can in turn convert again into pairs. This alternating sequence repeats until the particle energies fall to the critical energy, where ionization losses dominate and the cascade stops."
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter",
+            "sub": "Electromagnetic Showers",
+            "diff": 2,
+            "q": "In the simplest shower model, after $t$ radiation lengths a particle of initial energy $E_0$ gives\n$$N = 2^t, \\qquad E(t)=\\frac{E_0}{2^t}.$$\nWhat do these relations mean physically, and when does the shower reach its maximum?",
+            "a": "They express the idea that, in the simplest picture, each radiation length roughly doubles the number of shower particles while halving their average energy. The shower maximum occurs when the average particle energy drops to the critical energy $E_c$. Then\n$$t_{\\max} = \\frac{\\ln(E_0/E_c)}{\\ln 2}, \\qquad N_{\\max} = \\frac{E_0}{E_c}.$$"
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter",
+            "sub": "Electromagnetic Showers",
+            "diff": 3,
+            "q": "The longitudinal shower profile is often written in the form\n$$\\frac{dE}{dt} = E_0\\,\\frac{b(bt)^{a-1}e^{-bt}}{\\Gamma(a)}.$$\nWhat does this parameterization describe, and how is the shower maximum related to it?",
+            "a": "It is an empirical gamma-distribution fit to the shower energy deposition as a function of depth in radiation lengths. The shape is controlled by the material-dependent parameters $a$ and $b$. The position of the maximum occurs at\n$$t_{\\max}=\\frac{a-1}{b},$$\nwhich in the book is found to behave approximately like $t_{\\max}\\approx 1.0(\\ln y + C_i)$ with $y=E/E_c$ and $i=e,\\gamma$.",
+            "figure": {
+                "src": "images/book-experimental-techniques/fig2.26_monte-carlo-electromagnetic-shower.png",
+                "caption": "Monte Carlo calculation of the longitudinal energy deposition in an electromagnetic shower.",
+                "size": "medium"
+            }
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter",
+            "sub": "Shower Geometry",
+            "diff": 2,
+            "q": "What is the Moliere radius, and why is it important for the transverse size of an electromagnetic shower?",
+            "a": "The Moliere radius is defined by\n$$R_M = L_{\\rm rad}\\frac{E_s}{E_c}, \\qquad E_s = m_ec^2\\sqrt{\\frac{4\\pi}{\\alpha}} \\approx 21.2\\,\\mathrm{MeV}.$$\nIt sets the characteristic transverse scale of the shower. Roughly 90% of the shower energy is contained within a radius of about $2R_M$ from the shower axis."
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter",
+            "sub": "Shower Geometry",
+            "diff": 2,
+            "q": "Why are electromagnetic calorimeters made thick, often of order many radiation lengths?",
+            "a": "They must contain the full longitudinal development of the shower so that the total deposited energy can be measured. Since the shower energy is spread over many generations of pair production and bremsstrahlung, a thick absorber is needed to absorb the cascade before it leaks out of the detector."
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter",
+            "sub": "Photon Attenuation",
+            "diff": 2,
+            "q": "The total photon interaction cross section is written as\n$$\\sigma=\\sigma_{\\rm photo}+Z\\sigma_c+\\tau_{\\rm pair}.$$\nWhat does this sum represent physically?",
+            "a": "It is the total probability per atom for a photon to be removed from the beam by any of the three dominant photon processes in matter: the photoelectric effect, Compton scattering, and pair production. The factor of $Z$ multiplying the Compton term reflects that Compton scattering occurs from atomic electrons, while the photoelectric and pair-production terms are written as atomic cross sections."
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter",
+            "sub": "Photon Attenuation",
+            "diff": 2,
+            "q": "From the total photon interaction cross section, the absorption coefficient is\n$$\\mu=N\\sigma=\\frac{\\rho N_A}{A}\\sigma.$$\nWhy is this quantity useful, and how does it relate to beam attenuation?",
+            "a": "The absorption coefficient gives the probability per unit path length that a photon will interact in the material. It is the inverse of the mean free path of the photon. As a result, the surviving beam intensity decreases exponentially with thickness:\n$$I/I_0=\\exp(-\\mu x).$$"
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter",
+            "sub": "Photon Attenuation",
+            "diff": 2,
+            "q": "The plot below shows the total photon absorption cross section for lead. Why does the curve have sharp edges at low energy, then a falling middle region, and finally a rise again at higher energy?",
+            "a": "At low photon energies, the photoelectric effect dominates and produces sharp K- and L-shell edges when shell thresholds are crossed. In the intermediate region, Compton scattering is the main process, so the total cross section falls more smoothly. At still higher energies, pair production becomes important and the total cross section rises again.",
+            "figure": {
+                "src": "images/book-experimental-techniques/fig2.29_total-absorption-cross-section-lead.png",
+                "caption": "Total photon absorption cross section for lead as a function of photon energy.",
+                "size": "medium"
+            }
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter",
+            "sub": "Photon Attenuation",
+            "diff": 2,
+            "q": "For compounds and mixtures, why can the mass absorption coefficient be written as\n$$\\frac{\\mu}{\\rho}=w_1\\left(\\frac{\\mu}{\\rho}\\right)_1+w_2\\left(\\frac{\\mu}{\\rho}\\right)_2+\\cdots?$$",
+            "a": "The mass absorption coefficient is a weighted sum of the elemental contributions because the different atoms in the compound contribute approximately independently to the total attenuation. The weights are the fractions by mass of each constituent."
+        },
+
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter",
+            "sub": "Neutron Interactions",
+            "diff": 1,
+            "q": "Why do neutrons penetrate matter much more deeply than charged particles?",
+            "a": "Because neutrons carry no electric charge, they are not subject to Coulomb interactions with atomic electrons or nuclei. Their main interactions occur through the strong force with nuclei, so they interact only when they come close enough to a nucleus. As a result, neutron attenuation is usually much weaker than the energy loss of charged particles in matter."
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter",
+            "sub": "Neutron Interactions",
+            "diff": 2,
+            "q": "What are the main nuclear processes by which neutrons interact in matter, and which one is the principal energy-loss mechanism for fast neutrons?",
+            "a": "The main processes are elastic scattering, inelastic scattering, radiative capture, other nuclear reactions, fission in fissile materials, and high-energy hadron shower production. For fast neutrons, elastic scattering from nuclei is the principal mechanism of energy loss, because it transfers kinetic energy from the neutron to the recoil nucleus."
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter",
+            "sub": "Neutron Cross Sections",
+            "diff": 2,
+            "q": "The total neutron cross section is written as\n$$\\sigma_{\\rm tot}=\\sigma_{\\rm elastic}+\\sigma_{\\rm inelastic}+\\sigma_{\\rm capture}+\\cdots.$$ \nWhat does this sum represent physically, and how does it lead to attenuation in matter?",
+            "a": "It is the total probability for a neutron to undergo any interaction listed in the sum. Multiplying by the density of atoms gives the mean free path,\n$$\\frac{1}{\\lambda}=N\\sigma_{\\rm tot},$$\nso a collimated neutron beam is attenuated exponentially as\n$$N=N_0\\exp(-x/\\lambda).$$"
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter",
+            "sub": "Neutron Cross Sections",
+            "diff": 2,
+            "q": "The plot below shows the total neutron reaction cross section for several materials as a function of neutron energy. Why is the energy dependence usually smooth, with only moderate structure?",
+            "a": "Unlike photon attenuation, neutron cross sections are dominated by nuclear-force interactions. Their energy dependence is therefore usually smoother, although resonances can appear at specific energies, especially in heavy nuclei. Over many materials the total cross section varies gradually with energy rather than showing the sharp shell edges typical of photon interactions.",
+            "figure": {
+                "src": "images/book-experimental-techniques/fig2.30_total-neutron-cross-section.png",
+                "caption": "Typical total neutron reaction cross sections as a function of neutron energy.",
+                "size": "medium"
+            }
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter",
+            "sub": "Neutron Moderation",
+            "diff": 2,
+            "q": "What is moderation, and why are light nuclei especially effective at slowing down fast neutrons?",
+            "a": "Moderation is the process by which a fast neutron loses kinetic energy through repeated elastic scattering until it reaches thermal or epithermal energies. The lighter the target nucleus, the larger the fraction of neutron energy that can be transferred in a collision. For that reason hydrogen-rich materials such as water or paraffin are especially effective moderators.",
+            "figure": {
+                "src": "images/book-experimental-techniques/fig2.31_neutron-scattering-geometry.png",
+                "caption": "Elastic scattering of a neutron from a nucleus in the laboratory and center-of-mass frames.",
+                "size": "medium"
+            }
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter",
+            "sub": "Neutron Moderation",
+            "diff": 3,
+            "q": "For elastic scattering from a nucleus of mass number $A$, the scattered neutron energy satisfies\n$$\\left(\\frac{E}{E_0}\\right)_{\\min}=\\left(\\frac{A-1}{A+1}\\right)^2,\\qquad \\left(\\frac{E}{E_0}\\right)_{\\max}=1.$$\nWhat does this imply physically?",
+            "a": "The neutron can retain nearly all of its energy in a forward collision, but the maximum energy loss per collision is much larger for light nuclei than for heavy nuclei. For hydrogen, $A=1$, so a neutron can lose essentially all of its energy in one collision. For large $A$, the fractional energy loss per collision is much smaller."
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter",
+            "sub": "Neutron Moderation",
+            "diff": 3,
+            "q": "The average lethargy gain per collision is defined by\n$$\\xi=\\langle \\ln(E_0/E)\\rangle.$$ \nWhy is lethargy useful in neutron moderation, and what does a large value of $\\xi$ mean?",
+            "a": "Lethargy measures energy loss on a logarithmic scale, which is convenient because successive neutron collisions reduce the energy multiplicatively rather than additively. The average number of collisions needed to slow a neutron from $E_0$ to $E$ is approximately\n$$n\\simeq \\frac{\\ln(E_0/E)}{\\xi}.$$ \nA large $\\xi$ means the material slows neutrons efficiently in fewer collisions.",
+            "figure": {
+                "src": "images/book-experimental-techniques/fig2.32_neutron-energy-after-scatterings.png",
+                "caption": "Neutron energy distributions after several elastic scatterings.",
+                "size": "medium"
+            }
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter",
+            "sub": "Neutron Energy Regions",
+            "diff": 2,
+            "q": "How are neutrons commonly classified by energy, and what physical regimes do these names correspond to?",
+            "a": "Neutrons are commonly described as slow or thermal at very low energies, epithermal at intermediate energies, fast at higher energies up to about tens of MeV, and very fast above that. Thermal neutrons are near thermal equilibrium with the medium, epithermal neutrons lie above that range but below the fast-neutron regime, and fast neutrons are energetic enough that nuclear resonance and inelastic effects become important."
         }
 
 

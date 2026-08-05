@@ -41,7 +41,7 @@
     "collection": "Experimental Techniques in Nuclear and Particle Physics",
     "chapter": "Ch.2: Passage of Radiation Through Matter",
     "deck": "book-exptech-ch2",
-    "title": "Energy Loss of Heavy Charged Paticles",
+    "title": "Energy Loss of Heavy Charged Particles by Atomic Collisions",
     "order": 5,
     "file": "maps/book-experimental-techniques/heavy-charged-particles.json"
   },
@@ -89,6 +89,33 @@
     "title": "Multiple Coulomb Scattering",
     "order": 10,
     "file": "maps/book-experimental-techniques/multiple-coulomb-scattering.json"
+  },
+  {
+    "id": "energy-straggling",
+    "collection": "Experimental Techniques in Nuclear and Particle Physics",
+    "chapter": "Ch.2: Passage of Radiation Through Matter",
+    "deck": "book-exptech-ch2",
+    "title": "Energy Straggling",
+    "order": 11,
+    "file": "maps/book-experimental-techniques/energy-straggling.json"
+  },
+  {
+    "id": "photon-interaction",
+    "collection": "Experimental Techniques in Nuclear and Particle Physics",
+    "chapter": "Ch.2: Passage of Radiation Through Matter",
+    "deck": "book-exptech-ch2",
+    "title": "The Interaction of Photons",
+    "order": 12,
+    "file": "maps/book-experimental-techniques/photon-interaction.json"
+  },
+  {
+    "id": "neutron-interaction",
+    "collection": "Experimental Techniques in Nuclear and Particle Physics",
+    "chapter": "Ch.2: Passage of Radiation Through Matter",
+    "deck": "book-exptech-ch2",
+    "title": "The Interaction of Neutrons",
+    "order": 13,
+    "file": "maps/book-experimental-techniques/neutron-interaction.json"
   },
 
 
