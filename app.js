@@ -29,6 +29,7 @@ let deckIndex = {};
 let lastDeckByCollection = {};
 let pendingStudySelection = null;
 let mapDeckFilter = null;
+let openDashboardDeckId = null;
 
 let state = {
   customCards: [],       // user-added cards
@@ -482,6 +483,255 @@ function deckStats(deckId) {
     };
 }
 
+function deckProgressStats(deckId) {
+
+    const cards = getCardsForDeck(deckId);
+    const progress = loadJSON(`progress:${deckId}`, {});
+
+    const groups = {};
+
+    let boxSum = 0;
+    let due = 0;
+    let mastered = 0;
+    let correct = 0;
+    let incorrect = 0;
+
+    for (const card of cards) {
+
+        const sub = card.sub ?? "Other";
+
+        if (!groups[sub]) {
+            groups[sub] = {
+                name: sub,
+                total: 0,
+                due: 0,
+                mastered: 0,
+                boxSum: 0,
+                correct: 0,
+                incorrect: 0
+            };
+        }
+
+        const group = groups[sub];
+        const cardProgress = progress[card.id];
+
+        const box = cardProgress?.box ?? 0;
+        const cardCorrect = cardProgress?.correct ?? 0;
+        const cardIncorrect = cardProgress?.incorrect ?? 0;
+
+        group.total++;
+        group.boxSum += box;
+        group.correct += cardCorrect;
+        group.incorrect += cardIncorrect;
+
+        boxSum += box;
+        correct += cardCorrect;
+        incorrect += cardIncorrect;
+
+        if (!cardProgress || cardProgress.nextDue <= todayStr()) {
+            due++;
+            group.due++;
+        }
+
+        if (box === 5) {
+            mastered++;
+            group.mastered++;
+        }
+    }
+
+    const subtopics =
+        Object.values(groups).map(group => {
+            const reviews = group.correct + group.incorrect;
+
+            return {
+                name: group.name,
+                total: group.total,
+                due: group.due,
+                mastered: group.mastered,
+                purity:
+                    group.total > 0
+                        ? Math.round(100 * group.boxSum / (5 * group.total))
+                        : 0,
+                reviews,
+                efficiency:
+                    reviews > 0
+                        ? Math.round(100 * group.correct / reviews)
+                        : null
+            };
+        });
+
+    const total = cards.length;
+    const reviews = correct + incorrect;
+
+    return {
+        total,
+        due,
+        mastered,
+        purity:
+            total > 0
+                ? Math.round(100 * boxSum / (5 * total))
+                : 0,
+        reviews,
+        efficiency:
+            reviews > 0
+                ? Math.round(100 * correct / reviews)
+                : null,
+        subtopics
+    };
+}
+
+function renderDeckProgressPanel(deckId) {
+
+    const stats = deckProgressStats(deckId);
+
+    if (stats.total === 0) {
+        return `
+            <div class="dashboard-deck-progress-panel">
+                <div class="dashboard-progress-placeholder">
+                    No cards found for this deck.
+                </div>
+            </div>
+        `;
+    }
+
+    const efficiencyText =
+        stats.efficiency === null
+            ? "—"
+            : `${stats.efficiency}%`;
+
+    const subtopicsHtml =
+        stats.subtopics
+            .filter(subtopic => subtopic.total > 0)
+            .sort((a, b) => a.purity - b.purity)
+            .map(subtopic => {
+
+                const subEfficiency =
+                    subtopic.efficiency === null
+                        ? "—"
+                        : `${subtopic.efficiency}%`;
+
+                return `
+                    <div class="concept-subtopic-row">
+
+                        <div class="concept-subtopic-main">
+
+                            <div class="concept-subtopic-head">
+
+                                <div class="concept-subtopic-name">
+                                    ${escapeHtml(subtopic.name)}
+                                </div>
+
+                                <div class="concept-subtopic-purity">
+                                    ${subtopic.purity}%
+                                </div>
+
+                            </div>
+
+                            <div class="bar-track concept-subtopic-track">
+                                <div
+                                    class="bar-fill"
+                                    style="width:${subtopic.purity}%;background:var(--cherenkov);">
+                                </div>
+                            </div>
+
+                            <div class="concept-subtopic-meta">
+                                <span>${subtopic.total} cards</span>
+                                <span>${subtopic.due} due</span>
+                                <span>${subtopic.mastered} mastered</span>
+                                <span>${subtopic.reviews} reviews</span>
+                                <span>${subEfficiency} efficiency</span>
+                            </div>
+
+                        </div>
+
+                    </div>
+                `;
+            })
+            .join("");
+
+    return `
+        <div class="dashboard-deck-progress-panel">
+
+            <div class="concept-stats-header">
+
+                <div>
+                    <div class="concept-stats-title">
+                        Deck progress
+                    </div>
+
+                    <div class="concept-stats-subtitle">
+                        Subtopic progress for this deck.
+                    </div>
+                </div>
+
+                <div class="concept-stats-overall">
+                    ${stats.purity}%
+                </div>
+
+            </div>
+
+            <div class="concept-stats-grid">
+
+                <div class="concept-stat-card">
+                    <div class="concept-stat-value">
+                        ${stats.total}
+                    </div>
+                    <div class="concept-stat-label">
+                        Cards
+                    </div>
+                </div>
+
+                <div class="concept-stat-card">
+                    <div class="concept-stat-value amber">
+                        ${stats.due}
+                    </div>
+                    <div class="concept-stat-label">
+                        Due
+                    </div>
+                </div>
+
+                <div class="concept-stat-card">
+                    <div class="concept-stat-value alt">
+                        ${stats.mastered}
+                    </div>
+                    <div class="concept-stat-label">
+                        Mastered
+                    </div>
+                </div>
+
+                <div class="concept-stat-card">
+                    <div class="concept-stat-value">
+                        ${efficiencyText}
+                    </div>
+                    <div class="concept-stat-label">
+                        Efficiency
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="concept-stats-progress">
+                <div class="concept-stats-progress-head">
+                    <span>Overall mastery</span>
+                    <span>${stats.purity}%</span>
+                </div>
+
+                <div class="bar-track">
+                    <div
+                        class="bar-fill"
+                        style="width:${stats.purity}%;background:var(--scint);">
+                    </div>
+                </div>
+            </div>
+
+            <div class="concept-subtopics">
+                ${subtopicsHtml}
+            </div>
+
+        </div>
+    `;
+}
+
 function escapeHtml(str){
   return String(str).replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
 }
@@ -599,7 +849,7 @@ async function switchDeck(deckId, options = {}) {
     }
 }
 
-/* ================= OVERVIEW ================= */
+/* ================= DASHBOARD ================= */
 function renderOverview() {
 
     const deckResults = deckCatalog.map(deck => ({
@@ -645,7 +895,6 @@ function renderOverview() {
             <div class="stat-value">
                 ${globalStats.cards}
             </div>
-
             <div class="stat-label">
                 Total cards
             </div>
@@ -655,7 +904,6 @@ function renderOverview() {
             <div class="stat-value amber">
                 ${globalStats.due}
             </div>
-
             <div class="stat-label">
                 Due now
             </div>
@@ -665,7 +913,6 @@ function renderOverview() {
             <div class="stat-value alt">
                 ${globalStats.mastered}
             </div>
-
             <div class="stat-label">
                 Mastered
             </div>
@@ -679,7 +926,6 @@ function renderOverview() {
                         : `${globalEfficiency}%`
                 }
             </div>
-
             <div class="stat-label">
                 Recall efficiency
             </div>
@@ -738,9 +984,7 @@ function renderOverview() {
 
             </section>
         `;
-
     } else {
-
         continueRoot.innerHTML = "";
     }
 
@@ -807,16 +1051,12 @@ function renderOverview() {
 
                         return `
                             <div class="dashboard-deck-row">
-
                                 <div class="dashboard-deck-main">
-
                                     <div class="dashboard-deck-heading">
-
                                         <div>
                                             <div class="dashboard-deck-name">
                                                 ${escapeHtml(deck.name)}
                                             </div>
-
                                             ${
                                                 isCurrent
                                                     ? `
@@ -827,13 +1067,10 @@ function renderOverview() {
                                                     : ""
                                             }
                                         </div>
-
                                         <div class="dashboard-deck-purity">
                                             ${stats.purity}%
                                         </div>
-
                                     </div>
-
                                     <div class="bar-track dashboard-deck-track">
                                         <div
                                             class="bar-fill"
@@ -843,49 +1080,56 @@ function renderOverview() {
                                             ">
                                         </div>
                                     </div>
-
                                     <div class="dashboard-deck-meta">
                                         <span>${stats.total} cards</span>
                                         <span>${stats.due} due</span>
                                         <span>${stats.mastered} mastered</span>
-
                                         ${
                                             stats.efficiency === null
                                                 ? ""
                                                 : `<span>${stats.efficiency}% efficiency</span>`
                                         }
                                     </div>
-
                                 </div>
-
                                 <div class="dashboard-deck-actions">
+                                    ${
+                                        isCurrent
+                                            ? `
+                                                <span class="dashboard-current-badge">
+                                                    Current
+                                                </span>
+                                            `
+                                            : `
+                                                <button
+                                                    class="btn btn-ghost dashboard-set-current"
+                                                    onclick="setCurrentDeck('${deck.id}')">
 
+                                                    Set current
+
+                                                </button>
+                                            `
+                                    }
+                                    <button
+                                        class="btn btn-ghost"
+                                        onclick="toggleDeckProgress('${deck.id}')">
+                                        View progress
+                                    </button>
                                     <button
                                         class="btn btn-primary"
                                         onclick="openDeckView('${deck.id}', 'train')">
-
                                         Train
-
                                     </button>
-
                                     <button
                                         class="btn btn-ghost"
                                         onclick="openDeckView('${deck.id}', 'library')">
-
                                         Library
-
                                     </button>
-
                                     <button
                                         class="btn btn-ghost"
                                         onclick="openDeckMaps('${deck.id}')">
-
                                         Maps
-
                                     </button>
-
                                 </div>
-
                             </div>
                         `;
                     })
@@ -931,11 +1175,16 @@ function renderOverview() {
                             ${deckRows}
                         </div>
 
+                        ${
+                            items.some(item => item.deck.id === openDashboardDeckId)
+                                ? renderDeckProgressPanel(openDashboardDeckId)
+                                : ""
+                        }
+
                     </section>
                 `;
             })
             .join("");
-                      
 }
 
 async function openDeckView(deckId, view) {
@@ -954,6 +1203,12 @@ async function openDeckView(deckId, view) {
     goTo(view);
 }
 
+function toggleDeckProgress(deckId) {
+  openDashboardDeckId =
+    openDashboardDeckId === deckId ? null : deckId;
+
+  renderOverview();
+}
 
 function confirmReset(){
   if(confirm('This clears all review progress (box levels, due dates, efficiency stats). Custom cards you added are kept. Continue?')){
