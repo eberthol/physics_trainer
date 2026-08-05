@@ -78,8 +78,17 @@
     "chapter": "Ch.2: Passage of Radiation Through Matter",
     "deck": "book-exptech-ch2",
     "title": "Energy Loss of Electrons and Positrons",
-    "order": 8,
+    "order": 9,
     "file": "maps/book-experimental-techniques/electrons-positrons.json"
+  },
+  {
+    "id": "multiple-coulomb-scattering",
+    "collection": "Experimental Techniques in Nuclear and Particle Physics",
+    "chapter": "Ch.2: Passage of Radiation Through Matter",
+    "deck": "book-exptech-ch2",
+    "title": "Multiple Coulomb Scattering",
+    "order": 10,
+    "file": "maps/book-experimental-techniques/multiple-coulomb-scattering.json"
   },
 
 

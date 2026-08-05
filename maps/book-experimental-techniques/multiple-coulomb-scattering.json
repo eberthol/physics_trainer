@@ -1,0 +1,18 @@
+{
+  "title": "Multiple Coulomb scattering",
+
+  "layers": [
+    {
+      "title": "Multiple Coulomb scattering",
+      "image": "images/book-experimental-techniques/maps/multiple-coulonb-scattering.png"
+    }
+  ],
+
+  "caption": "Multiple Coulomb scattering",
+
+  "study": {
+    "subtopics": [
+      ""
+    ]
+  }
+}
