@@ -19,14 +19,14 @@
         "sub": "Photocathode",
         "diff": 2,
         "q": "The photocathode obeys Einstein's photoelectric relation\n$$E=h\\nu-\\phi.$$\nWhat does this equation mean physically, and what is the threshold condition for photoemission?",
-        "a": "The photon energy is used first to overcome the work function \\(\\phi\\) of the photocathode material, and the remainder appears as the kinetic energy of the emitted electron. Photoemission can occur only if the photon frequency exceeds a minimum threshold so that \\(h\\nu>\\phi\\)."
+        "a": "The photon energy is used first to overcome the work function $\\phi$ of the photocathode material, and the remainder appears as the kinetic energy of the emitted electron. Photoemission can occur only if the photon frequency exceeds a minimum threshold so that $h\\nu>\\phi$."
     },
     {
         "topic": "Ch.8: Photomultipliers",
         "sub": "Quantum Efficiency",
         "diff": 2,
         "q": "What is the quantum efficiency of a photocathode, and how is the radiant cathode sensitivity defined?",
-        "a": "The quantum efficiency \\(\\eta(\\lambda)\\) is the number of photoelectrons released divided by the number of incident photons at wavelength \\(\\lambda\\). The radiant cathode sensitivity is defined by\n$$S(\\lambda)=\\frac{I_k}{P(\\lambda)}=\\eta(\\lambda)\\frac{e}{h c}\\,\\lambda,$$\nor equivalently, for \\(\\lambda\\) in nanometers,\n$$S(\\lambda)=\\frac{\\eta(\\lambda)\\,\\lambda}{1240}\\;[\\mathrm{A/W}].$$"
+        "a": "The quantum efficiency $\\eta(\\lambda)$ is the number of photoelectrons released divided by the number of incident photons at wavelength $\\lambda$. The radiant cathode sensitivity is defined by\n$$S(\\lambda)=\\frac{I_k}{P(\\lambda)}=\\eta(\\lambda)\\frac{e}{h c}\\,\\lambda,$$\nor equivalently, for $\\lambda$ in nanometers,\n$$S(\\lambda)=\\frac{\\eta(\\lambda)\\,\\lambda}{1240}\\;[\\mathrm{A/W}].$$"
     },
     {
         "topic": "Ch.8: Photomultipliers",
@@ -51,21 +51,339 @@
         "topic": "Ch.8: Photomultipliers",
         "sub": "Photocathode Response",
         "diff": 2,
-        "q": "The photocathode obeys Einstein's relation\n$$E=h\\nu-\\phi.$$\nWhat does this imply about the threshold for photoemission and the meaning of the work function \\(\\phi\\)?",
-        "a": "The photon must supply at least the work function \\(\\phi\\) of the photocathode material before an electron can be emitted. The work function is the binding energy that must be overcome to free the electron. Thus, photoemission occurs only above a threshold frequency, where the photon energy exceeds \\(\\phi\\)."
+        "q": "The photocathode obeys Einstein's relation\n$$E=h\\nu-\\phi.$$\nWhat does this imply about the threshold for photoemission and the meaning of the work functionv$\\phi$?",
+        "a": "The photon must supply at least the work function $\\phi$ of the photocathode material before an electron can be emitted. The work function is the binding energy that must be overcome to free the electron. Thus, photoemission occurs only above a threshold frequency, where the photon energy exceeds $\\phi$."
     },
     {
         "topic": "Ch.8: Photomultipliers",
         "sub": "Quantum Efficiency",
         "diff": 2,
-        "q": "The figure below shows the quantum efficiency of several photocathode materials as a function of wavelength. What does \\(\\eta(\\lambda)\\) measure, and what does the plot tell you about choosing a photocathode?",
-        "a": "\\(\\eta(\\lambda)\\) is the number of photoelectrons released divided by the number of incident photons at wavelength \\(\\lambda\\). The plot shows that different photocathodes have very different response curves, with each material having its own peak sensitivity region. Choosing a photocathode therefore means matching its quantum-efficiency curve to the wavelength range of the light source being detected.",
+        "q": "The figure below shows the quantum efficiency of several photocathode materials as a function of wavelength. What does $\\eta(\\lambda)$ measure, and what does the plot tell you about choosing a photocathode?",
+        "a": "$\\eta(\\lambda)$ is the number of photoelectrons released divided by the number of incident photons at wavelength $\\lambda$. The plot shows that different photocathodes have very different response curves, with each material having its own peak sensitivity region. Choosing a photocathode therefore means matching its quantum-efficiency curve to the wavelength range of the light source being detected.",
         "figure": {
             "src": "images/book-experimental-techniques/fig8.2_photocathode-quantum-efficiency.png",
             "caption": "Quantum efficiency of various photocathode materials as a function of wavelength.",
             "size": "medium"
         }
+    },
+    {
+        "topic": "Ch.8: Photomultipliers",
+        "sub": "Electron-Optical Input",
+        "diff": 2,
+        "q": "The figure below shows the electron-optical input system of a photomultiplier tube. Why is this stage important, and what are the two main requirements it must satisfy?",
+        "a": "After a photoelectron is emitted from the photocathode, it must be collected and focused efficiently onto the first dynode. The input system uses electric fields, or a combination of electric and magnetic fields, to guide the electron trajectory. Its two main requirements are: (1) very efficient collection, so that as many emitted electrons as possible reach the multiplier section, and (2) a transit time from cathode to first dynode that is as independent as possible of the emission point. This transit-time uniformity is especially important in fast PMs used for timing.",
+        "figure": {
+            "src": "images/book-experimental-techniques/fig8.3_electron-optical-input-system.png",
+            "caption": "Electron-optical input system of a typical photomultiplier tube.",
+            "size": "medium"
+        }
+    },
+    {
+        "topic": "Ch.8: Photomultipliers",
+        "sub": "Dynodes",
+        "diff": 2,
+        "q": "What is the role of the dynode chain in a photomultiplier, and what properties should a good dynode material have?",
+        "a": "The dynode chain amplifies the weak primary photocurrent by repeated secondary emission. Each dynode converts one incoming electron into several outgoing secondary electrons, so the signal grows from stage to stage until a measurable pulse is collected at the anode. A good dynode material should have a high secondary emission factor, be stable under high current, and have low thermionic emission so that the noise stays small.",
+    },
+    {
+        "topic": "Ch.8: Photomultipliers",
+        "sub": "Dynode Configurations",
+        "diff": 2,
+        "q": "Why do photomultipliers use different dynode configurations, and what trade-off do these geometries control?",
+        "a": "Dynode strings can be built in several geometries, including venetian blind, box-and-grid, linear focused, circular focused, and microchannel plate forms. The configuration affects response time, linearity, gain, and input acceptance. For example, linear focused designs tend to give better overall response, while venetian blind structures can offer simpler construction and good gain. The choice is a compromise between timing performance, linearity, and practical design constraints.",
+        "figure": {
+            "src": "images/book-experimental-techniques/fig8.4_dynode-configurations.png",
+            "caption": "Various dynode configurations used in photomultipliers. (a) venetian blind (b) box and grid (c)  linear focused (d) side-on configuration",
+            "size": "medium"
+        }
+    },
+    {
+        "topic": "Ch.8: Photomultipliers",
+        "sub": "Dynode Configurations",
+        "diff": 3,
+        "q": "The plot below compares the linearity of several dynode configurations. Why is the linear-focused type often the most favorable, and why might a Venetian-blind tube still be chosen?",
+        "a": "The linear-focused type gives the best compromise between high gain and good linearity over a useful range of input currents. It also offers better timing because the electron path lengths are more controlled. A Venetian-blind tube may still be chosen when a moderate input-current range is sufficient and a simpler or lower-cost construction is preferred.",
+        "figure": {
+            "src": "images/book-experimental-techniques/fig8.5_dynode-linearity.png",
+            "caption": "Linearity of different dynode configurations.",
+            "size": "medium"
+        }
+    },
+    {
+        "topic": "Ch.8: Photomultipliers",
+        "sub": "Microchannel Plates",
+        "diff": 2,
+        "q": "What is a microchannel plate photomultiplier, and why can it provide very fast timing?",
+        "a": "A microchannel plate consists of a glass plate perforated by a huge number of tiny channels, each channel acting as a continuous dynode. An electron entering a channel is repeatedly accelerated and multiplied along the channel wall, producing a very large gain in a very short distance. Because the channels are so small and the electron path is short, the transit time is very short and timing response is excellent.",
+        "figure": {
+            "src": "images/book-experimental-techniques/fig8.6_microchannel-plate.png",
+            "caption": "Schematic diagram of a microchannel plate.",
+            "size": "medium"
+        }
+    },
+    {
+        "topic": "Ch.8: Photomultipliers",
+        "sub": "Microchannel Plates",
+        "diff": 2,
+        "q": "What is the chevron configuration in a microchannel plate system, and why is it used?",
+        "a": "The chevron configuration uses two microchannel plates mounted with their channel directions opposed. A third plate may also be added to form a 'Z' configuration. This arrangement increases the total gain while helping suppress feedback and improving practical detector performance.",
+        "figure": {
+            "src": "images/book-experimental-techniques/fig8.7_chevron-configuration.png",
+            "caption": "Chevron configuration in a microchannel-plate photomultiplier.",
+            "size": "medium"
+        }
+    },
+    {
+        "topic": "Ch.8: Photomultipliers",
+        "sub": "Single-Electron Response",
+        "diff": 3,
+        "q": "The figure below shows the single-electron pulse-height spectra of a photomultiplier. Why do single-electron events not all produce the same pulse height, and what does this imply for the gain?",
+        "a": "The secondary emission process is statistical, so a single photoelectron entering the dynode chain can lead to different numbers of emitted electrons from event to event. As a result, the pulse-height spectrum is broad rather than a sharp line. The mean pulse height gives the average gain, but individual events fluctuate around that mean. These fluctuations are often described by Polya, negative-binomial, or compound-Poisson distributions.",
+        "figure": {
+            "src": "images/book-experimental-techniques/fig8.8_single-electron-spectrum.png",
+            "caption": "Single-electron pulse-height spectra for different photomultiplier configurations.",
+            "size": "medium"
+        }
+    },
+    {
+        "topic": "Ch.8: Photomultipliers",
+        "sub": "Gain and Voltage Supply",
+        "diff": 2,
+        "q": "The secondary emission factor of a dynode is written as\n$$\\delta=K V_d^n,$$\nand the total gain of a photomultiplier with $n$ stages becomes\n$$G=\\delta^n=(K V_d)^n.$$\nWhat does this relation say about the dependence of gain on the dynode voltage?",
+        "a": "The gain increases rapidly as the voltage between dynodes increases. Because each dynode's secondary emission factor rises with the voltage across it, the overall gain is a power law in the dynode voltage. This means that even small changes in the high-voltage supply can produce large changes in gain."
+    },
+    {
+        "topic": "Ch.8: Photomultipliers",
+        "sub": "Gain and Voltage Supply",
+        "diff": 2,
+        "q": "If the total high voltage $V_b$ is divided equally among $n$ dynode gaps, then\n$$V_b=nV_d=n\\,G^{1/n}/K.$$\nWhy does minimizing $V_b$ give\n$$n=\\ln G?$$",
+        "a": "For a fixed required gain $G$, the supply voltage depends on the number of dynode stages through the factor $nG^{1/n}$. Differentiating with respect to $n$ and setting the derivative to zero gives the minimum supply voltage when $n=\\ln G$. This shows that the number of stages should be chosen to balance high gain against practical high-voltage limitations."
+    },
+    {
+        "topic": "Ch.8: Photomultipliers",
+        "sub": "Gain and Voltage Supply",
+        "diff": 2,
+        "q": "The gain stability relation is\n$$\\frac{\\Delta G}{G}=n\\frac{\\Delta V_d}{V_d}=n\\frac{\\Delta V_b}{V_b}.$$\nWhy does this imply that a photomultiplier gain of $n=10$ requires the supply voltage to be stable at the level of about $0.1\\%$ if the gain must remain stable to $1\\%$?",
+        "a": "Because the gain changes by $n$ times the fractional voltage change. With $n=10$, a 1% gain variation corresponds to only a 0.1% variation in the applied voltage. High-gain photomultipliers therefore require a very well regulated high-voltage supply."
+    },
+    {
+        "topic": "Ch.8: Photomultipliers",
+        "sub": "Voltage Dividers",
+        "diff": 2,
+        "q": "Why is a voltage divider used in a photomultiplier tube, and why must the bleeder current be much larger than the anode current?",
+        "a": "A voltage divider provides the fixed sequence of dynode potentials needed to operate the multiplier chain. The bleeder current must be much larger than the anode current so that the divider voltages stay nearly constant even when the PM output current changes. If the divider current were too small, the dynode voltages would sag and the gain would vary nonlinearly during pulses."
+    },
+    {
+        "topic": "Ch.8: Photomultipliers",
+        "sub": "Voltage Divider Network",
+        "diff": 2,
+        "q": "The figure below shows several examples of PM voltage-divider networks. Why are capacitors and sometimes Zener diodes added to the divider chain?",
+        "a": "Capacitors store charge so that the dynode voltages remain stable during short, high-current pulses. Zener diodes can be used to hold the last dynode voltages near fixed values when the tube is driven hard. These additions improve pulse stability, linearity, and recovery after large signals.",
+        "figure": {
+            "src": "images/book-experimental-techniques/fig8.10_voltage-divider-networks.png",
+            "caption": "Examples of photomultiplier voltage-divider networks.",
+            "size": "medium"
+        }
+    },
+    {
+        "topic": "Ch.8: Photomultipliers",
+        "sub": "Gain and Voltage Supply",
+        "diff": 2,
+        "q": "The photomultiplier gain is written as\n$$\\delta = K V_d^n, \\qquad G = \\delta^n = (K V_d)^n.$$\nWhat does this show about the dependence of gain on the dynode voltage?",
+        "a": "The gain rises very rapidly with dynode voltage because each stage's secondary emission factor increases as a power of the voltage across that stage. Since the total gain is the product of the stage gains, even a small change in the dynode voltage can cause a large change in the overall PM gain."
+    },
+    {
+        "topic": "Ch.8: Photomultipliers",
+        "sub": "Voltage Dividers",
+        "diff": 2,
+        "q": "Why is a voltage divider needed in a photomultiplier tube, and why must the bleeder current be much larger than the anode current?",
+        "a": "The voltage divider provides the sequence of dynode potentials required to operate the multiplier chain. The bleeder current must be much larger than the anode current so that the dynode voltages remain nearly constant when the tube delivers pulses. If the divider current were too small, the dynode voltages would sag and the gain would change nonlinearly."
+    },
+    {
+        "topic": "Ch.8: Photomultipliers",
+        "sub": "Voltage Divider Network",
+        "diff": 2,
+        "q": "The figure below shows examples of PM voltage-divider networks. Why are capacitors and Zener diodes sometimes added to the divider chain?",
+        "a": "Capacitors store charge so that the dynode voltages stay stable during short, high-current pulses. Zener diodes can hold the last dynode voltages near fixed values when the tube is driven hard. These additions improve pulse stability, linearity, and recovery after large signals.",
+        "figure": {
+            "src": "images/book-experimental-techniques/fig8.10_voltage-divider-networks.png",
+            "caption": "Examples of photomultiplier voltage-divider networks.",
+            "size": "medium"
+        }
+    },
+    {
+        "topic": "Ch.8: Photomultipliers",
+        "sub": "Current Linearity",
+        "diff": 2,
+        "q": "Why is photomultiplier linearity limited by space charge, and what happens as the light intensity increases?",
+        "a": "Linearity requires that the current emitted by each stage be fully collected by the next stage, preserving a strict proportionality between input photocurrent and output current. At high light levels, a cloud of electrons can accumulate near the emitting electrode and distort the electric field, reducing collection efficiency and causing saturation. As the voltage is increased, the space charge is swept away and the full current is collected again.",
+        "figure": {
+            "src": "images/book-experimental-techniques/fig8.11_current-voltage-characteristics.png",
+            "caption": "Current-voltage characteristics of the PM cathode and anode under different light intensities.",
+            "size": "medium"
+        }
+    },
+    {
+        "topic": "Ch.8: Photomultipliers",
+        "sub": "Pulse Shape",
+        "diff": 2,
+        "q": "The anode output of a photomultiplier can be modeled by\n$$I(t)=\\frac{GNe}{\\tau_s}e^{-t/\\tau_s}$$\nand by an output circuit with\n$$I(t)=\\frac{V}{R}+C\\frac{dV}{dt}.$$\nWhy is the output pulse shape important, and why is voltage mode usually preferred?",
+        "a": "The pulse shape determines the detector's time resolution, counting-rate capability, and sensitivity to fluctuations. In voltage mode, the signal is read across the capacitance and is less distorted by the load resistor, giving a larger output pulse that is less sensitive to variations in the current pulse. Current mode is more directly tied to the anode current but gives smaller signals and a lower rate capability because of pile-up.",
+        "figure": {
+            "src": "images/book-experimental-techniques/fig8.12_equivalent-circuit-photomultiplier.png",
+            "caption": "Equivalent circuit for a photomultiplier treated as an ideal current generator in parallel with resistance and capacitance.",
+            "size": "medium"
+        }
+    },
+    {
+        "topic": "Ch.8: Photomultipliers",
+        "sub": "Pulse Shape",
+        "diff": 2,
+        "q": "The figure below shows output signals for different scintillator time constants. What does it demonstrate about the PM output pulse?",
+        "a": "It shows that the output pulse follows the decay time of the scintillator when the scintillator time constant is short compared with the circuit time constant. As the decay time changes, the pulse shape and amplitude change accordingly. This is why the output circuit must be chosen to match the intended timing and counting-rate conditions.",
+        "figure": {
+            "src": "images/book-experimental-techniques/fig8.13_output-signals-time-constants.png",
+            "caption": "Output signals of a photomultiplier for various time constants.",
+            "size": "medium"
+        }
+    },
+    {
+        "topic": "Ch.8: Photomultipliers",
+        "sub": "Time Resolution",
+        "diff": 2,
+        "q": "What are the two principal factors that limit the time resolution of a photomultiplier?",
+        "a": "The first is variation in the transit time of the electrons through the PM, caused by differences in path length and in the energy with which electrons are emitted from the photocathode. The second is statistical noise, arising from the random nature of photoemission and secondary emission in the dynode chain."
+    },
+    {
+        "topic": "Ch.8: Photomultipliers",
+        "sub": "Transit Time Spread",
+        "diff": 2,
+        "q": "The figure below shows the transit-time difference in a conventional photomultiplier and the equipotential lines of a fast PM input system. Why do fast PMs use a shaped electron-optical input system?",
+        "a": "Different emission points on the photocathode give different path lengths and therefore different transit times to the first dynode. By shaping the electric field with focusing electrodes and properly graded equipotential lines, the electrons are accelerated more uniformly and the transit-time spread is reduced.",
+        "figure": {
+            "src": "images/book-experimental-techniques/fig8.14_transit-time-difference.png",
+            "caption": "Transit time difference in a conventional PM and the electron-optical input system of a fast PM.",
+            "size": "medium"
+        }
+    },
+    {
+        "topic": "Ch.8: Photomultipliers",
+        "sub": "Transit Time Spread",
+        "diff": 3,
+        "q": "The transit-time spread is approximated by\n$$\\Delta t \\approx \\frac{\\sqrt{2m_eW}}{eE}.$$\nWhat does this formula show, and how can the spread be reduced?",
+        "a": "The spread increases with the initial kinetic energy component $W$ of the emitted electron and decreases as the electric field strength $E$ is increased. Thus, a stronger field reduces the time differences between electrons emitted with different initial energies or angles. This is especially important in fast PMs."
+    },
+    {
+        "topic": "Ch.8: Photomultipliers",
+        "sub": "Statistical Noise",
+        "diff": 2,
+        "q": "Why does statistical noise limit the time resolution of a photomultiplier even when the electron optics are well designed?",
+        "a": "Photoemission from the photocathode and secondary emission from the dynodes are both statistical processes. As a result, the number of emitted electrons fluctuates from pulse to pulse, and the output pulse shape and timing therefore fluctuate as well. This intrinsic randomness sets a lower bound on the achievable time resolution."
+    },
+    {
+        "topic": "Ch.8: Photomultipliers",
+        "sub": "Fast PM Input System",
+        "diff": 2,
+        "q": "The figure below shows the electron-optical input system of a fast photomultiplier. What design features help improve time resolution?",
+        "a": "The input system uses focusing and accelerating electrodes to steer photoelectrons toward the first dynode along more nearly equal trajectories. This reduces dependence of the transit time on the emission point and helps make the first-dynode arrival time as uniform as possible.",
+        "figure": {
+            "src": "images/book-experimental-techniques/fig8.15_electron-optical-input-system-fast-pm.png",
+            "caption": "Electron-optical input system of a fast photomultiplier.",
+            "size": "medium"
+        }
+    },
+    {
+        "topic": "Ch.8: Photomultipliers",
+        "sub": "Dark Current",
+        "diff": 2,
+        "q": "What is the dark current in a photomultiplier, and what are its main sources?",
+        "a": "The dark current is the small output current that flows even when the photomultiplier is not illuminated. Its main sources are thermionic emission from the cathode and dynodes, leakage currents, radioactive contamination, ionization phenomena, and light leaks. In most PMs, thermionic emission is the dominant component."
+    },
+    {
+        "topic": "Ch.8: Photomultipliers",
+        "sub": "Dark Current",
+        "diff": 2,
+        "q": "Thermionic dark current is described by Richardson's equation\n$$I=AT^2\\exp\\left(-\\frac{e\\phi}{kT}\\right).$$\nWhat does this tell you about the temperature dependence of dark current?",
+        "a": "The dark current rises very rapidly with temperature because of the exponential factor. Lowering the temperature therefore strongly reduces thermionic emission and is one of the most effective ways to suppress dark noise."
+    },
+    {
+        "topic": "Ch.8: Photomultipliers",
+        "sub": "Afterpulsing",
+        "diff": 2,
+        "q": "What is afterpulsing in a photomultiplier, and what causes it?",
+        "a": "Afterpulsing is a delayed spurious pulse that appears after a true signal pulse. It is caused by positive ions or residual gas ions formed in the tube, which drift back toward the cathode or dynodes and release additional electrons when they strike them. Under high current, afterpulses may also be caused by electron-induced light from the last dynodes."
+    },
+    {
+        "topic": "Ch.8: Photomultipliers",
+        "sub": "Statistical Noise",
+        "diff": 2,
+        "q": "What is statistical noise in a photomultiplier, and why does it limit time resolution?",
+        "a": "Statistical noise is the fluctuation in the number of photoelectrons emitted and multiplied for a constant light input. It arises from the random nature of photoemission and secondary emission. These fluctuations produce pulse-height and timing variations, so they set a fundamental lower limit on the photomultiplier's time resolution.",
+        "figure": {
+            "src": "images/book-experimental-techniques/fig8.16_statistical-noise.png",
+            "caption": "Statistical noise from a photomultiplier.",
+            "size": "medium"
+        }
+    },
+    {
+        "topic": "Ch.8: Photomultipliers",
+        "sub": "Magnetic Fields",
+        "diff": 2,
+        "q": "Why are photomultipliers sensitive to magnetic fields, and what is the practical consequence?",
+        "a": "A magnetic field deflects the electron trajectories inside the tube, which can prevent proper collection at the next dynode and reduce the anode current. The effect is strongest when the field is oriented along the axis that most strongly interferes with the electron cascade. For this reason PMs are often shielded with mu-metal, and close-proximity focusing designs may also be used to reduce sensitivity.",
+        "figure": {
+            "src": "images/book-experimental-techniques/fig8.17_magnetic-field-effect.png",
+            "caption": "Effect of magnetic fields on the anode current of an unshielded photomultiplier.",
+            "size": "medium"
+        }
+    },
+    {
+        "topic": "Ch.8: Photomultipliers",
+        "sub": "Temperature Effects",
+        "diff": 2,
+        "q": "How do temperature changes affect photomultiplier operation?",
+        "a": "Temperature mainly affects the PM through dark noise and, to a lesser extent, gain and photocathode response. Dark current increases strongly with temperature because thermionic emission rises rapidly, while the gain may also vary because the dynode and cathode characteristics depend on temperature. These effects are usually smaller than other PM limitations but can be important for precision work.",
+        "figure": {
+            "src": "images/book-experimental-techniques/fig8.19_20_temperature-effects.png",
+            "caption": "Dark noise and gain variations with temperature for photomultipliers.",
+            "size": "medium"
+        }
+    },
+    {
+        "topic": "Ch.8: Photomultipliers",
+        "sub": "Ambient Light",
+        "diff": 2,
+        "q": "Why must a photomultiplier not be exposed to ambient light while under voltage?",
+        "a": "Ambient light can drive large photocurrents that overload the tube and produce instability or even permanent damage. Even after the light is removed, the tube may take time to recover. Photomultipliers should therefore be kept in the dark whenever they are operating."
+    },
+    {
+        "topic": "Ch.8: Photomultipliers",
+        "sub": "Gain Stability",
+        "diff": 2,
+        "q": "What is meant by gain drift in a photomultiplier, and how is it different from shift?",
+        "a": "Drift is a gradual change of gain with time under a constant level of illumination. Shift is a sudden change in gain after the current has changed, for example in count-rate applications when the average counting rate changes abruptly. Drift is therefore a slow time dependence, while shift is a step-like change associated with a change in operating conditions."
+    },
+    {
+        "topic": "Ch.8: Photomultipliers",
+        "sub": "Gain Stability",
+        "diff": 3,
+        "q": "The gain-stability test defines\n$$\\mathrm{DRIFT}=\\frac{\\sum_i |P_i-\\bar P|}{n\\bar P}$$\nand\n$$\\mathrm{SHIFT}=\\frac{\\sum_i |P_i-P_n|}{mP_n}.$$ \nWhat do these quantities measure physically, and what level is considered acceptable?",
+        "a": "They measure how much the position of a reference peak in the pulse-height spectrum moves with time. The drift compares each measurement to the average peak position over the drift run, while the shift compares measurements taken after a change in count rate to the last drift measurement at the reference count rate. For an acceptable photomultiplier, the drift should not exceed 1%, and the shift should also not exceed 1% for the acceptable tube."
+    },
+    {
+        "topic": "Ch.8: Photomultipliers",
+        "sub": "Gain Stability",
+        "diff": 2,
+        "q": "The figure below shows PM gain drift and shift. Why are these effects important in practice, and how can they appear in operation?",
+        "a": "They show that the gain of a photomultiplier is not perfectly constant but can change slowly with time or abruptly after a change in count rate. In practice, this means the same light input may produce slightly different pulse heights depending on the tube history. After periods of inactivity, anode-current changes can also produce a gradual recovery or instability before the gain settles.",
+        "figure": {
+            "src": "images/book-experimental-techniques/fig8.21_gain-drift-and-shift.png",
+            "caption": "PM gain drift and shift as functions of time and count-rate changes.",
+            "size": "medium"
+        }
     }
+
+
 
 
 

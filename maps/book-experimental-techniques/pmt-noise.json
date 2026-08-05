@@ -1,0 +1,18 @@
+{
+  "title": "PMT: Noise and Environment",
+
+  "layers": [
+    {
+      "title": "PMT: Noise and Environment",
+      "image": "images/book-experimental-techniques/maps/pmt-noise.png"
+    }
+  ],
+
+  "caption": "PMT: Noise and Environment",
+
+  "study": {
+    "subtopics": [
+      ""
+    ]
+  }
+}

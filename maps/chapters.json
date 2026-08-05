@@ -17,6 +17,22 @@
   },
 
   {
+    "book": "Experimental Techniques in Nuclear and Particle Physics",
+    "bookOrder": 1,
+    "chapterTitle": "Ch.8: Photomultipliers",
+    "chapterOrder": 8,
+    "deck": "book-exptech-ch8",
+    "manifest": "maps/book-experimental-techniques/manifests/ch8.manifest.json"
+  },
+
+
+
+
+
+
+
+
+  {
     "book": "The Nuclear Many Body Problem",
     "bookOrder": 2,
     "chapterTitle": "Ch.1: The Liquid Drop Model",
