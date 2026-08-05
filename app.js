@@ -19,6 +19,8 @@ const ICONS = {
 /* ================= STATE ================= */
 let deckCatalog = [];     // list from decks/catalog.json
 let mapCatalog = [];      // list from maps/catalog.json
+let chapterCatalog = [];
+let chapterManifests = {};
 let currentDeck = null;   // id of the selected deck
 let currentDeckInfo = null;
 let currentCollection = null;
@@ -127,6 +129,39 @@ async function loadMapCatalog() {
     }
 
     mapCatalog = await response.json();
+}
+
+async function loadChapterCatalog() {
+    const response = await fetch("maps/chapters.json", {
+        cache: "no-store"
+    });
+
+    if (!response.ok) {
+        throw new Error("Cannot load chapter catalog");
+    }
+
+    chapterCatalog = await response.json();
+}
+
+async function loadChapterManifests() {
+    chapterManifests = {};
+
+    await Promise.all(chapterCatalog.map(async chapter => {
+        const response = await fetch(chapter.manifest, {
+            cache: "no-store"
+        });
+
+        if (!response.ok) {
+            throw new Error(`Cannot load ${chapter.manifest}`);
+        }
+
+        const json = await response.json();
+
+        chapterManifests[chapter.id] = {
+            ...chapter,
+            ...json
+        };
+    }));
 }
 
 async function loadDeck(deckId) {
@@ -1257,77 +1292,86 @@ async function studyCurrentConcept() {
 
 function renderMapBrowser() {
 
-    // Group by collection
-    const collections = {};
-    const visibleMaps = mapDeckFilter
-        ? mapCatalog.filter(map => map.deck === mapDeckFilter)
-        : mapCatalog;
+    const mapById = Object.fromEntries( mapCatalog.map(m => [m.id, m]) );
 
-    for (const map of visibleMaps) {
+    const visibleChapters = Object.values(chapterManifests)
+        .filter(chapter => !mapDeckFilter || chapter.deck === mapDeckFilter )
+        .sort((a, b) => (a.bookOrder ?? 999) - (b.bookOrder ?? 999) || (a.chapterOrder ?? 999) - (b.chapterOrder ?? 999) );
 
-        if (!collections[map.collection]) {
-            collections[map.collection] = {};
+    const books = new Map();
+
+    for (const chapter of visibleChapters) {
+        const bookTitle = chapter.book ?? "Other";
+
+        if (!books.has(bookTitle)) {
+            books.set(bookTitle, {
+                order: chapter.bookOrder ?? 999,
+                chapters: []
+            });
         }
 
-        if (!collections[map.collection][map.chapter]) {
-            collections[map.collection][map.chapter] = [];
-        }
-
-        collections[map.collection][map.chapter].push(map);
+        const bucket = books.get(bookTitle);
+        bucket.order = Math.min(bucket.order, chapter.bookOrder ?? 999);
+        bucket.chapters.push(chapter);
     }
+
+    const sortedBooks = [...books.entries()]
+        .sort((a, b) =>
+            a[1].order - b[1].order ||
+            a[0].localeCompare(b[0])
+        );
 
     let html = "";
 
-    for (const [collectionName, chapters] of Object.entries(collections)) {
-
-        // Count maps in this collection
-        const nMaps = Object.values(chapters)
-            .reduce((sum, maps) => sum + maps.length, 0);
+    for (const [bookTitle, bucket] of sortedBooks) {
 
         html += `
             <section class="panel map-collection">
 
                 <div class="map-collection-head">
-
                     <div class="map-collection-title">
-                        ${escapeHtml(collectionName)}
+                        ${escapeHtml(bookTitle)}
                     </div>
 
                     <div class="map-collection-count">
-                        ${nMaps} map${nMaps === 1 ? "" : "s"}
+                        ${bucket.chapters.length}
+                        chapter${bucket.chapters.length === 1 ? "" : "s"}
                     </div>
-
                 </div>
         `;
 
-        // Sort chapter names alphabetically.
-        // (Later we can sort with a chapterOrder field.)
-        const chapterNames = Object.keys(chapters).sort();
+        const chapters = bucket.chapters
+            .slice()
+            .sort((a, b) =>
+                (a.chapterOrder ?? 999) - (b.chapterOrder ?? 999)
+            );
 
-        for (const chapter of chapterNames) {
+        for (const chapter of chapters) {
 
             html += `
                 <div class="map-chapter">
-                    ${escapeHtml(chapter)}
+                    ${escapeHtml(chapter.chapterTitle ?? chapter.title ?? chapter.chapter ?? "")}
                 </div>
 
                 <div class="map-list">
             `;
 
-            const maps = chapters[chapter]
-                .slice()
-                .sort((a, b) => (a.order ?? 999) - (b.order ?? 999));
+            for (const item of (chapter.items ?? [])) {
+                const meta = mapById[item.id];
+                if (!meta) continue;
 
-            for (const map of maps) {
+                const kindLabel =
+                    item.type === "intro" ? "Intro" :
+                    item.type === "summary" ? "Summary" :
+                    "";
 
                 html += `
                     <div
                         class="map-row"
-                        onclick="openConceptMap('${map.id}')"
+                        onclick="openConceptMap('${meta.id}')"
                         role="button"
                         tabindex="0"
                     >
-
                         <div class="map-icon">
                             <svg viewBox="0 0 24 24" aria-hidden="true">
                                 <circle cx="6" cy="12" r="2"></circle>
@@ -1342,30 +1386,29 @@ function renderMapBrowser() {
                         </div>
 
                         <div class="map-info">
-
                             <div class="map-title">
-                                ${escapeHtml(map.title)}
+                                ${escapeHtml(meta.title)}
                             </div>
-
+                            ${
+                                kindLabel
+                                    ? `<div class="map-meta">${escapeHtml(kindLabel)}</div>`
+                                    : ""
+                            }
                         </div>
 
                         <div class="map-chevron">›</div>
-
                     </div>
                 `;
             }
 
-            html += `
-                </div>
-            `;
+            html += `</div>`;
         }
 
-        html += `
-            </section>
-        `;
+        html += `</section>`;
     }
 
-    document.getElementById("mapsView").innerHTML = html;
+    document.getElementById("mapsView").innerHTML =
+        html || `<div class="empty-state">No concept maps found.</div>`;
 }
 
 async function openConceptMap(id) {
@@ -2361,6 +2404,8 @@ async function init() {
     await loadDeckCatalog();
     await loadDeckMetadata();
     await loadMapCatalog();
+    await loadChapterCatalog();
+    await loadChapterManifests();
 
     loadCollectionMemory();
 

@@ -1,0 +1,15 @@
+{
+  "items": [
+    { "type": "intro",   "id": "liquid-drop-intro" },
+    { "type": "map",     "id": "SEMF" },
+    { "type": "map",     "id": "deformation-parameters" },
+    { "type": "map",     "id": "surface-oscillations" },
+    { "type": "map",     "id": "deformed-shapes" },
+    { "type": "map",     "id": "axial-symmetry" },
+    { "type": "map",     "id": "asymmetric-rotor" },
+
+    { "type": "map",     "id": "nuclear-fission" },
+    { "type": "map",     "id": "rotating-liquid-drops" },
+    { "type": "summary",     "id": "ch1-liquid-drop-summary" }
+  ]
+}

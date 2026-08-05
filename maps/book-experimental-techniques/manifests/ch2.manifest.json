@@ -1,0 +1,16 @@
+{
+  "items": [
+    { "type": "map", "id": "cross-section" },
+    { "type": "map", "id": "mean-free-path" },
+    { "type": "map", "id": "heavy-charged-particles" },
+    { "type": "map", "id": "bethe-bloch" },
+    { "type": "map", "id": "energy-loss" },
+    { "type": "map", "id": "cherenkov" },
+
+    { "type": "map", "id": "electrons-positrons" },
+    { "type": "map", "id": "multiple-coulomb-scattering" },
+    { "type": "map", "id": "energy-straggling" },
+    { "type": "map", "id": "photon-interaction" },
+    { "type": "map", "id": "neutron-interaction" }
+  ]
+}

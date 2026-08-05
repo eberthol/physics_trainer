@@ -1,0 +1,6 @@
+{
+  "items": [
+    { "type": "map",     "id": "radiocative-decays" },
+    { "type": "map",     "id": "radiocative-decay-signature" }
+  ]
+}
