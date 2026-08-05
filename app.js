@@ -3,7 +3,7 @@ const BOX_INTERVALS = [0, 1, 3, 7, 16, 35]; // days until due, indexed by box le
 const TOPIC_PALETTE = ['#5FD4E3', '#9B87F5', '#F2B84B', '#5FD98A', '#F27F5F', '#7FA9F2', '#E38FD1', '#8FE3C0'];
 
 const NAV_ITEMS = [
-  {id:'overview', label:'Overview', icon:'ring'},
+  {id:'overview', label:'Dashboard', icon:'ring'},
   {id:'train', label:'Train', icon:'bolt'},
   {id:'library', label:'Library', icon:'book'},
   {id:'maps', label:'Concept Maps', icon:'book'}

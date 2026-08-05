@@ -662,7 +662,7 @@
 
 
 
-        
+
 
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
@@ -720,6 +720,65 @@
             "figure": {
                 "src": "images/book-experimental-techniques/fig2.15_multiple-scattering-angular-distribution.png",
                 "caption": "Measured multiple-scattering angular distribution compared with a Gaussian approximation.",
+                "size": "medium"
+            }
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter",
+            "sub": "Gaussian Approximation",
+            "diff": 2,
+            "q": "Ignoring rare large-angle single scatterings, the space-angle distribution is approximated by\n$$P(\\theta)d\\theta=\\frac{2\\theta}{\\langle\\theta^2\\rangle}\\exp\\left(-\\frac{\\theta^2}{\\langle\\theta^2\\rangle}\\right)d\\theta.$$\nWhat is the physical meaning of $\\langle\\theta^2\\rangle$ and why is this distribution approximately Gaussian?",
+            "a": "$\\langle\\theta^2\\rangle$ is the mean squared space scattering angle, and $\\sqrt{\\langle\\theta^2\\rangle}$ is the rms scattering angle. The distribution is approximately Gaussian because the net deflection is the cumulative result of many independent small-angle scatterings. Rare large-angle collisions are omitted from this approximation."
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter",
+            "sub": "Gaussian Approximation",
+            "diff": 2,
+            "q": "The projected scattering-angle distribution is\n$$P(\\theta_x)d\\theta_x=\\frac{1}{\\sqrt{2\\pi\\langle\\theta_x^2\\rangle}}\\exp\\left(-\\frac{\\theta_x^2}{2\\langle\\theta_x^2\\rangle}\\right)d\\theta_x,$$\nwith\n$$\\langle\\theta_x^2\\rangle=\\frac{\\langle\\theta^2\\rangle}{2}.$$\nWhy is the projected mean squared angle one-half of the space-angle value?",
+            "a": "For an azimuthally symmetric scattering distribution, the total transverse deflection is shared equally between two perpendicular projected directions. The two projected variances are therefore equal and satisfy $\\langle\\theta^2\\rangle=\\langle\\theta_x^2\\rangle+\\langle\\theta_y^2\\rangle=2\\langle\\theta_x^2\\rangle$."
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter",
+            "sub": "Gaussian Approximation",
+            "diff": 3,
+            "q": "An empirical estimate of the mean squared multiple-scattering angle is\n$$\\langle\\theta^2\\rangle=2\\frac{\\chi_c^2}{1+F^2}\\left[\\frac{1+\\nu}{\\nu}\\ln(1+\\nu)-1\\right].$$\nWhat qualitative dependences of the angular spread follow from this result?",
+            "a": "The angular spread increases with absorber thickness and with the charge and atomic number factors contained in $\\chi_c$. It decreases strongly with increasing momentum and velocity through the approximate $1/(p\\beta)^2$ dependence. Thus, slow low-momentum particles in thick high-$Z$ absorbers undergo the largest multiple scattering."
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter",
+            "sub": "Gaussian Approximation",
+            "diff": 2,
+            "q": "Why does the true rms angle of the complete Moliere distribution formally become infinite, even though a finite Gaussian width is useful in practice?",
+            "a": "The full distribution has a long Rutherford-like tail from rare large-angle scatterings. These events contribute strongly to the second moment, causing the formal mean squared angle to diverge. In practical calculations, the Gaussian approximation effectively describes the central portion of the distribution after excluding a small fraction of the largest-angle events."
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter",
+            "sub": "Gaussian Approximation",
+            "diff": 2,
+            "q": "The lateral-displacement distribution after traversing a thickness $t$ in radiation lengths has\n$$\\langle r^2\\rangle=\\frac{\\langle\\theta^2\\rangle t^2}{3}.$$\nWhat does this relation show about the connection between angular scattering and transverse displacement?",
+            "a": "A particle that is repeatedly deflected accumulates a transverse displacement as it travels. The rms displacement grows with both the angular spread and the traversed thickness. The factor $1/3$ reflects the continuous buildup of deflection along the path rather than a single deflection occurring at one point."
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter",
+            "sub": "Electron Backscattering",
+            "diff": 2,
+            "q": "The diagram below shows an electron entering an absorber and emerging again from the entrance surface. Why are low-energy electrons especially susceptible to backscattering?",
+            "a": "Because of their small mass and low momentum, electrons can undergo large angular deflections in nuclear Coulomb scattering. Several such deflections can reverse the direction of motion and return the electron through the entrance surface. The effect becomes stronger at lower energy and in materials with larger atomic number.",
+            "figure": {
+                "src": "images/book-experimental-techniques/fig2.16_electron-backscattering.png",
+                "caption": "Backscattering of an electron caused by large-angle multiple scattering in an absorber.",
+                "size": "medium"
+            }
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter",
+            "sub": "Electron Backscattering",
+            "diff": 2,
+            "q": "The plots below show the electron backscattering coefficient $\\eta$ for several materials. What trends with electron energy and absorber atomic number are evident, and why are they important for detector design?",
+            "a": "The backscattering coefficient generally decreases as the electron energy increases and increases strongly with the atomic number of the absorber. Low-energy electrons in high-$Z$ materials are therefore most likely to be reflected. In electron detectors, especially those using non-collimated electrons and high-$Z$ materials such as NaI, backscattering can remove a large fraction of particles before they deposit a usable signal.",
+            "figure": {
+                "src": "images/book-experimental-techniques/fig2.17_backscattering-coefficients.png",
+                "caption": "Measured electron backscattering coefficients as functions of energy for several absorber materials.",
                 "size": "medium"
             }
         }
