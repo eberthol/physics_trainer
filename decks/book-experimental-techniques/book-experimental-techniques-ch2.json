@@ -537,9 +537,9 @@
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
             "sub": "Bremsstrahlung",
-            "diff": 2,
-            "q": "Why is bremsstrahlung important for electrons and positrons but much less important for heavier charged particles?",
-            "a": "The bremsstrahlung emission probability varies approximately as the inverse square of the particle mass, $\\sigma\\propto1/m^2$. Because electrons and positrons have very small mass, they radiate efficiently when accelerated in a nuclear electric field. For example, radiation loss by muons is about $40000$ times smaller than for electrons."
+            "diff": 1,
+            "q": "What is bremsstrahlung, and why is it an important energy-loss mechanism for electrons and positrons?",
+            "a": "Bremsstrahlung ('braking radiation') is electromagnetic radiation emitted when a charged particle is accelerated or decelerated by the electric field of a nucleus. As an electron or positron passes near a nucleus, its trajectory bends and its kinetic energy is partially converted into photons. Because the bremsstrahlung probability varies approximately as $1/m^2$, it is much more important for electrons and positrons than for heavier charged particles. Above the critical energy, bremsstrahlung becomes their dominant mechanism of energy loss."
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
