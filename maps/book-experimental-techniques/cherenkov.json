@@ -1,14 +1,14 @@
 {
-  "title": "Cherenlov Radiation",
+  "title": "Cherenkov Radiation",
 
   "layers": [
     {
-      "title": "Cherenlov Radiation",
+      "title": "Cherenkov Radiation",
       "image": "images/book-experimental-techniques/maps/cherenkov.png"
     }
   ],
 
-  "caption": "Cherenlov Radiation",
+  "caption": "Cherenkov Radiation",
 
   "study": {
     "subtopics": [
