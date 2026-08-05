@@ -83,7 +83,7 @@
         "sub": "Dynodes",
         "diff": 2,
         "q": "What is the role of the dynode chain in a photomultiplier, and what properties should a good dynode material have?",
-        "a": "The dynode chain amplifies the weak primary photocurrent by repeated secondary emission. Each dynode converts one incoming electron into several outgoing secondary electrons, so the signal grows from stage to stage until a measurable pulse is collected at the anode. A good dynode material should have a high secondary emission factor, be stable under high current, and have low thermionic emission so that the noise stays small.",
+        "a": "The dynode chain amplifies the weak primary photocurrent by repeated secondary emission. Each dynode converts one incoming electron into several outgoing secondary electrons, so the signal grows from stage to stage until a measurable pulse is collected at the anode. A good dynode material should have a high secondary emission factor, be stable under high current, and have low thermionic emission so that the noise stays small."
     },
     {
         "topic": "Ch.8: Photomultipliers",
@@ -145,7 +145,7 @@
             "size": "medium"
         }
     },
-    {
+     {
         "topic": "Ch.8: Photomultipliers",
         "sub": "Gain and Voltage Supply",
         "diff": 2,
@@ -382,13 +382,7 @@
             "size": "medium"
         }
     }
-
-
-
-
-
-
-
+    
 
 
 
