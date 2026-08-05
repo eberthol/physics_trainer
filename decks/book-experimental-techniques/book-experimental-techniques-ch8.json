@@ -12,7 +12,12 @@
         "sub": "Basic Construction",
         "diff": 2,
         "q": "What are the main parts of a typical photomultiplier tube, and how does it work?",
-        "a": "A typical PM tube consists of a photocathode, an electron-collection system, a series of dynodes, and an anode, all enclosed in an evacuated glass tube. An incident photon ejects a photoelectron from the photocathode, the electron is accelerated by the high voltage to the first dynode, secondary electrons are emitted, and the cascade is repeated at successive dynodes until a measurable pulse is collected at the anode."
+        "a": "A typical PM tube consists of a photocathode, an electron-collection system, a series of dynodes, and an anode, all enclosed in an evacuated glass tube. An incident photon ejects a photoelectron from the photocathode, the electron is accelerated by the high voltage to the first dynode, secondary electrons are emitted, and the cascade is repeated at successive dynodes until a measurable pulse is collected at the anode.",
+         "figure": {
+            "src": "images/book-experimental-techniques/fig8.1_photomultiplier-tube.png",
+            "caption": "Schematic diagram of a typical photomultiplier tube.",
+            "size": "small"
+        }
     },
     {
         "topic": "Ch.8: Photomultipliers",
@@ -25,8 +30,15 @@
         "topic": "Ch.8: Photomultipliers",
         "sub": "Quantum Efficiency",
         "diff": 2,
-        "q": "What is the quantum efficiency of a photocathode, and how is the radiant cathode sensitivity defined?",
-        "a": "The quantum efficiency $\\eta(\\lambda)$ is the number of photoelectrons released divided by the number of incident photons at wavelength $\\lambda$. The radiant cathode sensitivity is defined by\n$$S(\\lambda)=\\frac{I_k}{P(\\lambda)}=\\eta(\\lambda)\\frac{e}{h c}\\,\\lambda,$$\nor equivalently, for $\\lambda$ in nanometers,\n$$S(\\lambda)=\\frac{\\eta(\\lambda)\\,\\lambda}{1240}\\;[\\mathrm{A/W}].$$"
+        "q": "What is the quantum efficiency of a photocathode?",
+        "a": "The quantum efficiency $\\eta(\\lambda)$ is the number of photoelectrons released divided by the number of incident photons at wavelength $\\lambda$."
+    },
+    {
+        "topic": "Ch.8: Photomultipliers",
+        "sub": "Quantum Efficiency",
+        "diff": 2,
+        "q": "What radiant cathode sensitivity and how is it defined?",
+        "a": "The radiant cathode sensitivity is equivalent to the quantum efficiency. \nIt is defined by\n$$S(\\lambda)=\\frac{I_k}{P(\\lambda)}=\\eta(\\lambda)\\frac{e}{h c}\\,\\lambda,$$\nor equivalently, for $\\lambda$ in nanometers,\n$$S(\\lambda)=\\frac{\\eta(\\lambda)\\,\\lambda}{1240}\\;[\\mathrm{A/W}].$$ where $I_k$ is the photoelectric emission current from the cathode and $P(\\lambda)$ is the incident radiant power."
     },
     {
         "topic": "Ch.8: Photomultipliers",
@@ -34,25 +46,6 @@
         "diff": 2,
         "q": "Why are semiconductors often preferred over metals for photocathodes, and what is the role of escape depth?",
         "a": "In metals, the quantum efficiency is very small because the emitted electron must travel through the material and lose energy through collisions before reaching the surface. The characteristic layer from which an electron can escape is called the escape depth, and in metals it is very thin. In semiconductors, the band structure makes it easier for an electron to reach the vacuum level, so the quantum efficiency is much higher. Negative electron-affinity materials such as gallium phosphide can further improve the efficiency because the conduction-band minimum lies above the vacuum potential barrier."
-    },
-    {
-        "topic": "Ch.8: Photomultipliers",
-        "sub": "Basic Construction",
-        "diff": 2,
-        "q": "The figure below shows the schematic of a typical photomultiplier tube. What is the role of the photocathode, dynode chain, and anode in producing a measurable pulse?",
-        "a": "An incident photon strikes the photocathode and ejects a photoelectron by the photoelectric effect. The electron is accelerated through a high-voltage ladder toward the first dynode, where it produces secondary electrons. This multiplication repeats through the dynode chain, so that a single photoelectron is converted into a measurable current pulse at the anode.",
-        "figure": {
-            "src": "images/book-experimental-techniques/fig8.1_photomultiplier-tube.png",
-            "caption": "Schematic diagram of a typical photomultiplier tube.",
-            "size": "medium"
-        }
-    },
-    {
-        "topic": "Ch.8: Photomultipliers",
-        "sub": "Photocathode Response",
-        "diff": 2,
-        "q": "The photocathode obeys Einstein's relation\n$$E=h\\nu-\\phi.$$\nWhat does this imply about the threshold for photoemission and the meaning of the work functionv$\\phi$?",
-        "a": "The photon must supply at least the work function $\\phi$ of the photocathode material before an electron can be emitted. The work function is the binding energy that must be overcome to free the electron. Thus, photoemission occurs only above a threshold frequency, where the photon energy exceeds $\\phi$."
     },
     {
         "topic": "Ch.8: Photomultipliers",
