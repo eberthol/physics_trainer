@@ -1,0 +1,20 @@
+{
+  "title": "The Interaction of Neutrons",
+
+  "layers": [
+    {
+      "title": "The Interaction of Neutrons",
+      "image": "images/book-experimental-techniques/maps/neutron-interaction.png"
+    }
+  ],
+
+  "caption": "The Interaction of Neutrons",
+
+  "study": {
+    "subtopics": [
+      "Neutron Interactions",
+      "Neutron Moderation",
+      "Neutron Energy Regions"
+    ]
+  }
+}

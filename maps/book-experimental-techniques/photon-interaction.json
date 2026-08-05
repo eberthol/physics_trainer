@@ -1,18 +1,25 @@
 {
-  "title": "The Interaction of Neutrons",
+  "title": "The Interaction of Photons",
 
   "layers": [
     {
-      "title": "The Interaction of Neutrons",
-      "image": "images/book-experimental-techniques/maps/neutron-interaction.png"
+      "title": "The Interaction of Photons",
+      "image": "images/book-experimental-techniques/maps/photon-interaction.png"
     }
   ],
 
-  "caption": "The Interaction of Neutrons",
+  "caption": "The Interaction of Photons",
 
   "study": {
     "subtopics": [
-      ""
+      "Photon Interactions",
+      "Photon Attenuation",
+      "Photoelectric Effect",
+      "Compton Scattering",
+      "Thomson and Rayleigh Scattering",
+      "Pair Production",
+      "Electromagnetic Showers",
+      "Shower Geometry"
     ]
   }
 }
