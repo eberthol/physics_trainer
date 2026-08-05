@@ -121,6 +121,55 @@
     "file": "maps/book-experimental-techniques/ch2-passage-of-radiation-trough-matter-summary.json"
   },
 
+  {
+    "id": "pmt-basic-operation",
+    "collection": "Experimental Techniques in Nuclear and Particle Physics",
+    "chapter": "Ch.8: Photomultipliers",
+    "deck": "book-exptech-ch8",
+    "title": "PMT Basic Operation",
+    "file": "maps/book-experimental-techniques/pmt-basic-operation.json"
+  },
+  {
+    "id": "pmt-operating-parameters",
+    "collection": "Experimental Techniques in Nuclear and Particle Physics",
+    "chapter": "Ch.8: Photomultipliers",
+    "deck": "book-exptech-ch8",
+    "title": "PMT Operating Parameters",
+    "file": "maps/book-experimental-techniques/pmt-operating-parameters.json"
+  },
+  {
+    "id": "pmt-time-response",
+    "collection": "Experimental Techniques in Nuclear and Particle Physics",
+    "chapter": "Ch.8: Photomultipliers",
+    "deck": "book-exptech-ch8",
+    "title": "PMT Timing Response",
+    "file": "maps/book-experimental-techniques/pmt-time-response.json"
+  },
+  {
+    "id": "pmt-noise",
+    "collection": "Experimental Techniques in Nuclear and Particle Physics",
+    "chapter": "Ch.8: Photomultipliers",
+    "deck": "book-exptech-ch8",
+    "title": "PMT Noise and Environment",
+    "file": "maps/book-experimental-techniques/pmt-noise.json"
+  },
+  {
+    "id": "pmt-stability",
+    "collection": "Experimental Techniques in Nuclear and Particle Physics",
+    "chapter": "Ch.8: Photomultipliers",
+    "deck": "book-exptech-ch8",
+    "title": "PMT Gain Stability",
+    "file": "maps/book-experimental-techniques/pmt-stability.json"
+  },
+  {
+    "id": "ch8-pmt-summary",
+    "collection": "Experimental Techniques in Nuclear and Particle Physics",
+    "chapter": "Ch.8: Photomultipliers",
+    "deck": "book-exptech-ch8",
+    "title": "Photomultipliers - Summary",
+    "file": "maps/book-experimental-techniques/ch8-pmt-summary.json"
+  },
+
 
 
 

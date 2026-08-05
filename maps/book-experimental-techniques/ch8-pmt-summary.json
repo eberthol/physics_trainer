@@ -1,0 +1,47 @@
+{
+  "title": "Photomultipliers",
+
+  "layers": [
+    {
+      "title": "Photomultipliers",
+      "image": "icons/icon-512.png"
+    }
+  ],
+  "caption": "Photomultipliers",
+
+  "study": {
+    "subtopics": [
+      "Photomultipliers",
+      "Basic Construction",
+      "Photocathode",
+      "Quantum Efficiency",
+      "Photocathode Materials",
+      "Photocathode Response",
+      "Electron-Optical Input",
+      "Dynodes",
+      "Dynode Configurations",
+      "Microchannel Plates",
+      "Single-Electron Response",
+
+      "Gain and Voltage Supply",
+      "Voltage Dividers",
+      "Voltage Divider Network",
+      "Current Linearity",
+      "Pulse Shape",
+
+      "Time Resolution",
+      "Transit Time Spread",
+      "Fast PM Input System",
+      "Statistical Noise",
+
+      "Dark Current",
+      "Afterpulsing",
+      "Statistical Noise",
+      "Magnetic Fields",
+      "Temperature Effects",
+      "Ambient Light",
+
+      "Gain Stability"
+    ]
+  }
+}

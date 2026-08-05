@@ -1,11 +1,12 @@
 {
   "items": [
-    { "type": "map", "id": "pmt-operation-principle" },
-    { "type": "map", "id": "pmt-signal-multiplication" },
-    { "type": "map", "id": "pmt-operating-conditions" },
-    { "type": "map", "id": "pmt-timing" },
+    { "type": "map", "id": "pmt-basic-operation" },
+    { "type": "map", "id": "pmt-operating-parameters" },
+    { "type": "map", "id": "pmt-time-response" },
     { "type": "map", "id": "pmt-noise" },
-    { "type": "map", "id": "pmt-stability" }
+    { "type": "map", "id": "pmt-stability" },
+
+    { "type": "summary", "id": "ch8-pmt-summary" }
 
   ]
 }

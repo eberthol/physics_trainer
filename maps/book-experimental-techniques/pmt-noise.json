@@ -12,7 +12,12 @@
 
   "study": {
     "subtopics": [
-      ""
+      "Dark Current",
+      "Afterpulsing",
+      "Statistical Noise",
+      "Magnetic Fields",
+      "Temperature Effects",
+      "Ambient Light"
     ]
   }
 }

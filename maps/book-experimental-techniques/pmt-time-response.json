@@ -1,0 +1,21 @@
+{
+  "title": "PMT: Timing Response",
+
+  "layers": [
+    {
+      "title": "PMT: Timing Response",
+      "image": "images/book-experimental-techniques/maps/pmt-time-response.png"
+    }
+  ],
+
+  "caption": "PMT: Timing Response",
+
+  "study": {
+    "subtopics": [
+      "Time Resolution",
+      "Transit Time Spread",
+      "Fast PM Input System",
+      "Statistical Noise"
+    ]
+  }
+}

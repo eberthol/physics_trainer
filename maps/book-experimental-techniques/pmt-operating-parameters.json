@@ -1,0 +1,22 @@
+{
+  "title": "PMT: Operating Parameters",
+
+  "layers": [
+    {
+      "title": "PMT: Operating Parameters",
+      "image": "images/book-experimental-techniques/maps/pmt-operating-parameters.png"
+    }
+  ],
+
+  "caption": "PMT: Operating Parameters",
+
+  "study": {
+    "subtopics": [
+      "Gain and Voltage Supply",
+      "Voltage Dividers",
+      "Voltage Divider Network",
+      "Current Linearity",
+      "Pulse Shape"
+    ]
+  }
+}

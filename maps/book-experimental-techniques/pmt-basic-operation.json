@@ -1,0 +1,28 @@
+{
+  "title": "PMT: Basic Operation",
+
+  "layers": [
+    {
+      "title": "PMT: Basic Operation",
+      "image": "images/book-experimental-techniques/maps/pmt-operating-principle.png"
+    }
+  ],
+
+  "caption": "PMT: Basic Operation",
+
+  "study": {
+    "subtopics": [
+      "Photomultipliers",
+      "Basic Construction",
+      "Photocathode",
+      "Quantum Efficiency",
+      "Photocathode Materials",
+      "Photocathode Response",
+      "Electron-Optical Input",
+      "Dynodes",
+      "Dynode Configurations",
+      "Microchannel Plates",
+      "Single-Electron Response"
+    ]
+  }
+}

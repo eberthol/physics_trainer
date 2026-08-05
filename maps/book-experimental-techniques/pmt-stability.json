@@ -1,18 +1,18 @@
 {
-  "title": "PMT: Stability",
+  "title": "PMT: Gain Stability",
 
   "layers": [
     {
-      "title": "PMT: Stability",
+      "title": "PMT: Gain Stability",
       "image": "images/book-experimental-techniques/maps/pmt-stability.png"
     }
   ],
 
-  "caption": "PMT: Stability",
+  "caption": "PMT: Gain Stability",
 
   "study": {
     "subtopics": [
-      ""
+      "Gain Stability"
     ]
   }
 }
