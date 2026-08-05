@@ -526,6 +526,35 @@ function deckStats(deckId) {
     };
 }
 
+function deckConceptMapStats(deckId) {
+    const mapById = Object.fromEntries(
+        (mapCatalog ?? []).map(m => [m.id, m])
+    );
+
+    const chapters = (chapterManifests ?? [])
+        .filter(ch => ch.deck === deckId);
+
+    const mapItems = chapters.flatMap(ch =>
+        (ch.items ?? []).filter(item => item.type === "map")
+    );
+
+    return mapItems
+        .map(item => {
+            const meta = mapById[item.id];
+            if (!meta) return null;
+
+            const stats = conceptStats(meta);
+
+            return {
+                meta,
+                stats,
+                chapterTitle: chapters.find(ch => (ch.items ?? []).some(i => i.id === item.id))
+                    ?.chapterTitle ?? ""
+            };
+        })
+        .filter(Boolean);
+}
+
 function deckProgressStats(deckId) {
 
     const cards = getCardsForDeck(deckId);
@@ -624,153 +653,135 @@ function deckProgressStats(deckId) {
 }
 
 function renderDeckProgressPanel(deckId) {
+    const deck = deckCatalog.find(d => d.id === deckId);
+    if (!deck) return "";
 
-    const stats = deckProgressStats(deckId);
+    const deckMaps = deckConceptMapStats(deckId);
 
-    if (stats.total === 0) {
+    if (deckMaps.length === 0) {
         return `
             <div class="dashboard-deck-progress-panel">
                 <div class="dashboard-progress-placeholder">
-                    No cards found for this deck.
+                    No concept maps found for this deck.
                 </div>
             </div>
         `;
     }
 
-    const efficiencyText =
-        stats.efficiency === null
-            ? "—"
-            : `${stats.efficiency}%`;
+    const deckStatsSummary = deckStats(deckId);
 
-    const subtopicsHtml =
-        stats.subtopics
-            .filter(subtopic => subtopic.total > 0)
-            .sort((a, b) => a.purity - b.purity)
-            .map(subtopic => {
+    const mapRows = deckMaps
+        .sort((a, b) =>
+            (a.meta.order ?? 999) - (b.meta.order ?? 999) ||
+            String(a.meta.title ?? "").localeCompare(String(b.meta.title ?? ""))
+        )
+        .map(({ meta, stats, chapterTitle }) => {
+            const efficiencyText =
+                stats.efficiency === null ? "—" : `${stats.efficiency}%`;
 
-                const subEfficiency =
-                    subtopic.efficiency === null
-                        ? "—"
-                        : `${subtopic.efficiency}%`;
+            return `
+                <div class="concept-map-progress-row">
 
-                return `
-                    <div class="concept-subtopic-row">
-
-                        <div class="concept-subtopic-main">
-
-                            <div class="concept-subtopic-head">
-
-                                <div class="concept-subtopic-name">
-                                    ${escapeHtml(subtopic.name)}
-                                </div>
-
-                                <div class="concept-subtopic-purity">
-                                    ${subtopic.purity}%
-                                </div>
-
-                            </div>
-
-                            <div class="bar-track concept-subtopic-track">
-                                <div
-                                    class="bar-fill"
-                                    style="width:${subtopic.purity}%;background:var(--cherenkov);">
-                                </div>
-                            </div>
-
-                            <div class="concept-subtopic-meta">
-                                <span>${subtopic.total} cards</span>
-                                <span>${subtopic.due} due</span>
-                                <span>${subtopic.mastered} mastered</span>
-                                <span>${subtopic.reviews} reviews</span>
-                                <span>${subEfficiency} efficiency</span>
-                            </div>
-
+                    <div class="concept-map-progress-head">
+                        <div class="concept-map-progress-name">
+                            ${escapeHtml(meta.title)}
                         </div>
 
+                        <div class="concept-map-progress-purity">
+                            ${stats.purity}%
+                        </div>
                     </div>
-                `;
-            })
-            .join("");
+
+                    ${
+                        chapterTitle
+                            ? `
+                                <div class="concept-map-progress-chapter">
+                                    ${escapeHtml(chapterTitle)}
+                                </div>
+                              `
+                            : ""
+                    }
+
+                    <div class="bar-track concept-map-progress-track">
+                        <div
+                            class="bar-fill"
+                            style="width:${stats.purity}%;background:var(--cherenkov);">
+                        </div>
+                    </div>
+
+                    <div class="concept-map-progress-meta">
+                        <span>${stats.total} cards</span>
+                        <span>${stats.due} due</span>
+                        <span>${stats.mastered} mastered</span>
+                        <span>${efficiencyText} efficiency</span>
+                    </div>
+
+                </div>
+            `;
+        })
+        .join("");
 
     return `
         <div class="dashboard-deck-progress-panel">
 
             <div class="concept-stats-header">
-
                 <div>
                     <div class="concept-stats-title">
-                        Deck progress
+                        Concept maps
                     </div>
 
                     <div class="concept-stats-subtitle">
-                        Subtopic progress for this deck.
+                        Progress per concept map in this deck.
                     </div>
                 </div>
 
                 <div class="concept-stats-overall">
-                    ${stats.purity}%
+                    ${deckStatsSummary.purity}%
                 </div>
-
             </div>
 
             <div class="concept-stats-grid">
-
+                <div class="concept-stat-card">
+                    <div class="concept-stat-value">${deckStatsSummary.total}</div>
+                    <div class="concept-stat-label">Cards</div>
+                </div>
+                <div class="concept-stat-card">
+                    <div class="concept-stat-value amber">${deckStatsSummary.due}</div>
+                    <div class="concept-stat-label">Due</div>
+                </div>
+                <div class="concept-stat-card">
+                    <div class="concept-stat-value alt">${deckStatsSummary.mastered}</div>
+                    <div class="concept-stat-label">Mastered</div>
+                </div>
                 <div class="concept-stat-card">
                     <div class="concept-stat-value">
-                        ${stats.total}
+                        ${
+                            deckStatsSummary.efficiency === null
+                                ? "—"
+                                : `${deckStatsSummary.efficiency}%`
+                        }
                     </div>
-                    <div class="concept-stat-label">
-                        Cards
-                    </div>
+                    <div class="concept-stat-label">Efficiency</div>
                 </div>
-
-                <div class="concept-stat-card">
-                    <div class="concept-stat-value amber">
-                        ${stats.due}
-                    </div>
-                    <div class="concept-stat-label">
-                        Due
-                    </div>
-                </div>
-
-                <div class="concept-stat-card">
-                    <div class="concept-stat-value alt">
-                        ${stats.mastered}
-                    </div>
-                    <div class="concept-stat-label">
-                        Mastered
-                    </div>
-                </div>
-
-                <div class="concept-stat-card">
-                    <div class="concept-stat-value">
-                        ${efficiencyText}
-                    </div>
-                    <div class="concept-stat-label">
-                        Efficiency
-                    </div>
-                </div>
-
             </div>
 
             <div class="concept-stats-progress">
                 <div class="concept-stats-progress-head">
-                    <span>Overall mastery</span>
-                    <span>${stats.purity}%</span>
+                    <span>Overall deck mastery</span>
+                    <span>${deckStatsSummary.purity}%</span>
                 </div>
 
                 <div class="bar-track">
                     <div
                         class="bar-fill"
-                        style="width:${stats.purity}%;background:var(--scint);">
+                        style="width:${deckStatsSummary.purity}%;background:var(--scint);">
                     </div>
                 </div>
             </div>
 
-            <div class="concept-subtopics">
-                ${subtopicsHtml}
+            <div class="concept-map-progress-list">
+                ${mapRows}
             </div>
-
         </div>
     `;
 }

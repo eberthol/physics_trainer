@@ -707,6 +707,60 @@ button{font-family:inherit;}
 
 /* ---------- Dashboard ---------- */
 
+.concept-map-progress-list{
+  margin-top:18px;
+}
+
+.concept-map-progress-row{
+  padding:14px 0;
+  border-bottom:1px solid var(--border-soft);
+}
+
+.concept-map-progress-row:last-child{
+  border-bottom:0;
+  padding-bottom:0;
+}
+
+.concept-map-progress-head{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:16px;
+}
+
+.concept-map-progress-name{
+  font-size:13px;
+  font-weight:600;
+}
+
+.concept-map-progress-purity{
+  flex-shrink:0;
+  font-family:var(--font-mono);
+  font-size:11px;
+  color:var(--cherenkov);
+}
+
+.concept-map-progress-chapter{
+  margin-top:4px;
+  font-family:var(--font-mono);
+  font-size:9.5px;
+  color:var(--text-faint);
+}
+
+.concept-map-progress-track{
+  margin-top:8px;
+}
+
+.concept-map-progress-meta{
+  display:flex;
+  flex-wrap:wrap;
+  gap:5px 13px;
+  margin-top:7px;
+  font-family:var(--font-mono);
+  font-size:9.5px;
+  color:var(--text-faint);
+}
+
 .dashboard-continue{
   display:flex;
   align-items:center;
