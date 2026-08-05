@@ -1,0 +1,27 @@
+{
+  "title": "Basic Nuclear Processes in Radioactive Sources",
+
+  "layers": [
+    {
+      "title": "Basic Nuclear Processes in Radioactive Sources",
+      "image": "icons/icon-512.png"
+    }
+  ],
+  "caption": "Basic Nuclear Processes in Radioactive Sources",
+
+  "study": {
+    "subtopics": [
+      "Alpha Decay",
+      "Beta Decay",
+      "Electron Capture",
+      "Gamma Emission",
+      "Annihilation Radiation",
+      "Internal Conversion",
+      "Auger Electrons",
+      "Neutron Sources",
+      "Source Activity Units",
+      "Radioactive Decay Law",
+      "Fluctuations in Radioactive Decay"
+    ]
+  }
+}

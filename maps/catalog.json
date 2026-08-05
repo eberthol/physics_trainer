@@ -15,6 +15,14 @@
     "title": "Signature of Radioactive Processes",
     "file": "maps/book-experimental-techniques/radioactive-decays-signature.json"
   },
+  {
+    "id": "ch1-nuclear-sources-summary",
+    "collection": "Experimental Techniques in Nuclear and Particle Physics",
+    "chapter": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
+    "deck": "book-exptech-ch1",
+    "title": "Basic Nuclear Processes in Radioactive Sources - Summary",
+    "file": "maps/book-experimental-techniques/ch1-nuclear-sources-summary.json"
+  },
 
   {
     "id": "cross-section",
@@ -104,6 +112,14 @@
     "title": "The Interaction of Neutrons",
     "file": "maps/book-experimental-techniques/neutron-interaction.json"
   },
+  {
+    "id": "ch2-passage-of-radiation-trough-matter-summary",
+    "collection": "Experimental Techniques in Nuclear and Particle Physics",
+    "chapter": "Ch.2: Passage of Radiation Through Matter",
+    "deck": "book-exptech-ch2",
+    "title": "Passage of Radiation Through Matter - Summary",
+    "file": "maps/book-experimental-techniques/ch2-passage-of-radiation-trough-matter-summary.json"
+  },
 
 
 
@@ -188,7 +204,7 @@
     "collection": "The Nuclear Many Body Problem",
     "chapter": "Ch.1: The Liquid Drop Model",
     "deck": "book-nuclear-many-body-problem-ch1",
-    "title": "The Liquid Drop Model Summary",
+    "title": "The Liquid Drop Model Summary - Summary",
     "file": "maps/book-nuclear-many-body-problem/ch1-liquid-drop-summary.json"
   }
 

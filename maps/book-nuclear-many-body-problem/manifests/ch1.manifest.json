@@ -10,6 +10,6 @@
 
     { "type": "map",     "id": "nuclear-fission" },
     { "type": "map",     "id": "rotating-liquid-drops" },
-    { "type": "summary",     "id": "ch1-liquid-drop-summary" }
+    { "type": "summary", "id": "ch1-liquid-drop-summary" }
   ]
 }

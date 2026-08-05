@@ -1,6 +1,5 @@
 [
   {
-    "id": "exptech-ch1",
     "book": "Experimental Techniques in Nuclear and Particle Physics",
     "bookOrder": 1,
     "chapterTitle": "Ch.1: Basic Nuclear Processes in Radioactive Sources",
@@ -9,7 +8,6 @@
     "manifest": "maps/book-experimental-techniques/manifests/ch1.manifest.json"
   },
   {
-    "id": "exptech-ch2",
     "book": "Experimental Techniques in Nuclear and Particle Physics",
     "bookOrder": 1,
     "chapterTitle": "Ch.2: Passage of Radiation Through Matter",
@@ -19,8 +17,7 @@
   },
 
   {
-    "id": "nuclear-many-body-problem-ch1",
-    "book": "Experimental Techniques in Nuclear and Particle Physics",
+    "book": "The Nuclear Many Body Problem",
     "bookOrder": 2,
     "chapterTitle": "Ch.1: The Liquid Drop Model",
     "chapterOrder": 1,

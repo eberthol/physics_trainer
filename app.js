@@ -20,7 +20,7 @@ const ICONS = {
 let deckCatalog = [];     // list from decks/catalog.json
 let mapCatalog = [];      // list from maps/catalog.json
 let chapterCatalog = [];
-let chapterManifests = {};
+let chapterManifests = [];
 let currentDeck = null;   // id of the selected deck
 let currentDeckInfo = null;
 let currentCollection = null;
@@ -140,28 +140,36 @@ async function loadChapterCatalog() {
         throw new Error("Cannot load chapter catalog");
     }
 
-    chapterCatalog = await response.json();
+    const data = await response.json();
+
+    chapterCatalog = data.map((chapter, index) => ({
+        ...chapter,
+        chapterKey: (chapter.id?.trim() || chapter.deck?.trim() || `chapter-${index}`)
+    }));
 }
 
 async function loadChapterManifests() {
-    chapterManifests = {};
+    chapterManifests = [];
 
-    await Promise.all(chapterCatalog.map(async chapter => {
-        const response = await fetch(chapter.manifest, {
-            cache: "no-store"
-        });
+    await Promise.all(
+        chapterCatalog.map(async chapter => {
+            const response = await fetch(chapter.manifest, {
+                cache: "no-store"
+            });
 
-        if (!response.ok) {
-            throw new Error(`Cannot load ${chapter.manifest}`);
-        }
+            if (!response.ok) {
+                throw new Error(`Cannot load ${chapter.manifest}`);
+            }
 
-        const json = await response.json();
+            const data = await response.json();
 
-        chapterManifests[chapter.id] = {
-            ...chapter,
-            ...json
-        };
-    }));
+            chapterManifests.push({
+                ...chapter,
+                ...data,
+                chapterKey: chapter.chapterKey
+            });
+        })
+    );
 }
 
 async function loadDeck(deckId) {
@@ -1291,63 +1299,68 @@ async function studyCurrentConcept() {
 }
 
 function renderMapBrowser() {
+    const root = document.getElementById("mapsView");
+    if (!root) return;
 
-    const mapById = Object.fromEntries( mapCatalog.map(m => [m.id, m]) );
+    const mapById = Object.fromEntries(
+        (mapCatalog ?? []).map(map => [map.id, map])
+    );
 
-    const visibleChapters = Object.values(chapterManifests)
-        .filter(chapter => !mapDeckFilter || chapter.deck === mapDeckFilter )
-        .sort((a, b) => (a.bookOrder ?? 999) - (b.bookOrder ?? 999) || (a.chapterOrder ?? 999) - (b.chapterOrder ?? 999) );
+    const visibleChapters = (chapterManifests ?? [])
+        .filter(chapter => !mapDeckFilter || chapter.deck === mapDeckFilter)
+        .sort((a, b) =>
+            (a.bookOrder ?? 999) - (b.bookOrder ?? 999) ||
+            String(a.book ?? "").localeCompare(String(b.book ?? "")) ||
+            (a.chapterOrder ?? 999) - (b.chapterOrder ?? 999) ||
+            String(a.chapterTitle ?? "").localeCompare(String(b.chapterTitle ?? ""))
+        );
 
     const books = new Map();
 
     for (const chapter of visibleChapters) {
         const bookTitle = chapter.book ?? "Other";
+        const bookOrder = chapter.bookOrder ?? 999;
+        const key = `${bookOrder}::${bookTitle}`;
 
-        if (!books.has(bookTitle)) {
-            books.set(bookTitle, {
-                order: chapter.bookOrder ?? 999,
+        if (!books.has(key)) {
+            books.set(key, {
+                title: bookTitle,
+                order: bookOrder,
                 chapters: []
             });
         }
 
-        const bucket = books.get(bookTitle);
-        bucket.order = Math.min(bucket.order, chapter.bookOrder ?? 999);
-        bucket.chapters.push(chapter);
+        books.get(key).chapters.push(chapter);
     }
 
-    const sortedBooks = [...books.entries()]
-        .sort((a, b) =>
-            a[1].order - b[1].order ||
-            a[0].localeCompare(b[0])
-        );
+    const sortedBooks = [...books.values()].sort(
+        (a, b) => a.order - b.order || a.title.localeCompare(b.title)
+    );
 
     let html = "";
 
-    for (const [bookTitle, bucket] of sortedBooks) {
-
+    for (const book of sortedBooks) {
         html += `
             <section class="panel map-collection">
 
                 <div class="map-collection-head">
                     <div class="map-collection-title">
-                        ${escapeHtml(bookTitle)}
+                        ${escapeHtml(book.title)}
                     </div>
 
                     <div class="map-collection-count">
-                        ${bucket.chapters.length}
-                        chapter${bucket.chapters.length === 1 ? "" : "s"}
+                        ${book.chapters.length}
+                        chapter${book.chapters.length === 1 ? "" : "s"}
                     </div>
                 </div>
         `;
 
-        const chapters = bucket.chapters
-            .slice()
-            .sort((a, b) =>
-                (a.chapterOrder ?? 999) - (b.chapterOrder ?? 999)
-            );
+        const sortedChapters = book.chapters.slice().sort((a, b) =>
+            (a.chapterOrder ?? 999) - (b.chapterOrder ?? 999) ||
+            String(a.chapterTitle ?? "").localeCompare(String(b.chapterTitle ?? ""))
+        );
 
-        for (const chapter of chapters) {
-
+        for (const chapter of sortedChapters) {
             html += `
                 <div class="map-chapter">
                     ${escapeHtml(chapter.chapterTitle ?? chapter.title ?? chapter.chapter ?? "")}
@@ -1389,6 +1402,7 @@ function renderMapBrowser() {
                             <div class="map-title">
                                 ${escapeHtml(meta.title)}
                             </div>
+
                             ${
                                 kindLabel
                                     ? `<div class="map-meta">${escapeHtml(kindLabel)}</div>`
@@ -1407,8 +1421,12 @@ function renderMapBrowser() {
         html += `</section>`;
     }
 
-    document.getElementById("mapsView").innerHTML =
-        html || `<div class="empty-state">No concept maps found.</div>`;
+    root.innerHTML = html || `
+        <div class="empty-state">
+            <h3>No concept maps found</h3>
+            <p>Check your chapter manifests and map catalog.</p>
+        </div>
+    `;
 }
 
 async function openConceptMap(id) {

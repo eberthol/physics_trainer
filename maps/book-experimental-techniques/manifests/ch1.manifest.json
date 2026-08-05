@@ -1,6 +1,7 @@
 {
   "items": [
     { "type": "map",     "id": "radiocative-decays" },
-    { "type": "map",     "id": "radiocative-decay-signature" }
+    { "type": "map",     "id": "radiocative-decay-signature" },
+    { "type": "summary", "id": "ch1-nuclear-sources-summary" }
   ]
 }
