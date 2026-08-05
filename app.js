@@ -823,9 +823,7 @@ function decksInCurrentCollection() {
 
 async function switchDeck(deckId, options = {}) {
 
-    const {
-        navigate = true
-    } = options;
+    const { navigate = true } = options;
 
     await loadDeck(deckId);
     await loadState();
@@ -847,6 +845,16 @@ async function switchDeck(deckId, options = {}) {
     if (navigate) {
         goTo(currentView);
     }
+}
+
+async function setCurrentDeck(deckId) {
+    if (deckId === currentDeck) {
+        return;
+    }
+
+    await switchDeck(deckId, { navigate: false });
+    renderOverview();
+    showToast("Current deck updated");
 }
 
 /* ================= DASHBOARD ================= */
