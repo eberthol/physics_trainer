@@ -269,13 +269,14 @@ async function loadDeckMetadata() {
 
         const json = await response.json();
 
-        const builtInCards = json.cards.map(card => ({
+        const cards = json.cards.map(card => ({
             ...card,
             id: makeCardId(deck.id, card)
         }));
 
         deckIndex[deck.id] = {
-            cards: builtInCards
+            cardCount: cards.length,
+            cards
         };
     }
 }
@@ -320,6 +321,19 @@ function makeCardId(deckId, card) {
     return `${deckId}:${hashString(key)}`;
 }
 
+function getCardsForDeck(deckId) {
+
+    const builtInCards =
+        deckIndex[deckId]?.cards ?? [];
+
+    const customCards =
+        loadJSON(`user-cards:${deckId}`, []);
+
+    return [
+        ...builtInCards,
+        ...customCards
+    ];
+}
 
 function allCards(){ return deckCards.concat(state.customCards); }
 
@@ -1119,6 +1133,19 @@ function renderConceptMap() {
     document.getElementById("mapChapter").textContent = currentMap.chapter;
     document.getElementById("mapCaption").textContent = currentMap.caption ?? "";
 
+
+    const statsPanel = document.getElementById("conceptStatsPanel");
+    const statsButton = document.getElementById("conceptStatsToggle");
+
+    if (statsPanel) {
+        statsPanel.hidden = true;
+        statsPanel.innerHTML = "";
+    }
+
+    if (statsButton) {
+        statsButton.textContent = "View progress";
+    }
+
     const img = document.getElementById("mapImage");
 
     const layer = currentMap.layers?.[0];
@@ -1176,9 +1203,383 @@ function getCurrentMapIndex() {
     return mapCatalog.findIndex(m => m.id === currentMap.id);
 }
 
+function conceptStats(map) {
+
+    const deckId = map?.deck;
+
+    const selectedSubtopics =
+        map?.study?.subtopics ?? [];
+
+    if (!deckId) {
+        console.warn(
+            `Concept map "${map?.title ?? "unknown"}" has no deck`
+        );
+
+        return emptyConceptStats();
+    }
+
+    if (selectedSubtopics.length === 0) {
+        console.warn(
+            `Concept map "${map?.title ?? "unknown"}" has no study subtopics`
+        );
+
+        return emptyConceptStats();
+    }
+
+    const selectedSet =
+        new Set(selectedSubtopics);
+
+    const cards = getCardsForDeck(deckId)
+        .filter(card => selectedSet.has(card.sub));
+
+    const progress =
+        loadJSON(`progress:${deckId}`, {});
+
+    let boxSum = 0;
+    let due = 0;
+    let mastered = 0;
+    let correct = 0;
+    let incorrect = 0;
+
+    const subtopicResults =
+        selectedSubtopics.map(subtopic => {
+
+            const subtopicCards =
+                cards.filter(card => card.sub === subtopic);
+
+            let subBoxSum = 0;
+            let subDue = 0;
+            let subMastered = 0;
+            let subCorrect = 0;
+            let subIncorrect = 0;
+
+            for (const card of subtopicCards) {
+
+                const cardProgress =
+                    progress[card.id];
+
+                const box =
+                    cardProgress?.box ?? 0;
+
+                const cardCorrect =
+                    cardProgress?.correct ?? 0;
+
+                const cardIncorrect =
+                    cardProgress?.incorrect ?? 0;
+
+                boxSum += box;
+                subBoxSum += box;
+
+                correct += cardCorrect;
+                incorrect += cardIncorrect;
+
+                subCorrect += cardCorrect;
+                subIncorrect += cardIncorrect;
+
+                if (
+                    !cardProgress ||
+                    cardProgress.nextDue <= todayStr()
+                ) {
+                    due++;
+                    subDue++;
+                }
+
+                if (box === 5) {
+                    mastered++;
+                    subMastered++;
+                }
+            }
+
+            const subTotal =
+                subtopicCards.length;
+
+            const subReviews =
+                subCorrect + subIncorrect;
+
+            return {
+                name: subtopic,
+                total: subTotal,
+                due: subDue,
+                mastered: subMastered,
+
+                purity:
+                    subTotal > 0
+                        ? Math.round(
+                            100 *
+                            subBoxSum /
+                            (5 * subTotal)
+                        )
+                        : 0,
+
+                reviews: subReviews,
+
+                efficiency:
+                    subReviews > 0
+                        ? Math.round(
+                            100 *
+                            subCorrect /
+                            subReviews
+                        )
+                        : null
+            };
+        });
+
+    const total =
+        cards.length;
+
+    const reviews =
+        correct + incorrect;
+
+    return {
+        total,
+        due,
+        mastered,
+
+        purity:
+            total > 0
+                ? Math.round(
+                    100 * boxSum / (5 * total)
+                )
+                : 0,
+
+        reviews,
+
+        efficiency:
+            reviews > 0
+                ? Math.round(
+                    100 * correct / reviews
+                )
+                : null,
+
+        subtopics: subtopicResults
+    };
+}
+
+function emptyConceptStats() {
+
+    return {
+        total: 0,
+        due: 0,
+        mastered: 0,
+        purity: 0,
+        reviews: 0,
+        efficiency: null,
+        subtopics: []
+    };
+}
+
+function renderConceptStats() {
+
+    const panel =
+        document.getElementById("conceptStatsPanel");
+
+    if (!panel || !currentMap) {
+        return;
+    }
+
+    const stats =
+        conceptStats(currentMap);
+
+    if (stats.total === 0) {
+
+        panel.innerHTML = `
+            <div class="concept-stats-title">
+                Concept progress
+            </div>
+
+            <div class="concept-stats-empty">
+                No matching flashcards were found for this concept.
+            </div>
+        `;
+
+        return;
+    }
+
+    const efficiencyText =
+        stats.efficiency === null
+            ? "—"
+            : `${stats.efficiency}%`;
+
+    const subtopicsHtml =
+        stats.subtopics
+            .filter(subtopic => subtopic.total > 0)
+            .sort((a, b) => a.purity - b.purity)
+            .map(subtopic => {
+
+                const subEfficiency =
+                    subtopic.efficiency === null
+                        ? "—"
+                        : `${subtopic.efficiency}%`;
+
+                return `
+                    <div class="concept-subtopic-row">
+
+                        <div class="concept-subtopic-main">
+
+                            <div class="concept-subtopic-head">
+
+                                <div class="concept-subtopic-name">
+                                    ${escapeHtml(subtopic.name)}
+                                </div>
+
+                                <div class="concept-subtopic-purity">
+                                    ${subtopic.purity}%
+                                </div>
+
+                            </div>
+
+                            <div class="bar-track concept-subtopic-track">
+                                <div
+                                    class="bar-fill"
+                                    style="
+                                        width:${subtopic.purity}%;
+                                        background:var(--cherenkov);
+                                    ">
+                                </div>
+                            </div>
+
+                            <div class="concept-subtopic-meta">
+                                <span>${subtopic.total} cards</span>
+                                <span>${subtopic.due} due</span>
+                                <span>${subtopic.mastered} mastered</span>
+                                <span>${subtopic.reviews} reviews</span>
+                                <span>${subEfficiency} efficiency</span>
+                            </div>
+
+                        </div>
+
+                    </div>
+                `;
+            })
+            .join("");
+
+    panel.innerHTML = `
+        <div class="concept-stats-header">
+
+            <div>
+                <div class="concept-stats-title">
+                    Concept progress
+                </div>
+
+                <div class="concept-stats-subtitle">
+                    Statistics for the flashcards linked to this concept map.
+                </div>
+            </div>
+
+            <div class="concept-stats-overall">
+                ${stats.purity}%
+            </div>
+
+        </div>
+
+        <div class="concept-stats-grid">
+
+            <div class="concept-stat-card">
+                <div class="concept-stat-value">
+                    ${stats.total}
+                </div>
+                <div class="concept-stat-label">
+                    Cards
+                </div>
+            </div>
+
+            <div class="concept-stat-card">
+                <div class="concept-stat-value amber">
+                    ${stats.due}
+                </div>
+                <div class="concept-stat-label">
+                    Due
+                </div>
+            </div>
+
+            <div class="concept-stat-card">
+                <div class="concept-stat-value alt">
+                    ${stats.mastered}
+                </div>
+                <div class="concept-stat-label">
+                    Mastered
+                </div>
+            </div>
+
+            <div class="concept-stat-card">
+                <div class="concept-stat-value">
+                    ${efficiencyText}
+                </div>
+                <div class="concept-stat-label">
+                    Efficiency
+                </div>
+            </div>
+
+        </div>
+
+        <div class="concept-stats-progress">
+
+            <div class="concept-stats-progress-head">
+                <span>Overall mastery</span>
+                <span>${stats.purity}%</span>
+            </div>
+
+            <div class="bar-track">
+                <div
+                    class="bar-fill"
+                    style="
+                        width:${stats.purity}%;
+                        background:var(--scint);
+                    ">
+                </div>
+            </div>
+
+        </div>
+
+        ${
+            subtopicsHtml
+                ? `
+                    <div class="concept-subtopics">
+
+                        <div class="concept-subtopics-title">
+                            Subtopics
+                        </div>
+
+                        ${subtopicsHtml}
+
+                    </div>
+                `
+                : ""
+        }
+    `;
+}
+
 function openAllConceptMaps() {
     mapDeckFilter = null;
     goTo("maps");
+}
+
+function toggleConceptStats() {
+
+    const panel =
+        document.getElementById("conceptStatsPanel");
+
+    const button =
+        document.getElementById("conceptStatsToggle");
+
+    if (!panel || !button || !currentMap) {
+        return;
+    }
+
+    const willOpen =
+        panel.hidden;
+
+    if (willOpen) {
+        renderConceptStats();
+    }
+
+    panel.hidden =
+        !willOpen;
+
+    button.textContent =
+        willOpen
+            ? "Hide progress"
+            : "View progress";
 }
 
 /* ================= TRAIN ================= */
