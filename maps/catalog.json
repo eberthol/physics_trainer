@@ -97,20 +97,20 @@
     "file": "maps/book-experimental-techniques/energy-straggling.json"
   },
   {
-    "id": "photon-interaction",
+    "id": "photon-interactions",
     "collection": "Experimental Techniques in Nuclear and Particle Physics",
     "chapter": "Ch.2: Passage of Radiation Through Matter",
     "deck": "book-exptech-ch2",
     "title": "The Interaction of Photons",
-    "file": "maps/book-experimental-techniques/photon-interaction.json"
+    "file": "maps/book-experimental-techniques/photon-interactions.json"
   },
   {
-    "id": "neutron-interaction",
+    "id": "neutron-interactions",
     "collection": "Experimental Techniques in Nuclear and Particle Physics",
     "chapter": "Ch.2: Passage of Radiation Through Matter",
     "deck": "book-exptech-ch2",
     "title": "The Interaction of Neutrons",
-    "file": "maps/book-experimental-techniques/neutron-interaction.json"
+    "file": "maps/book-experimental-techniques/neutron-interactions.json"
   },
   {
     "id": "ch2-passage-of-radiation-trough-matter-summary",

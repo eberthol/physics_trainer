@@ -9,8 +9,8 @@
     { "type": "map", "id": "electrons-positrons" },
     { "type": "map", "id": "multiple-coulomb-scattering" },
     { "type": "map", "id": "energy-straggling" },
-    { "type": "map", "id": "photon-interaction" },
-    { "type": "map", "id": "neutron-interaction" },
+    { "type": "map", "id": "photon-interactions" },
+    { "type": "map", "id": "neutron-interactions" },
 
     { "type": "summary", "id": "ch2-passage-of-radiation-trough-matter-summary" }
   ]
