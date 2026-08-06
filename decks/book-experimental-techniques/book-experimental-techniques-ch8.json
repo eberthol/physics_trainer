@@ -74,9 +74,16 @@
     {
         "topic": "Ch.8: Photomultipliers",
         "sub": "Dynodes",
+        "diff": 1,
+        "q": "What is the secondary emission factor $\\delta$$?",
+        "a": "It is the gain of each dynode."
+    },
+    {
+        "topic": "Ch.8: Photomultipliers",
+        "sub": "Dynodes",
         "diff": 2,
         "q": "What is the role of the dynode chain in a photomultiplier, and what properties should a good dynode material have?",
-        "a": "The dynode chain amplifies the weak primary photocurrent by repeated secondary emission. Each dynode converts one incoming electron into several outgoing secondary electrons, so the signal grows from stage to stage until a measurable pulse is collected at the anode. A good dynode material should have a high secondary emission factor, be stable under high current, and have low thermionic emission so that the noise stays small."
+        "a": "The dynode chain amplifies the weak primary photocurrent by repeated secondary emission. Each dynode converts one incoming electron into several outgoing secondary electrons, so the signal grows from stage to stage until a measurable pulse is collected at the anode. A good dynode material should have \n$\\circ$ a high secondary emission factor \n$\\circ$ be stable under high current \n$\\circ$ have low thermionic emission so that the noise stays small."
     },
     {
         "topic": "Ch.8: Photomultipliers",
@@ -130,7 +137,7 @@
         "topic": "Ch.8: Photomultipliers",
         "sub": "Single-Electron Response",
         "diff": 3,
-        "q": "The figure below shows the single-electron pulse-height spectra of a photomultiplier. Why do single-electron events not all produce the same pulse height, and what does this imply for the gain?",
+        "q": "Why do single-electron events not all produce the same pulse height, and what does this imply for the gain?",
         "a": "The secondary emission process is statistical, so a single photoelectron entering the dynode chain can lead to different numbers of emitted electrons from event to event. As a result, the pulse-height spectrum is broad rather than a sharp line. The mean pulse height gives the average gain, but individual events fluctuate around that mean. These fluctuations are often described by Polya, negative-binomial, or compound-Poisson distributions.",
         "figure": {
             "src": "images/book-experimental-techniques/fig8.8_single-electron-spectrum.png",
@@ -139,26 +146,34 @@
         }
     },
 
+    {
+        "topic": "Ch.8: Photomultipliers",
+        "sub": "Gain and Voltage Supply",
+        "diff": 1,
+        "q": "On which quantities do the PMT gain depend? Give its expression",
+        "a": "The gain depends on the number of dynodes, $n$, and the secondary emission factor, $\\delta$. $$G=\\delta^n$$ $\\delta$ is a function of the energy of the primary electron. In the multiplier chain, the energy of the electrons incident on each dynode is clearly a function of the potential difference $V_d$ thus $$\\delta = (KV_d)$$. "
+    },
+
 
     {
         "topic": "Ch.8: Photomultipliers",
         "sub": "Gain and Voltage Supply",
         "diff": 2,
-        "q": "The secondary emission factor of a dynode is written as\n$$\\delta=K V_d^n,$$\nand the total gain of a photomultiplier with $n$ stages becomes\n$$G=\\delta^n=(K V_d)^n.$$\nWhat does this relation say about the dependence of gain on the dynode voltage?",
+        "q": "The total gain of a photomultiplier with $n$ stages is \n$G=\\delta^n=(K V_d)^n$, where $V_d$ is the voltage between dynodes.$$$$What does this relation say about the dependence of gain on the dynode voltage?",
         "a": "The gain increases rapidly as the voltage between dynodes increases. Because each dynode's secondary emission factor rises with the voltage across it, the overall gain is a power law in the dynode voltage. This means that even small changes in the high-voltage supply can produce large changes in gain."
     },
     {
         "topic": "Ch.8: Photomultipliers",
         "sub": "Gain and Voltage Supply",
         "diff": 2,
-        "q": "If the total high voltage $V_b$ is divided equally among $n$ dynode gaps, then\n$$V_b=nV_d=n\\,G^{1/n}/K.$$\nWhy does minimizing $V_b$ give\n$$n=\\ln G?$$",
+        "q": "If the total high voltage $V_b$ is divided equally among $n$ dynode gaps, then\n$$V_b=nV_d=\\frac{n}{K}\\,G^{1/n}.$$\nWhy does minimizing $V_b$ give\n$$n=\\ln G?$$",
         "a": "For a fixed required gain $G$, the supply voltage depends on the number of dynode stages through the factor $nG^{1/n}$. Differentiating with respect to $n$ and setting the derivative to zero gives the minimum supply voltage when $n=\\ln G$. This shows that the number of stages should be chosen to balance high gain against practical high-voltage limitations."
     },
     {
         "topic": "Ch.8: Photomultipliers",
         "sub": "Gain and Voltage Supply",
         "diff": 2,
-        "q": "The gain stability relation is\n$$\\frac{\\Delta G}{G}=n\\frac{\\Delta V_d}{V_d}=n\\frac{\\Delta V_b}{V_b}.$$\nWhy does this imply that a photomultiplier gain of $n=10$ requires the supply voltage to be stable at the level of about $0.1\\%$ if the gain must remain stable to $1\\%$?",
+        "q": "The gain stability relation is\n$$\\frac{\\mathrm{d} G}{G}=n\\frac{\\Delta V_d}{V_d}=n\\frac{\\mathrm{d} V_b}{V_b}.$$\nWhy does this imply that a photomultiplier gain of $n=10$ requires the supply voltage to be stable at the level of about $0.1\\%$ if the gain must remain stable to $1\\%$?",
         "a": "Because the gain changes by $n$ times the fractional voltage change. With $n=10$, a 1% gain variation corresponds to only a 0.1% variation in the applied voltage. High-gain photomultipliers therefore require a very well regulated high-voltage supply."
     },
     {
