@@ -64,7 +64,7 @@
         "sub": "Electron-Optical Input",
         "diff": 2,
         "q": "The figure below shows the electron-optical input system of a photomultiplier tube. Why is this stage important, and what are the two main requirements it must satisfy?",
-        "a": "After a photoelectron is emitted from the photocathode, it must be collected and focused efficiently onto the first dynode. The input system uses electric fields, or a combination of electric and magnetic fields, to guide the electron trajectory. Its two main requirements are: (1) very efficient collection, so that as many emitted electrons as possible reach the multiplier section, and (2) a transit time from cathode to first dynode that is as independent as possible of the emission point. This transit-time uniformity is especially important in fast PMs used for timing.",
+        "a": "After a photoelectron is emitted from the photocathode, it must be collected and focused efficiently onto the first dynode. The input system uses electric fields, or a combination of electric and magnetic fields, to guide the electron trajectory. Its two main requirements are: \n(1) very efficient collection, so that as many emitted electrons as possible reach the multiplier section, \n(2) a transit time from cathode to first dynode that is as independent as possible of the emission point. This transit-time uniformity is especially important in fast PMs used for timing.",
         "figure": {
             "src": "images/book-experimental-techniques/fig8.3_electron-optical-input-system.png",
             "caption": "Electron-optical input system of a typical photomultiplier tube.",
@@ -138,7 +138,9 @@
             "size": "medium"
         }
     },
-     {
+
+
+    {
         "topic": "Ch.8: Photomultipliers",
         "sub": "Gain and Voltage Supply",
         "diff": 2,
@@ -166,6 +168,7 @@
         "q": "Why is a voltage divider used in a photomultiplier tube, and why must the bleeder current be much larger than the anode current?",
         "a": "A voltage divider provides the fixed sequence of dynode potentials needed to operate the multiplier chain. The bleeder current must be much larger than the anode current so that the divider voltages stay nearly constant even when the PM output current changes. If the divider current were too small, the dynode voltages would sag and the gain would vary nonlinearly during pulses."
     },
+    
     {
         "topic": "Ch.8: Photomultipliers",
         "sub": "Voltage Divider Network",
@@ -185,25 +188,8 @@
         "q": "The photomultiplier gain is written as\n$$\\delta = K V_d^n, \\qquad G = \\delta^n = (K V_d)^n.$$\nWhat does this show about the dependence of gain on the dynode voltage?",
         "a": "The gain rises very rapidly with dynode voltage because each stage's secondary emission factor increases as a power of the voltage across that stage. Since the total gain is the product of the stage gains, even a small change in the dynode voltage can cause a large change in the overall PM gain."
     },
-    {
-        "topic": "Ch.8: Photomultipliers",
-        "sub": "Voltage Dividers",
-        "diff": 2,
-        "q": "Why is a voltage divider needed in a photomultiplier tube, and why must the bleeder current be much larger than the anode current?",
-        "a": "The voltage divider provides the sequence of dynode potentials required to operate the multiplier chain. The bleeder current must be much larger than the anode current so that the dynode voltages remain nearly constant when the tube delivers pulses. If the divider current were too small, the dynode voltages would sag and the gain would change nonlinearly."
-    },
-    {
-        "topic": "Ch.8: Photomultipliers",
-        "sub": "Voltage Divider Network",
-        "diff": 2,
-        "q": "The figure below shows examples of PM voltage-divider networks. Why are capacitors and Zener diodes sometimes added to the divider chain?",
-        "a": "Capacitors store charge so that the dynode voltages stay stable during short, high-current pulses. Zener diodes can hold the last dynode voltages near fixed values when the tube is driven hard. These additions improve pulse stability, linearity, and recovery after large signals.",
-        "figure": {
-            "src": "images/book-experimental-techniques/fig8.10_voltage-divider-networks.png",
-            "caption": "Examples of photomultiplier voltage-divider networks.",
-            "size": "medium"
-        }
-    },
+    
+
     {
         "topic": "Ch.8: Photomultipliers",
         "sub": "Current Linearity",
@@ -263,7 +249,7 @@
         "topic": "Ch.8: Photomultipliers",
         "sub": "Transit Time Spread",
         "diff": 3,
-        "q": "The transit-time spread is approximated by\n$$\\Delta t \\approx \\frac{\\sqrt{2m_eW}}{eE}.$$\nWhat does this formula show, and how can the spread be reduced?",
+        "q": "The transit-time spread is approximated by\n$$\\Delta t \\approx -\\frac{\\sqrt{2m_eW}}{eE}.$$ where $W$ is the energy component normal to cathode and $E$ the electric field strength [V/m]. $$$$ What does this formula show, and how can the spread be reduced?",
         "a": "The spread increases with the initial kinetic energy component $W$ of the emitted electron and decreases as the electric field strength $E$ is increased. Thus, a stronger field reduces the time differences between electrons emitted with different initial energies or angles. This is especially important in fast PMs."
     },
     {
@@ -290,7 +276,7 @@
         "sub": "Dark Current",
         "diff": 2,
         "q": "What is the dark current in a photomultiplier, and what are its main sources?",
-        "a": "The dark current is the small output current that flows even when the photomultiplier is not illuminated. Its main sources are thermionic emission from the cathode and dynodes, leakage currents, radioactive contamination, ionization phenomena, and light leaks. In most PMs, thermionic emission is the dominant component."
+        "a": "The dark current is the small output current that flows even when the photomultiplier is not illuminated. Its main sources are \n(1) thermionic emission from the cathode and dynodes \n(2) leakage currents \n(3) radioactive contamination \n(4) ionization phenomena \n(5) light leaks. \nIn most PMs, thermionic emission is the dominant component."
     },
     {
         "topic": "Ch.8: Photomultipliers",
