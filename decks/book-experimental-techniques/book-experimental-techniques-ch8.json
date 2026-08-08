@@ -75,7 +75,7 @@
         "topic": "Ch.8: Photomultipliers",
         "sub": "Dynodes",
         "diff": 1,
-        "q": "What is the secondary emission factor $\\delta$$?",
+        "q": "What is the secondary emission factor $\\delta$?",
         "a": "It is the gain of each dynode."
     },
     {
