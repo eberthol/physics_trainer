@@ -19,6 +19,7 @@ const ICONS = {
 /* ================= STATE ================= */
 let deckCatalog = [];     // list from decks/catalog.json
 let mapCatalog = [];      // list from maps/catalog.json
+let mapIndex = {};
 let chapterCatalog = [];
 let chapterManifests = [];
 let currentDeck = null;   // id of the selected deck
@@ -129,6 +130,29 @@ async function loadMapCatalog() {
     }
 
     mapCatalog = await response.json();
+}
+
+async function loadMapDefinitions() {
+    mapIndex = {};
+
+    await Promise.all(
+        mapCatalog.map(async meta => {
+            const response = await fetch(meta.file, {
+                cache: "no-store"
+            });
+
+            if (!response.ok) {
+                throw new Error(`Cannot load ${meta.file}`);
+            }
+
+            const data = await response.json();
+
+            mapIndex[meta.id] = {
+                ...meta,
+                ...data
+            };
+        })
+    );
 }
 
 async function loadChapterCatalog() {
@@ -540,9 +564,9 @@ function deckConceptMapStats(deckId) {
 
     return mapItems
         .map(item => {
-            const meta = mapById[item.id];
-            if (!meta) return null;
 
+            const meta = mapIndex[item.id];
+            if (!meta) return null;
             const stats = conceptStats(meta);
 
             return {
@@ -2433,6 +2457,7 @@ async function init() {
     await loadDeckCatalog();
     await loadDeckMetadata();
     await loadMapCatalog();
+    await loadMapDefinitions();
     await loadChapterCatalog();
     await loadChapterManifests();
 
