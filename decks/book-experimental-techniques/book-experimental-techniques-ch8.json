@@ -165,8 +165,8 @@
         "topic": "Ch.8: Photomultipliers",
         "sub": "Gain and Voltage Supply",
         "diff": 2,
-        "q": "If the total high voltage $V_b$ is divided equally among $n$ dynode gaps, then\n$$V_b=nV_d=\\frac{n}{K}\\,G^{1/n}.$$\nWhy does minimizing $V_b$ give\n$$n=\\ln G?$$",
-        "a": "For a fixed required gain $G$, the supply voltage depends on the number of dynode stages through the factor $nG^{1/n}$. Differentiating with respect to $n$ and setting the derivative to zero gives the minimum supply voltage when $n=\\ln G$. This shows that the number of stages should be chosen to balance high gain against practical high-voltage limitations."
+        "q": "A photomultiplier gain comes from repeated secondary emission at the dynodes. Why is there an optimum number of dynodes for a given required gain?",
+        "a": "Because the gain is built up stage by stage, adding dynodes lets each stage work at a lower voltage while still reaching the same total gain. Too few stages force each dynode to run at a higher voltage, which is less practical and can make the tube less stable. Too many stages are unnecessary because the gain is already being obtained efficiently through repeated multiplication. So the optimum is the stage count that gives the desired gain with the smallest practical high voltage."
     },
     {
         "topic": "Ch.8: Photomultipliers",
