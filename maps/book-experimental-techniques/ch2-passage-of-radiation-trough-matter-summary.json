@@ -1,5 +1,5 @@
 {
-  "title": "Passage of Radiation Through Matter",
+  "title": "Passage of Radiation Through Matter - Summary",
 
   "layers": [
     {
@@ -11,44 +11,8 @@
 
   "study": {
     "subtopics": [
-      "Bethe-Bloch Formula",
-      "Bethe-Bloch Parameters",
-      "Bethe-Bloch Corrections",
-      "Cherenkov Radiation",
-      "Cross Section",
-      "Electron and Positron Energy Loss",
-      "Bremsstrahlung",
-      "Critical Energy and Radiation Length",
-      "Electron Range and Absorption",
-      "Energy Dependence of Stopping Power",
-      "Scaling and Mass Stopping Power",
-      "Mixtures and Compounds",
-      "Bethe-Bloch Limitations and Channeling",
-      "Range",
-      "Experimental Use of Stopping Power",
-      "Energy Straggling",
-      "Thick Absorbers",
-      "Thin Absorbers",
-      "Gaussian Approximation",
-      "Vavilov Theory",
-      "Energy Loss of Heavy Charged Particles",
-      "Interaction Probability",
-      "Multiple Coulomb Scattering",
-      "Moliere Distribution",
-      "Gaussian Approximation",
-      "Electron Backscattering",
-      "Neutron Interactions",
-      "Neutron Moderation",
-      "Neutron Energy Regions",
-      "Photon Interactions",
-      "Photon Attenuation",
-      "Photoelectric Effect",
-      "Compton Scattering",
-      "Thomson and Rayleigh Scattering",
-      "Pair Production",
-      "Electromagnetic Showers",
-      "Shower Geometry"
-
+   
+      
     ]
   }
 }

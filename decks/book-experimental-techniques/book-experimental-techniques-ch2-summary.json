@@ -1,0 +1,314 @@
+{
+    "cards":[
+
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter - Summary",
+            "sub": "Energy Loss Overview",
+            "diff": 2,
+            "q": "What is the main physical picture of how heavy charged particles pass through matter?",
+            "a": "Their energy loss is dominated by many inelastic collisions with atomic electrons, which produce ionization and excitation. Elastic scattering from nuclei is also common, but it mainly changes the particle direction rather than removing much energy."
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter - Summary",
+            "sub": "Bethe-Bloch Physics",
+            "diff": 3,
+            "q": "The corrected Bethe-Bloch formula has the form\n$$-\\frac{dE}{dx} \\propto \\frac{z^2 Z}{A\\beta^2}\\left[\\ln\\!\\left(\\frac{\\cdots}{I^2}\\right)-2\\beta^2-\\delta-\\frac{2C}{Z}\\right].$$\nWhat is the physics behind the main factors in this expression?",
+            "a": "The stopping power grows with the square of the projectile charge, so more highly charged particles lose energy faster. The strong low-velocity rise comes from the $1/\\beta^2$ factor. The logarithmic term contains the mean excitation potential $I$, which summarizes the atomic excitation spectrum. The density correction $\\delta$ reduces the high-energy rise because distant electrons are shielded by polarization of the medium, and the shell correction $C$ matters when the projectile velocity is comparable to bound-electron velocities."
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter - Summary",
+            "sub": "Energy Dependence",
+            "diff": 3,
+            "q": "Why does $dE/dx$ first fall, then reach a minimum ionizing region, and then rise again with increasing energy?",
+            "a": "At low velocity, the $1/\\beta^2$ factor dominates, so the stopping power decreases as the particle speeds up. At higher energy the logarithmic term would make $dE/dx$ rise again, but the density correction cancels much of that relativistic rise. The result is a broad minimum ionizing region, where the stopping power is nearly the same for particles with the same charge. As a particle slows down further, $dE/dx$ rises sharply, producing the Bragg peak near the end of its range."
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter - Summary",
+            "sub": "Scaling and Material Dependence",
+            "diff": 2,
+            "q": "What do the scaling laws and Bragg's rule tell us about stopping power in different particles and materials?",
+            "a": "For particles in the same material, the stopping power depends mainly on charge and velocity, so curves can be related by rescaling the energy per unit mass and multiplying by $z^2$. When expressed as mass stopping power, $-dE/d\\epsilon$, the result varies only weakly from one material to another because $Z/A$ and the logarithmic dependence on $I$ change slowly. For compounds and mixtures, Bragg's rule approximates the total stopping power as a weight-weighted sum of the constituent elements."
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter - Summary",
+            "sub": "Range and Straggling",
+            "diff": 2,
+            "q": "What is the range of a charged particle, and why is it not a single sharp number?",
+            "a": "The range is the distance a particle penetrates before it is stopped. It is not sharp because energy loss is statistical, so identical particles with the same initial energy do not all stop at exactly the same depth. This spread is called range straggling. Range-energy relations are useful for detector thickness, shielding, and beam transport."
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter - Summary",
+            "sub": "Limits and Channeling",
+            "diff": 3,
+            "q": "When does the Bethe-Bloch picture break down, and what special case can strongly reduce stopping power in crystals?",
+            "a": "At very low velocities the simple Bethe-Bloch description fails because the projectile can capture electrons and its effective charge changes, so the assumptions of the standard formula no longer hold. In crystalline materials, channeling is an important exception: if the particle enters close to a symmetry axis or plane, correlated small-angle scatterings guide it down open channels in the lattice. Then it meets fewer electrons and loses less energy, so the stopping power is reduced."
+        },
+
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter - Summary",
+            "sub": "Cherenkov Radiation",
+            "diff": 2,
+            "q": "What is the basic physical condition for Cherenkov radiation, and what does the emission angle formula\n$$\\cos\\theta_c=\\frac{1}{\\beta n(\\omega)}$$\nmean physically?",
+            "a": "Cherenkov radiation occurs when a charged particle moves faster than light can propagate in the same medium, so that $\\beta>1/n(\\omega)$. The radiation is emitted on a cone whose angle is set by the particle speed and the refractive index at the radiation frequency. Faster particles and larger refractive index give a larger Cherenkov angle.",
+            "figure": {
+                "src": "images/book-experimental-techniques/fig2.9_Cherenkov.png",
+                "caption": "Cherenkov radiation as an electromagnetic shock wave emitted when the particle exceeds the phase velocity of light in the medium.",
+                "size": "small"
+            }
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter - Summary",
+            "sub": "Cherenkov Radiation",
+            "diff": 2,
+            "q": "Why is Cherenkov radiation useful for particle detection even though its energy loss is small compared with collision loss?",
+            "a": "Although the radiated energy is small, Cherenkov emission is a very clean threshold effect: it turns on only when the particle velocity exceeds the medium-dependent threshold. That makes it ideal for identifying fast particles and measuring their velocity. Cherenkov counters exploit this to provide precise particle-velocity measurements in high-energy experiments."
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter - Summary",
+            "sub": "Cherenkov Radiation",
+            "diff": 2,
+            "q": "The photon yield can be written as\n$$\\frac{d^2N}{d\\lambda\\,dx}=\\frac{2\\pi z^2\\alpha}{\\lambda^2}\\left(1-\\frac{1}{\\beta^2 n^2(\\lambda)}\\right).$$\nWhat does this tell you about how the number of emitted photons depends on the particle and the medium?",
+            "a": "The photon yield grows with the square of the particle charge and with the amount by which the particle exceeds threshold. It also depends strongly on the refractive index and on the wavelength range of the detector. Because of the $1/\\lambda^2$ factor, shorter wavelengths contribute more strongly, which is why detector sensitivity range matters."
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter - Summary",
+            "sub": "Cherenkov Radiation",
+            "diff": 3,
+            "q": "Integrating the visible sensitivity range of a Cherenkov detector gives about\n$$\\frac{dN}{dx} \\approx 475 z^2 \\sin^2\\theta_c\\ \\text{photons/cm}.$$\nWhat is the big-picture meaning of this result?",
+            "a": "The result shows that a Cherenkov detector only produces a modest number of detectable photons per unit path length, even though the radiation is very useful experimentally. The detected signal depends on the particle charge and on how far above threshold the particle is. This is why photomultipliers are needed to detect the weak light signal efficiently."
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter - Summary",
+            "sub": "Cherenkov Radiation",
+            "diff": 2,
+            "q": "Why is the angular and spectral structure of Cherenkov radiation broader in a finite radiator than in an infinite medium?",
+            "a": "In a finite thickness of material, the radiation is not emitted as a perfect infinite shock wave. The finite path length produces a broadened angular distribution and a frequency-dependent emission pattern. The simple Cherenkov cone is recovered only as the radiator becomes long compared with the emitted wavelength."
+        },
+
+
+
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter - Summary",
+            "sub": "Energy Loss Overview",
+            "diff": 2,
+            "q": "What is the big-picture picture of how electrons and positrons lose energy in matter?",
+            "a": "Their total energy loss is the sum of two mechanisms: collision loss from interactions with atomic electrons and radiative loss from bremsstrahlung. At low and moderate energies collision loss is usually dominant, while at higher energies bremsstrahlung becomes increasingly important and eventually dominates. The competition between these two processes is the central idea of the section."
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter - Summary",
+            "sub": "Collision Loss",
+            "diff": 3,
+            "q": "For electrons and positrons, why does the collision-loss part of the Bethe-Bloch formula need to be modified, and what is its physical meaning?",
+            "a": "The collision-loss formula must be modified because electrons and positrons have the same mass as the target electrons, so the incident particle cannot be treated as a heavy projectile that is hardly deflected. The maximum transferable energy is only half the kinetic energy of the incident electron or positron, and the resulting formula includes additional terms such as F(τ), δ, and C. Physically, this part still describes energy transferred to atomic electrons by ionization and excitation."
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter - Summary",
+            "sub": "Bremsstrahlung",
+            "diff": 3,
+            "q": "Why does bremsstrahlung become the key extra energy-loss mechanism for electrons and positrons, and what controls its importance?",
+            "a": "Bremsstrahlung is radiation emitted when the electron or positron is accelerated in the electric field of a nucleus. Because the radiative probability scales roughly like the inverse square of the particle mass, it is far more important for electrons and positrons than for heavier charged particles. The effect also depends strongly on the atomic number Z of the absorber and on screening by atomic electrons."
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter - Summary",
+            "sub": "Critical Energy and Radiation Length",
+            "diff": 3,
+            "q": "What is the physical meaning of the critical energy $E_c$ and the radiation length $L_\\mathrm{rad}$?",
+            "a": "The critical energy $E_c$ is the energy at which radiative loss and collision loss are equal. Above $E_c$, radiation loss dominates; below $E_c$, collision loss dominates. The radiation length $L_\\mathrm{rad}$ is the characteristic distance over which an electron loses energy by bremsstrahlung alone, and it is also the natural thickness scale used for electromagnetic cascades and shielding."
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter - Summary",
+            "sub": "Range and Absorption",
+            "diff": 2,
+            "q": "Why are the range and absorption curves for electrons and positrons less simple than for heavy charged particles?",
+            "a": "Electrons and positrons are much more strongly affected by multiple scattering and by large fluctuations in energy loss. As a result, their range differs significantly from a simple path-length integral, and the distribution of ranges is broader. For beta absorbers, the transmitted intensity often follows an approximate exponential law, but that behavior applies only in the simpler allowed-decay cases shown in the section."
+        },
+
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter - Summary",
+            "sub": "Multiple Coulomb Scattering",
+            "diff": 2,
+            "q": "What is the big physical picture of multiple Coulomb scattering?",
+            "a": "A charged particle crossing matter suffers many small elastic Coulomb deflections from nuclei. Each deflection is tiny, but their cumulative effect produces a net change in direction and a lateral displacement of the track. For heavy charged particles this usually does not remove much energy, but it does blur the trajectory and limit angular resolution."
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter - Summary",
+            "sub": "Multiple Coulomb Scattering",
+            "diff": 2,
+            "q": "Why does the scattering distribution have a narrow core and a long tail?",
+            "a": "Most collisions are small-angle events, so the central part of the distribution is approximately Gaussian. Rare single large-angle Coulomb scatterings produce a long tail at larger angles, closer to the Rutherford behavior. The Gaussian picture describes the bulk of the events, while the tail comes from the uncommon but important hard scatterings."
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter - Summary",
+            "sub": "Multiple Coulomb Scattering",
+            "diff": 2,
+            "q": "What do the projected angle and lateral displacement tell us about the path of a scattered particle?",
+            "a": "The projected angle in one transverse direction is again approximately Gaussian, with a smaller width than the full space-angle distribution. The same random walk in angle also produces a lateral displacement that grows with thickness. So multiple scattering affects not only where the particle points, but also where it ends up in the detector."
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter - Summary",
+            "sub": "Multiple Coulomb Scattering",
+            "diff": 2,
+            "q": "Why are low-energy electrons especially sensitive to backscattering?",
+            "a": "Electrons are light, so large-angle deflections can reverse their direction more easily than for heavier particles. As a result, a significant fraction of low-energy electrons can be scattered back out of the absorber, especially in high-Z materials. This is important for electron detectors because it reduces the collected signal and can distort the measured efficiency."
+        },
+
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter - Summary",
+            "sub": "Energy Straggling",
+            "diff": 2,
+            "q": "What is the big physical idea behind energy straggling?\nA particle crossing matter does not lose exactly the same energy event by event, even if the initial energy and absorber thickness are fixed. Why not?",
+            "a": "Because energy loss is statistical. The number of collisions varies from particle to particle, and the energy transferred in each collision also fluctuates. So instead of a single sharp energy-loss value, a beam develops a distribution of losses after passing through matter. This is the energy-loss analogue of range straggling."
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter - Summary",
+            "sub": "Thick Absorbers",
+            "diff": 2,
+            "q": "For thick absorbers, why does the energy-loss distribution become approximately Gaussian?",
+            "a": "When the absorber is thick enough, many collisions contribute to the total loss. Then the total energy loss is the sum of many independent random contributions, so the Central Limit Theorem applies. The distribution therefore approaches a Gaussian characterized by a mean loss and a width. For nonrelativistic heavy particles, Bohr's result gives the variance in terms of the material and thickness."
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter - Summary",
+            "sub": "Thin Absorbers",
+            "diff": 2,
+            "q": "Why do thin absorbers produce an asymmetric energy-loss distribution with a long high-energy tail?",
+            "a": "When the absorber is thin, the number of collisions is too small for the Gaussian limit to hold. Then rare large transfers in a single collision become important, and they create a long tail on the high-energy-loss side. This is the regime described by Landau and Vavilov, where the most probable loss is not the same as the mean loss.",
+            "figure": {
+                "src": "images/book-experimental-techniques/fig2.18_energy-loss-distribution.png",
+                "caption": "Energy-loss distribution in a thin absorber with a long high-energy tail.",
+                "size": "medium"
+            }
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter - Summary",
+            "sub": "Landau and Vavilov",
+            "diff": 3,
+            "q": "The parameter $\\kappa = \\Delta/W_{\\max}$ is used to classify thin-absorber fluctuations. What does it mean physically?",
+            "a": "It compares the mean energy loss in the absorber to the largest energy that can be transferred in a single collision. If $\\kappa$ is very small, rare large transfers matter strongly and the Landau limit applies. As $\\kappa$ increases, the distribution moves toward the Gaussian regime. Vavilov theory covers the intermediate region between these two limits.",
+            "figure": {
+                "src": "images/book-experimental-techniques/fig2.19_vavilov-distributions.png",
+                "caption": "Vavilov distributions interpolate between the Landau and Gaussian limits as the absorber thickness changes.",
+                "size": "medium"
+            }
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter - Summary",
+            "sub": "Landau-Vavilov",
+            "diff": 2,
+            "q": "What is the overall message of the Landau-Vavilov theory for energy straggling?",
+            "a": "It provides a bridge between two physical regimes: thin absorbers, where a few rare large collisions dominate and the distribution is strongly skewed, and thick absorbers, where many collisions average out and the distribution becomes Gaussian. The measured distributions in the book show that these theories capture the transition region well. The key point is that the shape of the loss distribution tells you which microscopic processes are dominating the energy transfer.",
+            "figure": {
+                "src": "images/book-experimental-techniques/fig2.20_vavilov-symon-experiment.png",
+                "caption": "Comparison of Landau and Vavilov theory with measured energy-loss distributions.",
+                "size": "medium"
+            }
+        },
+
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter - Summary",
+            "sub": "Photon Interactions",
+            "diff": 2,
+            "q": "What is the big physical picture of photon interactions in matter?",
+            "a": "Because photons carry no charge, they do not produce the many inelastic electron collisions characteristic of charged particles. Instead, x-rays and $\\gamma$-rays interact mainly through three processes: \n(1) photoelectric effect \n(2) Compton scattering \n(3) pair production. \nThe result is usually attenuation of the beam intensity rather than a continuous loss of photon energy along the track, since photons are either removed from the beam or scattered into new directions."
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter - Summary",
+            "sub": "Photon Interactions",
+            "diff": 2,
+            "q": "Why does the photon beam obey an exponential attenuation law,\n$$I=I_0\\exp(-\\mu x),$$\nand what does $\\mu$ represent physically?",
+            "a": "A photon beam is attenuated because each photon has a certain probability per unit path length of undergoing an interaction. The coefficient $\\mu$ is the total absorption coefficient, or total interaction probability per unit length, and it is the inverse of the mean free path. For compounds and mixtures, $\\mu$ is built from the contributions of the individual interaction channels and the material composition."
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter - Summary",
+            "sub": "Photoelectric Effect",
+            "diff": 3,
+            "q": "What happens in the photoelectric effect, and what does the relation\n$$E=h\\nu-B.E.$$ \nmean physically?",
+            "a": "In the photoelectric effect the photon is absorbed by a bound atomic electron, which is then ejected from the atom. The photon energy is first used to overcome the binding energy B.E. of the electron, and the remainder appears as the kinetic energy of the outgoing electron. This process is especially important near shell thresholds, where the cross section shows strong absorption edges such as the K- and L-edges."
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter - Summary",
+            "sub": "Compton Scattering",
+            "diff": 3,
+            "q": "What is the physical meaning of Compton scattering in matter, and why is the Compton edge important?",
+            "a": "Compton scattering is the scattering of photons by (approximately) free electrons, with energy and momentum shared between the photon and the recoil electron. It is described by the Klein-Nishina formula, and the recoil-electron spectrum has a sharp endpoint called the Compton edge, which is the maximum recoil energy allowed by kinematics. The section also distinguishes the scattered-photon part from the absorption part of Compton scattering."
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter - Summary",
+            "sub": "Pair Production",
+            "diff": 3,
+            "q": "What is pair production, and why does it require a threshold energy of 1.022 MeV?",
+            "a": "Pair production is the conversion of a photon into an electron-positron pair in the field of a nucleus, which is needed to conserve momentum. The threshold is 1.022 MeV because that is the combined rest-mass energy of the electron and positron. Above threshold, the cross section grows with energy and depends strongly on the atomic number Z and on screening effects in the medium."
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter - Summary",
+            "sub": "Photon Interactions",
+            "diff": 2,
+            "q": "How are the total photon interaction probability and the main partial cross sections related?",
+            "a": "The total photon interaction probability is the sum of the contributions from photoelectric absorption, Compton scattering, and pair production. In other words, the total cross section or total absorption coefficient is built from the individual interaction channels. This is why the dominant process changes with photon energy and with the absorber material."
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter - Summary",
+            "sub": "Neutron Interactions",
+            "diff": 2,
+            "q": "What is the big physical picture of how neutrons interact with matter?",
+            "a": "Unlike charged particles, neutrons do not interact through Coulomb forces, so they can penetrate matter much more deeply before anything happens. Their main interactions are with nuclei through the strong force, and which reaction dominates depends strongly on neutron energy."
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter - Summary",
+            "sub": "Neutron Interactions",
+            "diff": 2,
+            "q": "What are the main neutron reaction channels listed in the section, and how should they be thought of physically?",
+            "a": "- elastic scattering \n- inelastic scattering \n- radiative capture \n- other nuclear reactions \n- fission \n- high-energy hadron-shower production. \nElastic scattering mainly changes the neutron direction and is the key energy-loss mechanism for fast neutrons. Inelastic scattering excites the nucleus, capture removes the neutron from the beam, and the higher-energy channels become relevant in the appropriate energy ranges."
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter - Summary",
+            "sub": "Neutron Cross Section",
+            "diff": 2,
+            "q": "What does the neutron total cross section tell us physically?",
+            "a": "The total cross section is the sum of the cross sections for all open neutron interaction channels. It measures the overall probability that a neutron will interact in matter, and it depends strongly on energy. The cross section is not smooth in detail: resonances can appear, especially at low energies, so the likelihood of interaction can change a lot with neutron energy.",
+            "figure": {
+                "src": "images/book-experimental-techniques/fig2.30_total-neutron-cross-section.png",
+                "caption": "Total reaction cross sections for neutrons in different materials as a function of neutron energy.",
+                "size": "small"
+            }
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter - Summary",
+            "sub": "Neutron Moderation",
+            "diff": 2,
+            "q": "What is moderation, and why are light nuclei such as hydrogen so effective for slowing neutrons down?",
+            "a": "Moderation is the slowing down of fast neutrons through repeated elastic collisions with nuclei. The lighter the nucleus, the larger the fraction of neutron energy it can absorb in a collision, so hydrogen and other light nuclei are especially effective moderators. This is why materials like water and paraffin are used in neutron moderators and shielding.",
+            "figure": {
+                "src": "images/book-experimental-techniques/fig2.31_neutron-scattering-geometry.png",
+                "caption": "Elastic scattering of a neutron on a nucleus, shown in the lab and center-of-mass systems.",
+                "size": "small"
+            }
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter - Summary",
+            "sub": "Neutron Slowing Down",
+            "diff": 3,
+            "q": "What is lethargy, and what does the average lethargy gain per collision mean?",
+            "a": "Lethargy is the logarithmic energy variable defined by $u=\\ln(E_0/E)$. It is used because neutron slowing down is multiplicative in energy rather than additive. The average lethargy gain per collision tells you how much the neutron energy typically decreases in one scattering, and therefore how many collisions are needed to slow a neutron from one energy to another.",
+            "figure": {
+                "src": "images/book-experimental-techniques/fig2.32_neutron-energy-after-scatterings.png",
+                "caption": "Energy distribution of neutrons after several elastic scatterings.",
+                "size": "small"
+            }
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter - Summary",
+            "sub": "Neutron Attenuation",
+            "diff": 2,
+            "q": "How is neutron attenuation in matter described at the simplest level?",
+            "a": "If a collimated neutron beam passes through matter, the beam intensity decreases exponentially with thickness, with the mean free path set by the total cross section and the atomic density of the material. This is the neutron analogue of photon attenuation, but the underlying interactions are nuclear rather than electromagnetic. In practice, the detailed energy dependence of neutron cross sections makes the real behavior much richer than a simple exponential law suggests."
+        }
+                
+
+
+
+
+
+
+
+    ]
+}
