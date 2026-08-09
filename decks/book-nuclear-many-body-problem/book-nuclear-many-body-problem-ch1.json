@@ -158,7 +158,7 @@
             "topic": "Ch.1: The Liquid Drop Model",
             "sub": "Semi-Empirical Mass Formula",
             "diff": 2,
-            "q": "How does the binding energy per nucleon vary with the mass number?",
+            "q": "How does the binding energy per nucleon vary with the mass number? Can you sketch it?",
             "a": "The binding energy per nucleon rises rapidly for light nuclei, reaches a maximum of just under 9 MeV around $A\\approx60$, after which $B/A$ decreases gradually because Coulomb repulsion becomes increasingly important.",
             "figure": {
                 "src": "images/book-nuclear-many-body-problem/binding-energy-per-nucleon.png",

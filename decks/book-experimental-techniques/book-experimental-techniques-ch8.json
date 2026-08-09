@@ -154,7 +154,6 @@
         "a": "The gain depends on the number of dynodes, $n$, and the secondary emission factor, $\\delta$. $$G=\\delta^n$$ $\\delta$ is a function of the energy of the primary electron. In the multiplier chain, the energy of the electrons incident on each dynode is clearly a function of the potential difference $V_d$ thus $$\\delta = (KV_d)$$. "
     },
 
-
     {
         "topic": "Ch.8: Photomultipliers",
         "sub": "Gain and Voltage Supply",
