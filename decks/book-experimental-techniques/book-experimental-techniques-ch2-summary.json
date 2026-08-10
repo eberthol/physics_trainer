@@ -92,7 +92,7 @@
             "sub": "Energy Loss Overview",
             "diff": 2,
             "q": "What is the big-picture picture of how electrons and positrons lose energy in matter?",
-            "a": "Their total energy loss is the sum of two mechanisms: collision loss from interactions with atomic electrons and radiative loss from bremsstrahlung. At low and moderate energies collision loss is usually dominant, while at higher energies bremsstrahlung becomes increasingly important and eventually dominates. The competition between these two processes is the central idea of the section."
+            "a": "Their total energy loss is the sum of two mechanisms: collision loss from interactions with atomic electrons and radiative loss from bremsstrahlung. At low and moderate energies collision loss is usually dominant, while at higher energies bremsstrahlung becomes increasingly important and eventually dominates."
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter - Summary",

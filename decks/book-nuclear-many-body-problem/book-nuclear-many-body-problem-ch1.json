@@ -545,7 +545,7 @@
             "topic": "Ch.1: The Liquid Drop Model",
             "sub": "Surface Oscillations",
             "diff": 3,
-            "q": "Figure 1.7 shows the energy of the first $2^+$ state as a function of the mass number $A$. What are the two main physical messages of this figure?",
+            "q": "The figure below shows the energy of the first $2^+$ state as a function of the mass number $A$. What are the two main physical messages of this figure?",
             "a": "First, the excitation energy decreases roughly with increasing mass number, showing that collective quadrupole vibrations become softer in heavier nuclei. Second, large peaks occur near closed neutron or proton shells, demonstrating that shell structure strongly influences the low-lying $2^+$ states and that they cannot be described as pure liquid-drop surface vibrations.",
             "figure": {
                 "src": "images/book-nuclear-many-body-problem/fig1.7-2plus-even-even.png",
@@ -614,34 +614,14 @@
             "q": "How should the parameters $B_\\lambda$ and $C_\\lambda$ be viewed in practice?",
             "a": "Rather than treating them as quantities predicted accurately by the liquid-drop model, they are usually regarded as adjustable phenomenological parameters or are calculated using more microscopic many-body theories."
         },
-        {
-            "topic": "Ch.1: The Liquid Drop Model",
-            "sub": "Rotations and Vibrations - Bohr Hamiltonian",
-            "diff": 2,
-            "q": "The collective Hamiltonian is approximated by the harmonic form\n$$H_{\\rm coll}\\propto \\dot\\alpha^2+\\alpha^2.$$ Under what conditions is this approximation expected to be valid?",
-            "a": "Only for small-amplitude surface vibrations around the equilibrium shape. Larger-amplitude collective motion requires going beyond the harmonic approximation."
-        },
-        {
-            "topic": "Ch.1: The Liquid Drop Model",
-            "sub": "Rotations and Vibrations - Bohr Hamiltonian",
-            "diff": 2,
-            "q": "Why must anharmonic terms such as $$\\alpha^3,\\;\\alpha^4,\\;\\dot\\alpha^2\\alpha,\\ldots$$ be included for large-amplitude collective motion?",
-            "a": "For large deformations the restoring force is no longer proportional to the displacement. The harmonic approximation breaks down, and higher-order terms are needed to describe the nonlinear dynamics of the nucleus."
-        },
-        {
-            "topic": "Ch.1: The Liquid Drop Model",
-            "sub": "Rotations and Vibrations - Bohr Hamiltonian",
-            "diff": 3,
-            "q": "What is the physical significance of introducing anharmonic terms into the collective Hamiltonian?",
-            "a": "They account for deviations from the ideal harmonic oscillator, allowing the model to describe more realistic collective motion, including changes in excitation energies, state mixing, and the dynamics of large-amplitude vibrations."
-        },
+
 
         {
             "topic": "Ch.1: The Liquid Drop Model",
             "sub": "Rotations and Vibrations - Bohr Hamiltonian",
             "diff": 2,
-            "q": "The collective potential is assumed to have a minimum at a finite deformation,\n$$V(\\beta,\\gamma)=\\frac12C_{20}(\\alpha_{20}-\\alpha_{20}^0)^2+\\frac12C_{22}(\\alpha_{22}-\\alpha_{22}^0)^2.$$ What is the physical meaning of this assumption?",
-            "a": "The nucleus no longer has a spherical equilibrium shape. Instead, its ground state is permanently deformed, and the low-energy excitations are small vibrations and rotations about this equilibrium deformation."
+            "q": "Why can a nucleus have a stable deformed ground state even though the pure liquid-drop model favors a spherical equilibrium shape?",
+            "a": "The pure liquid-drop energy has its stable minimum at the spherical shape, but quantum-mechanical shell effects can modify the collective potential $V(\\alpha)$ and produce a minimum at a finite deformation $\\alpha=\\alpha_0$. The nucleus can then have a permanently deformed ground state."
         },
         {
             "topic": "Ch.1: The Liquid Drop Model",
@@ -653,98 +633,107 @@
         {
             "topic": "Ch.1: The Liquid Drop Model",
             "sub": "Rotations and Vibrations - Bohr Hamiltonian",
+            "diff": 2,
+            "q": "For a nucleus with a stable deformed minimum, why is it useful to replace the five quadrupole coordinates $\\alpha_{2\\mu}$ by the variables $(\\Omega,\\beta,\\gamma)$? and what do these coordinates represent?",
+            "a": "The body-fixed description separates intrinsic shape from orientation. The two variables $\\beta$ and $\\gamma$ describe the intrinsic quadrupole shape, while the three Euler angles $\\Omega$ describe the orientation of that shape in the laboratory."
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Rotations and Vibrations - Bohr Hamiltonian",
+            "diff": 2,
+            "q": "Near a deformed minimum $(\\beta_0,\\gamma_0)$, the potential is approximated by $$V(\\beta,\\gamma)\\simeq \\frac12 C_{20}\\left(\\alpha_{20}(\\beta,\\gamma)-\\alpha_{20}^0\\right)^2+C_{22}\\left(\\alpha_{22}(\\beta,\\gamma)-\\alpha_{22}^0\\right)^2.$$ What is the physical picture behind this approximation?",
+            "a": "The nucleus has a permanent equilibrium deformation in its ground state. Its low-energy collective excitations are rotations of this deformed shape together with small vibrations around the equilibrium values $(\\beta_0,\\gamma_0)$."
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Rotations and Vibrations - Bohr Hamiltonian",
+            "diff": 2,
+            "q": "The collective kinetic energy in the body-fixed frame is $$T=T_{\\rm rot}+\\frac12B_2\\left(\\dot\\beta^2+\\beta^2\\dot\\gamma^2\\right).$$ What do the two parts describe physically?",
+            "a": "$T_{\\rm rot}$ describes rotation of the deformed nucleus as a whole, while the terms containing $\\dot\\beta$ and $\\dot\\gamma$ describe changes of its intrinsic quadrupole shape. Thus the Bohr model contains rotational and vibrational collective motion in the same Hamiltonian."
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Rotations and Vibrations - Bohr Hamiltonian",
             "diff": 3,
-            "q": "Why is rotation about a symmetry axis not considered a collective rotation?",
-            "a": "Rotating about a symmetry axis does not change the intrinsic shape of the nucleus. In quantum mechanics it changes only the overall phase of the wavefunction, leaving the physical state unchanged."
+            "q": "The rotational kinetic energy is $$T_{\\rm rot}=\\frac12\\sum_{\\kappa=1}^{3}\\mathcal{J}_\\kappa(\\beta,\\gamma)\\omega_\\kappa^2.$$ Why are rotations and vibrations generally coupled in the Bohr Hamiltonian?",
+            "a": "The moments of inertia $\\mathcal{J}_\\kappa$ depend on the deformation variables $\\beta$ and $\\gamma$. A vibration changes the intrinsic shape and therefore changes the rotational inertia, so rotational and vibrational motion cannot in general be separated."
         },
         {
             "topic": "Ch.1: The Liquid Drop Model",
-            "sub": "Rotations and Vibrations - Bohr Hamiltonian",
-            "diff": 2,
-            "q": "Why is it convenient to transform from the laboratory frame to the body-fixed frame when describing deformed nuclei?",
-            "a": "The body-fixed frame follows the principal axes of the deformed nucleus. This separates the intrinsic shape variables $(\\beta,\\gamma)$ from the overall rotational motion described by the Euler angles."
-        },
-        {
-            "topic": "Ch.1: The Liquid Drop Model",
-            "sub": "Rotations and Vibrations - Bohr Hamiltonian",
-            "diff": 2,
-            "q": "After transforming to the body-fixed frame, what are the five collective degrees of freedom?",
-            "a": "The collective coordinates become the three Euler angles describing the orientation of the nucleus together with the two intrinsic deformation parameters $\\beta$ and $\\gamma$."
-        },
-        {
-            "topic": "Ch.1: The Liquid Drop Model",
-            "sub": "Rotations and Vibrations - Bohr Hamiltonian",
-            "diff": 2,
-            "q": "The kinetic energy is written as\n$$T=T_{\\rm rot}+\\frac12B_2(\\dot\\beta^2+\\beta^2\\dot\\gamma^2).$$ What is the physical meaning of the two terms?",
-            "a": "$T_{\\rm rot}$ is the kinetic energy associated with rotation of the whole nucleus, while the second term describes vibrations of the intrinsic shape through changes in $\\beta$ and $\\gamma$."
-        },
-        {
-            "topic": "Ch.1: The Liquid Drop Model",
-            "sub": "Rotations and Vibrations - Bohr Hamiltonian",
-            "diff": 2,
-            "q": "Why are rotations and vibrations coupled in the Bohr Hamiltonian?",
-            "a": "The moments of inertia (that appear in $T_{\\rm rot}$) depend on the deformation parameters $\\beta$ and $\\gamma$. As the shape changes, the rotational inertia changes as well, coupling rotational and vibrational motion."
-        },
-
-        {
-            "topic": "Ch.1: The Liquid Drop Model",
-            "sub": "Rotations and Vibrations - Bohr Hamiltonian",
-            "diff": 2,
-            "q": "The classical Bohr Hamiltonian is quantized to obtain\n$$\\hat H_{\\rm coll}= -\\frac{\\hbar^2}{2B_2}\\left[\\beta^{-4}\\frac{\\partial}{\\partial\\beta}\\left(\\beta^4\\frac{\\partial}{\\partial\\beta}\\right)+\\frac{1}{\\beta^2\\sin3\\gamma}\\frac{\\partial}{\\partial\\gamma}\\left(\\sin3\\gamma\\frac{\\partial}{\\partial\\gamma}\\right)\\right]+\\hat T_{\\rm rot}+V(\\beta,\\gamma).$$\nWhat is the physical meaning of this quantization?",
-            "a": "The collective coordinates $(\\beta,\\gamma)$ and the rotational degrees of freedom become quantum-mechanical variables. Instead of describing a classical vibrating and rotating liquid drop, the Bohr Hamiltonian now predicts discrete collective energy levels and their corresponding wavefunctions."
-        },
-        {
-            "topic": "Ch.1: The Liquid Drop Model",
-            "sub": "Rotations and Vibrations - Bohr Hamiltonian",
+            "sub": "Moments of Inertia",
             "diff": 3,
             "q": "What is the main physical difference between the irrotational and rigid-body moments of inertia?",
             "a": "In an irrotational nucleus the nucleons flow collectively like a fluid, whereas in a rigid rotor every part of the nucleus rotates with the same angular velocity. Consequently, the dependence of the moments of inertia on $\\beta$ and $\\gamma$ is very different."
         },
         {
             "topic": "Ch.1: The Liquid Drop Model",
-            "sub": "Rotations and Vibrations - Bohr Hamiltonian",
-            "diff": 2,
-            "q": "Why does the comparison with experiment show that the nucleus is neither an irrotational fluid nor a rigid body?",
-            "a": "The experimentally measured moments of inertia lie between the predictions of the irrotational-flow model and the rigid-rotor model. The nucleus therefore behaves as an intermediate system."
-        },
-        {
-            "topic": "Ch.1: The Liquid Drop Model",
-            "sub": "Rotations and Vibrations - Bohr Hamiltonian",
+            "sub": "Moments of Inertia",
             "diff": 3,
-            "q": "The plots below compare the principal moments of inertia $\\mathcal{J}_k$ as functions of the triaxiality parameter $\\gamma$ for an irrotational fluid and for a rigid rotor. What is the main physical conclusion?",
-            "a": "The irrotational moments of inertia depend strongly on the triaxiality parameter $\\gamma$ and even vanish about symmetry axes, whereas the rigid-body moments vary much less with $\\gamma$. Experimentally, nuclear moments of inertia lie between these two limits, showing that nuclei behave neither as perfect irrotational fluids nor as rigid rotors.",
+            "q": "The plots below compare the $\\gamma$ dependence of the principal moments of inertia for irrotational flow and for a rigid rotor. What is the main physical difference?",
+            "a": "The irrotational moments of inertia depend strongly on the nuclear shape and vanish for rotation about a symmetry axis, whereas the rigid-body moments vary much less with $\\gamma$. Experimentally, well-deformed nuclei have moments of inertia between these limits, showing that nuclear motion is neither a perfect irrotational flow nor a rigid-body rotation.",
             "figure": {
                 "src": "images/book-nuclear-many-body-problem/fig1.9-moments-of-inertia.png",
-                "caption": "Comparison of the irrotational and rigid-body moments of inertia as functions of the triaxiality parameter $\\gamma$.",
+                "caption": "Principal moments of inertia as functions of the triaxiality parameter $\\gamma$ for irrotational flow and rigid-body rotation.",
                 "size": "medium"
             }
         },
         {
             "topic": "Ch.1: The Liquid Drop Model",
-            "sub": "Rotations and Vibrations - Bohr Hamiltonian",
+            "sub": "Moments of Inertia",
+            "diff": 2,
+            "q": "Experimentally one finds approximately $$\\mathcal{J}^{\\rm irr}<\\mathcal{J}^{\\rm exp}<\\mathcal{J}^{\\rm rig}.$$ What does this inequality tell us about the motion inside a deformed nucleus?",
+            "a": "The nucleus cannot be described as either an ideal irrotational fluid or a rigid classical body. Its collective rotational response is intermediate between these two limiting pictures."
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Quantization of Collective Motion",
             "diff": 3,
-            "q": "The eigenfunctions of the quantized Bohr Hamiltonian are written as\n$$|\\Psi^I_M\\rangle=\\sum_K g_K(\\beta,\\gamma)|IMK\\rangle.$$ What are $I$, $M$, and $K$, and what is the physical interpretation of this wavefunction?",
-            "a": "$I$ is the total angular momentum of the nucleus. $M$ is its projection onto the laboratory $z$ axis, and $K$ is its projection onto the 3-axis of the body-fixed frame. The collective nuclear state is a superposition of rotational states $|IMK\\rangle$, weighted by the deformation-dependent amplitudes $g_K(\\beta,\\gamma)$. It therefore describes both the intrinsic shape of the nucleus and its rotational motion.",
+            "q": "Why is quantizing the classical Bohr Hamiltonian more subtle than replacing ordinary Cartesian momenta by derivatives?",
+            "a": "The collective coordinates are curvilinear and the kinetic energy contains a coordinate-dependent metric. Because the corresponding operators do not commute, their ordering is ambiguous. The Pauli prescription resolves this by constructing the appropriate Laplace operator in the collective coordinates."
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Quantization of Collective Motion",
+            "diff": 2,
+            "q": "After quantization, the rotational part of the Bohr Hamiltonian is $$\\hat T_{\\rm rot}=\\frac{\\hat I_1^2}{2\\mathcal{J}_1}+\\frac{\\hat I_2^2}{2\\mathcal{J}_2}+\\frac{\\hat I_3^2}{2\\mathcal{J}_3}.$$ What is the physical meaning of the operators $\\hat I_\\kappa$?",
+            "a": "They are the components of the total nuclear angular momentum resolved along the three principal axes of the body-fixed frame. The rotational energy depends on how the total angular momentum is distributed among these intrinsic axes."
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Quantization of Collective Motion",
+            "diff": 2,
+            "q": "The sketch below shows the total angular momentum $I$ and its projections $M$ and $K$. What do these quantities represent?",
+            "a": "$I$ is the total angular momentum of the nucleus. $M$ is its projection onto the laboratory $z$ axis, while $K$ is its projection onto the body-fixed 3-axis.",
             "figure": {
                 "src": "images/book-nuclear-many-body-problem/fig1.10-angular-momentum.png",
-                "caption": "The total angular momentum and its projections onto the laboratory and body-fixed axes.",
+                "caption": "Total angular momentum $I$ with its laboratory-frame projection $M$ and body-fixed projection $K$.",
                 "size": "medium"
             }
         },
         {
             "topic": "Ch.1: The Liquid Drop Model",
-            "sub": "Rotations and Vibrations - Bohr Hamiltonian",
+            "sub": "Quantization of Collective Motion",
+            "diff": 3,
+            "q": "The eigenfunctions of the quantized Bohr Hamiltonian have the form $$|\\Psi_M^I\\rangle=\\sum_K g_K(\\beta,\\gamma)|IMK\\rangle.$$ What is the physical interpretation of this wavefunction?",
+            "a": "The state combines intrinsic deformation and collective rotation. The functions $g_K(\\beta,\\gamma)$ describe the deformation-dependent intrinsic amplitudes, while $|IMK\\rangle$ describes the orientation and angular momentum of the nucleus. A general collective state may therefore contain several $K$ components."
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model",
+            "sub": "Quantization of Collective Motion",
             "diff": 3,
             "q": "Why is the quantum number $K$ useful when describing a deformed nucleus?",
             "a": "$K$ measures how much of the total angular momentum is aligned with the intrinsic symmetry axis of the nucleus. It is therefore a natural quantum number in the body-fixed frame."
         },
         {
             "topic": "Ch.1: The Liquid Drop Model",
-            "sub": "Rotations and Vibrations - Bohr Hamiltonian",
+            "sub": "Symmetries of the Bohr Hamiltonian",
             "diff": 3,
-            "q": "Why is the Bohr Hamiltonian regarded as a unified description of collective motion?",
-            "a": "It treats both collective rotations and collective vibrations within a single Hamiltonian, allowing them to coexist and interact through the deformation-dependent moments of inertia."
+            "q": "The triaxial Bohr Hamiltonian is invariant under discrete $180^\\circ$ rotations about the body-fixed principal axes. What is the physical consequence of these $D_2$ symmetries for the collective wavefunction?",
+            "a": "The wavefunction cannot contain arbitrary combinations of $K$ components. The discrete rotational symmetries impose relations between the amplitudes $g_K$ and $g_{-K}$ and therefore restrict the allowed collective states and their spectra."
         },
+
+
+
 
 
 

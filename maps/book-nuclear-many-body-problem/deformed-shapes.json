@@ -11,7 +11,10 @@
 
   "study": {
     "subtopics": [
-      "Rotations and Vibrations - Bohr Hamiltonian"
+      "Rotations and Vibrations - Bohr Hamiltonian",
+      "Moments of Inertia",
+      "Quantization of Collective Motion",
+      "Symmetries of the Bohr Hamiltonian"
     ]
   }
 }
