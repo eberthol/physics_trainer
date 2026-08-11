@@ -1,0 +1,18 @@
+{
+  "title": "Spin-Orbit Coupling",
+
+  "layers": [
+    {
+      "title": "Spin-Orbit Coupling",
+      "image": "images/book-nuclear-many-body-problem/maps/ch2-spin-orbit-coupling.png"
+    }
+  ],
+  "caption": "Spin-Orbit Coupling",
+
+  "study": {
+    "subtopics": [
+      "Spin-Orbit Coupling"
+      
+    ]
+  }
+}

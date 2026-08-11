@@ -180,6 +180,96 @@
                 "caption": "Comparison of the single-particle level schemes produced by the isotropic harmonic oscillator and the infinite square-well potential.",
                 "size": "large"
             }
+        },
+
+        {
+            "topic": "Ch.2: The Shell Model",
+            "sub": "Spin-Orbit Coupling",
+            "diff": 2,
+            "q": "The single-particle potential acquires a spin-dependent term of the form $$f(r)\\,\\mathbf{l}\\cdot\\mathbf{s}.$$ What is the physical effect of this spin-orbit interaction?",
+            "a": "It couples the nucleon's orbital angular momentum $\\mathbf{l}$ to its intrinsic spin $\\mathbf{s}$, splitting the states that would otherwise be degenerate according to $j=l\\pm\\frac12$."
+        },
+        {
+            "topic": "Ch.2: The Shell Model",
+            "sub": "Spin-Orbit Coupling",
+            "diff": 2,
+            "q": "For a nucleon with orbital angular momentum $l$ and spin $s=\\frac12$, what are the two possible values of the total angular momentum $j$?",
+            "a": "The orbital and spin angular momenta couple to give $$j=l+\\frac12$$ or $$j=l-\\frac12$$. Without spin-orbit coupling these two possibilities are degenerate, but the spin-orbit interaction separates them in energy."
+        },
+        {
+            "topic": "Ch.2: The Shell Model",
+            "sub": "Spin-Orbit Coupling",
+            "diff": 2,
+            "q": "The spin-orbit splitting is governed by $$2\\,\\mathbf{l}\\cdot\\mathbf{s}=\\left[j(j+1)-l(l+1)-\\frac34\\right].$$ What does this relation tell us physically?",
+            "a": "The energy contribution from the spin-orbit interaction depends on how the orbital angular momentum and spin are coupled. The two orientations corresponding to $j=l+\\frac12$ and $j=l-\\frac12$ therefore acquire different energies."
+        },
+        {
+            "topic": "Ch.2: The Shell Model",
+            "sub": "Spin-Orbit Coupling",
+            "diff": 2,
+            "q": "For an attractive spin-orbit interaction, why is the $j=l+\\frac12$ level lower in energy than the $j=l-\\frac12$ level?",
+            "a": "For $j=l+\\frac12$, the orbital angular momentum and spin are predominantly parallel, giving a larger positive value of $\\mathbf{l}\\cdot\\mathbf{s}$. Since the spin-orbit interaction is attractive, this configuration has the lower energy."
+        },
+        {
+            "topic": "Ch.2: The Shell Model",
+            "sub": "Spin-Orbit Coupling",
+            "diff": 2,
+            "q": "For a constant $f(r)$, the separation between the $j=l+\\frac12$ and $j=l-\\frac12$ levels is proportional to $$\\Delta E(l)=2l+1.$$ What is the physical consequence of this dependence?",
+            "a": "The spin-orbit splitting becomes larger for states with larger orbital angular momentum $l$. Thus high-$l$ orbitals are split much more strongly than low-$l$ orbitals."
+        },
+        {
+            "topic": "Ch.2: The Shell Model",
+            "sub": "Spin-Orbit Coupling",
+            "diff": 3,
+            "q": "Why was the inclusion of a strong spin-orbit interaction decisive for the shell model?",
+            "a": "The spin-orbit interaction removes the large accidental degeneracies of the simple harmonic-oscillator spectrum and rearranges the single-particle levels. This produces the large shell gaps required to reproduce all of the observed magic numbers $2,8,20,28,50,82,$ and $126$."
+        },
+        {
+            "topic": "Ch.2: The Shell Model",
+            "sub": "Spin-Orbit Coupling",
+            "diff": 2,
+            "q": "How are single-particle states labeled once spin-orbit coupling is included?",
+            "a": "The appropriate coupling scheme is $j$-coupling. Single-particle states are characterized by the quantum numbers $n$, $l$, $j$, and $m$, with $$j=l\\pm\\frac12$$ resulting from coupling the orbital angular momentum to the nucleon spin."
+        },
+        {
+            "topic": "Ch.2: The Shell Model",
+            "sub": "Spin-Orbit Coupling",
+            "diff": 3,
+            "q": "Why do experimental neutron and proton resonances provide evidence for the ordering of the spin-orbit partners?",
+            "a": "The observed lowest resonances correspond predominantly to the $j=\\frac32$ component of the $l=1$ states, while the $j=\\frac12$ resonances occur several MeV higher. This confirms that the $j=l+\\frac12$ state lies below the $j=l-\\frac12$ state for an attractive spin-orbit interaction."
+        },
+        {
+            "topic": "Ch.2: The Shell Model",
+            "sub": "Spin-Orbit Coupling",
+            "diff": 3,
+            "q": "The modified shell scheme below includes the strong spin-orbit interaction. What is the main physical change compared with the simple harmonic-oscillator shell scheme?",
+            "a": "The spin-orbit interaction splits and reorders the single-particle levels, removing the large accidental degeneracies of the harmonic oscillator. The resulting level gaps occur at the experimentally observed magic numbers $2,8,20,28,50,82,$ and $126$.",
+            "figure": {
+                "src": "images/book-nuclear-many-body-problem/fig2-5-spin-orbit-shell-scheme.png",
+                "caption": "Single-particle shell structure after inclusion of the spin-orbit interaction, showing the experimentally observed magic-number shell closures.",
+                "size": "large"
+            }
+        },
+        {
+            "topic": "Ch.2: The Shell Model",
+            "sub": "Spin-Orbit Coupling",
+            "diff": 2,
+            "q": "Why is the radial spin-orbit strength expected to be largest near the nuclear surface?",
+            "a": "The spin-orbit radial dependence is associated with the change of the average potential through the nuclear surface. Since the potential changes most rapidly there, the spin-orbit term is naturally strongest in the surface region."
+        },
+        {
+            "topic": "Ch.2: The Shell Model",
+            "sub": "Spin-Orbit Coupling",
+            "diff": 2,
+            "q": "A commonly used form for the radial spin-orbit strength is $$f(r)=\\lambda\\frac{1}{r}\\frac{dV}{dr}.$$ What is the physical motivation for this choice?",
+            "a": "It makes the spin-orbit interaction strongest where the average nuclear potential changes most rapidly, namely near the nuclear surface. It is also analogous to the radial dependence obtained from the spin-orbit interaction in atomic systems."
+        },
+        {
+            "topic": "Ch.2: The Shell Model",
+            "sub": "Spin-Orbit Coupling",
+            "diff": 3,
+            "q": "Why does the simple spin-orbit term have to be much stronger in nuclei than the corresponding interaction obtained by analogy with atomic electrons?",
+            "a": "The relativistic electromagnetic spin-orbit interaction obtained from the atomic analogy is about an order of magnitude too weak to produce the experimentally required shell splittings. The strong spin-orbit interaction must therefore originate from the strong nuclear force and its corresponding average field."
         }
 
         

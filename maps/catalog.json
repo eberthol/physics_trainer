@@ -272,6 +272,14 @@
     "deck": "book-nuclear-many-body-problem-ch2",
     "title": "The Average Potential of the Nucleus",
     "file": "maps/book-nuclear-many-body-problem/ch2-average-potential.json"
+  },
+  {
+    "id": "spin-orbit-coupling",
+    "collection": "The Nuclear Many Body Problem",
+    "chapter": "Ch.2: The Shell Model",
+    "deck": "book-nuclear-many-body-problem-ch2",
+    "title": "Spin-Orbit Coupling",
+    "file": "maps/book-nuclear-many-body-problem/ch2-spin-orbit-coupling.json"
   }
 
   
