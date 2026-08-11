@@ -39,5 +39,13 @@
     "chapterOrder": 1,
     "deck": "book-nuclear-many-body-problem-ch1",
     "manifest": "maps/book-nuclear-many-body-problem/manifests/ch1.manifest.json"
+  },
+  {
+    "book": "The Nuclear Many Body Problem",
+    "bookOrder": 2,
+    "chapterTitle": "Ch.2: The Shell Model",
+    "chapterOrder": 2,
+    "deck": "book-nuclear-many-body-problem-ch2",
+    "manifest": "maps/book-nuclear-many-body-problem/manifests/ch2.manifest.json"
   }
 ]

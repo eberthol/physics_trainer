@@ -182,7 +182,7 @@
     "chapter": "Ch.1: The Liquid Drop Model",
     "deck": "book-nuclear-many-body-problem-ch1",
     "title": "The Liquid Drop Model Introduction",
-    "file": "maps/book-nuclear-many-body-problem/liquid-drop-intro.json"
+    "file": "maps/book-nuclear-many-body-problem/ch1-liquid-drop-intro.json"
   },
   {
     "id": "SEMF",
@@ -190,7 +190,7 @@
     "chapter": "Ch.1: The Liquid Drop Model",
     "deck": "book-nuclear-many-body-problem-ch1",
     "title": "Semi-Empirical Mass Formula",
-    "file": "maps/book-nuclear-many-body-problem/SEMF.json"
+    "file": "maps/book-nuclear-many-body-problem/ch1-SEMF.json"
   },
   {
     "id": "deformation-parameters",
@@ -198,7 +198,7 @@
     "chapter": "Ch.1: The Liquid Drop Model",
     "deck": "book-nuclear-many-body-problem-ch1",
     "title": "Deformation Paramters",
-    "file": "maps/book-nuclear-many-body-problem/deformation-parameters.json"
+    "file": "maps/book-nuclear-many-body-problem/ch1-deformation-parameters.json"
   },
   {
     "id": "surface-oscillations",
@@ -206,7 +206,7 @@
     "chapter": "Ch.1: The Liquid Drop Model",
     "deck": "book-nuclear-many-body-problem-ch1",
     "title": "Surface Oscillations",
-    "file": "maps/book-nuclear-many-body-problem/surface-oscillations.json"
+    "file": "maps/book-nuclear-many-body-problem/ch1-surface-oscillations.json"
   },
   {
     "id": "deformed-shapes",
@@ -214,7 +214,7 @@
     "chapter": "Ch.1: The Liquid Drop Model",
     "deck": "book-nuclear-many-body-problem-ch1",
     "title": "Deformed Shapes",
-    "file": "maps/book-nuclear-many-body-problem/deformed-shapes.json"
+    "file": "maps/book-nuclear-many-body-problem/ch1-deformed-shapes.json"
   },
   {
     "id": "axial-symmetry",
@@ -222,7 +222,7 @@
     "chapter": "Ch.1: The Liquid Drop Model",
     "deck": "book-nuclear-many-body-problem-ch1",
     "title": "Axial Symmetry",
-    "file": "maps/book-nuclear-many-body-problem/axial-symmetry.json"
+    "file": "maps/book-nuclear-many-body-problem/ch1-axial-symmetry.json"
   },
   {
     "id": "asymmetric-rotor",
@@ -230,7 +230,7 @@
     "chapter": "Ch.1: The Liquid Drop Model",
     "deck": "book-nuclear-many-body-problem-ch1",
     "title": "The Asymmetric Rotor",
-    "file": "maps/book-nuclear-many-body-problem/asymmetric-rotor.json"
+    "file": "maps/book-nuclear-many-body-problem/ch1-asymmetric-rotor.json"
   },
   {
     "id": "nuclear-fission",
@@ -238,7 +238,7 @@
     "chapter": "Ch.1: The Liquid Drop Model",
     "deck": "book-nuclear-many-body-problem-ch1",
     "title": "Nuclear Fission",
-    "file": "maps/book-nuclear-many-body-problem/nuclear-fission.json"
+    "file": "maps/book-nuclear-many-body-problem/ch1-nuclear-fission.json"
   },
   {
     "id": "rotating-liquid-drops",
@@ -246,7 +246,7 @@
     "chapter": "Ch.1: The Liquid Drop Model",
     "deck": "book-nuclear-many-body-problem-ch1",
     "title": "Stability of Rotating Liquid Drops",
-    "file": "maps/book-nuclear-many-body-problem/rotating-liquid-drops.json"
+    "file": "maps/book-nuclear-many-body-problem/ch1-rotating-liquid-drops.json"
   },
   {
     "id": "ch1-liquid-drop-summary",
@@ -255,6 +255,23 @@
     "deck": "book-nuclear-many-body-problem-ch1-summary",
     "title": "The Liquid Drop Model Summary - Summary",
     "file": "maps/book-nuclear-many-body-problem/ch1-liquid-drop-summary.json"
+  },
+
+  {
+    "id": "shell-model-intro",
+    "collection": "The Nuclear Many Body Problem",
+    "chapter": "Ch.2: The Shell Model",
+    "deck": "book-nuclear-many-body-problem-ch2",
+    "title": "The Shell Model - Introduction",
+    "file": "maps/book-nuclear-many-body-problem/ch2-shell-model-intro.json"
+  },
+  {
+    "id": "average-potential",
+    "collection": "The Nuclear Many Body Problem",
+    "chapter": "Ch.2: The Shell Model",
+    "deck": "book-nuclear-many-body-problem-ch2",
+    "title": "The Average Potential of the Nucleus",
+    "file": "maps/book-nuclear-many-body-problem/ch2-average-potential.json"
   }
 
   
