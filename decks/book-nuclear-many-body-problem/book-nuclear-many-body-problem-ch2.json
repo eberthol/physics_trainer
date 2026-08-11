@@ -12,7 +12,7 @@
             "topic": "Ch.2: The Shell Model",
             "sub": "Independent-Particle Picture",
             "diff": 2,
-            "q": "The nucleon-nucleon force has an almost infinitely repulsive core at a radius of about $$c\\approx0.4\\,\\mathrm{fm}$$, while the nuclear radius is of order $$R\\approx r_0A^{1/3}$$. Why does this make strong nucleon-nucleon collisions relatively rare?",
+            "q": "The nucleon-nucleon force has an almost infinitely repulsive core at a radius of about $c\\approx0.4\\,\\mathrm{fm}$, while the nuclear radius is of order $R\\approx r_0A^{1/3}$. Why does this make strong nucleon-nucleon collisions relatively rare?",
             "a": "The volume occupied by closely packed nucleons is only about one hundredth of the actual nuclear volume. Most of the time the nucleons are therefore far enough apart that they do not probe the strongly repulsive core of the interaction."
         },
         {
@@ -61,7 +61,7 @@
             "topic": "Ch.2: The Shell Model",
             "sub": "Shell Effects",
             "diff": 3,
-            "q": "Why does the excitation energy of the first $$2^+$$ state become especially large near magic numbers?",
+            "q": "Why does the excitation energy of the first $2^+$ state become especially large near magic numbers?",
             "a": "Near a shell closure, promoting nucleons to produce a collective excitation requires crossing a larger single-particle energy gap. The nucleus is therefore more resistant to low-energy excitation, producing a pronounced increase in the first $$2^+$$ excitation energy."
         },
         {
@@ -101,7 +101,12 @@
             "sub": "Woods-Saxon Potential",
             "diff": 2,
             "q": "The Woods-Saxon potential is written as $$V^{\\mathrm{WS}}(r)=-V_0\\left[1+\\exp\\left(\\frac{r-R_0}{a}\\right)\\right]^{-1}.$$ What physical features of the nuclear mean field does this form describe?",
-            "a": "It represents an approximately constant attractive potential in the nuclear interior, a smooth transition through the nuclear surface, and a potential that approaches zero outside the nucleus. The parameter $R_0$ sets the nuclear size, $V_0$ the depth, and $a$ the surface diffuseness."
+            "a": "It represents an approximately constant attractive potential in the nuclear interior, a smooth transition through the nuclear surface, and a potential that approaches zero outside the nucleus. The parameter $R_0$ sets the nuclear size, $V_0$ the depth, and $a$ the surface diffuseness.",
+            "figure": {
+                "src": "images/book-nuclear-many-body-problem/fig2-3-Woords-Saxon-potential.png",
+                "caption": "Shape of the Wookds-Saxon potential",
+                "size": "small"
+            }
         },
         {
             "topic": "Ch.2: The Shell Model",
