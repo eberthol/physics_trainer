@@ -11,20 +11,19 @@
 
   "study": {
     "subtopics": [
-      "Quantum Nature of Nuclei",
-      "Semi-Empirical Mass Formula",
-      "SEMF terms",
+      "Liquid-Drop Picture",
+      "Binding Energy",
       "Deformation Parameters",
       "Surface Oscillations",
-      "Rotations and Vibrations - Bohr Hamiltonian",
+      "Quadrupole Collectivity",
+      "Bohr Hamiltonian",
       "Moments of Inertia",
-      "Quantization of Collective Motion",
-      "Symmetries of the Bohr Hamiltonian",
-      "Axially Symmetric Case",
+      "Angular Momentum",
+      "Axially Symmetric Rotor",
       "Asymmetric Rotor",
       "Nuclear Fission",
       "Rotating Liquid Drops",
-      "Liquid-Drop Model Limitations"
+      "Model Scope and Limitations"
     ]
   }
 }

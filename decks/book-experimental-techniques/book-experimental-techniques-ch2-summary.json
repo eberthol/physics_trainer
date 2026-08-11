@@ -180,7 +180,7 @@
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter - Summary",
-            "sub": "Landau and Vavilov",
+            "sub": "Landau-Vavilov",
             "diff": 3,
             "q": "The parameter $\\kappa = \\Delta/W_{\\max}$ is used to classify thin-absorber fluctuations. What does it mean physically?",
             "a": "It compares the mean energy loss in the absorber to the largest energy that can be transferred in a single collision. If $\\kappa$ is very small, rare large transfers matter strongly and the Landau limit applies. As $\\kappa$ increases, the distribution moves toward the Gaussian regime. Vavilov theory covers the intermediate region between these two limits.",

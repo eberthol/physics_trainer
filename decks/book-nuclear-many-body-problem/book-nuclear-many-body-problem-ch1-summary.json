@@ -1,0 +1,176 @@
+{
+    "cards": [
+        {
+            "topic": "Ch.1: The Liquid Drop Model - Summary",
+            "sub": "Liquid-Drop Picture",
+            "diff": 2,
+            "q": "What is the central physical picture of the liquid-drop model of the nucleus?",
+            "a": "The nucleus is treated as an incompressible, charged liquid drop with approximately constant density. Its gross properties result from the competition between short-range nuclear binding, surface tension, Coulomb repulsion, asymmetry effects, and pairing."
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model - Summary",
+            "sub": "Liquid-Drop Picture",
+            "diff": 2,
+            "q": "Why does the nuclear radius scale approximately as $$R=R_0\\propto A^{1/3}?$$",
+            "a": "Because the nuclear density is approximately constant. The nuclear volume is therefore proportional to the number of nucleons $A$, so $R^3\\propto A$ and hence $R\\propto A^{1/3}$."
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model - Summary",
+            "sub": "Binding Energy",
+            "diff": 2,
+            "q": "In the semi-empirical mass formula, what is the physical origin of the volume, surface, Coulomb, asymmetry, and pairing terms?",
+            "a": "The volume term represents bulk nuclear binding; the surface term accounts for the reduced binding of nucleons at the surface; the Coulomb term describes proton-proton repulsion; the asymmetry term penalizes unequal neutron and proton populations; and the pairing term describes the extra stability associated with paired nucleons."
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model - Summary",
+            "sub": "Deformation Parameters",
+            "diff": 2,
+            "q": "The nuclear surface is expanded as $$R(\\theta,\\phi)=R_0\\left(1+a_{00}+\\sum_{\\lambda\\mu}\\alpha^*_{\\lambda\\mu}Y_{\\lambda\\mu}(\\theta,\\phi)\\right).$$ What is the physical meaning of the multipolarity $\\lambda$?",
+            "a": "$\\lambda$ labels the type of surface deformation. The $\\lambda=0$ term changes the volume, $\\lambda=1$ mainly translates the nucleus, $\\lambda=2$ describes quadrupole deformation, $\\lambda=3$ octupole deformation, and higher $\\lambda$ values describe increasingly complex surface distortions."
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model - Summary",
+            "sub": "Deformation Parameters",
+            "diff": 2,
+            "q": "The Hill-Wheeler coordinates are defined by $$\\alpha_{20}=\\beta\\cos\\gamma,\\qquad \\alpha_{22}=\\frac{1}{\\sqrt2}\\beta\\sin\\gamma.$$ What are the physical meanings of $\\beta$ and $\\gamma$?",
+            "a": "$\\beta$ measures the magnitude of the quadrupole deformation, while $\\gamma$ determines its triaxial character. Thus $\\beta$ tells how far the shape is from spherical, whereas $\\gamma$ distinguishes axial and triaxial quadrupole shapes."
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model - Summary",
+            "sub": "Surface Oscillations",
+            "diff": 2,
+            "q": "For small surface oscillations, the collective Hamiltonian is $$H_{\\rm coll}=\\frac12\\sum_{\\lambda\\mu}\\left\\{B_\\lambda|\\dot\\alpha_{\\lambda\\mu}|^2+C_\\lambda|\\alpha_{\\lambda\\mu}|^2\\right\\}.$$ What are the physical meanings of $B_\\lambda$ and $C_\\lambda$?",
+            "a": "$B_\\lambda$ is the collective inertia associated with the surface motion, while $C_\\lambda$ is the stiffness or restoring force against that deformation. Their competition determines the vibration frequency."
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model - Summary",
+            "sub": "Surface Oscillations",
+            "diff": 2,
+            "q": "The vibration frequency is $$\\Omega_\\lambda=\\sqrt{\\frac{C_\\lambda}{B_\\lambda}}.$$ What does this relation mean physically?",
+            "a": "A stiffer surface oscillates faster, while a larger collective inertia slows the motion. The frequency therefore reflects the balance between restoring force and inertia."
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model - Summary",
+            "sub": "Surface Oscillations",
+            "diff": 2,
+            "q": "After quantization, what is the physical meaning of a one-phonon surface excitation of multipolarity $\\lambda$?",
+            "a": "It is a quantized collective vibration of the nuclear surface. A one-phonon state has angular momentum $J=\\lambda$, projection $M=\\mu$, and parity $(-1)^\\lambda$."
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model - Summary",
+            "sub": "Quadrupole Collectivity",
+            "diff": 3,
+            "q": "Why are large $$B(E2)$$ values evidence for collective quadrupole motion?",
+            "a": "An E2 transition probes the quadrupole distribution of the proton charge. If many protons move coherently, the quadrupole matrix element is strongly enhanced compared with a single-particle transition, producing a large $B(E2)$."
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model - Summary",
+            "sub": "Quadrupole Collectivity",
+            "diff": 3,
+            "q": "Why does the first low-lying $2^+$ state not contain the entire quadrupole response of the nucleus?",
+            "a": "Although the first $2^+$ state is collective and can have a large $B(E2)$, it usually exhausts only a fraction of the quadrupole sum rule. Much of the quadrupole strength is distributed among higher-energy states, especially the giant quadrupole resonance."
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model - Summary",
+            "sub": "Bohr Hamiltonian",
+            "diff": 2,
+            "q": "For a nucleus with a stable deformed minimum, why is the collective motion described by the five variables $(\\Omega,\\beta,\\gamma)$?",
+            "a": "The intrinsic shape requires two variables, $\\beta$ and $\\gamma$, while the three Euler angles $\\Omega$ specify the orientation of that shape in the laboratory. Together they describe the five collective quadrupole degrees of freedom."
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model - Summary",
+            "sub": "Bohr Hamiltonian",
+            "diff": 3,
+            "q": "The collective kinetic energy is $$T=T_{\\rm rot}+\\frac12B_2\\left(\\dot\\beta^2+\\beta^2\\dot\\gamma^2\\right).$$ Why are rotations and vibrations generally coupled?",
+            "a": "The rotational moments of inertia depend on the intrinsic shape variables $\\beta$ and $\\gamma$. When the nucleus vibrates, its shape and therefore its rotational inertia change, so rotational and vibrational motion are coupled."
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model - Summary",
+            "sub": "Moments of Inertia",
+            "diff": 3,
+            "q": "Experimentally one finds approximately $$\\mathcal{J}^{\\rm irr}<\\mathcal{J}^{\\rm exp}<\\mathcal{J}^{\\rm rig}.$$ What is the physical conclusion?",
+            "a": "A rotating nucleus behaves neither like an ideal irrotational fluid nor like a rigid classical body. Its collective moment of inertia lies between these two limiting pictures."
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model - Summary",
+            "sub": "Angular Momentum",
+            "diff": 2,
+            "q": "In the collective wavefunctions $|IMK\\rangle$, what are the physical meanings of $I$, $M$, and $K$?",
+            "a": "$I$ is the total nuclear angular momentum, $M$ is its projection onto the laboratory $z$ axis, and $K$ is its projection onto the body-fixed 3-axis."
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model - Summary",
+            "sub": "Bohr Hamiltonian",
+            "diff": 3,
+            "q": "The collective eigenfunctions have the form $$|\\Psi_M^I\\rangle=\\sum_K g_K(\\beta,\\gamma)|IMK\\rangle.$$ What is the physical interpretation of this wavefunction?",
+            "a": "The functions $g_K(\\beta,\\gamma)$ describe the intrinsic deformation-dependent amplitudes, while $|IMK\\rangle$ describes the rotational orientation. A collective nuclear state therefore combines intrinsic shape dynamics with rotation and may contain several $K$ components."
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model - Summary",
+            "sub": "Axially Symmetric Rotor",
+            "diff": 2,
+            "q": "For an axially symmetric deformed nucleus, what is the physical difference between $\\beta$- and $\\gamma$-vibrations?",
+            "a": "A $\\beta$-vibration changes the magnitude of the deformation while preserving axial symmetry. A $\\gamma$-vibration changes the triaxiality and therefore breaks axial symmetry."
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model - Summary",
+            "sub": "Axially Symmetric Rotor",
+            "diff": 2,
+            "q": "What does it mean physically that a rotational band is built on an intrinsic vibrational state?",
+            "a": "The intrinsic state fixes the internal deformation or vibration of the nucleus, while the whole nucleus can rotate with several angular momenta. These rotational excitations form a sequence of levels belonging to the same intrinsic configuration."
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model - Summary",
+            "sub": "Asymmetric Rotor",
+            "diff": 3,
+            "q": "What new spectral feature appears when axial symmetry is broken and the nucleus becomes triaxial?",
+            "a": "Different $K$ components can mix, producing additional rotational states. A characteristic consequence is the appearance of low-lying extra $2^+$, $3^+$, and $4^+$ states and, for suitable triaxial shapes, wobbling bands."
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model - Summary",
+            "sub": "Nuclear Fission",
+            "diff": 2,
+            "q": "What is the basic physical competition responsible for nuclear fission?",
+            "a": "Surface energy favors a compact spherical nucleus because it minimizes surface area, while Coulomb repulsion favors deformation and separation of the proton charge. Fission occurs when the Coulomb tendency toward separation becomes sufficiently strong compared with the restoring surface tension."
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model - Summary",
+            "sub": "Nuclear Fission",
+            "diff": 2,
+            "q": "The fissility parameter is $$x=\\frac{E_C(0)}{2E_S(0)}=\\frac{Z^2/A}{(Z^2/A)_{\\rm crit}}.$$ What does $x$ tell us physically?",
+            "a": "$x$ measures how close the nucleus is to classical instability against fission. For $x<1$ the spherical liquid drop is classically stable, while at $x=1$ the restoring quadrupole stiffness vanishes and for $x>1$ the drop becomes classically unstable."
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model - Summary",
+            "sub": "Nuclear Fission",
+            "diff": 3,
+            "q": "Why can a nucleus such as $^{238}$U undergo spontaneous fission even though the liquid-drop model gives $x<1$?",
+            "a": "For $x<1$ the nucleus is classically trapped behind a finite fission barrier. Spontaneous fission becomes possible because the collective nuclear wavefunction can tunnel quantum mechanically through this barrier."
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model - Summary",
+            "sub": "Rotating Liquid Drops",
+            "diff": 2,
+            "q": "For a rotating liquid drop, the energy contains $$E(\\alpha)=E_S(\\alpha)+E_C(\\alpha)+E_R(\\alpha).$$ How does increasing angular momentum affect the equilibrium shape?",
+            "a": "The rotational term favors shapes with larger moments of inertia. As angular momentum increases, the equilibrium shape becomes increasingly deformed, evolving from nearly spherical or oblate configurations toward triaxial shapes and eventually toward instability against fission."
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model - Summary",
+            "sub": "Rotating Liquid Drops",
+            "diff": 3,
+            "q": "What is the physical meaning of the Jacobi bifurcation in a rapidly rotating liquid drop?",
+            "a": "It is the point at which the axially symmetric rotating equilibrium ceases to be the preferred stable shape and a triaxial configuration becomes energetically favored."
+        },
+        {
+            "topic": "Ch.1: The Liquid Drop Model - Summary",
+            "sub": "Model Scope and Limitations",
+            "diff": 3,
+            "q": "What is the main strength and the main limitation of the liquid-drop model as presented in this chapter?",
+            "a": "Its strength is that it provides a simple unified picture of binding, deformation, collective vibrations, rotations, fission, and rotational stability. Its main limitation is that many quantitative nuclear properties depend strongly on microscopic quantum effects such as shell structure, pairing, and detailed single-particle dynamics that the macroscopic liquid-drop picture does not contain."
+        }
+   
+
+        
+    ]
+}
+

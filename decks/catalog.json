@@ -44,6 +44,14 @@
     "order": 1,
     "level": "Detailed",
     "file": "decks/book-nuclear-many-body-problem/book-nuclear-many-body-problem-ch1.json"
+  },
+  {
+    "id": "book-nuclear-many-body-problem-ch1-summary",
+    "collection": "The Nuclear Many-Body Problem",
+    "name":  "Chapter 1 - The Liquid Drop Model - Summary",
+    "order": 2,
+    "level": "Summary",
+    "file": "decks/book-nuclear-many-body-problem/book-nuclear-many-body-problem-ch1-summary.json"
   }
 
   

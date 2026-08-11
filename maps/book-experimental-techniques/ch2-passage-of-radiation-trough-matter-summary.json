@@ -11,8 +11,31 @@
 
   "study": {
     "subtopics": [
-   
-      
+      "Energy Loss Overview",
+      "Bethe-Bloch Physics",
+      "Energy Dependence",
+      "Scaling and Material Dependence",
+      "Range and Straggling",
+      "Limits and Channeling",
+      "Cherenkov Radiation",
+      "Collision Loss",
+      "Bremsstrahlung",
+      "Critical Energy and Radiation Length",
+      "Range and Absorption",
+      "Multiple Coulomb Scattering",
+      "Energy Straggling",
+      "Thick Absorbers",
+      "Thin Absorbers",
+      "Landau-Vavilov",
+      "Photon Interactions",
+      "Photoelectric Effect",
+      "Compton Scattering",
+      "Pair Production",
+      "Neutron Interactions",
+      "Neutron Cross Section",
+      "Neutron Moderation",
+      "Neutron Slowing Down",
+      "Neutron Attenuation"
     ]
   }
 }
