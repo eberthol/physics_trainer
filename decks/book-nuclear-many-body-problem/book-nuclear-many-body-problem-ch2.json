@@ -256,6 +256,174 @@
             "diff": 3,
             "q": "Why does the simple spin-orbit term have to be much stronger in nuclei than the corresponding interaction obtained by analogy with atomic electrons?",
             "a": "The relativistic electromagnetic spin-orbit interaction obtained from the atomic analogy is about an order of magnitude too weak to produce the experimentally required shell splittings. The strong spin-orbit interaction must therefore originate from the strong nuclear force and its corresponding average field."
+        },
+
+
+
+
+        {
+            "topic": "Ch.2: The Shell Model",
+            "sub": "Many-Body Hamiltonian",
+            "diff": 2,
+            "q": "What three assumptions about the nucleus underlie the microscopic shell-model approach?",
+            "a": "(1) the nucleus is treated as a quantum-mechanical many-body system \n(2) the nucleon velocities are small enough that relativistic effects can be neglected \n(3) the nucleon-nucleon interaction is assumed to have a two-body character."
+        },
+        {
+            "topic": "Ch.2: The Shell Model",
+            "sub": "Many-Body Hamiltonian",
+            "diff": 2,
+            "q": "The microscopic nuclear Hamiltonian is written as $$H=\\sum_{i=1}^{A}-\\frac{\\hbar^2}{2m}\\Delta_i+\\sum_{i<j}v(i,j).$$ What physical ingredients does this Hamiltonian contain?",
+            "a": "It contains the kinetic energy of all nucleons and the two-body interaction between every pair of nucleons. This is the starting point for a microscopic many-body description of the nucleus."
+        },
+        
+        {
+            "topic": "Ch.2: The Shell Model",
+            "sub": "Independent-Particle Hamiltonian",
+            "diff": 2,
+            "q": "The shell-model approximation replaces the full Hamiltonian by $$H_0=\\sum_{i=1}^{A}h_i=\\sum_{i=1}^{A}\\left(-\\frac{\\hbar^2}{2m}\\Delta_i+V(i)\\right).$$ What is the physical meaning of this approximation?",
+            "a": "The complicated two-body interaction is replaced by an average one-body potential $V(i)$. The nucleons then move independently in this common mean field, while their mutual interaction is included only indirectly through the potential."
+        },
+        {
+            "topic": "Ch.2: The Shell Model",
+            "sub": "Single-Particle States",
+            "diff": 2,
+            "q": "The single-particle states satisfy $$h_k\\phi_k(i)=\\epsilon_k\\phi_k(i).$$ What do $\\phi_k$ and $\\epsilon_k$ represent?",
+            "a": "$\\phi_k$ is a single-particle wavefunction of the average nuclear potential, and $\\epsilon_k$ is its corresponding single-particle energy. The set of these states provides the basis in which the many-body shell model is constructed."
+        },
+        {
+            "topic": "Ch.2: The Shell Model",
+            "sub": "Slater Determinants",
+            "diff": 2,
+            "q": "Why must the many-nucleon wavefunction be an antisymmetrized product of single-particle states?",
+            "a": "Nucleons are fermions, so the total wavefunction must be antisymmetric under exchange of two identical nucleons. The antisymmetrized product is therefore represented by a Slater determinant."
+        },
+        {
+            "topic": "Ch.2: The Shell Model",
+            "sub": "Slater Determinants",
+            "diff": 2,
+            "q": "For a configuration of occupied single-particle states $k_1,\\ldots,k_A$, the shell-model state is written as $$|\\Phi_{k_1,\\ldots,k_A}\\rangle=a^+_{k_1}\\cdots a^+_{k_A}|-\\rangle.$$ What does this notation describe physically?",
+            "a": "Starting from the empty vacuum, the creation operators place one fermion in each of the specified single-particle states. The resulting state is the antisymmetrized many-nucleon configuration corresponding to that occupation pattern."
+        },
+        {
+            "topic": "Ch.2: The Shell Model",
+            "sub": "Ground State and Fermi Level",
+            "diff": 2,
+            "q": "How is the ground state constructed in the independent-particle shell model?",
+            "a": "The single-particle levels are filled successively from lowest to highest energy, with each quantum state occupied by at most one identical nucleon. In the ground state, all states up to the Fermi level are occupied and all states above it are empty.",
+            "figure": {
+                "src": "images/book-nuclear-many-body-problem/fig2-6-shell-model-potential.png",
+                "caption": "",
+                "size": "medium"
+            }
+        },
+        {
+            "topic": "Ch.2: The Shell Model",
+            "sub": "Ground State and Fermi Level",
+            "diff": 2,
+            "q": "Why does the shell-model ground state have a particularly simple structure for a closed shell?",
+            "a": "For a closed shell, the available single-particle states are filled completely according to the Pauli principle. There is therefore a unique occupation pattern for the ground state, with no ambiguity in which states are occupied."
+        },
+        {
+            "topic": "Ch.2: The Shell Model",
+            "sub": "Protons and Neutrons",
+            "diff": 2,
+            "q": "Why do protons and neutrons experience different average single-particle potentials?",
+            "a": "Protons experience the additional Coulomb repulsion, while the symmetry energy also favors equal proton and neutron populations. Consequently the proton and neutron mean fields are not identical, especially in nuclei with neutron excess.\nIf, in the nucleus, we replace a neutron by a proton, we gain symmetry energy and lose Coulomb energy. So there must be a difference between the single-particle potential for protons and neutrons, caused by the symmetry energy: the nuclear part of the proton potential is therefore deeper (dashed line on the figure).",
+            "figure": {
+                "src": "images/book-nuclear-many-body-problem/fig2-7-protons-vs-neutrons.png",
+                "caption": "",
+                "size": "medium"
+            }
+        },
+        {
+            "topic": "Ch.2: The Shell Model",
+            "sub": "Protons and Neutrons",
+            "diff": 3,
+            "q": "For a neutron-rich nucleus, the proton and neutron single-particle energies are shifted relative to one another according to $$\\epsilon_{nj}^{(p)}-\\epsilon_{nj}^{(n)}=\\Delta_c-\\Delta_s.$$ What are the physical origins of the two contributions?",
+            "a": "$\\Delta_c$ is the positive shift produced by the Coulomb interaction for protons, while $\\Delta_s$ represents the opposite contribution from the symmetry energy. In heavy neutron-rich nuclei these competing effects shift the proton and neutron Fermi levels relative to one another."
+        },
+        {
+            "topic": "Ch.2: The Shell Model",
+            "sub": "Independent-Particle Picture",
+            "diff": 3,
+            "q": "Why does the fact that the same magic numbers occur for both protons and neutrons support the independent-particle picture?",
+            "a": "If strong many-body correlations played a major role in determining the shell structure, the neutron excess in heavy nuclei could be expected to shift the proton magic numbers, since the proton and neutron environments would strongly affect one another. Experimentally, the same magic numbers are found for protons and neutrons, indicating that the single-particle shell structure is largely maintained independently for the two kinds of nucleons. The fact that some subshells can have a different ordering does not change this overall conclusion."
+        },
+        {
+            "topic": "Ch.2: The Shell Model",
+            "sub": "Shell-Model Excitations",
+            "diff": 2,
+            "q": "How are the lowest shell-model excitations constructed from the ground state?",
+            "a": "They are produced by promoting nucleons from occupied levels below the Fermi surface to unoccupied levels above it. A single-particle promotion gives a particle-hole, $1p-1h$, excitation, while more complicated configurations involve several particles and holes."
+        },
+        {
+            "topic": "Ch.2: The Shell Model",
+            "sub": "Shell-Model Excitations",
+            "diff": 2,
+            "q": "For a particle-hole excitation $$|\\Phi_{mi}\\rangle=a_m^+a_i|\\Phi_0\\rangle,$$ what do the indices $i$ and $m$ represent?",
+            "a": "$i$ labels an initially occupied single-particle state below the Fermi level, while $m$ labels an initially empty state above the Fermi level. The excitation is therefore created by removing a nucleon from $i$ and placing it in $m$."
+        },
+        
+        {
+            "topic": "Ch.2: The Shell Model",
+            "sub": "Quasiparticles",
+            "diff": 2,
+            "q": "Why is it useful to describe states above the Fermi surface as particles and states below it as holes?",
+            "a": "Relative to the closed-shell ground state, excitations are most naturally described as particles added above the Fermi surface and holes left behind below it. This provides a convenient language for organizing many-body excitations.",
+            "figure": {
+                "src": "images/book-nuclear-many-body-problem/fig2-8-particles-holes.png",
+                "caption": "It is usual to classify all excited states by taking the ground state as a reference state. The nucleons that are missing in the ground slate are denoted by holes, those above the Fermi levels by particles.",
+                "size": "medium"
+            }
+        },
+        {
+            "topic": "Ch.2: The Shell Model",
+            "sub": "Quasiparticles",
+            "diff": 3,
+            "q": "Starting from a magic nucleus with the mass number $A$, we can add a particle and obtain a nucleus with the mass number $A + 1$. If we put the particle into level $m$, the wavefunction is $| \\phi_m \\rang = a^+_m | \\phi_0 \\rang$. $$$$The energy difference is then $$\\epsilon_m=E_m(A+1)-E_0(A),$$ what can be learned experimentally from this relation?",
+            "a": "The energy difference between neighboring nuclei can be used to determine single-particle energies of states outside a closed shell. Thus nuclei with one particle added to a closed-shell core provide direct information about the single-particle spectrum."
+        },
+        {
+            "topic": "Ch.2: The Shell Model",
+            "sub": "Quasiparticles",
+            "diff": 3,
+            "q": "The quasiparticle operators are defined by $$a_k^+=a_k^+,\\quad a_k=a_k\\quad\\text{for }\\epsilon_k>\\epsilon_F,$$ and $$a_i^+=a_i,\\quad a_i=a_i^+\\quad\\text{for }\\epsilon_i<\\epsilon_F.$$ What is the physical meaning of this redefinition?",
+            "a": "Above the Fermi surface the quasiparticles behave as particles, while below the Fermi surface they behave as holes. The closed-shell ground state then acts as a vacuum with respect to these quasiparticles, making particle-hole and multiparticle excitations easy to construct."
+        },
+        {
+            "topic": "Ch.2: The Shell Model",
+            "sub": "Residual Interaction",
+            "diff": 3,
+            "q": "The full Hamiltonian is decomposed as $$H=H_0+V_R,$$ with $$V_R=\\sum_{i<j}v(i,j)-\\sum_iV(i).$$ What is the physical meaning of the residual interaction $V_R$?",
+            "a": "$V_R$ contains the part of the nucleon-nucleon interaction that is not already included in the average single-particle potential. The shell model chooses $V(i)$ so that $V_R$ is as small as possible, making the independent-particle Hamiltonian a useful zeroth-order approximation."
+        },
+        {
+            "topic": "Ch.2: The Shell Model",
+            "sub": "Beyond the Independent-Particle Model",
+            "diff": 3,
+            "q": "The exact ground-state wavefunction can be expanded as $$|\\Psi_0\\rangle=C_0|\\Phi_0\\rangle+\\sum_{mi}C_{mi}a_m^+a^+_i|\\Phi_0\\rangle+\\frac14\\sum_{mi,m'i'}C_{mim'i'}a_m^+a_{m'}^+a_{i}^+a_{i'}|^+\\Phi_0\\rangle+\\cdots.$$ What does this expansion tell us about the shell model?",
+            "a": "The independent-particle ground state $|\\Phi_0\\rangle$ is only one component of the exact many-body state. Particle-hole and more complicated configurations mix into the true wavefunction through the residual interaction. If the shell model is a good approximation, the coefficients of these additional configurations remain relatively small."
+        },
+        {
+            "topic": "Ch.2: The Shell Model",
+            "sub": "Open Shells",
+            "diff": 3,
+            "q": "Why are configurations in partially filled $j$-shells degenerate in the basic shell model?",
+            "a": "A $j$-shell has a $(2j+1)$-fold degeneracy, and the shell-model Hamiltonian assigns the same single-particle energy to all substates with the same $j$. Different ways of distributing particles among these degenerate substates therefore have the same unperturbed energy."
+        },
+        {
+            "topic": "Ch.2: The Shell Model",
+            "sub": "Open Shells",
+            "diff": 3,
+            "q": "For partially filled proton and neutron $j$-shells, the number of linearly independent shell-model states is $$\\binom{2j+1}{\\kappa}\\binom{2j'+1}{\\lambda}.$$ What does this expression represent physically?",
+            "a": "It counts the number of allowed antisymmetric many-body configurations obtained by placing $\\kappa$ protons in a $j$-shell with degeneracy $2j+1$ and $\\lambda$ neutrons in a $j'$-shell with degeneracy $2j'+1$. These configurations form the model space in which the residual interaction can be diagonalized."
+        },
+        {
+            "topic": "Ch.2: The Shell Model",
+            "sub": "Open Shells",
+            "diff": 3,
+            "q": "Why does the residual interaction need to be included explicitly for nuclei with open shells?",
+            "a": "The unperturbed shell-model Hamiltonian leaves many configurations degenerate when shells are only partially filled. The residual nucleon-nucleon interaction removes these degeneracies by mixing and splitting the configurations, producing the actual many-body spectrum."
         }
 
         
