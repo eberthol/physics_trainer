@@ -280,8 +280,15 @@
     "deck": "book-nuclear-many-body-problem-ch2",
     "title": "Spin-Orbit Coupling",
     "file": "maps/book-nuclear-many-body-problem/ch2-spin-orbit-coupling.json"
+  },
+  {
+    "id": "shell-model-approach",
+    "collection": "The Nuclear Many Body Problem",
+    "chapter": "Ch.2: The Shell Model",
+    "deck": "book-nuclear-many-body-problem-ch2",
+    "title": "The Shell Model Approach to the Many-Body Problem",
+    "file": "maps/book-nuclear-many-body-problem/ch2-shell-model-approach.json"
   }
 
-  
 
 ]

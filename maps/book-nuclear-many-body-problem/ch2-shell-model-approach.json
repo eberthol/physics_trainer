@@ -1,0 +1,29 @@
+{
+  "title": "The Shell Model Approach to the Many-Body Problem",
+
+  "layers": [
+    {
+      "title": "The Shell Model Approach to the Many-Body Problem",
+      "image": "images/book-nuclear-many-body-problem/maps/ch2-shell-model-approach.png"
+    }
+  ],
+  "caption": "The Shell Model Approach to the Many-Body Problem",
+
+  "study": {
+    "subtopics": [
+      "Many-Body Hamiltonian",
+      "Independent-Particle Hamiltonian",
+      "Single-Particle States",
+      "Slater Determinants",
+      "Ground State and Fermi Level",
+      "Protons and Neutrons",
+      "Independent-Particle Picture",
+      "Shell-Model Excitations",
+      "Quasiparticles",
+      "Residual Interaction",
+      "Beyond the Independent-Particle Model",
+      "Open Shells"
+      
+    ]
+  }
+}
