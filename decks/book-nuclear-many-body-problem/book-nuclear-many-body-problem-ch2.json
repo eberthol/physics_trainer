@@ -4,23 +4,9 @@
         {
             "topic": "Ch.2: The Shell Model",
             "sub": "Independent-Particle Picture",
-            "diff": 2,
-            "q": "Why can the nucleons in a nucleus be treated, as a first approximation, as independent particles moving in single-particle orbits?",
-            "a": "The nucleon-nucleon force has an almost infinitely repulsive core at very short distances, so nucleons are rarely close enough to experience the strongest part of the interaction. Since they are, on average, relatively far apart, they mostly feel the weaker attractive tail of the force, making independent-particle motion a useful first approximation."
-        },
-        {
-            "topic": "Ch.2: The Shell Model",
-            "sub": "Independent-Particle Picture",
-            "diff": 2,
-            "q": "The nucleon-nucleon force has an almost infinitely repulsive core at a radius of about $c\\approx0.4\\,\\mathrm{fm}$, while the nuclear radius is of order $R\\approx r_0A^{1/3}$. Why does this make strong nucleon-nucleon collisions relatively rare?",
-            "a": "The volume occupied by closely packed nucleons is only about one hundredth of the actual nuclear volume. Most of the time the nucleons are therefore far enough apart that they do not probe the strongly repulsive core of the interaction."
-        },
-        {
-            "topic": "Ch.2: The Shell Model",
-            "sub": "Independent-Particle Picture",
-            "diff": 2,
-            "q": "What is the significance of the mean free path of a nucleon being at least of the order of the nuclear dimension?",
-            "a": "A nucleon can travel across a substantial fraction of the nucleus before suffering a strong collision. This provides experimental support for the picture of relatively unperturbed single-particle motion inside the nucleus."
+            "diff": 3,
+            "q": "What physical argument justifies treating the nucleons in a nucleus, as a first approximation, as independent particles moving in single-particle orbits?",
+            "a": "The nucleon-nucleon force has an almost infinitely repulsive core at about $c\\approx0.4\\,\\mathrm{fm}$, while the nuclear radius is of order $R\\approx r_0A^{1/3}$. The volume occupied by such closely packed nucleons is only about one hundredth of the nuclear volume, so nucleons are usually far apart and mainly feel the attractive tail of the interaction. The nucleon mean free path is at least of the order of the nuclear dimension, showing that strong collisions are relatively rare. Thus the nucleons can, as a first approximation, move independently in single-particle orbits."
         },
         {
             "topic": "Ch.2: The Shell Model",
@@ -62,7 +48,7 @@
             "sub": "Shell Effects",
             "diff": 3,
             "q": "Why does the excitation energy of the first $2^+$ state become especially large near magic numbers?",
-            "a": "Near a shell closure, promoting nucleons to produce a collective excitation requires crossing a larger single-particle energy gap. The nucleus is therefore more resistant to low-energy excitation, producing a pronounced increase in the first $$2^+$$ excitation energy."
+            "a": "Near a shell closure, promoting nucleons to produce a collective excitation requires crossing a larger single-particle energy gap. The nucleus is therefore more resistant to low-energy excitation, producing a pronounced increase in the first $2^+$ excitation energy."
         },
         {
             "topic": "Ch.2: The Shell Model",
@@ -134,7 +120,7 @@
             "sub": "Harmonic Oscillator",
             "diff": 3,
             "q": "Why does a single harmonic-oscillator shell contain states with only one parity?",
-            "a": "The oscillator shell satisfies $$N=2(n-1)+l$$. Therefore $l$ has the same parity as $N$, and since the parity of a single-particle state is $(-1)^l$, all states in a given oscillator shell have the same parity."
+            "a": "The oscillator shell satisfies $$N=2(n-1)+l.$$ Therefore $l$ has the same parity as $N$, and since the parity of a single-particle state is $(-1)^l$, all states in a given oscillator shell have the same parity."
         },
         {
             "topic": "Ch.2: The Shell Model",
@@ -194,7 +180,7 @@
             "sub": "Spin-Orbit Coupling",
             "diff": 2,
             "q": "For a nucleon with orbital angular momentum $l$ and spin $s=\\frac12$, what are the two possible values of the total angular momentum $j$?",
-            "a": "The orbital and spin angular momenta couple to give $$j=l+\\frac12$$ or $$j=l-\\frac12$$. Without spin-orbit coupling these two possibilities are degenerate, but the spin-orbit interaction separates them in energy."
+            "a": "The orbital and spin angular momenta couple to give $$j=l+\\frac12$$ or $$j=l-\\frac12$.$ Without spin-orbit coupling these two possibilities are degenerate, but the spin-orbit interaction separates them in energy."
         },
         {
             "topic": "Ch.2: The Shell Model",
