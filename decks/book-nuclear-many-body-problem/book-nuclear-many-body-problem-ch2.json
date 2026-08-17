@@ -180,7 +180,7 @@
             "sub": "Spin-Orbit Coupling",
             "diff": 2,
             "q": "For a nucleon with orbital angular momentum $l$ and spin $s=\\frac12$, what are the two possible values of the total angular momentum $j$?",
-            "a": "The orbital and spin angular momenta couple to give $$j=l+\\frac12$$ or $$j=l-\\frac12$.$ Without spin-orbit coupling these two possibilities are degenerate, but the spin-orbit interaction separates them in energy."
+            "a": "The orbital and spin angular momenta couple to give $$j=l+\\frac12$$ or $$j=l-\\frac12$$. Without spin-orbit coupling these two possibilities are degenerate, but the spin-orbit interaction separates them in energy."
         },
         {
             "topic": "Ch.2: The Shell Model",
@@ -247,7 +247,7 @@
             "topic": "Ch.2: The Shell Model",
             "sub": "Spin-Orbit Coupling",
             "diff": 2,
-            "q": "A commonly used form for the radial spin-orbit strength is $$f(r)=\\lambda\\frac{1}{r}\\frac{dV}{dr}.$$ What is the physical motivation for this choice?",
+            "q": "A commonly used form for the radial spin-orbit strength is $$f(r)=\\lambda\\frac{1}{r}\\frac{dV}{dr}$$ with $\\lambda \\approx -0.5 \\ \\mathrm{fm}^2$. $$$$ What is the physical motivation for this choice?",
             "a": "It makes the spin-orbit interaction strongest where the average nuclear potential changes most rapidly, namely near the nuclear surface. It is also analogous to the radial dependence obtained from the spin-orbit interaction in atomic systems."
         },
         {

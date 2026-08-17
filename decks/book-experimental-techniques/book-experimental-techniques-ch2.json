@@ -553,7 +553,7 @@
             "sub": "Bremsstrahlung",
             "diff": 2,
             "q": "The radiation loss may be written as\n$$-\\left(\\frac{dE}{dx}\\right)_{\\rm rad}=NE_0\\Phi_{\\rm rad}.$$\nWhat does this form imply about the energy dependence of bremsstrahlung loss?",
-            "a": "For a given material, $\\Phi_{\\rm rad}$ is approximately independent of the electron energy over the relevant range. The radiation loss is therefore approximately proportional to the electron energy $E_0$, which explains its rapid increase relative to collision loss."
+            "a": "For a fixed absorber, $N$ is set by the material and $\\Phi_{\\rm rad}$ is mainly a material-dependent factor, so the radiative loss is approximately proportional to the incident electron energy $E_0$. That means bremsstrahlung rises much faster with energy than collision loss, and this is why radiation loss eventually dominates for sufficiently energetic electrons and positrons."
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
@@ -829,29 +829,29 @@
             "topic": "Ch.2: Passage of Radiation Through Matter",
             "sub": "Photon Interactions",
             "diff": 1,
-            "q": "Why do x-rays and \\(\\gamma\\)-rays interact with matter very differently from charged particles, and what are the main processes?",
+            "q": "Why do x-rays and $$\\gamma$$-rays interact with matter very differently from charged particles, and what are the main processes?",
             "a": "Because photons carry no electric charge, they do not undergo the many inelastic collisions with atomic electrons that dominate charged-particle energy loss. Their principal interactions in matter are the photoelectric effect, Compton scattering (including Thomson and Rayleigh scattering), and pair production. The beam is attenuated in intensity but, for the photons that pass through without interacting, the photon energy itself is not degraded."
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
             "sub": "Photon Attenuation",
             "diff": 1,
-            "q": "Photon attenuation in matter is written as\n$$I(x)=I_0\\exp(-\\mu x).$$\nWhat does \\(\\mu\\) represent physically?",
-            "a": "\\(\\mu\\) is the absorption coefficient. It measures the probability per unit thickness that a photon will be removed from the beam by interaction. The exponential law reflects the fact that the surviving photons after thickness \\(x\\) are those that have not yet interacted."
+            "q": "Photon attenuation in matter is written as\n$$I(x)=I_0\\exp(-\\mu x).$$\nWhat does $\\mu$ represent physically?",
+            "a": "$\\mu$ is the absorption coefficient. It measures the probability per unit thickness that a photon will be removed from the beam by interaction. The exponential law reflects the fact that the surviving photons after thickness $x$ are those that have not yet interacted."
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
             "sub": "Photoelectric Effect",
             "diff": 2,
-            "q": "What is the photoelectric effect, and why does the emitted electron energy satisfy\n$$E=h\\nu-\\mathrm{B.E.}$$\n?",
-            "a": "In the photoelectric effect, a photon is completely absorbed by an atomic electron, which is then ejected from the atom. The outgoing electron carries the photon energy minus the electron binding energy, so the kinetic energy is \\(E=h\\nu-\\mathrm{B.E.}\\). The process is therefore a true absorption process, not a scattering process."
+            "q": "What is the photoelectric effect, and why does the emitted electron energy satisfy $E=h\\nu-\\mathrm{B.E.}$?",
+            "a": "In the photoelectric effect, a photon is completely absorbed by an atomic electron, which is then ejected from the atom. The outgoing electron carries the photon energy minus the electron binding energy, so the kinetic energy is $E=h\\nu-\\mathrm{B.E.}$. The process is therefore a true absorption process, not a scattering process."
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
             "sub": "Photoelectric Effect",
             "diff": 2,
-            "q": "Why does the photoelectric cross section show sharp changes near the K, L, and M edges, and why is it strongly dependent on atomic number \\(Z\\)?",
-            "a": "The sharp changes occur when the photon energy becomes just sufficient to remove electrons from a given atomic shell, so the corresponding shell absorption channel opens or closes. These thresholds produce the K-edge, L-edge and M-edge structure. The cross section is strongly dependent on \\(Z\\), with high-\\(Z\\) materials being especially favorable for photoelectric absorption."
+            "q": "Why does the photoelectric cross section show sharp changes near the K, L, and M edges, and why is it strongly dependent on atomic number $Z$?",
+            "a": "The sharp changes occur when the photon energy becomes just sufficient to remove electrons from a given atomic shell, so the corresponding shell absorption channel opens or closes. These thresholds produce the K-edge, L-edge and M-edge structure. The cross section is strongly dependent on $Z$, with high-$Z$ materials being especially favorable for photoelectric absorption."
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
@@ -872,7 +872,7 @@
             "sub": "Thomson and Rayleigh Scattering",
             "diff": 2,
             "q": "What are Thomson and Rayleigh scattering, and when are they relevant?",
-            "a": "Thomson scattering is the scattering of photons by free electrons in the classical low-energy limit. Rayleigh scattering is coherent scattering of photons by bound atomic electrons. Both are related to Compton scattering, but at the relatively high x-ray and \\(\\gamma\\)-ray energies of interest here they are usually small and can often be neglected."
+            "a": "Thomson scattering is the scattering of photons by free electrons in the classical low-energy limit. Rayleigh scattering is coherent scattering of photons by bound atomic electrons. Both are related to Compton scattering, but at the relatively high x-ray and $\\gamma$-ray energies of interest here they are usually small and can often be neglected."
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
