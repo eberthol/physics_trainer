@@ -1,0 +1,22 @@
+{
+  "title": "Symmetry Properties",
+
+  "layers": [
+    {
+      "title": "Symmetry Properties",
+      "image": "images/book-nuclear-many-body-problem/maps/ch2-symmetries.png"
+    }
+  ],
+  "caption": "Symmetry Properties",
+
+  "study": {
+    "subtopics": [
+      "Translational Symmetry",
+      "Rotational Symmetry",
+      "Angular Momentum Coupling",
+      "Isotopic Spin",
+      "Isospin Multiplets",
+      "Isospin Symmetry"
+    ]
+  }
+}

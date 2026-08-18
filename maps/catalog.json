@@ -288,6 +288,14 @@
     "deck": "book-nuclear-many-body-problem-ch2",
     "title": "The Shell Model Approach to the Many-Body Problem",
     "file": "maps/book-nuclear-many-body-problem/ch2-shell-model-approach.json"
+  },
+  {
+    "id": "symmetries",
+    "collection": "The Nuclear Many Body Problem",
+    "chapter": "Ch.2: The Shell Model",
+    "deck": "book-nuclear-many-body-problem-ch2",
+    "title": "Symmetry Properties",
+    "file": "maps/book-nuclear-many-body-problem/ch2-symmetries.json"
   }
 
 

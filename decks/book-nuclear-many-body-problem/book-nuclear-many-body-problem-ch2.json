@@ -466,7 +466,182 @@
             "diff": 3,
             "q": "Why does the residual interaction need to be included explicitly for nuclei with open shells?",
             "a": "The unperturbed shell-model Hamiltonian leaves many configurations degenerate when shells are only partially filled. The residual nucleon-nucleon interaction removes these degeneracies by mixing and splitting the configurations, producing the actual many-body spectrum."
+        },
+
+
+        {
+            "topic": "Ch.2: The Shell Model",
+            "sub": "Translational Symmetry",
+            "diff": 2,
+            "q": "Why does the shell model violate translational invariance, and what is the physical consequence?",
+            "a": "The shell model introduces a fixed average potential in space, even though an isolated nucleus should be invariant under a translation of the whole system. This introduces redundant center-of-mass degrees of freedom. As a result, the excitation spectrum contains spurious states that correspond to motion of the nucleus as a whole rather than intrinsic nuclear excitations."
+        },
+        {
+            "topic": "Ch.2: The Shell Model",
+            "sub": "Translational Symmetry",
+            "diff": 3,
+            "q": "Why does fixing the nucleus in space introduce three redundant degrees of freedom in the shell model?",
+            "a": "A nucleus consisting of $A$ particles has $3A$ spatial coordinates, but after separating out the center-of-mass motion only $3A-3$ describe intrinsic motion. The shell model retains all $3A$ coordinates while fixing the mean field in space, so the three center-of-mass degrees of freedom appear as redundant excitations."
+        },
+        {
+            "topic": "Ch.2: The Shell Model",
+            "sub": "Rotational Symmetry",
+            "diff": 2,
+            "q": "The spherical shell-model Hamiltonian conserves total angular momentum, with $$\\mathbf{J}=\\sum_{i=1}^{A}\\mathbf{j}^{(i)},\\qquad J_z=\\sum_{i=1}^{A}j_z^{(i)}.$$ What is the physical consequence of this rotational symmetry?",
+            "a": "The many-body eigenstates can be chosen to have definite total angular momentum $I$ and projection $M$. Rotational symmetry therefore provides a good quantum number with which the nuclear states can be classified."
+        },
+        {
+            "topic": "Ch.2: The Shell Model",
+            "sub": "Rotational Symmetry",
+            "diff": 2,
+            "q": "Why does a closed-shell nucleus have ground-state angular momentum $I=0$ in the spherical shell model?",
+            "a": "All single-particle states in a closed shell are occupied in complete angular-momentum multiplets. Their angular momenta cancel pairwise and the filled shell has no net angular momentum, giving a unique nondegenerate ground state with $I=0$."
+        },
+        {
+            "topic": "Ch.2: The Shell Model",
+            "sub": "Rotational Symmetry",
+            "diff": 2,
+            "q": "Why does an even-odd nucleus with only one nucleon outside closed shells usually have ground-state angular momentum equal to the $j$ value of that nucleon?",
+            "a": "The closed shells contribute zero total angular momentum. The remaining unpaired nucleon therefore carries essentially all of the ground-state angular momentum, so the nuclear spin is given by its single-particle $j$ value. The same argument applies to a single hole in an otherwise filled shell."
+        },
+        {
+            "topic": "Ch.2: The Shell Model",
+            "sub": "Angular Momentum Coupling",
+            "diff": 2,
+            "q": "For two nucleons with angular momenta $j_1$ and $j_2$, what total angular momenta can be obtained by angular-momentum coupling?",
+            "a": "The allowed total angular momenta are $$|j_1-j_2|\\leq I\\leq j_1+j_2,$$ in integer steps. These are the different ways the two single-particle angular momenta can combine to form a total nuclear angular momentum."
+        },
+        {
+            "topic": "Ch.2: The Shell Model",
+            "sub": "Angular Momentum Coupling",
+            "diff": 3,
+            "q": "For two identical nucleons occupying the same $j$-shell, why are only even values of the total angular momentum $I$ allowed?",
+            "a": "The two-nucleon state must be antisymmetric under exchange of the identical fermions. When the two single-particle states are coupled to good total angular momentum, the exchange symmetry causes the odd-$I$ combinations to cancel identically, leaving only even angular momenta."
+        },
+        {
+            "topic": "Ch.2: The Shell Model",
+            "sub": "Angular Momentum Coupling",
+            "diff": 3,
+            "q": "For two identical nucleons in the same $j$-shell, how does angular-momentum coupling transform the degenerate product states?",
+            "a": "The antisymmetric product states $|m_1m_2\\rangle$ can be transformed into states $|IM\\rangle$ with definite total angular momentum. For identical particles in the same shell, only the allowed even-$I$ coupled states remain."
+        },
+        {
+            "topic": "Ch.2: The Shell Model",
+            "sub": "Angular Momentum Coupling",
+            "diff": 3,
+            "q": "Why can pure angular-momentum coupling alone not determine which of the allowed $I$ states is the ground state?",
+            "a": "Angular-momentum coupling determines which total angular momenta are allowed, but the corresponding states remain degenerate in the unperturbed shell model. The residual interaction $V_R$ must be diagonalized in the relevant subspace to determine their actual energies and therefore which state becomes the ground state."
+        },
+        {
+            "topic": "Ch.2: The Shell Model",
+            "sub": "Angular Momentum Coupling",
+            "diff": 3,
+            "q": "Why is configuration mixing needed to explain some experimentally observed ground-state spins of odd nuclei?",
+            "a": "The pure shell model treats a nucleus as a single occupation configuration, but experimentally some odd nuclei have ground-state spins that cannot be accounted for by one unpaired nucleon alone. Mixing of different particle-hole configurations through the residual interaction provides the additional correlations needed to reproduce these ground-state spins."
+        },
+        {
+            "topic": "Ch.2: The Shell Model",
+            "sub": "Angular Momentum Coupling",
+            "diff": 3,
+            "q": "The coupled two-particle states are constructed as $$|IM\\rangle=\\sum_{m_1m_2}C^{j_1j_2I}_{m_1m_2M}|m_1m_2\\rangle.$$ What is the physical meaning of this transformation?",
+            "a": "It replaces the uncoupled description in terms of the individual magnetic substates $m_1$ and $m_2$ by states with definite total angular momentum $I$ and projection $M$. The Clebsch-Gordan coefficients give the amplitudes for the different ways the two particles combine to produce that total angular momentum."
+        },
+        {
+            "topic": "Ch.2: The Shell Model",
+            "sub": "Angular Momentum Coupling",
+            "diff": 3,
+            "q": "Why must special care be taken when coupling particle-hole states rather than two-particle states?",
+            "a": "A particle creation operator transforms as a spherical tensor in the same way as the corresponding single-particle state, whereas a hole annihilation operator transforms with the conjugate transformation. The hole must therefore be treated as a time-reversed state before applying the standard angular-momentum coupling rules."
+        },
+        {
+            "topic": "Ch.2: The Shell Model",
+            "sub": "Isotopic Spin",
+            "diff": 2,
+            "q": "Why can protons and neutrons be treated as two states of the same particle when discussing the nuclear force?",
+            "a": "Apart from their electromagnetic interactions, protons and neutrons have nearly the same physical properties, and the nuclear force is to a large extent charge independent. When the Coulomb interaction can be neglected, the proton and neutron can therefore be regarded as two states of the same particle, the nucleon."
+        },
+        {
+            "topic": "Ch.2: The Shell Model",
+            "sub": "Isotopic Spin",
+            "diff": 2,
+            "q": "What is isotopic spin, and how is it different from ordinary spin?",
+            "a": "Isotopic spin introduces a two-dimensional internal space whose two basis states correspond to the proton and neutron. It is formally analogous to ordinary spin, with the proton and neutron playing the role of two spin projections. Unlike ordinary spin, however, isospin has nothing to do with rotations in coordinate space and does not have to be coupled to orbital angular momentum."
+        },
+        {
+            "topic": "Ch.2: The Shell Model",
+            "sub": "Isotopic Spin",
+            "diff": 2,
+            "q": "The isospin operator satisfies $$t_3\\nu=-\\frac12\\nu,\\qquad t_3\\pi=+\\frac12\\pi$$ in the isospin convention. What is the physical meaning of $t_3$?",
+            "a": "$t_3$ distinguishes the two possible isospin states of a nucleon: proton and neutron. It is the isospin analogue of the spin projection quantum number."
+        },
+        {
+            "topic": "Ch.2: The Shell Model",
+            "sub": "Isotopic Spin",
+            "diff": 2,
+            "q": "What do the isospin raising and lowering operators do physically?",
+            "a": "They convert a neutron into a proton or a proton into a neutron. They therefore act in isospin space in the same formal way that ordinary spin raising and lowering operators act on spin states."
+        },
+        {
+            "topic": "Ch.2: The Shell Model",
+            "sub": "Isotopic Spin",
+            "diff": 2,
+            "q": "How are the total isospin of a nucleus and its third component defined?",
+            "a": "For a nucleus of $A$ nucleons, the total isospin operator is $$\\mathbf T=\\sum_{i=1}^{A}\\mathbf t^{(i)},$$ and its third component is $$T_3=\\sum_{i=1}^{A}t_3^{(i)}.$$ Thus the total isospin is obtained by coupling the individual nucleon isospins in exactly the same formal way as ordinary angular momenta."
+        },
+        {
+            "topic": "Ch.2: The Shell Model",
+            "sub": "Isotopic Spin",
+            "diff": 3,
+            "q": "What physical information is contained in the third component $T_3$ of the total isospin?",
+            "a": "$T_3$ measures the proton-neutron imbalance of the nucleus. In the convention used for the neutron excess, it is proportional to $N-Z$, so its value is fixed by the numbers of neutrons and protons."
+        },
+        {
+            "topic": "Ch.2: The Shell Model",
+            "sub": "Isotopic Spin",
+            "diff": 3,
+            "q": "Under what condition is total isospin $T$ a good quantum number?",
+            "a": "If the nuclear Hamiltonian is sufficiently charge independent so that $\\mathbf T^2$ commutes with the Hamiltonian, the eigenstates can be classified by a good total isospin quantum number $T$. The Coulomb interaction breaks this symmetry because it distinguishes protons from neutrons."
+        },
+        {
+            "topic": "Ch.2: The Shell Model",
+            "sub": "Isospin Multiplets",
+            "diff": 3,
+            "q": "What is an isospin multiplet?",
+            "a": "An isospin multiplet consists of states with the same total isospin $T$ but different values of $T_3$, corresponding to different members of an isobaric family with different proton and neutron numbers. In the charge-independent limit, these states should have the same energy apart from Coulomb effects."
+        },
+        {
+            "topic": "Ch.2: The Shell Model",
+            "sub": "Isospin Multiplets",
+            "diff": 3,
+            "q": "For the isobaric nuclei $^{10}\\mathrm{Be}$, $^{10}\\mathrm{B}$, and $^{10}\\mathrm{C}$, how does the shell-model picture use isospin to classify their corresponding states?",
+            "a": "The three nuclei have the same mass number but different proton and neutron numbers, corresponding to different values of $T_3$. States belonging to the same total isospin $T$ form isospin multiplets and are expected to occur at nearly the same energy, with small splittings produced by the Coulomb interaction."
+        },
+        {
+            "topic": "Ch.2: The Shell Model",
+            "sub": "Isospin Symmetry",
+            "diff": 3,
+            "q": "Why can low-lying nuclear states have approximately good isospin even in heavy nuclei, where the Coulomb interaction is not negligible?",
+            "a": "The nuclear interaction is much more nearly charge independent than the Coulomb interaction is symmetry breaking. For many low-lying bound states, the proton and neutron single-particle wavefunctions are therefore similar apart from an approximately constant energy shift, so isospin remains a useful approximate quantum number."
+        },
+        {
+            "topic": "Ch.2: The Shell Model",
+            "sub": "Isospin Symmetry",
+            "diff": 3,
+            "q": "Why is the shell-model ground state of an $N=Z$ nucleus expected to have $T=0$ in the simple picture?",
+            "a": "When proton and neutron levels are filled in the same way, the configuration has the maximum symmetry in isospin space appropriate to the fixed value of $T_3=0$. The simple shell-model configuration therefore has the lowest possible total isospin, $T=0$, for the ground state of an $N=Z$ nucleus."
+        },
+        {
+            "topic": "Ch.2: The Shell Model",
+            "sub": "Isospin Symmetry",
+            "diff": 3,
+            "q": "Why is isospin mixing expected to be small in heavy nuclei with a large neutron excess?",
+            "a": "Configurations that violate the dominant isospin character require a proton particle to occupy a level associated with a neutron hole. Their number relative to all possible configurations decreases approximately as $1/(N-Z)$. Thus the isospin impurity becomes smaller as the neutron excess increases."
         }
+
+
+
+
+
 
         
       
