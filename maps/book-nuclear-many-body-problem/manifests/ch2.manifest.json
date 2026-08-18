@@ -2,7 +2,8 @@
   "items": [
     { "type": "map",     "id": "shell-model-intro" },
     { "type": "map",     "id": "average-potential" },
-    { "type": "map",     "id": "spin-orbit-coupling" }
+    { "type": "map",     "id": "spin-orbit-coupling" },
+    { "type": "map",     "id": "shell-model-approach" }
 
   ]
 }
