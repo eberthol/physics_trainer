@@ -725,35 +725,35 @@
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
-            "sub": "Gaussian Approximation",
+            "sub": "Multiple Scattering - Gaussian Approximation",
             "diff": 2,
             "q": "Ignoring rare large-angle single scatterings, the space-angle distribution is approximated by\n$$P(\\theta)d\\theta=\\frac{2\\theta}{\\langle\\theta^2\\rangle}\\exp\\left(-\\frac{\\theta^2}{\\langle\\theta^2\\rangle}\\right)d\\theta.$$\nWhat is the physical meaning of $\\langle\\theta^2\\rangle$ and why is this distribution approximately Gaussian?",
             "a": "$\\langle\\theta^2\\rangle$ is the mean squared space scattering angle, and $\\sqrt{\\langle\\theta^2\\rangle}$ is the rms scattering angle. The distribution is approximately Gaussian because the net deflection is the cumulative result of many independent small-angle scatterings. Rare large-angle collisions are omitted from this approximation."
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
-            "sub": "Gaussian Approximation",
+            "sub": "Multiple Scattering - Gaussian Approximation",
             "diff": 2,
             "q": "The projected scattering-angle distribution is\n$$P(\\theta_x)d\\theta_x=\\frac{1}{\\sqrt{2\\pi\\langle\\theta_x^2\\rangle}}\\exp\\left(-\\frac{\\theta_x^2}{2\\langle\\theta_x^2\\rangle}\\right)d\\theta_x,$$\nwith\n$$\\langle\\theta_x^2\\rangle=\\frac{\\langle\\theta^2\\rangle}{2}.$$\nWhy is the projected mean squared angle one-half of the space-angle value?",
             "a": "For an azimuthally symmetric scattering distribution, the total transverse deflection is shared equally between two perpendicular projected directions. The two projected variances are therefore equal and satisfy $\\langle\\theta^2\\rangle=\\langle\\theta_x^2\\rangle+\\langle\\theta_y^2\\rangle=2\\langle\\theta_x^2\\rangle$."
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
-            "sub": "Gaussian Approximation",
+            "sub": "Multiple Scattering - Gaussian Approximation",
             "diff": 3,
             "q": "An empirical estimate of the mean squared multiple-scattering angle is\n$$\\langle\\theta^2\\rangle=2\\frac{\\chi_c^2}{1+F^2}\\left[\\frac{1+\\nu}{\\nu}\\ln(1+\\nu)-1\\right].$$\nWhat qualitative dependences of the angular spread follow from this result?",
             "a": "The angular spread increases with absorber thickness and with the charge and atomic number factors contained in $\\chi_c$. It decreases strongly with increasing momentum and velocity through the approximate $1/(p\\beta)^2$ dependence. Thus, slow low-momentum particles in thick high-$Z$ absorbers undergo the largest multiple scattering."
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
-            "sub": "Gaussian Approximation",
+            "sub": "Multiple Scattering - Gaussian Approximation",
             "diff": 2,
             "q": "Why does the true rms angle of the complete Moliere distribution formally become infinite, even though a finite Gaussian width is useful in practice?",
             "a": "The full distribution has a long Rutherford-like tail from rare large-angle scatterings. These events contribute strongly to the second moment, causing the formal mean squared angle to diverge. In practical calculations, the Gaussian approximation effectively describes the central portion of the distribution after excluding a small fraction of the largest-angle events."
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
-            "sub": "Gaussian Approximation",
+            "sub": "Multiple Scattering - Gaussian Approximation",
             "diff": 2,
             "q": "The lateral-displacement distribution after traversing a thickness $t$ in radiation lengths has\n$$\\langle r^2\\rangle=\\frac{\\langle\\theta^2\\rangle t^2}{3}.$$\nWhat does this relation show about the connection between angular scattering and transverse displacement?",
             "a": "A particle that is repeatedly deflected accumulates a transverse displacement as it travels. The rms displacement grows with both the angular spread and the traversed thickness. The factor $1/3$ reflects the continuous buildup of deflection along the path rather than a single deflection occurring at one point."
@@ -796,6 +796,13 @@
         },
         {
             "topic": "Ch.2: Passage of Radiation Through Matter",
+            "sub": "Energy Straggling",
+            "diff": 1,
+            "q": "Explain the different regimes and the related models describing them.",
+            "a": "- Thick absorbers: large number of collisions, velocity of the particle is negligibly altered in the collisions $\\Rightarrow$ total energy lost follows a Gaussian distribution (Central Limit Theorem). \n- Very thick absorbers: energy loss is not small anymore compared to the initial energy $\\Rightarrow$ need special treatment. \n- Thin absorbers: Landau theory, Vavilov theory for the in-between region (describes how to pass from Landau to Gaussian)."
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter",
             "sub": "Thick Absorbers",
             "diff": 2,
             "q": "Why does the energy-loss distribution become Gaussian for a sufficiently thick absorber, and what is the corresponding form of the distribution?",
@@ -805,11 +812,18 @@
             "topic": "Ch.2: Passage of Radiation Through Matter",
             "sub": "Thin Absorbers",
             "diff": 3,
-            "q": "For thin absorbers, the parameter\n$$\\kappa=\\frac{\\bar{\\Delta}}{W_{\\max}}$$\ndetermines the shape of the energy-loss distribution. What does $\\kappa$ measure, what is the Landau limit, and why is the distribution asymmetric?",
-            "a": "$\\kappa$ measures the ratio of the mean energy loss to the maximum energy transferable in a single collision. For $\\kappa\\lesssim0.01$, Landau theory applies. In this regime the absorber is thin enough that occasional large single-collision transfers dominate the high-energy side of the distribution, producing a long tail toward large $\\Delta$. As a result, the mean energy loss no longer coincides with the most probable energy loss. In Landau theory the most probable energy loss is given by $\\Delta_{\\rm mp}=\\xi[\\ln(\\xi/I)+0.198-\\delta]$.",
+            "q": "For thin absorbers, what are the assumptions of the Landau theory?",
+            "a": "1) the maximum energy transfer permitted is infinite, $W_{\\mathrm{max}} \\to \\infty$ ($\\kappa \\to 0$) \n2) the individual energy transfers are sufficiently large such that the electrons may be treated as free. Small energy transfers  from so-called distant collisions are ignored \n3)  the decrease in velocity of the particle is negligible, i.e., the particle maintains a constant velocity"
+        },
+        {
+            "topic": "Ch.2: Passage of Radiation Through Matter",
+            "sub": "Thin Absorbers",
+            "diff": 3,
+            "q": "For thin absorbers, the parameter\n$$\\kappa=\\frac{\\bar{\\Delta}}{W_{\\max}}$$ where $\\bar{\\Delta}$ is the mean energy loss, \ndetermines the shape of the energy-loss distribution. What does $\\kappa$ measure, what is the Landau limit, and why is the distribution asymmetric?",
+            "a": "$\\kappa$ measures the ratio of the mean energy loss to the maximum energy transferable in a single collision. For $\\kappa\\lesssim0.01$, Landau theory applies. In this regime the absorber is thin enough that occasional large single-collision transfers dominate the high-energy side of the distribution, producing a long tail toward large $\\Delta$ (energy loss in absorber). As a result, the mean energy loss no longer coincides with the most probable energy loss. In Landau theory the most probable energy loss is given by $\\Delta_{\\rm mp}=\\xi[\\ln(\\xi/I)+0.198-\\delta]$.",
             "figure": {
-                "src": "images/book-experimental-techniques/fig2.19_vavilov-distributions.png",
-                "caption": "Vavilov distributions for various values of $\\kappa$, with the Landau distribution shown for $\\kappa=0$.",
+                "src": "images/book-experimental-techniques/fig2.18_energy-loss-distribution.png",
+                "caption": "Typical distribution of energy loss in a thin absorber, showing a long high-energy tail.",
                 "size": "medium"
             }
         },
@@ -820,8 +834,8 @@
             "q": "How does Vavilov theory relate the Landau and Gaussian limits, and why is it useful?",
             "a": "Vavilov theory describes the intermediate region between the thin-absorber Landau limit and the thick-absorber Gaussian limit. As $\\kappa$ increases, the distribution becomes more Gaussian-like; as $\\kappa$ decreases, it approaches the Landau form with a long high-energy tail. This makes Vavilov theory useful for absorbers where neither the Gaussian nor the Landau approximation is fully adequate. The theory also agrees well with measured energy-loss distributions.",
             "figure": {
-                "src": "images/book-experimental-techniques/fig2.20_vavilov-symon-experiment.png",
-                "caption": "Comparison of Vavilov's and Symon's theories with experimental energy-loss data.",
+                "src": "images/book-experimental-techniques/fig2.19_vavilov-distributions.png",
+                "caption": "Vavilov distributions for various values of $\\kappa$, with the Landau distribution shown for $\\kappa=0$.",
                 "size": "medium"
             }
         },
@@ -829,7 +843,7 @@
             "topic": "Ch.2: Passage of Radiation Through Matter",
             "sub": "Photon Interactions",
             "diff": 1,
-            "q": "Why do x-rays and $$\\gamma$$-rays interact with matter very differently from charged particles, and what are the main processes?",
+            "q": "Why do x-rays and $\\gamma$-rays interact with matter very differently from charged particles, and what are the main processes?",
             "a": "Because photons carry no electric charge, they do not undergo the many inelastic collisions with atomic electrons that dominate charged-particle energy loss. Their principal interactions in matter are the photoelectric effect, Compton scattering (including Thomson and Rayleigh scattering), and pair production. The beam is attenuated in intensity but, for the photons that pass through without interacting, the photon energy itself is not degraded."
         },
         {
