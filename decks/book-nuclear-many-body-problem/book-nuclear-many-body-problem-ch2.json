@@ -504,6 +504,7 @@
             "q": "Why does an even-odd nucleus with only one nucleon outside closed shells usually have ground-state angular momentum equal to the $j$ value of that nucleon?",
             "a": "The closed shells contribute zero total angular momentum. The remaining unpaired nucleon therefore carries essentially all of the ground-state angular momentum, so the nuclear spin is given by its single-particle $j$ value. The same argument applies to a single hole in an otherwise filled shell."
         },
+        
         {
             "topic": "Ch.2: The Shell Model",
             "sub": "Angular Momentum Coupling",
