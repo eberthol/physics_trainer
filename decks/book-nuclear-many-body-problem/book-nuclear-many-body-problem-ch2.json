@@ -272,7 +272,7 @@
             "topic": "Ch.2: The Shell Model",
             "sub": "Many-Body Hamiltonian",
             "diff": 2,
-            "q": "The microscopic nuclear Hamiltonian is written as $$H=\\sum_{i=1}^{A}-\\frac{\\hbar^2}{2m}\\Delta_i+\\sum_{i<j}v(i,j).$$ What physical ingredients does this Hamiltonian contain?",
+            "q": "The microscopic nuclear Hamiltonian is written as $$H=\\sum_{i=1}^{A}-\\frac{\\hbar^2}{2m}\\Delta_i+\\sum_{i<j}^{A}v(i,j).$$ What physical ingredients does this Hamiltonian contain?",
             "a": "It contains the kinetic energy of all nucleons and the two-body interaction between every pair of nucleons. This is the starting point for a microscopic many-body description of the nucleus."
         },
         
@@ -323,15 +323,37 @@
             "q": "Why does the shell-model ground state have a particularly simple structure for a closed shell?",
             "a": "For a closed shell, the available single-particle states are filled completely according to the Pauli principle. There is therefore a unique occupation pattern for the ground state, with no ambiguity in which states are occupied."
         },
+
         {
             "topic": "Ch.2: The Shell Model",
             "sub": "Protons and Neutrons",
             "diff": 2,
             "q": "Why do protons and neutrons experience different average single-particle potentials?",
-            "a": "Protons experience the additional Coulomb repulsion, while the symmetry energy also favors equal proton and neutron populations. Consequently the proton and neutron mean fields are not identical, especially in nuclei with neutron excess.\nIf, in the nucleus, we replace a neutron by a proton, we gain symmetry energy and lose Coulomb energy. So there must be a difference between the single-particle potential for protons and neutrons, caused by the symmetry energy: the nuclear part of the proton potential is therefore deeper (dashed line on the figure).",
+            "a": "Because two effects distinguish them. Symmetry energy favors a configuration with equal number of protons and neutrons. Additionally, protons experience Coulomb repulsion. Therefore the proton and neutron average potentials are not identical."
+        },
+        {
+            "topic": "Ch.2: The Shell Model",
+            "sub": "Protons and Neutrons",
+            "diff": 2,
+            "q": "Why there is a neutron excess for heavier nuclei and not a proton excess?",
+            "a": "Because of Coulomb repulsion. If, in the nucleus, we replace a neutron by a proton, we gain symmetry energy and lose Coulomb energy."
+        },
+        {
+            "topic": "Ch.2: The Shell Model",
+            "sub": "Protons and Neutrons",
+            "diff": 3,
+            "q": "Why is the nuclear part of the proton potential deeper than the nuclear part of the neutron potential in a neutron-rich nucleus?",
+            "a": "The symmetry energy favors a configuration with equal numbers of protons and neutrons. Replacing a neutron by a proton therefore lowers the symmetry-energy contribution. Since the Coulomb effect is treated separately, this requires the nuclear part of the proton single-particle potential to be deeper than the corresponding neutron potential."
+        },
+        {
+            "topic": "Ch.2: The Shell Model",
+            "sub": "Protons and Neutrons",
+            "diff": 3,
+            "q": "Why does the total proton potential appear less deep than the neutron potential even though its nuclear part is deeper?",
+            "a": "The proton potential contains both the deeper nuclear contribution and the positive Coulomb potential. The Coulomb repulsion shifts the proton potential upward, opposing the deeper nuclear part. The two effects do not cancel, so the total proton well is less deep than the neutron well.",
             "figure": {
                 "src": "images/book-nuclear-many-body-problem/fig2-7-protons-vs-neutrons.png",
-                "caption": "",
+                "caption": "Comparison of neutron and proton single-particle potentials in a neutron-rich nucleus. The dashed curve shows the nuclear part of the proton potential; the full proton potential is shifted upward by the Coulomb contribution.",
                 "size": "medium"
             }
         },
@@ -339,8 +361,15 @@
             "topic": "Ch.2: The Shell Model",
             "sub": "Protons and Neutrons",
             "diff": 3,
-            "q": "For a neutron-rich nucleus, the proton and neutron single-particle energies are shifted relative to one another according to $$\\epsilon_{nj}^{(p)}-\\epsilon_{nj}^{(n)}=\\Delta_c-\\Delta_s.$$ What are the physical origins of the two contributions?",
-            "a": "$\\Delta_c$ is the positive shift produced by the Coulomb interaction for protons, while $\\Delta_s$ represents the opposite contribution from the symmetry energy. In heavy neutron-rich nuclei these competing effects shift the proton and neutron Fermi levels relative to one another."
+            "q": "For a nucleus with $N\\neq Z$, the corresponding proton and neutron single-particle levels are shifted according to\n$$\\epsilon_{nj}^{(p)}-\\epsilon_{nj}^{(n)}=\\Delta_c-\\Delta_s.$$ What is the physical meaning of the two terms?",
+            "a": "$\\Delta_c>0$ is the upward shift of the proton levels caused by Coulomb repulsion, while $\\Delta_s>0$ represents the downward shift of the proton levels caused by the symmetry-energy contribution. The observed proton-neutron level difference is therefore the result of these two competing effects."
+        },
+        {
+            "topic": "Ch.2: The Shell Model",
+            "sub": "Protons and Neutrons",
+            "diff": 3,
+            "q": "Why must the proton and neutron Fermi surfaces have the same energy in a stable nucleus?",
+            "a": "If the proton and neutron Fermi energies were different, converting one type of nucleon into the other by $\\beta$ decay could lower the total energy. Stability therefore requires the proton and neutron Fermi surfaces to coincide, even though the proton and neutron single-particle potentials and level spacings are different."
         },
         {
             "topic": "Ch.2: The Shell Model",
@@ -363,7 +392,13 @@
             "q": "For a particle-hole excitation $$|\\Phi_{mi}\\rangle=a_m^+a_i|\\Phi_0\\rangle,$$ what do the indices $i$ and $m$ represent?",
             "a": "$i$ labels an initially occupied single-particle state below the Fermi level, while $m$ labels an initially empty state above the Fermi level. The excitation is therefore created by removing a nucleon from $i$ and placing it in $m$."
         },
-        
+        {
+            "topic": "Ch.2: The Shell Model",
+            "sub": "Shell-Model Excitations",
+            "diff": 2,
+            "q": "Can all the excitated states be explained by particle-hole excitation?",
+            "a": "No, here are low-lying collective states which cannot be explained in the independent particle model (cf. liquid drop model)."
+        },
         {
             "topic": "Ch.2: The Shell Model",
             "sub": "Quasiparticles",
@@ -406,6 +441,13 @@
         },
         {
             "topic": "Ch.2: The Shell Model",
+            "sub": "Beyond the Independent-Particle Model",
+            "diff": 3,
+            "q": "What does the specific choice of potential used in the shell model implies about the type of nucleus well described by this model?",
+            "a": "The chosen potential has a shperical symmerty. Spherical nuclei exist only in the neighborbood of magic nuclei. Therefore, only nuclei with (almost) closed-shells are well described by this potential. \nThe filling of the shells is without ambiguity, if we have closed shells. When we start filling neutrons and protons in unfilled shells these states will be degenerate, because the $j$-shells have a $(2j+ 1)$-fold degeneracy."
+        },
+        {
+            "topic": "Ch.2: The Shell Model",
             "sub": "Open Shells",
             "diff": 3,
             "q": "Why are configurations in partially filled $j$-shells degenerate in the basic shell model?",
@@ -415,8 +457,8 @@
             "topic": "Ch.2: The Shell Model",
             "sub": "Open Shells",
             "diff": 3,
-            "q": "For partially filled proton and neutron $j$-shells, the number of linearly independent shell-model states is $$\\binom{2j+1}{\\kappa}\\binom{2j'+1}{\\lambda}.$$ What does this expression represent physically?",
-            "a": "It counts the number of allowed antisymmetric many-body configurations obtained by placing $\\kappa$ protons in a $j$-shell with degeneracy $2j+1$ and $\\lambda$ neutrons in a $j'$-shell with degeneracy $2j'+1$. These configurations form the model space in which the residual interaction can be diagonalized."
+            "q": "Let $\\kappa$ and $\\lambda$ be the proton and neutron numbers (resp.) in a partially filled $j$-shell. Let $(n, l, j)$ the quantum numbers of the partially filled neutron shell and $(n^\\prime, l^\\prime, j^\\prime)$ that of the protons. How many linearly independent antisymmetric many-body configurations can be obtained?",
+            "a": "It is given by the product of binomial coefficients $$\\binom{2j+1}{\\kappa}\\binom{2j'+1}{\\lambda}.$$ These configurations form the model space in which the residual interaction can be diagonalized."
         },
         {
             "topic": "Ch.2: The Shell Model",
