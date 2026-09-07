@@ -296,6 +296,14 @@
     "deck": "book-nuclear-many-body-problem-ch2",
     "title": "Symmetry Properties",
     "file": "maps/book-nuclear-many-body-problem/ch2-symmetries.json"
+  },
+  {
+    "id": "comparison-with-experiment",
+    "collection": "The Nuclear Many Body Problem",
+    "chapter": "Ch.2: The Shell Model",
+    "deck": "book-nuclear-many-body-problem-ch2",
+    "title": "Comparison With Experiment",
+    "file": "maps/book-nuclear-many-body-problem/ch2-comparison-with-experiment.json"
   }
 
 

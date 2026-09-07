@@ -756,6 +756,150 @@
             "diff": 3,
             "q": "Measured spectroscopic factors for several experimentally identified single-particle states are about $0.8$-$0.9$ rather than exactly $1$. What does this imply?",
             "a": "The states retain a strong single-particle character, so the shell model is a good approximation, but they are not perfectly pure. Roughly speaking, some of their strength has been redistributed into more complicated configurations through the residual interaction."
+        },
+
+        {
+            "topic": "Ch.2: The Shell Model",
+            "sub": "Electromagnetic Moments and Transitions",
+            "diff": 2,
+            "q": "In the simple shell-model description of an odd-mass nucleus,\n$$|\\Phi_m\\rangle=a_m^+|\\Phi_0\\rangle,$$\nwhat is the physical picture of the state?",
+            "a": "The nucleus is approximated as one unpaired nucleon occupying a single-particle orbital outside an inert even-even core. The electromagnetic properties are then mainly determined by this external nucleon."
+        },
+        {
+            "topic": "Ch.2: The Shell Model",
+            "sub": "Electromagnetic Moments and Transitions",
+            "diff": 2,
+            "q": "Why is the description of electromagnetic moments especially simple when the core is a closed-shell nucleus?",
+            "a": "A closed-shell core has $I=0$, so its electromagnetic multipole moments vanish. The measured moment of the odd-mass nucleus can therefore be attributed, in first approximation, to the single particle or hole outside the closed shell."
+        },
+        {
+            "topic": "Ch.2: The Shell Model",
+            "sub": "Particle and Hole States",
+            "diff": 3,
+            "q": "How are electromagnetic moments of a single-hole state related to those of the corresponding single-particle state?",
+            "a": "A hole has the same magnetic moment as the corresponding particle state, but its electric multipole moment has the opposite sign. This difference follows from the time-reversal properties of magnetic and electric multipole operators."
+        },
+        {
+            "topic": "Ch.2: The Shell Model",
+            "sub": "Magnetic Moments",
+            "diff": 2,
+            "q": "The magnetic moment operator for a nucleon is written as\n$$\\boldsymbol{\\mu}=\\mu_N\\left(g^l\\mathbf l+g^s\\mathbf s\\right).$$\nWhat is the physical meaning of the two terms?",
+            "a": "The magnetic moment has an orbital contribution from the nucleon's motion, proportional to $g^l\\mathbf l$, and an intrinsic-spin contribution, proportional to $g^s\\mathbf s$. Their vector coupling determines the magnetic moment of the single-particle state."
+        },
+        {
+            "topic": "Ch.2: The Shell Model",
+            "sub": "Magnetic Moments",
+            "diff": 2,
+            "q": "Why are the magnetic properties of protons and neutrons different even when they occupy analogous shell-model orbitals?",
+            "a": "Their gyromagnetic factors are different. Protons have both orbital and spin magnetic contributions, whereas neutrons have no bare orbital charge contribution but still possess an intrinsic magnetic moment through their spin."
+        },
+        {
+            "topic": "Ch.2: The Shell Model",
+            "sub": "Schmidt Lines",
+            "diff": 3,
+            "q": "For a pure single-particle state with $j=l\\pm\\frac12$, the shell model predicts characteristic magnetic moments known as Schmidt values. What are the Schmidt lines physically?",
+            "a": "They are the magnetic moments expected if the odd nucleon behaves as a pure single particle with its angular momentum obtained by coupling $l$ and $s=1/2$. The two lines correspond to the two possible couplings $j=l+1/2$ and $j=l-1/2$."
+        },
+        {
+            "topic": "Ch.2: The Shell Model",
+            "sub": "Schmidt Lines",
+            "diff": 3,
+            "q": "Experimental magnetic moments of odd nuclei tend to lie between two characteristic single-particle curves corresponding to $j=l+\\frac12$ and $j=l-\\frac12$. What does this comparison tell us?",
+            "a": "The overall clustering near the Schmidt lines supports the idea that the magnetic moment is largely controlled by the last unpaired nucleon. Deviations from the lines show that the state is not a perfectly pure single-particle configuration and that additional many-body effects are present.",
+            "figure": {
+                "src": "images/book-nuclear-many-body-problem/fig2-16-17-schmidt.png",
+                "caption": "Magnetic moments of odd-proton nuclei compared with the single-particle Schmidt limits.",
+                "size": "large"
+            }
+        },
+        {
+            "topic": "Ch.2: The Shell Model",
+            "sub": "Magnetic Moments",
+            "diff": 3,
+            "q": "Why can the simple single-particle picture give reasonable magnetic moments even for some nuclei that are not very close to closed shells?",
+            "a": "Nucleons in time-reversed orbitals tend to be occupied in pairs, and their magnetic moments cancel because the two time-reversed states contribute opposite signs. The dominant magnetic contribution can therefore still come from the last unpaired nucleon."
+        },
+        {
+            "topic": "Ch.2: The Shell Model",
+            "sub": "Magnetic Moments",
+            "diff": 3,
+            "q": "Why do measured magnetic moments often deviate from the Schmidt values even for rather pure one-particle or one-hole states?",
+            "a": "Two important effects are missing from the simplest model: the magnetic response of a nucleon inside the nucleus differs from that of a free nucleon, motivating effective $g$-factors, and the supposedly inert core can be polarized by the external nucleon and the electromagnetic field."
+        },
+        {
+            "topic": "Ch.2: The Shell Model",
+            "sub": "Core Polarization",
+            "diff": 2,
+            "q": "What is core polarization in the shell-model description of electromagnetic observables?",
+            "a": "The closed-shell core is not perfectly inert. The external nucleon or electromagnetic field can induce virtual excitations of the core, and these collective responses modify the measured electromagnetic moment or transition strength."
+        },
+        {
+            "topic": "Ch.2: The Shell Model",
+            "sub": "M1 Transitions",
+            "diff": 3,
+            "q": "In the pure single-particle model, why are M1 transitions between states with different orbital angular momentum $l$ forbidden?",
+            "a": "The M1 operator is built from the orbital and spin angular-momentum operators and commutes with $l^2$. It therefore cannot change the orbital quantum number $l$ in the pure single-particle approximation."
+        },
+        {
+            "topic": "Ch.2: The Shell Model",
+            "sub": "M1 Transitions",
+            "diff": 3,
+            "q": "Very weak M1 transitions with $\\Delta l\\neq0$ are nevertheless observed experimentally. What does this imply?",
+            "a": "The simple single-particle M1 operator is incomplete. Core polarization and mesonic or exchange-current effects generate additional components of the electromagnetic operator that can weakly connect states with different $l$ values."
+        },
+        {
+            "topic": "Ch.2: The Shell Model",
+            "sub": "Electric Quadrupole Moments",
+            "diff": 2,
+            "q": "For a single-particle state, the quadrupole moment is predicted to scale as\n$$Q\\propto -e\\langle r^2\\rangle\\frac{2j-1}{2j+2}.$$\nWhat does the sign of $Q$ mean physically for a particle with $j>1/2$?",
+            "a": "The negative sign corresponds to an oblate, pancake-like probability distribution for the single-particle state. For the corresponding hole state, the sign is reversed, giving a prolate-type distribution."
+        },
+        {
+            "topic": "Ch.2: The Shell Model",
+            "sub": "Electric Quadrupole Moments",
+            "diff": 3,
+            "q": "Why does the spherical single-particle model work best for electric quadrupole moments near magic numbers?",
+            "a": "Near a closed shell, the nucleus can often be approximated as one particle or one hole coupled to a nearly spherical inert core. As more nucleons fill an open shell, collective deformation develops and the spherical single-particle description becomes inadequate."
+        },
+        {
+            "topic": "Ch.2: The Shell Model",
+            "sub": "Electric Quadrupole Moments",
+            "diff": 3,
+            "q": "A plot of quadrupole moments across odd-A nuclei shows relatively simple single-particle behavior near shell closures but very large values in the middle of open shells. What is the physical interpretation?",
+            "a": "Near magic numbers, one-particle or one-hole configurations dominate and the spherical shell model works qualitatively. Mid-shell, many nucleons participate coherently, producing strong collective deformation and quadrupole moments much larger than single-particle expectations.",
+            "figure": {
+                "src": "images/book-nuclear-many-body-problem/fig2-18-quadrupole-moments-odd-A.png",
+                "caption": "Quadrupole moments of odd-A nuclei; arrows indicate shell closures. Large mid-shell values signal collective deformation.",
+                "size": "large"
+            }
+        },
+        {
+            "topic": "Ch.2: The Shell Model",
+            "sub": "Effective Charges",
+            "diff": 3,
+            "q": "Why are effective electric charges introduced in shell-model calculations of quadrupole moments and E2 transitions?",
+            "a": "The valence nucleon polarizes the core, so the observed electric response is larger than the bare single-particle charge would predict. This missing core response is represented phenomenologically by an effective charge. In the discussion here, typical values are roughly $e_{\\mathrm{eff}}\\approx1$ for neutrons and $e_{\\mathrm{eff}}\\approx2$ for protons."
+        },
+        {
+            "topic": "Ch.2: The Shell Model",
+            "sub": "Effective Charges",
+            "diff": 3,
+            "q": "Why can a neutron contribute to an electric quadrupole moment or E2 transition even though its bare electric charge is zero?",
+            "a": "The neutron can polarize the charged proton distribution of the core. The resulting collective motion of the core produces an electric response, so the neutron behaves phenomenologically as if it carried a nonzero effective charge."
+        },
+        {
+            "topic": "Ch.2: The Shell Model",
+            "sub": "Electromagnetic Transitions",
+            "diff": 3,
+            "q": "Why do electric observables generally depart from the simple single-particle picture more strongly than magnetic moments away from closed shells?",
+            "a": "Magnetic contributions from paired time-reversed states tend to cancel, leaving the odd nucleon dominant. Electric multipole contributions are time-even and therefore add rather than cancel, making them much more sensitive to collective core motion and deformation."
+        },
+        {
+            "topic": "Ch.2: The Shell Model",
+            "sub": "Nuclear Isomers",
+            "diff": 3,
+            "q": "Why can high-angular-momentum states near closed shells have unusually long lifetimes?",
+            "a": "Their decay may require a large change in angular momentum and therefore radiation of high multipolarity. Such electromagnetic transitions are strongly suppressed, producing metastable states with long lifetimes known as nuclear isomers."
         }
 
 

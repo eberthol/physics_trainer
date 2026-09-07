@@ -1,0 +1,29 @@
+{
+  "title": "Comparison with Experiment",
+
+  "layers": [
+    {
+      "title": "Experimental Evidence for Single Particle (Hole) States",
+      "image": "images/book-nuclear-many-body-problem/maps/ch2-comparison-with-experiment.png"
+    }
+  ],
+  "caption": "Comparison with Experiment",
+
+  "study": {
+    "subtopics": [
+      "Experimental Evidence for Single-Particle States",
+      "Spectroscopic Factors",
+      "Electromagnetic Moments and Transitions",
+      "Particle and Hole States",
+      "Magnetic Moments",
+      "Schmidt Lines",
+      "Magnetic Moments",
+      "Core Polarization",
+      "M1 Transitions",
+      "Electric Quadrupole Moments",
+      "Effective Charges",
+      "Electromagnetic Transitions",
+      "Nuclear Isomers"
+    ]
+  }
+}
