@@ -397,7 +397,7 @@
             "sub": "Shell-Model Excitations",
             "diff": 2,
             "q": "Can all the excitated states be explained by particle-hole excitation?",
-            "a": "No, here are low-lying collective states which cannot be explained in the independent particle model (cf. liquid drop model)."
+            "a": "No, there are low-lying collective states which cannot be explained in the independent particle model (cf. liquid drop model)."
         },
         {
             "topic": "Ch.2: The Shell Model",
@@ -637,7 +637,126 @@
             "diff": 3,
             "q": "Why is isospin mixing expected to be small in heavy nuclei with a large neutron excess?",
             "a": "Configurations that violate the dominant isospin character require a proton particle to occupy a level associated with a neutron hole. Their number relative to all possible configurations decreases approximately as $1/(N-Z)$. Thus the isospin impurity becomes smaller as the neutron excess increases."
+        },
+
+        {
+        "topic": "Ch.2: The Shell Model",
+        "sub": "Experimental Evidence for Single-Particle States",
+        "diff": 2,
+        "q": "Which kinds of direct reactions can provide experimental evidence for nuclear single-particle and single-hole states?",
+        "a": "Stripping reactions such as $(d,p)$, pickup reactions such as $(p,d)$, and direct knockout reactions such as $(p,2p)$ and $(e,e^{\\prime}p)$ can selectively add or remove a nucleon. The energies and strengths of the resulting states can then be compared with the single-particle levels predicted by the shell model."
+    },
+    {
+        "topic": "Ch.2: The Shell Model",
+        "sub": "Experimental Evidence for Single-Particle States",
+        "diff": 2,
+        "q": "What is the physical idea behind using a high-energy $(p,2p)$ reaction to probe proton single-particle states?",
+        "a": "Ideally, the incoming proton interacts only once with a bound proton, knocking it out, and both outgoing protons leave the nucleus without further interactions. The process therefore probes the state from which the bound proton was removed."
+    },
+    {
+        "topic": "Ch.2: The Shell Model",
+        "sub": "Experimental Evidence for Single-Particle States",
+        "diff": 2,
+        "q": "In a direct $(p,2p)$ reaction, the binding energy of the knocked-out proton is obtained from $E_B=E-E^{\\prime}-^{\\prime\\prime}$. What is the physical meaning of this relation?",
+        "a": "$E$ is the energy of the incoming proton and $E'$ and $E''$ are the energies of the two outgoing protons. Their energy difference gives the energy that was required to remove the bound proton from the nucleus, so the reaction can be used to infer its single-particle binding energy.",
+        "figure": {
+            "src": "images/book-nuclear-many-body-problem/fig2-12-p2p-reaction.png",
+            "caption": "Experimental $(p,2p)$ cross section showing broadened strength associated with the $1s_{1/2}$, $1p_{3/2}$, and $1p_{1/2}$ shell-model orbitals.",
+            "size": "large"
         }
+    },
+    {
+        "topic": "Ch.2: The Shell Model",
+        "sub": "Experimental Evidence for Single-Particle States",
+        "diff": 3,
+        "q": "If nucleons occupied pure shell-model orbitals with definite binding energies, what structure would you expect in the measured cross section of a direct knockout reaction?",
+        "a": "The cross section should show resonances at discrete binding energies corresponding to the occupied single-particle orbitals. Observing such structures therefore provides direct evidence for shell-model single-particle states."
+    },
+    {
+        "topic": "Ch.2: The Shell Model",
+        "sub": "Experimental Evidence for Single-Particle States",
+        "diff": 3,
+        "q": "The measured $(p,2p)$ cross section shows broad structures associated with the $1s_{1/2}$ and spin-orbit split $1p_{3/2}$ and $1p_{1/2}$ orbitals rather than infinitely sharp lines. What does this tell us?",
+        "a": "The shell-model orbitals can still be identified, but the single-particle strength is broadened by the residual interaction. The physical nuclear states are therefore not perfectly pure single-particle or hole configurations.",
+        "figure": {
+            "src": "images/book-nuclear-many-body-problem/fig2-13-p2p-cross-section.png",
+            "caption": "Experimental $(p,2p)$ cross section showing broadened strength associated with the $1s_{1/2}$, $1p_{3/2}$, and $1p_{1/2}$ shell-model orbitals.",
+            "size": "large"
+        }
+    },
+    {
+        "topic": "Ch.2: The Shell Model",
+        "sub": "Experimental Evidence for Single-Particle States",
+        "diff": 2,
+        "q": "What is the difference between a stripping reaction such as $(d,p)$ and a pickup reaction such as $(p,d)$ in the shell-model picture?",
+        "a": "A stripping reaction adds a nucleon to the nucleus and can create a particle state above a closed shell, whereas a pickup reaction removes a nucleon and can create a hole state below a closed shell."
+    },
+    {
+        "topic": "Ch.2: The Shell Model",
+        "sub": "Experimental Evidence for Single-Particle States",
+        "diff": 2,
+        "q": "Why is a $(d,p)$ reaction useful for identifying neutron single-particle states?",
+        "a": "The deuteron transfers a neutron to the target nucleus. If the added neutron occupies a shell-model orbital, the reaction produces a corresponding state in the $A+1$ nucleus. The measured energies and reaction strengths can therefore reveal the neutron single-particle spectrum."
+    },
+    {
+        "topic": "Ch.2: The Shell Model",
+        "sub": "Experimental Evidence for Single-Particle States",
+        "diff": 3,
+        "q": "A neutron-transfer spectrum contains sharp peaks that can be assigned to orbitals such as $3d_{5/2}$, $2g_{9/2}$, $1j_{15/2}$, and others. What is the main shell-model interpretation of such a spectrum?",
+        "a": "Each strong peak corresponds to a state with substantial overlap with a particular neutron single-particle orbital. The appearance of identifiable peaks with definite shell-model assignments is direct experimental evidence for the single-particle level structure.",
+        "figure": {
+            "src": "images/book-nuclear-many-body-problem/fig2-14-neutron-transfer-spectrum.png",
+            "caption": "Neutron-transfer spectrum in which prominent peaks are assigned to specific shell-model single-particle orbitals.",
+            "size": "large"
+        }
+    },
+    {
+        "topic": "Ch.2: The Shell Model",
+        "sub": "Experimental Evidence for Single-Particle States",
+        "diff": 3,
+        "q": "Why is it useful to compare experimentally determined proton and neutron single-particle energies with levels calculated from a Woods-Saxon potential?",
+        "a": "The comparison tests whether a realistic average one-body potential can reproduce the observed shell structure. Agreement in the ordering and approximate energies of the levels supports the shell-model picture of nucleons moving in an average potential."
+    },
+    {
+        "topic": "Ch.2: The Shell Model",
+        "sub": "Experimental Evidence for Single-Particle States",
+        "diff": 3,
+        "q": "The experimental and calculated single-particle spectra around $^{208}\\mathrm{Pb}$ show similar level patterns but not perfect agreement. What is the physical lesson?",
+        "a": "A Woods-Saxon mean field captures much of the observed proton and neutron shell structure, supporting the independent-particle picture. The remaining differences indicate that the average potential is only an approximation and that residual interactions and other many-body effects still matter.",
+        "figure": {
+            "src": "images/book-nuclear-many-body-problem/fig2-15-pb208-single-particle-levels.png",
+            "caption": "Comparison of experimentally determined and Woods-Saxon calculated proton and neutron single-particle levels around $^{208}\\mathrm{Pb}$.",
+            "size": "large"
+        }
+    },
+    {
+        "topic": "Ch.2: The Shell Model",
+        "sub": "Spectroscopic Factors",
+        "diff": 3,
+        "q": "The spectroscopic factor is defined as $$S_k=\\left|\\langle\\Psi_{A+1}|a_k^+|\\Psi_A\\rangle\\right|^2.$$ What does $S_k$ measure physically?",
+        "a": "$S_k$ measures how strongly the final nuclear state resembles the state obtained by simply adding one nucleon in the single-particle orbital $k$ to the initial nucleus. It therefore measures the single-particle purity, or single-particle strength, of that state."
+    },
+    {
+        "topic": "Ch.2: The Shell Model",
+        "sub": "Spectroscopic Factors",
+        "diff": 2,
+        "q": "What value of the spectroscopic factor would be expected for a pure single-particle state in the ideal shell-model approximation?",
+        "a": "For a pure shell-model state, the spectroscopic factor is approximately $S_k=1$. A value below one indicates that the state contains admixtures of more complicated particle-hole configurations."
+    },
+    {
+        "topic": "Ch.2: The Shell Model",
+        "sub": "Spectroscopic Factors",
+        "diff": 3,
+        "q": "Why does the residual interaction generally reduce a spectroscopic factor below one?",
+        "a": "The residual interaction mixes the simple single-particle configuration with more complicated particle-hole configurations. The exact state therefore contains only part of the pure single-particle component, reducing the overlap measured by $S_k$."
+    },
+    {
+        "topic": "Ch.2: The Shell Model",
+        "sub": "Spectroscopic Factors",
+        "diff": 3,
+        "q": "Measured spectroscopic factors for several experimentally identified single-particle states are about $0.8$-$0.9$ rather than exactly $1$. What does this imply?",
+        "a": "The states retain a strong single-particle character, so the shell model is a good approximation, but they are not perfectly pure. Roughly speaking, some of their strength has been redistributed into more complicated configurations through the residual interaction."
+    }
 
 
 
