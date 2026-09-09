@@ -304,7 +304,27 @@
     "deck": "book-nuclear-many-body-problem-ch2",
     "title": "Comparison With Experiment",
     "file": "maps/book-nuclear-many-body-problem/ch2-comparison-with-experiment.json"
+  },
+  {
+    "id": "deformed-shell-model",
+    "collection": "The Nuclear Many Body Problem",
+    "chapter": "Ch.2: The Shell Model",
+    "deck": "book-nuclear-many-body-problem-ch2",
+    "title": "The Deformed Shell Model",
+    "file": "maps/book-nuclear-many-body-problem/ch2-deformed-shell-model.json"
+  },
+
+  {
+    "id": "anisotropic-harmonic-oscillator",
+    "collection": "The Nuclear Many Body Problem",
+    "chapter": "Ch.2: The Shell Model",
+    "deck": "book-nuclear-many-body-problem-ch2",
+    "title": "The Anisotropic Harmonic Oscillator",
+    "file": "maps/book-nuclear-many-body-problem/ch2-anisotropic-harmonic-oscillator.json"
   }
+
+
+  
 
 
 ]

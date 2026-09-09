@@ -1,0 +1,26 @@
+{
+  "title": "The Deformed Shell Model",
+
+  "layers": [
+    {
+      "title": "The Deformed Shell Model",
+      "image": "images/book-nuclear-many-body-problem/maps/ch2-deformed-shell-model.png"
+    }
+  ],
+  "caption": "The Deformed Shell Model",
+
+  "study": {
+    "subtopics": [
+      "Deformed Shell Model",
+      "Rotational Bands",
+      "Quadrupole Deformation",
+      "Higher Multipole Deformation",
+      "Single-Particle Structure",
+      "Fission Isomers",
+      "General Deformed Potential",
+      "Deformed Woods-Saxon Potential",
+      "Deformed Spin-Orbit Interaction",
+      "General Deformed Potential"
+    ]
+  }
+}

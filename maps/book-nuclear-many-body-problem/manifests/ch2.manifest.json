@@ -5,6 +5,9 @@
     { "type": "map",     "id": "spin-orbit-coupling" },
     { "type": "map",     "id": "shell-model-approach" },
     { "type": "map",     "id": "symmetries" },
-    { "type": "map",     "id": "comparison-with-experiment" }
+    { "type": "map",     "id": "comparison-with-experiment" },
+
+    { "type": "map",     "id": "deformed-shell-model" },
+    { "type": "map",     "id": "anisotropic-harmonic-oscillator" }
   ]
 }

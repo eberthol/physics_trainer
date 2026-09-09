@@ -900,6 +900,217 @@
             "diff": 3,
             "q": "Why can high-angular-momentum states near closed shells have unusually long lifetimes?",
             "a": "Their decay may require a large change in angular momentum and therefore radiation of high multipolarity. Such electromagnetic transitions are strongly suppressed, producing metastable states with long lifetimes known as nuclear isomers."
+        },
+
+        {
+            "topic": "Ch.2: The Shell Model",
+            "sub": "Deformed Shell Model",
+            "diff": 2,
+            "q": "Why is a deformed single-particle potential needed in some nuclei even though the independent-particle picture still works?",
+            "a": "Far from closed shells, the nucleus can develop a stable nonspherical shape. The nucleons can still move approximately independently in an average field, but that mean field is no longer spherical. The shell model is therefore retained, with a deformed one-body potential instead of a spherical one."
+        },
+        {
+            "topic": "Ch.2: The Shell Model",
+            "sub": "Deformed Shell Model",
+            "diff": 2,
+            "q": "What experimental observations provide evidence that the nuclear mean field is deformed rather than spherical?",
+            "a": "Important signatures are rotational bands, very large quadrupole moments, strongly enhanced E2 transition probabilities, sizable hexadecapole matrix elements, deformation-dependent single-particle level patterns, and highly deformed fission-isomer states."
+        },
+        {
+            "topic": "Ch.2: The Shell Model",
+            "sub": "Rotational Bands",
+            "diff": 2,
+            "q": "Why do rotational bands with an approximately $I(I+1)$ spectrum provide evidence for a deformed shell-model potential?",
+            "a": "A pronounced rotational spectrum indicates that the nucleus has a stable intrinsic shape that can rotate collectively. A spherical nucleus has no preferred intrinsic orientation, so the appearance of rotational bands is a strong signature of stable deformation."
+        },
+        {
+            "topic": "Ch.2: The Shell Model",
+            "sub": "Quadrupole Deformation",
+            "diff": 2,
+            "q": "Why are very large measured quadrupole moments difficult to explain with a spherical single-particle model?",
+            "a": "In the spherical model, the quadrupole moment is mainly attributed to one particle or one hole outside an inert core. Very large measured values require many nucleons in the core to contribute coherently, which points to a permanently deformed charge distribution."
+        },
+        {
+            "topic": "Ch.2: The Shell Model",
+            "sub": "Quadrupole Deformation",
+            "diff": 2,
+            "q": "In axially symmetric rare-earth nuclei, the experimentally inferred quadrupole deformation is typically $$\\beta\\approx0.2-0.3.$$ What does this mean physically?",
+            "a": "It means that the equilibrium shape differs substantially from a sphere. For positive $\\beta$, the deformation is predominantly prolate, corresponding to an elongated, cigar-like intrinsic shape."
+        },
+        {
+            "topic": "Ch.2: The Shell Model",
+            "sub": "Quadrupole Deformation",
+            "diff": 3,
+            "q": "Why do strongly enhanced $B(E2)$ values within rotational bands support the existence of a stable quadrupole deformation?",
+            "a": "E2 transition strengths are directly related to the intrinsic quadrupole moment. Large $B(E2)$ values therefore indicate that the proton distribution participates coherently in a strong quadrupole deformation rather than behaving as a single-particle excitation."
+        },
+        {
+            "topic": "Ch.2: The Shell Model",
+            "sub": "Higher Multipole Deformation",
+            "diff": 3,
+            "q": "What is the physical significance of experimentally large hexadecapole matrix elements?",
+            "a": "They indicate that the intrinsic nuclear shape cannot be described by quadrupole deformation alone. A nonzero hexadecapole component $\\beta_4$ is also present, giving a more detailed distortion of the nuclear surface."
+        },
+        {
+            "topic": "Ch.2: The Shell Model",
+            "sub": "Single-Particle Structure",
+            "diff": 3,
+            "q": "Why are measured single-particle energies a sensitive test of nuclear deformation?",
+            "a": "The energies and ordering of single-particle orbitals depend strongly on the detailed shape of the average potential. Deformation changes the symmetry of the potential and splits or shifts the spherical shell-model levels, so the observed single-particle spectrum provides a direct probe of the deformation."
+        },
+        {
+            "topic": "Ch.2: The Shell Model",
+            "sub": "Fission Isomers",
+            "diff": 3,
+            "q": "Why do long-lived fission isomers with deformation as large as $$\\beta\\sim0.6$$ provide strong evidence for the deformed shell model?",
+            "a": "Such states correspond to extremely elongated metastable nuclear shapes. Their rotational spectra and moments of inertia show that they behave as well-defined deformed configurations, demonstrating that shell effects can stabilize very large deformations relevant to the fission process."
+        },
+        
+        {
+            "topic": "Ch.2: The Shell Model",
+            "sub": "Deformed Shell Model",
+            "diff": 3,
+            "q": "What symmetry is sacrificed when one replaces the spherical shell-model potential by a deformed intrinsic potential?",
+            "a": "A fixed deformed potential is no longer invariant under arbitrary rotations in the laboratory frame, so rotational invariance is broken at the level of the intrinsic mean field. The physical nucleus must ultimately recover rotational symmetry through the construction of states with good total angular momentum."
+        },
+        {
+            "topic": "Ch.2: The Shell Model",
+            "sub": "Deformed Shell Model",
+            "diff": 2,
+            "q": "How can the same independent-particle idea describe both spherical and deformed nuclei?",
+            "a": "In both cases, nucleons are treated as moving approximately independently in a self-generated average field. Near closed shells the equilibrium mean field is approximately spherical, while far from closed shells it can have a stable deformation. The essential shell-model idea is therefore the mean-field motion, not spherical symmetry itself."
+        },
+        {
+            "topic": "Ch.2: The Shell Model",
+            "sub": "General Deformed Potential",
+            "diff": 2,
+            "q": "Why should the average single-particle potential of a deformed nucleus have approximately the same shape as the nuclear density distribution?",
+            "a": "The nuclear force has a short range, of order $1\\,\\mathrm{fm}$, compared with the size of the nucleus. A nucleon therefore mainly feels the local distribution of nearby nucleons, so the self-consistent average potential is expected to follow the shape of the nuclear density."
+        },
+        {
+            "topic": "Ch.2: The Shell Model",
+            "sub": "Deformed Woods-Saxon Potential",
+            "diff": 2,
+            "q": "A deformed Woods-Saxon potential can be written as\n$$V(r,\\theta,\\phi)=-V_0\\left[1+\\exp\\left(\\frac{r-R(\\theta,\\phi)}{a(\\theta,\\phi)}\\right)\\right]^{-1}.$$ What is the physical meaning of replacing $R_0$ by $R(\\theta,\\phi)$?",
+            "a": "The nuclear surface is no longer at the same radius in every direction. $R(\\theta,\\phi)$ specifies the angle-dependent position of the deformed surface, so the potential well follows the intrinsic shape of the nucleus."
+        },
+        {
+            "topic": "Ch.2: The Shell Model",
+            "sub": "Deformed Woods-Saxon Potential",
+            "diff": 3,
+            "q": "In the deformed Woods-Saxon potential,\n$$V(r,\\theta,\\phi)=-V_0\\left[1+\\exp\\left(\\frac{r-R(\\theta,\\phi)}{a(\\theta,\\phi)}\\right)\\right]^{-1},$$\nwhy is the diffuseness parameter $a$ allowed to depend weakly on $\\theta$ and $\\phi$?",
+            "a": "The aim is to keep the physical surface thickness approximately constant even though the curvature of the nuclear surface changes with direction. A small angular dependence of $a(\\theta,\\phi)$ compensates for this geometric effect."
+        },
+        {
+            "topic": "Ch.2: The Shell Model",
+            "sub": "Deformed Spin-Orbit Interaction",
+            "diff": 3,
+            "q": "The spin-orbit interaction in a deformed potential is written as\n$$V_{LS}=\\lambda\\left(\\nabla V(r,\\theta,\\phi)\\times\\mathbf p\\right)\\cdot\\mathbf s.$$ What is the physical meaning of this form?",
+            "a": "It generalizes the spherical spin-orbit interaction to a nonspherical mean field. The spin couples to the nucleon's motion through the spatial gradient of the deformed potential, so the strength and direction of the spin-orbit field follow the local shape of the nuclear surface."
+        },
+        {
+            "topic": "Ch.2: The Shell Model",
+            "sub": "Deformed Spin-Orbit Interaction",
+            "diff": 3,
+            "q": "Why must spin-orbit coupling still be included in the deformed shell model?",
+            "a": "Spin-orbit coupling is essential for reproducing the observed single-particle level structure in spherical nuclei, and deformation does not remove this physics. In a deformed nucleus it remains a major contribution to the ordering and splitting of the single-particle states."
+        },
+        {
+            "topic": "Ch.2: The Shell Model",
+            "sub": "General Deformed Potential",
+            "diff": 2,
+            "q": "Why is the deformed harmonic oscillator introduced in addition to the deformed Woods-Saxon potential?",
+            "a": "It is a simpler approximation that preserves the essential effect of deformation while making the single-particle problem easier to analyze. It plays for deformed nuclei the same qualitative role that the spherical harmonic oscillator plays in the spherical shell model."
+        },
+
+        {
+            "topic": "Ch.2: The Shell Model",
+            "sub": "Anisotropic Harmonic Oscillator",
+            "diff": 2,
+            "q": "The deformed harmonic-oscillator Hamiltonian is\n$$h_0=-\\frac{\\hbar^2}{2m}\\Delta+\\frac{m}{2}\\left(\\omega_x^2x^2+\\omega_y^2y^2+\\omega_z^2z^2\\right).$$\nWhat is the physical meaning of using different oscillator frequencies $\\omega_x$, $\\omega_y$, and $\\omega_z$?",
+            "a": "Different frequencies make the confining potential anisotropic rather than spherical. The equipotential surfaces become ellipsoids, so the oscillator can represent the deformed average field of a nucleus."
+        },
+        {
+            "topic": "Ch.2: The Shell Model",
+            "sub": "Anisotropic Harmonic Oscillator",
+            "diff": 2,
+            "q": "For an ellipsoidal nuclear shape, the oscillator frequencies are chosen according to\n$$\\omega_\\nu=\\omega_0\\frac{R_0}{a_\\nu},\\qquad \\nu=x,y,z.$$ What is the physical meaning of this relation?",
+            "a": "The oscillator frequency along each direction is inversely proportional to the corresponding semi-axis of the ellipsoid. A longer spatial axis therefore corresponds to weaker confinement and a smaller oscillator frequency, while a shorter axis corresponds to stronger confinement and a larger frequency."
+        },
+        {
+            "topic": "Ch.2: The Shell Model",
+            "sub": "Anisotropic Harmonic Oscillator",
+            "diff": 2,
+            "q": "Volume conservation for the anisotropic oscillator implies\n$$\\omega_x\\omega_y\\omega_z=\\omega_0^3.$$ What does this condition mean physically?",
+            "a": "Changing the nuclear shape should not change its volume. Since the oscillator frequencies are inversely related to the three semi-axes, keeping their product constant is equivalent to keeping the product of the semi-axes, and therefore the nuclear volume, constant."
+        },
+        {
+            "topic": "Ch.2: The Shell Model",
+            "sub": "Anisotropic Harmonic Oscillator",
+            "diff": 2,
+            "q": "The anisotropic oscillator has energies\n$$\\epsilon_0(n_x,n_y,n_z)=\\hbar\\omega_x\\left(n_x+\\frac12\\right)+\\hbar\\omega_y\\left(n_y+\\frac12\\right)+\\hbar\\omega_z\\left(n_z+\\frac12\\right).$$ What is the physical consequence of deformation for the oscillator levels?",
+            "a": "In the spherical case the three frequencies are equal and many states are degenerate. Deformation makes the frequencies different, so states with different distributions of oscillator quanta among the three axes acquire different energies and the spherical degeneracies are split."
+        },
+        {
+            "topic": "Ch.2: The Shell Model",
+            "sub": "Axial Deformation",
+            "diff": 3,
+            "q": "For an axially symmetric oscillator, the deformation is introduced through\n$$\\omega_x^2=\\omega_y^2=\\omega_0^2(\\delta)\\left(1+\\frac{2}{3}\\delta\\right),$$\n$$\\omega_z^2=\\omega_0^2(\\delta)\\left(1-\\frac{4}{3}\\delta\\right).$$\nWhat is the physical role of the deformation parameter $\\delta$?",
+            "a": "$\\delta$ controls the departure from spherical symmetry by making the confinement along the symmetry axis different from that in the perpendicular directions. For $\\delta=0$ the oscillator is spherical; nonzero $\\delta$ produces an axially deformed ellipsoidal potential."
+        },
+        {
+            "topic": "Ch.2: The Shell Model",
+            "sub": "Axial Deformation",
+            "diff": 2,
+            "q": "For small axial deformations, the Nilsson deformation parameter $\\delta$ is related to the usual quadrupole deformation parameter by\n$$\\beta\\simeq\\frac{1}{3}\\sqrt{\\frac{16\\pi}{5}}\\,\\delta\\simeq1.057\\,\\delta.$$ What does this relation tell us?",
+            "a": "The two parameters describe essentially the same quadrupole deformation in different conventions. For small deformations they are numerically almost equal, so $\\delta$ in the anisotropic oscillator can be directly related to the more familiar geometric deformation parameter $\\beta$."
+        },
+        {
+            "topic": "Ch.2: The Shell Model",
+            "sub": "Axial Deformation",
+            "diff": 3,
+            "q": "For an axially symmetric oscillator, why are cylindrical quantum numbers $n_z$, $n_\\rho$, and $m_l$ more useful than $n_x$, $n_y$, and $n_z$?",
+            "a": "Axial symmetry singles out the $z$-axis. The projection $m_l$ of orbital angular momentum onto this symmetry axis is therefore conserved and becomes a good quantum number, making cylindrical coordinates the natural basis."
+        },
+        {
+            "topic": "Ch.2: The Shell Model",
+            "sub": "Nilsson Quantum Numbers",
+            "diff": 2,
+            "q": "For an axially symmetric deformed oscillator,\n$$N=n_z+2n_\\rho+m_l.$$ What is the physical meaning of $N$?",
+            "a": "$N$ is the total number of harmonic-oscillator quanta. In the spherical limit it labels the major oscillator shell, while in the deformed case the states within a given $N$ shell split according to how those quanta are distributed between motion along and perpendicular to the symmetry axis."
+        },
+        {
+            "topic": "Ch.2: The Shell Model",
+            "sub": "Nilsson Quantum Numbers",
+            "diff": 2,
+            "q": "For an axially symmetric deformed potential,\n$$\\Omega=m_l+m_s=m_l\\pm\\frac12.$$ What is the physical meaning of $\\Omega$?",
+            "a": "$\\Omega$ is the projection of the total single-particle angular momentum $\\mathbf j=\\mathbf l+\\mathbf s$ onto the symmetry axis of the deformed nucleus. Because of axial symmetry, this projection is a good quantum number even though the total $j$ is generally not."
+        },
+        {
+            "topic": "Ch.2: The Shell Model",
+            "sub": "Nilsson Quantum Numbers",
+            "diff": 3,
+            "q": "Deformed single-particle states are commonly labeled by Nilsson quantum numbers of the form\n$$\\Omega^\\pi[Nn_zm_l].$$ What information is contained in this notation?",
+            "a": "$N$ gives the major oscillator shell, $n_z$ gives the number of oscillator quanta along the symmetry axis, $m_l$ gives the projection of orbital angular momentum on that axis, $\\Omega$ gives the projection of the total angular momentum, and $\\pi=(-1)^N$ gives the parity."
+        },
+        {
+            "topic": "Ch.2: The Shell Model",
+            "sub": "Level Splitting with Deformation",
+            "diff": 3,
+            "q": "For small axial deformation, the single-particle energy behaves approximately as\n$$\\epsilon_0\\simeq\\hbar\\omega_0\\left[\\left(N+\\frac32\\right)+\\delta\\left(\\frac{N}{3}-n_z\\right)\\right].$$ What does this equation tell us about how deformation splits a spherical oscillator shell?",
+            "a": "States belonging to the same spherical shell $N$ no longer remain degenerate. Their energy shifts depend on $n_z$, so deformation separates states according to how much of their motion lies along the symmetry axis. The splitting is approximately linear in $\\delta$ for small deformations."
+        },
+        {
+            "topic": "Ch.2: The Shell Model",
+            "sub": "Level Splitting with Deformation",
+            "diff": 3,
+            "q": "A spherical oscillator shell splits into several branches when an axial deformation $\\delta$ is introduced. How should the slopes of these branches be interpreted?",
+            "a": "The slope of each branch reflects its value of $n_z$. States with different numbers of oscillator quanta along the symmetry axis respond differently to the deformation, so their energies move upward or downward at different rates as $\\delta$ changes.",
+            "figure": {
+                "src": "images/book-nuclear-many-body-problem/fig2-19-anisotropic-oscillator-levels.png",
+                "caption": "Splitting of anisotropic harmonic-oscillator levels as a function of the axial deformation parameter $\\delta$; the different branches correspond to different $n_z$ values.",
+                "size": "medium"
+            }
         }
 
 

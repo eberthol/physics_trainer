@@ -1,0 +1,20 @@
+{
+  "title": "The Anisotropic Harmonic Oscillator",
+
+  "layers": [
+    {
+      "title": "The Anisotropic Harmonic Oscillator",
+      "image": "images/book-nuclear-many-body-problem/maps/ch2-anisotropic-harmonic-oscillator.png"
+    }
+  ],
+  "caption": "The Anisotropic Harmonic Oscillator",
+
+  "study": {
+    "subtopics": [
+      "Anisotropic Harmonic Oscillator",
+      "Axial Deformation",
+      "Nilsson Quantum Numbers",
+      "Level Splitting with Deformation"
+    ]
+  }
+}
